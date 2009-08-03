@@ -1,0 +1,18 @@
+When importing on Linux the .bat doesn't work.
+
+Mass import using the following console command you must manually cd into each of the directory in the import order as set below.
+
+for i in $(ls *.sql); do mysql -uUSERNAME -pPASSWORD < $i; done 
+
+Replace the caps USERNAME and PASSWORD with your user with root access to the DB.
+
+
+
+Build Order:
+
+Create Scripts/
+Server Scripts/
+Server Scripts/Procedures
+Server Scripts/Functions
+AdminScripts/
+AstroMech Scripts/
