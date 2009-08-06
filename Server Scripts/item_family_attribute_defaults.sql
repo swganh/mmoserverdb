@@ -142,7 +142,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (3,13,14,'20',0),
  (3,13,15,'-15.0',3),
  (3,13,18,'@crafting:tool_status_ready',4),
- (3,13,19,'528385',0),
+ (3,13,19,'528417',0),
  (3,13,566,'@crafting:weapon_tool_name',1),
  (3,13,1270,'0',20),
  (3,14,1,'1',2),
