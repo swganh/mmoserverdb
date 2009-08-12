@@ -1,4 +1,4 @@
-/*
+﻿/*
 ---------------------------------------------------------------------------------------
 This source file is part of swgANH (Star Wars Galaxies - A New Hope - Server Emulator)
 For more information, see http://www.swganh.org
