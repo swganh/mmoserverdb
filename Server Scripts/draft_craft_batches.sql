@@ -1239,7 +1239,10 @@ INSERT INTO `draft_craft_batches` (`id`,`list_id`,`expGroup`) VALUES
  (1236,1214,34),
  (1236,1215,39),
  (1237,1216,34),
- (1237,1217,39);
+ (1237,1217,39),
+ (18,1219,44),
+ (18,1223,20),
+ (18,1224,49);
 /*!40000 ALTER TABLE `draft_craft_batches` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

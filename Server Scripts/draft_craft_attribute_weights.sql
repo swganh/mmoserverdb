@@ -2324,7 +2324,11 @@ INSERT INTO `draft_craft_attribute_weights` (`id`,`type`,`distribution`) VALUES
  (1216,10,1.00),
  (1216,9,1.00),
  (1216,4,1.00),
- (1216,8,1.00);
+ (1216,8,1.00),
+ (1223,8,1.00),
+ (1223,6,1.00),
+ (1224,9,1.00),
+ (1224,8,1.00);
 /*!40000 ALTER TABLE `draft_craft_attribute_weights` ENABLE KEYS */;
 
 
