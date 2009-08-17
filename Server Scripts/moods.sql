@@ -224,8 +224,7 @@ INSERT INTO `moods` (`id`,`name`) VALUES
  (184,'malevolent'),
  (185,'hurried'),
  (186,'patient'),
- (187,'firm'),
- (188,'chatter');
+ (187,'firm');
 /*!40000 ALTER TABLE `moods` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
