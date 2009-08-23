@@ -483,7 +483,6 @@ INSERT INTO `starting_items` (`id`,`req_id`,`family_id`,`type_id`,`customName`) 
  (444,58,3,14,NULL),
  (445,58,6,89,''),
  (446,48,7,752,NULL),
- (447,58,7,1132,NULL),
  (448,48,7,916,NULL),
  (449,48,3,14,NULL),
  (450,48,6,89,''),
