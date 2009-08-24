@@ -1,8 +1,13 @@
--- MySQL Administrator dump 1.4
---
--- ------------------------------------------------------
--- Server version	5.1.22-rc-community-log
+/*
+---------------------------------------------------------------------------------------
+This source file is part of swgANH (Star Wars Galaxies - A New Hope - Server Emulator)
+For more information, see http://www.swganh.org
 
+
+Copyright (c) 2006 - 2009 The swgANH Team
+
+---------------------------------------------------------------------------------------
+*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -13,12 +18,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
---
--- Create schema swganh
---
-
-CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
@@ -27,26 +26,26 @@ USE swganh;
 
 DROP TABLE IF EXISTS `item_types`;
 CREATE TABLE `item_types` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `object_string` char(255) NOT NULL DEFAULT 'object',
-  `stf_name` char(255) NOT NULL DEFAULT '0',
-  `stf_file` char(255) NOT NULL DEFAULT '0',
-  `stf_detail_name` char(255) NOT NULL DEFAULT '0',
-  `stf_detail_file` char(255) NOT NULL DEFAULT '0',
-  `bazaar_category` int(11) NOT NULL DEFAULT '0',
-  `equipSlots` int(10) unsigned NOT NULL DEFAULT '0',
-  `equipRestrictions` int(10) unsigned NOT NULL DEFAULT '0',
-  `complete` varchar(3) NOT NULL DEFAULT 'No',
-  `b_isSitable` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2771 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
+  `id` int(11) unsigned NOT NULL auto_increment,
+  `object_string` char(255) NOT NULL default 'object',
+  `stf_name` char(255) NOT NULL default '0',
+  `stf_file` char(255) NOT NULL default '0',
+  `stf_detail_name` char(255) NOT NULL default '0',
+  `stf_detail_file` char(255) NOT NULL default '0',
+  `bazaar_category` int(11) NOT NULL default '0',
+  `equipSlots` int(10) unsigned NOT NULL default '0',
+  `equipRestrictions` int(10) unsigned NOT NULL default '0',
+  `complete` varchar(3) NOT NULL default 'No',
+  `b_isSitable` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2772 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
 --
 -- Dumping data for table `item_types`
 --
 
 /*!40000 ALTER TABLE `item_types` DISABLE KEYS */;
-INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`) VALUES 
+INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`) VALUES
  (1,'object/tangible/survey_tool/shared_survey_tool_wind.iff','survey_tool_wind','item_n','survey_tool_wind','item_d',32770,0,0,'No',0),
  (2,'object/tangible/survey_tool/shared_survey_tool_gas.iff','survey_tool_gas','item_n','survey_tool_gas','item_d',32770,0,0,'No',0),
  (3,'object/tangible/survey_tool/shared_survey_tool_lumber.iff','survey_tool_lumber','item_n','survey_tool_lumber','item_d',32770,0,0,'No',0),
@@ -142,7 +141,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (93,'object/tangible/food/crafted/shared_dish_ramorrean_capanata.iff','ramorrean_capanata','food_name','ramorrean_capanata','food_detail',8202,0,0,'No',0),
  (94,'object/tangible/food/crafted/shared_dessert_dweezel.iff','dweezel','food_name','dweezel','food_detail',8202,0,0,'No',0),
  (95,'object/tangible/food/crafted/shared_dish_terratta.iff','terratta','food_name','terratta','food_detail',8202,0,0,'No',0),
- (96,'object/tangible/component/food/base/shared_drink_container_base.iff','drink_container','craft_food_ingredients_n','drink_container','craft_food_ingredients_d',8197,0,0,'No',0),
+ (96,'object/tangible/component/food/base/shared_drink_container_base.iff','drink_container','food_name','drink_container','food_detail',8197,0,0,'No',0),
  (97,'object/tangible/food/foraged/shared_foraged_vegetable_s5.iff','foraged_vegetable_4','food_name','foraged_vegetable_4','food_detail',8202,0,0,'No',0),
  (98,'object/tangible/food/crafted/shared_dessert_cavaellin_creams.iff','cavaellin_creams','food_name','cavaellin_creams','food_detail',8202,0,0,'No',0),
  (99,'object/tangible/food/crafted/shared_drink_breath_of_heaven.iff','breath_of_heaven','food_name','breath_of_heaven','food_detail',8216,0,0,'No',0),
@@ -660,7 +659,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (611,'object/tangible/wearables/helmet/shared_helmet_tie_fighter.iff','helmet_tie_fighter','wearables_name','helmet_tie_fighter','wearables_detail',16777226,50462721,2100159,'No',0),
  (612,'object/tangible/wearables/armor/ithorian_sentinel/shared_ith_armor_s03_leggings.iff','ith_armor_s03_leggings','wearables_name','ith_armor_s03_leggings','wearables_detail',260,2048,1027,'No',0),
  (613,'object/tangible/wearables/ithorian/shared_ith_necklace_s03.iff','ith_necklace_s03','wearables_name','ith_necklace_s03','wearables_detail',2097155,2,1027,'No',0),
- (614,'object/tangible/wearables/bikini/shared_bikini_s01.iff','bikini_s01','wearables_name','bikini_s01','wearables_detail',16777230,3072,3005,'No',0),
+ (614,'object/tangible/wearables/bikini/shared_bikini_s01.iff','bikini_s01','wearables_name','bikini_s01','wearables_detail',16777230,12,3005,'No',0),
  (615,'object/tangible/wearables/armor/bone/shared_armor_bone_s01_boots.iff','armor_bone_s01_boots','wearables_name','armor_bone_s01_boots','wearables_detail',263,4096,2991,'No',0),
  (616,'object/tangible/wearables/boots/shared_boots_corsec.iff','boots_corsec','wearables_name','boots_corsec','wearables_detail',16777222,4096,2991,'No',0),
  (617,'object/tangible/wearables/pants/shared_pants_s11.iff','pants_s11','wearables_name','pants_s11','wearables_detail',16777228,3072,3007,'No',0),
@@ -747,7 +746,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (698,'object/tangible/wearables/gloves/shared_gloves_s06.iff','gloves_s06','wearables_name','gloves_s06','wearables_detail',16777224,256,3007,'No',0),
  (699,'object/tangible/wearables/dress/shared_dress_s08.iff','dress_s08','wearables_name','dress_s08','wearables_detail',16777223,3324,3005,'No',0),
  (700,'object/tangible/wearables/shirt/shared_singing_mountain_clan_shirt_s01.iff','singing_mountain_clan_shirt_s01','wearables_name','singing_mountain_clan_shirt_s01','wearables_detail',16777230,4,3005,'No',0),
- (701,'object/tangible/wearables/bikini/shared_bikini_s04.iff','bikini_s04','wearables_name','bikini_s04','wearables_detail',16777230,3072,3005,'No',0),
+ (701,'object/tangible/wearables/bikini/shared_bikini_s04.iff','bikini_s04','wearables_name','bikini_s04','wearables_detail',16777230,12,3005,'No',0),
  (702,'object/tangible/wearables/ithorian/shared_hat_chef_s02_ith.iff','hat_chef_s02_ith','wearables_name','hat_chef_s02_ith','wearables_detail',16777226,1,1027,'No',0),
  (703,'object/tangible/wearables/earring/shared_earring_s08.iff','earring_s08','wearables_name','earring_s08','wearables_detail',2097156,0,3005,'No',0),
  (704,'object/tangible/wearables/ithorian/shared_ith_necklace_s06.iff','ith_necklace_s06','wearables_name','ith_necklace_s06','wearables_detail',2097155,2,1027,'No',0),
@@ -761,7 +760,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (712,'object/tangible/wearables/wookiee/shared_wke_shoulder_pad_s01.iff','wke_shoulder_pad_s01','wearables_name','wke_shoulder_pad_s01','wearables_detail',16777232,80,67,'No',0),
  (713,'object/tangible/wearables/armor/ithorian_guardian/shared_ith_armor_s02_bicep_l.iff','ith_armor_s02_bicep_l','wearables_name','ith_armor_s02_bicep_l','wearables_detail',261,16,1027,'No',0),
  (714,'object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_utility_belt.iff','armor_stormtrooper_utility_belt','wearables_name','armor_stormtrooper_utility_belt','wearables_detail',16777218,512,2100159,'No',0),
- (715,'object/tangible/wearables/apron/shared_apron_chef_s01.iff','apron_chef_s01','wearables_name','apron_chef_s01','wearables_detail',16777227,8,3007,'No',0),
+ (715,'object/tangible/wearables/apron/shared_apron_chef_s01.iff','apron_chef_s01','wearables_name','apron_chef_s01','wearables_detail',16777227,8,3071,'No',0),
  (716,'object/tangible/wearables/armor/zam/shared_armor_zam_wesell_belt.iff','armor_zam_wesell_belt','wearables_name','armor_zam_wesell_belt','wearables_detail',16777218,512,3007,'No',0),
  (717,'object/tangible/wearables/armor/stormtrooper/shared_armor_stormtrooper_bicep_r.iff','armor_stormtrooper_bicep_r','wearables_name','armor_stormtrooper_bicep_r','wearables_detail',261,64,3007,'No',0),
  (718,'object/tangible/wearables/armor/marauder/shared_armor_marauder_s02_leggings.iff','armor_marauder_s02_leggings','wearables_name','armor_marauder_s02_leggings','wearables_detail',260,2048,3007,'No',0),
@@ -1144,7 +1143,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (1094,'object/tangible/wearables/robe/shared_robe_inquisitor.iff','robe_inquisitor','wearables_name','robe_inquisitor','wearables_detail',16777229,8,3007,'No',0),
  (1095,'object/tangible/wearables/shirt/shared_shirt_s10.iff','shirt_s10','wearables_name','shirt_s10','wearables_detail',16777230,4,3007,'No',0),
  (1096,'object/tangible/wearables/ithorian/shared_ith_necklace_s01.iff','ith_necklace_s01','wearables_name','ith_necklace_s01','wearables_detail',2097155,2,1027,'No',0),
- (1097,'object/tangible/wearables/bikini/shared_bikini_s03.iff','bikini_s03','wearables_name','bikini_s03','wearables_detail',16777230,3072,3005,'No',0),
+ (1097,'object/tangible/wearables/bikini/shared_bikini_s03.iff','bikini_s03','wearables_name','bikini_s03','wearables_detail',16777230,12,3005,'No',0),
  (1098,'object/tangible/wearables/base/shared_base_backpack.iff','base_backpack','wearables_name','base_backpack','wearables_detail',8213,16384,3007,'No',0),
  (1099,'object/tangible/wearables/necklace/shared_necklace_wampum.iff','necklace_wampum','wearables_name','necklace_wampum','wearables_detail',2097155,2,4095,'No',0),
  (1100,'object/tangible/wearables/base/shared_base_gauntlets_long.iff','base_gauntlets_long','wearables_name','base_gauntlets_long','wearables_detail',16777233,0,3007,'No',0),
@@ -1323,7 +1322,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (1272,'object/tangible/wearables/ithorian/shared_ith_shirt_s13.iff','ith_shirt_s13','wearables_name','ith_shirt_s13','wearables_detail',16777230,4,1027,'No',0),
  (1273,'object/tangible/wearables/armor/marine/shared_armor_marine_leggings.iff','armor_marine_leggings','wearables_name','armor_marine_leggings','wearables_detail',260,2048,3007,'No',0),
  (1274,'object/tangible/wearables/ithorian/shared_ith_dress_short_s01.iff','ith_dress_short_s01','wearables_name','ith_dress_short_s01','wearables_detail',16777227,3084,1025,'No',0),
- (1275,'object/tangible/wearables/bikini/shared_bikini_s02.iff','bikini_s02','wearables_name','bikini_s02','wearables_detail',16777230,3072,3005,'No',0),
+ (1275,'object/tangible/wearables/bikini/shared_bikini_s02.iff','bikini_s02','wearables_name','bikini_s02','wearables_detail',16777230,12,3005,'No',0),
  (1276,'object/tangible/wearables/ithorian/shared_ith_belt_s09.iff','ith_belt_s09','wearables_name','ith_belt_s09','wearables_detail',16777218,512,1027,'No',0),
  (1277,'object/tangible/wearables/wookiee/shared_wke_hood_s02.iff','wke_hood_s02','wearables_name','wke_hood_s02','wearables_detail',16777232,1,67,'No',0),
  (1278,'object/tangible/wearables/necklace/shared_necklace_sparkling_bijou.iff','necklace_sparkling_bijou','wearables_name','necklace_sparkling_bijou','wearables_detail',2097155,2,4095,'No',0),
@@ -2392,7 +2391,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (2341,'object/weapon/ranged/rifle/shared_rifle_acid_beam.iff','rifle_acid_beam','weapon_name','rifle_acid_beam','weapon_detail',131074,32768,4095,'No',0),
  (2342,'object/weapon/ranged/rifle/shared_rifle_beam.iff','rifle_beam','weapon_name','rifle_beam','weapon_detail',131074,32768,4095,'No',0),
  (2343,'object/weapon/ranged/rifle/shared_rifle_bowcaster.iff','rifle_bowcaster','weapon_name','rifle_bowcaster','weapon_detail',131074,32768,4095,'No',0),
- (2344,'object/weapon/ranged/rifle/shared_rifle_cdef.iff','rifle_cdef','weapon_name','rifle_cdef','weapon_detail',131074,32768,4095,'No',0),
+ (2344,'object/weapon/ranged/rifle/shared_rifle_cdef.iff','rifle_cdef','weapon_name','rifle_cdef','weapon_detail',131074,32768,4095,'',0),
  (2345,'object/weapon/ranged/rifle/shared_rifle_dlt20.iff','rifle_dlt20','weapon_name','rifle_dlt20','weapon_detail',131074,32768,4095,'No',0),
  (2346,'object/weapon/ranged/rifle/shared_rifle_dlt20a.iff','rifle_dlt20a','weapon_name','rifle_dlt20a','weapon_detail',131074,32768,4095,'No',0),
  (2347,'object/weapon/ranged/rifle/shared_rifle_e11.iff','rifle_e11','weapon_name','rifle_e11','weapon_detail',131074,32768,4095,'No',0),
@@ -2616,11 +2615,9 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (2767,'object/weapon/ranged/rifle/shared_rifle_victor_tusken.iff','rifle_victor_tusken','weapon_name','rifle_victor_tusken','weapon_detail',131074,32768,4095,'No',0),
  (2768,'object/tangible/camp/shared_camp_chair_s1.iff','frn_chair','frn_n','unknown','frn_d',8203,0,0,'yes',1),
  (2769,'object/tangible/camp/shared_camp_chair_s2.iff','frn_chair','frn_n','unknown','frn_d',8203,0,0,'yes',1),
- (2770,'object/tangible/camp/shared_camp_chair_s3.iff','frn_chair','frn_n','unknown','frn_d',8203,0,0,'yes',1);
+ (2770,'object/tangible/camp/shared_camp_chair_s3.iff','frn_chair','frn_n','unknown','frn_d',8203,0,0,'yes',1),
+ (2771,'object/tangible/loot/bestine/shared_bestine_painting_schematic_blueleaf_temple.iff','bestine_painting_schematic_blueleaf_temple','unk','unk','unk',0,0,0,'No',0);
 /*!40000 ALTER TABLE `item_types` ENABLE KEYS */;
-
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

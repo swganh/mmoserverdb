@@ -37,7 +37,7 @@ CREATE TABLE `schematic_groups` (
 --
 
 /*!40000 ALTER TABLE `schematic_groups` DISABLE KEYS */;
-INSERT INTO `schematic_groups` (`id`,`name`) VALUES 
+INSERT INTO `schematic_groups` (`id`,`name`) VALUES
  (8,'craftAdvancedCreatureGroup'),
  (7,'craftAdvancedTissueGroup'),
  (9,'craftAggressiveCreatureGroupA'),
@@ -310,11 +310,11 @@ INSERT INTO `schematic_groups` (`id`,`name`) VALUES
  (199,'craftWeaponRangedGroupD'),
  (200,'craftWeaponRangedGroupE'),
  (201,'craftWeaponRangedGroupF'),
- (248,'craftWookieItems');
+ (248,'craftWookieItems'),
+ (275,'schem_tool_loot'),
+ (274,'schem_tool_quest'),
+ (276,'schem_tool_village');
 /*!40000 ALTER TABLE `schematic_groups` ENABLE KEYS */;
-
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
