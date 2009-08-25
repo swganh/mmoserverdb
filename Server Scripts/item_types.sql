@@ -26,19 +26,20 @@ USE swganh;
 
 DROP TABLE IF EXISTS `item_types`;
 CREATE TABLE `item_types` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `object_string` char(255) NOT NULL default 'object',
-  `stf_name` char(255) NOT NULL default '0',
-  `stf_file` char(255) NOT NULL default '0',
-  `stf_detail_name` char(255) NOT NULL default '0',
-  `stf_detail_file` char(255) NOT NULL default '0',
-  `bazaar_category` int(11) NOT NULL default '0',
-  `equipSlots` int(10) unsigned NOT NULL default '0',
-  `equipRestrictions` int(10) unsigned NOT NULL default '0',
-  `complete` varchar(3) NOT NULL default 'No',
-  `b_isSitable` int(10) unsigned NOT NULL default '0',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2772 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `object_string` char(255) NOT NULL DEFAULT 'object',
+  `stf_name` char(255) NOT NULL DEFAULT '0',
+  `stf_file` char(255) NOT NULL DEFAULT '0',
+  `stf_detail_name` char(255) NOT NULL DEFAULT '0',
+  `stf_detail_file` char(255) NOT NULL DEFAULT '0',
+  `bazaar_category` int(11) NOT NULL DEFAULT '0',
+  `equipSlots` int(10) unsigned NOT NULL DEFAULT '0',
+  `equipRestrictions` int(10) unsigned NOT NULL DEFAULT '0',
+  `complete` varchar(3) NOT NULL DEFAULT 'No',
+  `b_isSitable` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2772 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
+
 
 --
 -- Dumping data for table `item_types`
