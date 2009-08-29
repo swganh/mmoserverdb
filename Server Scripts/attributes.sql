@@ -1358,12 +1358,37 @@ INSERT INTO `attributes` (`id`,`name`,`internal`,`attribute_internal_description
  (2041,'harvest_qty',1,'Creature: Harvesting Quantity (Avg)'),
  (2042,'cant_be_harmed',1,'Creature: Cant Be Harmed'),
  (2043,'healer',1,'Creature: Healer'),
- (2044,'creature_xp',1,'Creature: XP');
+ (2044,'creature_xp',1,'Creature: XP'),
+ (2045,'lair_fix_position',1,'Lair: Fix position'),
+ (2046,'lair_wave_size',1,'Lair: Wave size'),
+ (2047,'lair_passive_waves',1,'Lair: Passive waves'),
+ (2048,'lair_respawn_delay',1,'Lair: Respawn delay'),
+ (2049,'lair_creatures_max_spawn_distance',1,'Lair: Creatures max spawn distance'),
+ (2050,'lair_creatures_respawn_delay',1,'Lair: Creatures spawn delay'),
+ (2051,'creature_respawn_delay',1,'Creature: Spawn delay'),
+ (2052,'creature_max_spawn_distance',1,'Creature: Max spawn distance'),
+ (2053,'creature_damage_min',1,'Creature: Min damage'),
+ (2054,'creature_damage_max',1,'Creature: Max damage'),
+ (2055,'creature_damage_max_range',1,'Creature: Max damage range'),
+ (2056,'creature_is_aggressive',1,'Creature: Aggressive'),
+ (2057,'creature_is_roaming',1,'Creature: Roaming'),
+ (2058,'creature_warning_range',1,'Creature: Warning range'),
+ (2059,'creature_attack_range',1,'Creature: Attack range'),
+ (2060,'creature_aggro_range',1,'Creature: Aggro range'),
+ (2061,'creature_warning_message',1,'Creature: Warning message'),
+ (2062,'creature_attacking_message',1,'Creature: Attacking message'),
+ (2063,'creature_attacked_message',1,'Creature: Attacked message'),
+ (2064,'creature_roaming_delay',1,'Creature: Roaming delay'),
+ (2065,'creature_roaming_speed',1,'Creature: Roaming speed'),
+ (2066,'creature_roaming_max_distance',1,'Creature: Roaming max distance'),
+ (2067,'creature_stalking_speed',1,'Creature: Stalking speed'),
+ (2068,'creature_stalking_max_distance',1,'Creature: Stalking max distance'),
+ (2069,'creature_group_assist',1,'Creature: Group assist');
+ 
+ 
+
+
 /*!40000 ALTER TABLE `attributes` ENABLE KEYS */;
-
-
-
-
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

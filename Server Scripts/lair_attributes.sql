@@ -42,6 +42,30 @@ CREATE TABLE `lair_attributes` (
 --
 
 /*!40000 ALTER TABLE `lair_attributes` DISABLE KEYS */;
+INSERT INTO `lair_attributes` (`id`,`lair_id`,`attribute_id`,`value`,`order`) VALUES
+ (1,1,2044,150,0),		-- Creature: XP
+ (2,1,2045,0,0),		-- Lair: Fix position
+ (3,1,2046,5,0),		-- Lair: Wave size
+ (4,1,2047,3,0),		-- Lair: Passive waves
+ (5,1,2048,60000,0),	-- Lair: Respawn delay
+ (6,1,2049,30,0),		-- Lair: Max spawn distance
+ (7,1,2050,60000,0),	-- Lair: Creatures spawn delay
+ (8,1,221,'5000',1),	-- Health
+ (9,1,225,'500',2),		-- Strength
+ (10,1,218,'500',3),	-- Constitution
+
+ 
+ (21,2,2044,180,0),		-- Creature: XP
+ (22,2,2045,1,0),		-- Lair: Fix position
+ (23,2,2046,1,0),		-- Lair: Wave size
+ (24,2,2047,3,0),		-- Lair: Passive waves
+ (25,2,2048,60000,0),	-- Lair: Respawn delay
+ (26,2,2049,45,0),		-- Lair: Max spawn distance
+ (27,2,2050,60000,0),	-- Lair: Creatures spawn delay
+ (28,2,221,'5000',1),	-- Health
+ (29,2,225,'500',2),	-- Strength
+ (30,2,218,'500',3);	-- Constitution
+  
 /*!40000 ALTER TABLE `lair_attributes` ENABLE KEYS */;
 
 

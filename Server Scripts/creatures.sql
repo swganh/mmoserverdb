@@ -51,7 +51,12 @@ CREATE TABLE `creatures` (
 
 /*!40000 ALTER TABLE `creatures` DISABLE KEYS */;
 INSERT INTO `creatures` (`id`,`creature_species_id`,`loot_group_id`,`creature_type`,`stf_variable_id`,`stf_file_id`,`creature_level`,`creature_faction`,`creature_posture`,`creature_moodID`,`creature_state`,`creature_scale`) VALUES 
- (1,1,1,'object/mobile/shared_rill.iff','rill','mob/creature_names',6,0,0,0,0,1);
+ (1,1,1,'object/mobile/shared_womp_rat.iff','womprat','mob/creature_names',6,1,0,0,0,1),
+ (2,1,1,'object/mobile/shared_greater_desert_womp_rat.iff','desert_womprat','mob/creature_names',6,1,0,0,0,1),
+ (3,1,1,'object/mobile/shared_lesser_desert_womp_rat.iff','lesser_desert_womprat','mob/creature_names',6,1,0,0,0,1),
+ (4,1,1,'object/mobile/shared_variegated_womp_rat.iff','variegated_womprat','mob/creature_names',6,1,0,0,0,1),
+ (5,1,1,'object/mobile/shared_womp_rat_hue.iff','womprat','mob/creature_names',6,1,0,0,0,1),
+ (6,2,1,'object/mobile/shared_rill.iff','rill','mob/creature_names',6,1,0,0,0,1);
 /*!40000 ALTER TABLE `creatures` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

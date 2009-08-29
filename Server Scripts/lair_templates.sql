@@ -42,8 +42,10 @@ CREATE TABLE `lair_templates` (
 
 /*!40000 ALTER TABLE `lair_templates` DISABLE KEYS */;
 INSERT INTO `lair_templates` (`id`,`lair_object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`) VALUES
- (1,'/object/tangible/lair/base/shared_poi_all_lair_rock_shelter_small.iff','all_lair_rock_shelter_small','lair_n','all_lair_rock_shelter_small','lair_d'),
- (2,'/object/tangible/lair/base/shared_poi_all_lair_rock_shelter_large.iff','all_lair_rock_shelter_large','lair_n','all_lair_rock_shelter_large','lair_d');
+ (1,'object/tangible/lair/base/shared_poi_all_lair_rocks_small.iff','rocks','lair_n','',''),
+ (2,'object/tangible/lair/base/shared_poi_all_lair_nest_small.iff','nest','lair_n','',''),
+ (3,'/object/tangible/lair/base/shared_poi_all_lair_rock_shelter_small.iff','all_lair_rock_shelter_small','lair_n','all_lair_rock_shelter_small','lair_d'),
+ (4,'/object/tangible/lair/base/shared_poi_all_lair_rock_shelter_large.iff','all_lair_rock_shelter_large','lair_n','all_lair_rock_shelter_large','lair_d');
 /*!40000 ALTER TABLE `lair_templates` ENABLE KEYS */;
 
 
