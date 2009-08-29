@@ -40,12 +40,12 @@ CREATE TABLE `creature_groups` (
 
 /*!40000 ALTER TABLE `creature_groups` DISABLE KEYS */;
 INSERT INTO `creature_groups` (`id`,`creature_group_id`,`creature_id`) VALUES
- (1,1,1),
- (2,1,2),
- (3,1,3),
- (4,1,4),
- (5,1,5),
- (6,2,6);
+ (1,1,101),
+ (2,1,102),
+ (3,1,103),
+ (4,1,104),
+ (5,1,105),
+ (6,2,106);
 /*!40000 ALTER TABLE `creature_groups` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
