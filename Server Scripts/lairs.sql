@@ -28,17 +28,24 @@ use swganh;
 DROP TABLE IF EXISTS `lairs`;
 CREATE TABLE `lairs` (
   `id` bigint(20) NOT NULL,
-  `spawn_group_id` bigint(20) NOT NULL,
-  `lair_id` bigint(20) default NULL,
-  `creature_groups_id` int(11) default NULL,
-  `count` int(11) default NULL,
-  PRIMARY KEY  (`id`,`spawn_group_id`),
-  KEY `fk_lairs_spawn_groups` (`spawn_group_id`),
-  KEY `fk_lair` (`lair_id`),
-  KEY `fk_lairs_creature_groups` (`creature_groups_id`),
-  CONSTRAINT `fk_lairs_creature_groups` FOREIGN KEY (`creature_groups_id`) REFERENCES `creature_groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_lair` FOREIGN KEY (`lair_id`) REFERENCES `lair_templates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_lairs_spawn_groups` FOREIGN KEY (`spawn_group_id`) REFERENCES `spawn_groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  `creature_spawn_region` bigint(20) NOT NULL,
+  `family` int(11) unsigned NOT NULL default '9',
+  `faction` int(8) unsigned NOT NULL default '0',
+  `lair_template` bigint(20) default NULL,
+  `creature_group` int(11) default NULL,
+  `count` int(11) default 0,
+  `spawn_x` float default NULL,
+  `spawn_y` float default NULL,
+  `spawn_z` float default NULL,
+  `spawn_dir_Y` float NOT NULL default '1.0',
+  `spawn_dir_W` float NOT NULL default '0.0',
+  PRIMARY KEY  (`id`,`creature_spawn_region`),
+  KEY `fk_creature_spawn_region` (`creature_spawn_region`),
+  KEY `fk_lair_template` (`lair_template`),
+  KEY `fk_lair_creature_group` (`creature_group`),
+  CONSTRAINT `fk_lair_creature_group` FOREIGN KEY (`creature_group`) REFERENCES `creature_groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_lair_template` FOREIGN KEY (`lair_template`) REFERENCES `lair_templates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_creature_spawn_region` FOREIGN KEY (`creature_spawn_region`) REFERENCES `spawns` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -46,9 +53,9 @@ CREATE TABLE `lairs` (
 --
 
 /*!40000 ALTER TABLE `lairs` DISABLE KEYS */;
-INSERT INTO `lairs` (`id`,`spawn_group_id`,`lair_id`,`creature_groups_id`, `count`) VALUES
- (1,1,1,1,25),
- (2,1,1,1,20);
+INSERT INTO `lairs` (`id`,`creature_spawn_region`,`family`,`faction`,`lair_template`,`creature_group`, `count`, `spawn_x`, `spawn_y`, `spawn_z`, `spawn_dir_Y`, `spawn_dir_W`) VALUES
+ (1,1,9,1,1,1,0,0.0,0.0,0.0,1.0,0.0),
+ (2,1,9,1,2,2,1,-1500,0,-3950,0.0,1.0);
 /*!40000 ALTER TABLE `lairs` ENABLE KEYS */;
 
 
