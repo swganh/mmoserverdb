@@ -78,6 +78,7 @@ charCreate:BEGIN
     DECLARE base_skill_id INT;
     DECLARE nameCheck INT;
 	DECLARE currentTime BIGINT(20);
+	DECLARE melon_id BIGINT(20);
         DECLARE EXIT HANDLER FOR NOT FOUND
         BEGIN
                 SET character_id = 4;
@@ -128,12 +129,20 @@ charCreate:BEGIN
         SET oY = 0;
         SET oZ = 0;
         SET oW = 0;
+		
+	--
+	-- Transaction Start
+	--
 
    START TRANSACTION;
         SELECT MAX(id) + 1000 FROM characters INTO character_id FOR UPDATE;
         IF character_id IS NULL THEN
                 SET character_id = 8589934593;
         END IF;
+		
+		--
+		-- Set the initial IDs
+		--
 
         SET inventory_id = character_id + 1;
         SET bank_id = character_id + 4;
@@ -156,10 +165,10 @@ charCreate:BEGIN
 			SET tutorialcontainer_id = 2533274790395904;
 			SET privateowner_id = character_id;
         END IF;
+		
         INSERT INTO characters VALUES (character_id, start_account_id, start_galaxy_id, start_firstname, start_lastname, race_id, character_parent_id, start_planet, start_x, start_y, start_z, oX, oY, oZ, oW, 0, NULL, 0, CURDATE() + 0);
 
         INSERT INTO inventories VALUES (inventory_id,1,1000000);
-
         INSERT INTO banks VALUES (bank_id,1000,-1);
         INSERT INTO datapads VALUES (datapad_id,1);
         INSERT INTO character_attributes VALUES (character_id, 1, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, battlefatigue,0,0,NULL,0,0,1,0,0,0,3);
@@ -176,16 +185,25 @@ charCreate:BEGIN
         IF start_biography IS NULL OR start_biography LIKE '' THEN
 	        SELECT f_rand_biography() INTO start_biography;
         END IF;
+		
         INSERT INTO character_biography VALUES (character_id, start_biography);
         INSERT INTO character_matchmaking VALUES (character_id,0,0,0,0,0);
+		
         CALL sp_CharacterCreateFactions(character_id);
         CALL sp_CharacterStartingItems(inventory_id,tutorialcontainer_id,privateowner_id,race_id,profession_id,gender);
+		
+	--
+	-- Fix Melon to have 5 stacks
+	-- 
+	
+	SELECT id FROM items WHERE parent_id = inventory_id AND item_type = 89 INTO melon_id;
+	
+	INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
 		
 	--
 	-- Generate Welcome Email
 	--
 	
-	-- SELECT Global_Tick_Count FROM galaxy WHERE galaxy_id = 2 INTO currentTime;
 	SET currentTime = UNIX_TIMESTAMP();
 
     INSERT INTO chat_mail VALUES (NULL, 'SWG\:ANH', character_id, '@newbie_tutorial/newbie_mail:welcome_subject', '@newbie_tutorial/newbie_mail:welcome_body', 0, currentTime, NULL, 0);
