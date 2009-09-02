@@ -43,7 +43,7 @@ CREATE TABLE `persistent_npc_attributes` (
 --
 
 /*!40000 ALTER TABLE `persistent_npc_attributes` DISABLE KEYS */;
-INSERT INTO `persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`order`) VALUES 
+INSERT INTO `persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`order`) VALUES
  (47244640257,12,'24',0),
  (47244640259,12,'20',0),
  (47244640261,12,'5',0),
@@ -748,7 +748,6 @@ INSERT INTO `persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`order`
  (47513077817,28,'1',0),
  (47513077819,28,'1',0),
  (47513077821,28,'1',0),
- (47513077863,28,'1',0),
  (47513077879,28,'1',0),
  (47513077951,28,'1',0),
  (47513077999,28,'1',0),
@@ -834,6 +833,7 @@ INSERT INTO `persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`order`
  (47513079019,13,'Move along.',0),
  (47513079097,12,'34',0),
  (47513079099,12,'35',0),
+ (47513079101,28,'1',0),
  (47513079105,28,'1',0),
  (47513079111,28,'1',0),
  (47513079175,28,'1',0),
@@ -894,6 +894,7 @@ INSERT INTO `persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`order`
  (47513082075,28,'1',0),
  (47513082083,28,'1',0),
  (47513082085,28,'1',0),
+ (47513082119,28,'1',0),
  (47513082163,28,'1',0),
  (47513082359,28,'1',0),
  (47513082399,28,'1',0),
@@ -959,11 +960,10 @@ INSERT INTO `persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`order`
  (47513085677,13,'I\'m sure glad that\'s over with.',0),
  (47513085679,13,'They\'re going to ship us off to the spice mines of Kessel.',0),
  (47513085681,12,'38',0),
- (47513079101,28,'1',0),
  (47513085683,12,'39',0),
  (47513085685,12,'40',0);
-
 /*!40000 ALTER TABLE `persistent_npc_attributes` ENABLE KEYS */;
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

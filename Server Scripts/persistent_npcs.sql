@@ -852,7 +852,7 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513076137,1028647,2,'object/mobile/shared_dressed_commoner_tatooine_nikto_male_05.iff','Deohapim','Ena',0,0,0,1,1,0,0.29,0,0.96,-11.39,-0.89,1.2,8,'nikto_base_male','npc_name',1),
  (47513076141,1028646,2,'object/mobile/shared_dressed_victor_questn_cantina.iff','Ssicare','Gawin',0,0,0,1,1,0,-0.12,0,0.99,32.25,0.1,-7.74,8,'twilek_base_male','npc_name',1),
  (47513076145,0,2,'object/mobile/shared_dressed_stormtrooper_sand_trooper_m.iff',NULL,NULL,0,0,0,1,3,0,0.7,0,-0.69,-1446.55,10,-3738.11,8,'crackdown_elite_sand_trooper','mob/creature_names',1),
- (47513076151,0,2,'object/mobile/shared_dark_trooper.iff','','',0,0,0,1,3,0,0.99,0,0.11,-1485.44,12,-3627.77,8,'crackdown_elite_dark_trooper','mob/creature_names',1.1),
+ (47513076151,0,2,'object/mobile/shared_dark_trooper.iff','','',0,0,0,1,3,0,0.99,0,0.11,-1486.88,12,-3627.77,8,'crackdown_elite_dark_trooper','mob/creature_names',1.1),
  (47513076153,0,2,'object/mobile/shared_dressed_commoner_tatooine_trandoshan_female_03.iff',NULL,NULL,0,0,0,1,1,0,-0.28,0,0.96,-1429.79,10,-3773.31,8,'commoner','mob/creature_names',1),
  (47513076161,0,2,'object/mobile/shared_dressed_imperial_medic1_human_male_01.iff',NULL,NULL,0,0,0,1,3,0,0.95,0,-0.3,-1413,10,-3780.9,8,'crackdown_imperial_medic_hard','mob/creature_names',1),
  (47513076169,0,2,'object/mobile/shared_dressed_scout_trooper_white_white.iff',NULL,NULL,0,0,0,1,3,0,0.27,0,0.96,-1485.56,12,-3639.62,8,'crackdown_scout_trooper','mob/creature_names',1),
@@ -1446,9 +1446,6 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513077853,1153522,2,'object/mobile/shared_dressed_bountyhunter_trainer_01.iff',NULL,NULL,0,0,0,1,1,0,0.38,0,0.92,29.36,-0.26,-0.44,8,'bounty_hunter','mob/creature_names',1),
  (47513077855,1153520,2,'object/mobile/shared_dressed_commoner_tatooine_sullustan_male_03.iff',NULL,NULL,0,0,0,1,1,0,0,0,1,12.8,-0.26,8.1,8,'explorer','mob/creature_names',0.85),
  (47513077857,1153520,2,'object/mobile/shared_dressed_commoner_tatooine_sullustan_male_01.iff',NULL,NULL,0,0,0,1,1,0,1,0,0,12.8,-0.26,9.2,8,'hunter','mob/creature_names',1),
- (47513077859,1153518,2,'object/mobile/shared_dressed_commoner_naboo_zabrak_male_02.iff',NULL,NULL,0,0,0,1,1,0,0.79,0,-0.62,19.01,0.01,-5.51,8,'commoner','mob/creature_names',1),
- (47513077861,1153518,2,'object/mobile/shared_dressed_commoner_tatooine_aqualish_female_01.iff',NULL,NULL,0,0,0,1,1,0,0.62,0,0.79,17.01,-0.26,-6.01,8,'commoner','mob/creature_names',1),
- (47513077863,1153518,2,'object/mobile/shared_r4.iff','R4-Z0',NULL,0,0,0,1,1,0,-0.7,0,0.71,19.01,0.01,-5.51,8,'r4','mob/creature_names',1),
  (47513077865,1153516,2,'object/mobile/shared_dressed_commoner_naboo_moncal_female_01.iff',NULL,NULL,0,0,0,1,1,0,0,0,1,7.2,-0.26,-8.84,8,'commoner','mob/creature_names',1),
  (47513077867,1153516,2,'object/mobile/shared_dressed_commoner_tatooine_bith_female_01.iff',NULL,NULL,0,0,0,1,1,0,1,0,0,7.2,-0.26,-7.74,8,'dim_u_cleric','mob/creature_names',1),
  (47513077869,1153516,2,'object/mobile/shared_dressed_bountyhunter_trainer_03.iff',NULL,NULL,0,0,0,1,1,0,0.92,0,0.38,6.1,-0.26,-7.74,8,'bounty_hunter','mob/creature_names',0.96),
@@ -1546,11 +1543,11 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513078075,0,2,'object/mobile/shared_dressed_stormtrooper_sand_trooper_m.iff',NULL,NULL,0,0,0,1,3,0,1,0,0,1431.6,9.5,3372.5,8,'crackdown_sand_trooper','mob/creature_names',1),
  (47513078077,0,2,'object/mobile/shared_r5.iff','R5-L8',NULL,0,0,0,1,1,0,0.66,0,0.75,1456.33,7,3336.99,8,'r5','mob/creature_names',1),
  (47513078079,0,2,'object/mobile/shared_dressed_noble_trandoshan_female_01.iff',NULL,NULL,0,0,0,1,1,0,-0.27,0,0.96,1455.33,7,3335.99,8,'noble','mob/creature_names',1),
- (47513078081,0,2,'object/mobile/shared_dressed_eisley_officer_bothan_male_01.iff',NULL,NULL,0,0,0,1,1,0,1,0,0,1356.66,7,3414.43,8,'bothan_information_broker','mob/creature_names',1);
-INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
+ (47513078081,0,2,'object/mobile/shared_dressed_eisley_officer_bothan_male_01.iff',NULL,NULL,0,0,0,1,1,0,1,0,0,1356.66,7,3414.43,8,'bothan_information_broker','mob/creature_names',1),
  (47513078083,0,2,'object/mobile/shared_dressed_stormtrooper_sand_trooper_m.iff',NULL,NULL,0,0,0,1,3,0,0.73,0,0.69,1333.6,7,3490,8,'crackdown_sand_trooper','mob/creature_names',1),
  (47513078153,0,2,'object/mobile/shared_dressed_eisley_officer_twilek_female_01.iff',NULL,NULL,0,0,0,1,1,0,-0.51,0,0.86,1502.41,7,3352.14,8,'jabba_thug','mob/creature_names',0.99),
- (47513078159,0,2,'object/mobile/shared_dressed_swamp_trooper_m.iff',NULL,NULL,0,0,0,1,1,0,0.99,0,0.17,1537.51,8,3403.78,8,'mos_entha_police_officer','mob/creature_names',1),
+ (47513078159,0,2,'object/mobile/shared_dressed_swamp_trooper_m.iff',NULL,NULL,0,0,0,1,1,0,0.99,0,0.17,1537.51,8,3403.78,8,'mos_entha_police_officer','mob/creature_names',1);
+INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
  (47513078163,0,2,'object/mobile/shared_dressed_commoner_old_twilek_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.83,0,0.55,1554.59,15,3500.85,8,'commoner','mob/creature_names',1),
  (47513078165,0,2,'object/mobile/shared_dressed_commoner_tatooine_aqualish_male_02.iff',NULL,NULL,0,0,0,1,1,0,-0.67,0,0.74,1583.89,7,3429.16,8,'commoner','mob/creature_names',0.96),
  (47513078167,0,2,'object/mobile/shared_dressed_rebel_trooper_sullustan_male_01.iff',NULL,NULL,0,0,0,1,2,0,0.96,0,-0.27,1588.89,7.17,3460.74,8,'crackdown_rebel_guardsman_hard','mob/creature_names',1),
@@ -1927,10 +1924,10 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513079281,1380125,2,'object/mobile/shared_dressed_xaan_talmaron.iff','Xaan','Talmaron',0,0,0,1,1,0,-0.16,0,0.99,0.92,0.13,-4.46,1,'human_base_male','npc_name',1),
  (47513079285,0,2,'object/mobile/shared_dressed_robber_human_male_01.iff','Oerxaien','Ferima',0,0,0,1,1,0,0.32,0,0.95,1636.22,4,-6394.48,1,'human_base_male','npc_name',0.95),
  (47513079287,0,2,'object/mobile/shared_dressed_criminal_organized_human_female_01.iff',NULL,NULL,0,0,0,1,1,0,0.97,0,-0.24,1537.07,4,-6405.62,1,'pirate_lieutenant','mob/creature_names',1),
- (47513079289,0,2,'object/mobile/shared_dressed_criminal_organized_twilek_female_01.iff',NULL,NULL,0,0,0,1,1,0,0.97,0,-0.24,1537.73,4,-6406.86,1,'pirate_lieutenant','mob/creature_names',1);
-INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
+ (47513079289,0,2,'object/mobile/shared_dressed_criminal_organized_twilek_female_01.iff',NULL,NULL,0,0,0,1,1,0,0.97,0,-0.24,1537.73,4,-6406.86,1,'pirate_lieutenant','mob/creature_names',1),
  (47513079291,0,2,'object/mobile/shared_dressed_criminal_pirate_human_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.58,0,0.81,1635.13,4,-6396.42,1,'pirate','mob/creature_names',0.95),
- (47513079293,0,2,'object/mobile/shared_dressed_commoner_naboo_human_male_01.iff',NULL,NULL,0,0,0,1,1,0,-0.43,0,0.9,1586.55,4,-6398.11,1,'commoner','mob/creature_names',1),
+ (47513079293,0,2,'object/mobile/shared_dressed_commoner_naboo_human_male_01.iff',NULL,NULL,0,0,0,1,1,0,-0.43,0,0.9,1586.55,4,-6398.11,1,'commoner','mob/creature_names',1);
+INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
  (47513079295,0,2,'object/mobile/shared_dressed_noble_trandoshan_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.97,0,-0.26,1580.07,4,-6439.9,1,'noble','mob/creature_names',0.98),
  (47513079303,0,2,'object/mobile/shared_dressed_criminal_thug_human_male_01.iff',NULL,NULL,0,0,0,1,1,0,-0.68,0,0.73,1558.14,4,-6367.31,1,'criminal','mob/creature_names',1),
  (47513079305,0,2,'object/mobile/shared_dressed_commoner_naboo_moncal_female_01.iff',NULL,NULL,0,0,0,1,1,0,0.99,0,0.14,1583.4,4,-6439.85,1,'businessman','mob/creature_names',1),
@@ -2298,10 +2295,10 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513080123,0,2,'object/mobile/shared_dressed_fed_dub_patrolman_human_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.13,0,0.99,4535.01,2,5031.51,7,'fed_dub_patrolman','mob/creature_names',0.89),
  (47513080127,0,2,'object/mobile/shared_dressed_fed_dub_captain_twk_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.13,0,0.99,4536.42,2,5031.54,7,'fed_dub_captain','mob/creature_names',1),
  (47513080131,0,2,'object/mobile/shared_dressed_commoner_tatooine_aqualish_male_09.iff',NULL,NULL,0,0,0,1,1,0,0.96,0,-0.29,4353.37,2,5125.93,7,'commoner','mob/creature_names',1),
- (47513080133,0,2,'object/mobile/shared_dressed_commoner_tatooine_aqualish_female_06.iff',NULL,NULL,0,0,0,1,1,0,-0.41,0,0.91,4363.41,2,5087.4,7,'commoner','mob/creature_names',1);
-INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
+ (47513080133,0,2,'object/mobile/shared_dressed_commoner_tatooine_aqualish_female_06.iff',NULL,NULL,0,0,0,1,1,0,-0.41,0,0.91,4363.41,2,5087.4,7,'commoner','mob/creature_names',1),
  (47513080135,0,2,'object/mobile/shared_dressed_commoner_naboo_twilek_male_02.iff',NULL,NULL,0,0,0,1,1,0,0.73,0,-0.69,4385.1,2,5049.53,7,'commoner','mob/creature_names',1.09),
- (47513080137,0,2,'object/mobile/shared_dressed_robber_twk_male_01.iff',NULL,NULL,0,0,0,1,1,0,0,0,1,4376.54,2,5050.29,7,'brawler','mob/creature_names',1),
+ (47513080137,0,2,'object/mobile/shared_dressed_robber_twk_male_01.iff',NULL,NULL,0,0,0,1,1,0,0,0,1,4376.54,2,5050.29,7,'brawler','mob/creature_names',1);
+INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
  (47513080139,0,2,'object/mobile/shared_dressed_doctor_trainer_moncal_female_01.iff',NULL,NULL,0,0,0,1,1,0,1,0,0,4376.54,2,5051.29,7,'scientist','mob/creature_names',0.85),
  (47513080141,0,2,'object/mobile/shared_r5.iff','R5-A0',NULL,0,0,0,1,1,0,-0.05,0,1,4347.08,2,5092.9,7,'r5','mob/creature_names',1),
  (47513080143,0,2,'object/mobile/shared_r5.iff','R5-K9',NULL,0,0,0,1,1,0,0.89,0,-0.46,4345.08,2,5093.9,7,'r5','mob/creature_names',1),
@@ -2674,10 +2671,10 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513081017,0,2,'object/mobile/shared_dressed_stormtrooper_black_black.iff','','',0,0,0,1,3,0,1,0,0,-5507.02,6,4407.77,5,'fbase_stormtrooper_bombardier_extreme','mob/creature_names',1),
  (47513081019,0,2,'object/mobile/shared_dressed_commoner_tatooine_bith_female_01.iff','','',0,0,0,1,1,0,0.86,0,-0.51,-5507.67,6,4309.38,5,'commoner','mob/creature_names',0.95),
  (47513081021,0,2,'object/mobile/shared_dressed_eisley_officer_bothan_female_01.iff','','',0,0,0,1,1,0,0.92,0,0.38,-5430.83,6,4273,5,'bothan_diplomat','mob/creature_names',1),
- (47513081023,0,2,'object/mobile/shared_dressed_commoner_tatooine_nikto_male_07.iff','','',0,0,0,1,1,0,-0.24,0,0.97,-5555.25,6,4241.44,5,'commoner','mob/creature_names',1.1);
-INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
+ (47513081023,0,2,'object/mobile/shared_dressed_commoner_tatooine_nikto_male_07.iff','','',0,0,0,1,1,0,-0.24,0,0.97,-5555.25,6,4241.44,5,'commoner','mob/creature_names',1.1),
  (47513081025,0,2,'object/mobile/shared_dressed_commoner_tatooine_aqualish_female_07.iff','','',0,0,0,1,1,0,-0.23,0,0.97,-5544.22,6,4232.32,5,'commoner','mob/creature_names',1),
- (47513081027,0,2,'object/mobile/shared_dressed_commoner_fat_zabrak_female_01.iff','','',0,0,0,1,1,0,0.98,0,-0.22,-5453.08,6,4198.55,5,'commoner','mob/creature_names',1),
+ (47513081027,0,2,'object/mobile/shared_dressed_commoner_fat_zabrak_female_01.iff','','',0,0,0,1,1,0,0.98,0,-0.22,-5453.08,6,4198.55,5,'commoner','mob/creature_names',1);
+INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
  (47513081029,1305893,2,'object/mobile/shared_dressed_rebel_trooper_human_female_01.iff','Mesose','Ercko',0,0,0,1,1,0,0,0,1,1.04,1.75,-20.86,5,'human_base_female','npc_name',0.95),
  (47513081031,1305893,2,'object/mobile/shared_dressed_mercenary_weak_hum_f.iff','','',0,0,0,1,1,0,1,0,0,1.04,1.75,-19.76,5,'mercenary','mob/creature_names',1),
  (47513081033,1305893,2,'object/mobile/shared_dressed_commoner_tatooine_ishitib_male_02.iff','','',0,0,0,1,1,0,0.92,0,0.38,-0.06,1.75,-19.76,5,'businessman','mob/creature_names',1),
@@ -3052,10 +3049,10 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513081805,0,2,'object/mobile/shared_dressed_criminal_thug_rodian_male_01.iff','','',0,0,0,1,1,0,1,0,0,4826.15,3.75,-4917.71,5,'mummer_bully','mob/creature_names',1.01),
  (47513081807,0,2,'object/mobile/shared_dressed_criminal_thug_zabrak_male_01.iff','','',0,0,0,1,1,0,0.82,0,-0.57,4826.15,3.75,-4918.71,5,'mummer_bully','mob/creature_names',1),
  (47513081809,0,2,'object/mobile/shared_dressed_criminal_thug_rodian_female_01.iff','','',0,0,0,1,1,0,-0.56,0,0.83,4826.9,3.86,-4944.1,5,'mummer_bully','mob/creature_names',1),
- (47513081811,0,2,'object/mobile/shared_dressed_commoner_tatooine_sullustan_male_04.iff','','',0,0,0,1,1,0,0.79,0,-0.61,4870.85,3.75,-4789.2,5,'commoner','mob/creature_names',1);
-INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
+ (47513081811,0,2,'object/mobile/shared_dressed_commoner_tatooine_sullustan_male_04.iff','','',0,0,0,1,1,0,0.79,0,-0.61,4870.85,3.75,-4789.2,5,'commoner','mob/creature_names',1),
  (47513081813,0,2,'object/mobile/shared_dressed_rsf_pilot.iff','','',0,0,0,1,1,0,1,0,0,4825.4,3.75,-4840.72,5,'rsf_pilot','mob/creature_names',1.05),
- (47513081815,0,2,'object/mobile/shared_dressed_rsf_captain.iff','','',0,0,0,1,1,0,0,0,1,4825.4,3.75,-4841.72,5,'rsf_captain','mob/creature_names',1),
+ (47513081815,0,2,'object/mobile/shared_dressed_rsf_captain.iff','','',0,0,0,1,1,0,0,0,1,4825.4,3.75,-4841.72,5,'rsf_captain','mob/creature_names',1);
+INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
  (47513081817,0,2,'object/mobile/shared_dressed_commoner_tatooine_rodian_male_01.iff','','',0,0,0,1,1,0,-0.66,0,0.75,4815.52,3.75,-4952.41,5,'commoner','mob/creature_names',0.98),
  (47513081819,0,2,'object/mobile/shared_dressed_commoner_tatooine_rodian_male_04.iff','','',0,0,0,1,1,0,1,0,0.02,4831.58,3.75,-4980.31,5,'commoner','mob/creature_names',1),
  (47513081821,0,2,'object/mobile/shared_dressed_rebel_trooper_sullustan_male_01.iff','','',0,0,0,1,2,0,1,0,0.08,4808.21,4.27,-4887.51,5,'crackdown_rebel_guardsman','mob/creature_names',1),
@@ -3200,7 +3197,7 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513082111,0,2,'object/mobile/shared_dressed_rebel_sergeant_moncal_male_01.iff','','',0,0,0,1,2,0,0.79,0,-0.61,4816.42,4.17,-4578.19,5,'crackdown_rebel_sergeant','mob/creature_names',1),
  (47513082113,0,2,'object/mobile/shared_dressed_royal_officer_human_male_01.iff','','',0,0,0,1,1,0,0.81,0,-0.59,2071.58,27.47,2579.27,5,'naboo_police','mob/creature_names',1),
  (47513082115,0,2,'object/mobile/shared_dressed_royal_officer_human_female_01.iff','','',0,0,0,1,1,0,1,0,-0.07,2072.93,28.01,2577.64,5,'naboo_police','mob/creature_names',0.98),
- (47513082119,0,2,'object/mobile/shared_dressed_royal_officer_human_female_01.iff','','',0,0,0,1,1,0,0.39,0,0.92,1999.22,12,2517.16,5,'naboo_police','mob/creature_names',0.96),
+ (47513082119,0,2,'object/mobile/shared_dressed_royal_officer_human_female_01.iff','','',0,0,0,1,1,0,0.69,0,0.72,1999.22,12,2517.16,5,'naboo_police','mob/creature_names',0.96),
  (47513082121,0,2,'object/mobile/shared_dressed_stormtrooper_m.iff','','',0,0,0,1,3,0,0.83,0,-0.56,1992.84,12.86,2494.75,5,'crackdown_stormtrooper','mob/creature_names',1),
  (47513082123,0,2,'object/mobile/shared_dressed_commoner_fat_twilek_male_02.iff','','',0,0,0,1,1,0,-0.3,0,0.95,1949.46,12,2419.42,5,'commoner','mob/creature_names',0.85),
  (47513082125,0,2,'object/mobile/shared_dressed_commoner_old_human_female_01.iff','','',0,0,0,1,1,0,0.92,0,0.4,1963.35,12,2435.67,5,'commoner','mob/creature_names',1),
@@ -3429,9 +3426,9 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513082657,1741542,2,'object/mobile/shared_dressed_commoner_tatooine_bith_male_05.iff','','',0,0,0,1,1,0,1,0,0,44.7,-0.52,32.08,5,'businessman','mob/creature_names',1),
  (47513082659,1741542,2,'object/mobile/shared_dressed_commoner_tatooine_nikto_male_03.iff','','',0,0,0,1,1,0,0,0,1,51.65,0.64,47.08,5,'swamp_villager','mob/creature_names',1),
  (47513082661,1741542,2,'object/mobile/shared_dressed_artisan_trainer_01.iff','','',0,0,0,1,1,0,1,0,0,51.65,0.64,48.08,5,'artisan','mob/creature_names',0.89),
- (47513082663,1741539,2,'object/mobile/shared_space_chassis_broker_05.iff','','',0,0,0,1,1,0,1,0,0.08,-0.58,0.64,67.27,5,'npc_name','chassis_npc',1);
+ (47513082663,1741539,2,'object/mobile/shared_space_chassis_broker_05.iff','','',0,0,0,1,1,0,1,0,0.08,-0.58,0.64,67.27,5,'npc_name','chassis_npc',1),
+ (47513082665,1741539,2,'object/mobile/shared_dressed_mercenary_messanger_hum_f.iff','Rakib','Ouraolo',0,0,0,1,1,0,0.28,0,0.96,1.1,0.64,66.3,5,'human_base_female','npc_name',1);
 INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
- (47513082665,1741539,2,'object/mobile/shared_dressed_mercenary_messanger_hum_f.iff','Rakib','Ouraolo',0,0,0,1,1,0,0.28,0,0.96,1.1,0.64,66.3,5,'human_base_female','npc_name',1),
  (47513082667,0,2,'object/mobile/shared_dressed_commoner_old_human_female_01.iff','','',0,0,0,1,1,0,0.96,0,0.28,5245.71,-192,6765.44,5,'commoner','mob/creature_names',0.95),
  (47513082669,0,2,'object/mobile/shared_dressed_stormtrooper_m.iff','','',0,0,0,1,3,0,0.16,0,0.99,5216.2,-192,6721.88,5,'stormtrooper','mob/creature_names',1),
  (47513082671,0,2,'object/mobile/shared_dressed_commoner_naboo_human_male_05.iff','','',0,0,0,1,1,0,0.11,0,0.99,5239.3,-192,6793.45,5,'commoner','mob/creature_names',1),
@@ -3799,9 +3796,9 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513083485,0,2,'object/mobile/shared_dressed_narmle_lieutenant_twk_female_01.iff',NULL,NULL,0,0,0,1,1,0,0.71,0,0.7,-5090.3,80,-2333.72,6,'narmle_lieutenant','mob/creature_names',1),
  (47513083487,0,2,'object/mobile/shared_dressed_narmle_guard_rodian_male_01.iff',NULL,NULL,0,0,0,1,1,0,1,0,0.02,-5109.75,80.03,-2192.15,6,'narmle_guard','mob/creature_names',0.89),
  (47513083489,0,2,'object/mobile/shared_dressed_narmle_lieutenant_twk_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.71,0,0.7,-5090.04,80,-2333.72,6,'narmle_lieutenant','mob/creature_names',1),
- (47513083493,0,2,'object/mobile/shared_dressed_narmle_guard_rodian_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.71,0,0.7,-5100.61,87.25,-2198.05,6,'narmle_guard','mob/creature_names',0.95);
+ (47513083493,0,2,'object/mobile/shared_dressed_narmle_guard_rodian_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.71,0,0.7,-5100.61,87.25,-2198.05,6,'narmle_guard','mob/creature_names',0.95),
+ (47513083499,0,2,'object/mobile/shared_dressed_narmle_guard_rodian_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.71,0,0.71,-5070.15,80,-2332.68,6,'narmle_guard','mob/creature_names',1);
 INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
- (47513083499,0,2,'object/mobile/shared_dressed_narmle_guard_rodian_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.71,0,0.71,-5070.15,80,-2332.68,6,'narmle_guard','mob/creature_names',1),
  (47513083503,0,2,'object/mobile/shared_dressed_commoner_tatooine_aqualish_female_02.iff',NULL,NULL,0,0,0,1,1,0,-0.31,0,0.95,-5137.08,80,-2408.5,6,'commoner','mob/creature_names',1),
  (47513083505,0,2,'object/mobile/shared_r2.iff','R2-P1',NULL,0,0,0,1,1,0,1,0,0,-5120.68,80,-2411.17,6,'r2','mob/creature_names',1),
  (47513083507,0,2,'object/mobile/shared_dressed_commoner_naboo_human_male_02.iff',NULL,NULL,0,0,0,1,1,0,0.99,0,0.12,-5088.2,80,-2407.66,6,'commoner','mob/creature_names',0.89),
@@ -4154,9 +4151,9 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513084305,0,2,'object/mobile/shared_dressed_corsec_pilot_human_female_01.iff',NULL,NULL,0,0,0,1,1,0,-0.26,0,0.96,6829.32,315,-5760.33,0,'corsec_trooper','mob/creature_names',1),
  (47513084307,0,2,'object/mobile/shared_dressed_commoner_tatooine_devaronian_male_01.iff',NULL,NULL,0,0,0,1,1,0,-0.5,0,0.87,6755.2,314.93,-5625.98,0,'commoner','mob/creature_names',1),
  (47513084309,0,2,'object/mobile/shared_dressed_commoner_tatooine_rodian_male_01.iff',NULL,NULL,0,0,0,1,1,0,0.17,0,0.99,6847.34,315,-5617.89,0,'commoner','mob/creature_names',1),
- (47513084311,0,2,'object/mobile/shared_dressed_commoner_naboo_human_female_07.iff',NULL,NULL,0,0,0,1,1,0,0.97,0,-0.26,6821.55,315,-5611.9,0,'commoner','mob/creature_names',0.89);
+ (47513084311,0,2,'object/mobile/shared_dressed_commoner_naboo_human_female_07.iff',NULL,NULL,0,0,0,1,1,0,0.97,0,-0.26,6821.55,315,-5611.9,0,'commoner','mob/creature_names',0.89),
+ (47513084313,0,2,'object/mobile/shared_dressed_imperial_officer_m.iff',NULL,NULL,0,0,0,1,3,0,0.87,0,0.49,6823.92,315,-5597.88,0,'imperial_sergeant','mob/creature_names',1);
 INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
- (47513084313,0,2,'object/mobile/shared_dressed_imperial_officer_m.iff',NULL,NULL,0,0,0,1,3,0,0.87,0,0.49,6823.92,315,-5597.88,0,'imperial_sergeant','mob/creature_names',1),
  (47513084315,0,2,'object/mobile/shared_dressed_stormtrooper_m.iff',NULL,NULL,0,0,0,1,3,0,1,0,-0.08,6842.92,315,-5604.11,0,'crackdown_stormtrooper','mob/creature_names',1),
  (47513084317,0,2,'object/mobile/shared_dressed_stormtrooper_m.iff',NULL,NULL,0,0,0,1,3,0,0.68,0,0.73,6691.2,315,-5578.48,0,'crackdown_stormtrooper','mob/creature_names',1),
  (47513084319,0,2,'object/mobile/shared_dressed_stormtrooper_m.iff',NULL,NULL,0,0,0,1,3,0,0.7,0,0.72,6691.46,315,-5570.32,0,'crackdown_stormtrooper','mob/creature_names',1),
@@ -4514,9 +4511,9 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513085133,0,2,'object/mobile/shared_dressed_mercenary_messanger_sullustan_m.iff',NULL,NULL,0,0,0,1,2,0,0.97,0,0.24,-5290.63,20.9,-2599.46,0,'crackdown_rebel_cadet_hard','mob/creature_names',1),
  (47513085135,0,2,'object/mobile/shared_dressed_rebel_corporal_moncal_male_01.iff',NULL,NULL,0,0,0,1,2,0,0.97,0,0.24,-5306.24,21,-2572.04,0,'crackdown_rebel_corporal_hard','mob/creature_names',0.89),
  (47513085137,0,2,'object/mobile/shared_dressed_corsec_pilot_human_female_01.iff',NULL,NULL,0,0,0,1,1,0,-0.57,0,0.82,-5244.3,21,-2631.54,0,'corsec_trooper','mob/creature_names',1),
- (47513085139,0,2,'object/mobile/shared_dressed_rebel_trooper_twk_male_01.iff',NULL,NULL,0,0,0,1,2,0,0.88,0,0.48,-5245.93,20.93,-2636.53,0,'crackdown_rebel_guardsman_hard','mob/creature_names',1);
+ (47513085139,0,2,'object/mobile/shared_dressed_rebel_trooper_twk_male_01.iff',NULL,NULL,0,0,0,1,2,0,0.88,0,0.48,-5245.93,20.93,-2636.53,0,'crackdown_rebel_guardsman_hard','mob/creature_names',1),
+ (47513085141,0,2,'object/mobile/shared_dressed_rebel_trooper_sullustan_male_01.iff',NULL,NULL,0,0,0,1,2,0,-0.61,0,0.79,-5207.08,20.99,-2650.5,0,'crackdown_rebel_soldier_hard','mob/creature_names',0.95);
 INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`lastName`,`posture`,`moodId`,`state`,`cl`,`faction`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`stf_variable_id`,`stf_file_id`,`scale`) VALUES 
- (47513085141,0,2,'object/mobile/shared_dressed_rebel_trooper_sullustan_male_01.iff',NULL,NULL,0,0,0,1,2,0,-0.61,0,0.79,-5207.08,20.99,-2650.5,0,'crackdown_rebel_soldier_hard','mob/creature_names',0.95),
  (47513085143,0,2,'object/mobile/shared_dressed_rebel_corporal_bothan_male_01.iff',NULL,NULL,0,0,0,1,2,0,-0.59,0,0.81,-5241.58,20.85,-2642.22,0,'crackdown_rebel_corporal_hard','mob/creature_names',1),
  (47513085145,0,2,'object/mobile/shared_dressed_mercenary_messanger_rod_m.iff',NULL,NULL,0,0,0,1,2,0,1,0,-0.04,-5174.6,20.99,-2656.7,0,'crackdown_rebel_recruit_hard','mob/creature_names',1),
  (47513085147,0,2,'object/mobile/shared_dressed_rebel_trooper_bith_m_01.iff',NULL,NULL,0,0,0,1,2,0,-0.3,0,0.95,-5128.2,21,-2652.1,0,'crackdown_rebel_rifleman_hard','mob/creature_names',1),
@@ -4763,33 +4760,22 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513085689,0,8,'object/mobile/shared_piket_hue.iff','','',0,0,0,10,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'piket_plains_walker','mob/creature_names',1),
  (47513085691,0,8,'object/mobile/shared_darth_vader.iff','','',0,0,0,10,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'darth_vader','mob/creature_names',1),
  (47513085693,0,8,'object/mobile/shared_rill.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'rill','mob/creature_names',1),
- -- (47513085695,0,9,'object/tangible/lair/womp_rat/shared_lair_womp_rat.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'womp_rat','lair_n',1),
- -- (47513085695,0,9,'object/building/poi/shared_creature_lair_baz_nitch.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'womp_rat','lair_n',1);
  (47513085695,0,9,'object/tangible/lair/base/shared_poi_all_lair_warren_large.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'warren','lair_n',1),
  (47513085697,0,9,'object/tangible/lair/base/shared_poi_all_lair_warren_small.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'warren','lair_n',1),
- 
  (47513085699,0,9,'object/tangible/lair/base/shared_poi_all_lair_rocks_large.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'rocks','lair_n',1),
  (47513085701,0,9,'object/tangible/lair/base/shared_poi_all_lair_rocks_small.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'rocks','lair_n',1),
- 
- (47513085703,0,9,'object/tangible/lair/base/shared_poi_all_lair_thicket_large.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'thicket','lair_n',1), 
- (47513085705,0,9,'object/tangible/lair/base/shared_poi_all_lair_thicket_small.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'thicket','lair_n',1), 
- 
- (47513085707,0,9,'object/tangible/lair/base/shared_poi_all_lair_nest_large.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'generic_nest','lair_n',1), 
- (47513085709,0,9,'object/tangible/lair/base/shared_poi_all_lair_nest_small.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'nest','lair_n',1), 
- 
- (47513085711,0,9,'object/tangible/lair/base/shared_poi_all_lair_rock_shelter_large.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'rock_shelter','lair_n',1), 
- (47513085713,0,9,'object/tangible/lair/base/shared_poi_all_lair_rock_shelter_small.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'rock_shelter','lair_n',1), 
- 
- (47513085715,0,9,'object/tangible/lair/base/shared_poi_all_lair_mound_large.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'generic_mound','lair_n',1), 
+ (47513085703,0,9,'object/tangible/lair/base/shared_poi_all_lair_thicket_large.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'thicket','lair_n',1),
+ (47513085705,0,9,'object/tangible/lair/base/shared_poi_all_lair_thicket_small.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'thicket','lair_n',1),
+ (47513085707,0,9,'object/tangible/lair/base/shared_poi_all_lair_nest_large.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'generic_nest','lair_n',1),
+ (47513085709,0,9,'object/tangible/lair/base/shared_poi_all_lair_nest_small.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'nest','lair_n',1),
+ (47513085711,0,9,'object/tangible/lair/base/shared_poi_all_lair_rock_shelter_large.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'rock_shelter','lair_n',1),
+ (47513085713,0,9,'object/tangible/lair/base/shared_poi_all_lair_rock_shelter_small.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'rock_shelter','lair_n',1),
+ (47513085715,0,9,'object/tangible/lair/base/shared_poi_all_lair_mound_large.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'generic_mound','lair_n',1),
  (47513085717,0,9,'object/tangible/lair/base/shared_poi_all_lair_mound_small.iff','','',0,0,0,6,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'mound','lair_n',1),
- 
- -- creatures
  (47513085719,0,8,'object/mobile/shared_greater_desert_womp_rat.iff','','',0,0,0,10,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'desert_womprat','mob/creature_names',1),
  (47513085721,0,8,'object/mobile/shared_lesser_desert_womp_rat.iff','','',0,0,0,10,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'lesser_desert_womprat','mob/creature_names',1),
  (47513085723,0,8,'object/mobile/shared_variegated_womp_rat.iff','','',0,0,0,10,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'variegated_womprat','mob/creature_names',1),
  (47513085725,0,8,'object/mobile/shared_womp_rat_hue.iff','','',0,0,0,10,1,0,0.707,0,0.707,38.1,-5.9,-113.4,99,'womprat','mob/creature_names',1);
- 
- 
 /*!40000 ALTER TABLE `persistent_npcs` ENABLE KEYS */;
 
 
