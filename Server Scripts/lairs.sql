@@ -54,8 +54,10 @@ CREATE TABLE `lairs` (
 
 /*!40000 ALTER TABLE `lairs` DISABLE KEYS */;
 INSERT INTO `lairs` (`id`,`creature_spawn_region`,`family`,`faction`,`lair_template`,`creature_group`, `count`, `spawn_x`, `spawn_y`, `spawn_z`, `spawn_dir_Y`, `spawn_dir_W`) VALUES
- (1,1,9,1,1,1,0,0.0,0.0,0.0,1.0,0.0),
- (2,1,9,1,2,2,1,-1500,0,-3950,0.0,1.0);
+ (1,1,9,1,1,1,0,-1631,33,-4031,1.0,0.0),	-- Womps
+ (2,1,9,1,2,2,0,-1377,60,-4235,0.0,1.0), -- Rills
+ (3,1,9,1,1,1,25,0.0,0.0,0.0,1.0,0.0),	-- Womps
+ (4,1,9,1,2,2,25,-1500,0,-3950,0.0,1.0); -- Rills
 /*!40000 ALTER TABLE `lairs` ENABLE KEYS */;
 
 

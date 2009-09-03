@@ -55,6 +55,39 @@ INSERT INTO `non_persistent_npcs` (`id`,`family`,`species_id`,`loot_group_id`,`t
  (1,2,1,1,'object/mobile/shared_dressed_stormtrooper_sand_trooper_m.iff','crackdown_elite_sand_trooper','mob/creature_names',1,3,0,0,0,1.02),	-- prev ref as 47513075899
  (2,2,1,1,'object/mobile/shared_dressed_imperial_officer_m_6.iff','crackdown_command_security_guard_hard','mob/creature_names',1,3,0,0,0,1.05), -- prev ref as 47513075719
  (3,2,1,1,'object/mobile/shared_dressed_scout_trooper_black_black.iff','crackdown_storm_commando_hard','mob/creature_names',1,3,0,0,0,1.0),		-- prev ref as 47513075777
+ 
+ -- Debris for Tutorial
+ (4,7,1,1,'object/tangible/newbie_tutorial/shared_debris.iff','newbie_tutorial_debris','container_name',1,1,0,0,0,1.0),							-- prev ref as 47513085667
+ 
+ -- Bandit for Tutorial
+ (5,8,1,1,'object/mobile/shared_dressed_cobral_bandit_bith_male_01.iff','bandit','mob/creature_names',10,1,0,0,0,1.0),	-- prev ref as 47513085669
+ 
+ -- Skill trainers for Tutorial
+ (10,1,1,1,'object/mobile/shared_dressed_medic_trainer_01.iff','trainer_medic','mob/creature_names',1,1,0,0,0,1.0),		-- prev ref as 47244640305
+ (11,1,1,1,'object/mobile/shared_dressed_medic_trainer_02.iff','trainer_medic','mob/creature_names',1,1,0,0,0,1.0),		-- prev ref as 47244640307
+ (12,1,1,1,'object/mobile/shared_dressed_medic_trainer_03.iff','trainer_medic','mob/creature_names',1,1,0,0,0,1.0),		-- prev ref as 47244640397
+  
+ (13,1,1,1,'object/mobile/shared_dressed_artisan_trainer_01.iff','trainer_artisan','mob/creature_names',1,1,0,0,0,1.0),	-- prev ref as 47244640497
+ (14,1,1,1,'object/mobile/shared_dressed_artisan_trainer_02.iff','trainer_artisan','mob/creature_names',1,1,0,0,0,1.0), -- prev ref as 47244640261
+ (15,1,1,1,'object/mobile/shared_dressed_artisan_trainer_03.iff','trainer_artisan','mob/creature_names',1,1,0,0,0,1.0),	-- prev ref as 47244640351
+  
+ (16,1,1,1,'object/mobile/shared_dressed_brawler_trainer_01.iff','trainer_brawler','mob/creature_names',1,1,0,0,0,1.0),	-- prev ref as 47244640429
+ (17,1,1,1,'object/mobile/shared_dressed_brawler_trainer_02.iff','trainer_brawler','mob/creature_names',1,1,0,0,0,0.8),	-- prev ref as 47244640571
+ (18,1,1,1,'object/mobile/shared_dressed_brawler_trainer_03.iff','trainer_brawler','mob/creature_names',1,1,0,0,0,1.0),	-- prev ref as 47244640601
+  
+ (19,1,1,1,'object/mobile/shared_dressed_entertainer_trainer_twk_male_01.iff','trainer_entertainer','mob/creature_names',1,1,0,0,0,0.89),		-- prev ref as 47244640277
+ (20,1,1,1,'object/mobile/shared_dressed_entertainer_trainer_twk_female_01.iff','trainer_entertainer','mob/creature_names',1,1,0,0,0,1.0),		-- prev ref as 47244640333
+ (21,1,1,1,'object/mobile/shared_dressed_entertainer_trainer_human_female_01.iff','trainer_entertainer','mob/creature_names',1,1,0,0,0,1.0),	-- prev ref as 47244640299
+  
+ (22,1,1,1,'object/mobile/shared_dressed_marksman_trainer_01.iff','trainer_marksman','mob/creature_names',1,1,0,0,0,0.98),		-- prev ref as 47244640339
+ (23,1,1,1,'object/mobile/shared_dressed_marksman_trainer_02.iff','trainer_marksman','mob/creature_names',1,1,0,0,0,1.0),		-- prev ref as 47244640363
+ (24,1,1,1,'object/mobile/shared_dressed_marksman_trainer_03.iff','trainer_marksman','mob/creature_names',1,1,0,0,0,1.0),		-- prev ref as 47244640451
+  
+ (25,1,1,1,'object/mobile/shared_dressed_scout_trainer_01.iff','trainer_scout','mob/creature_names',1,1,0,0,0,0.99),		-- prev ref as 47244640311
+ (26,1,1,1,'object/mobile/shared_dressed_scout_trainer_02.iff','trainer_scout','mob/creature_names',1,1,0,0,0,1.0),			-- prev ref as 47244640461    
+ (27,1,1,1,'object/mobile/shared_dressed_scout_trainer_03.iff','trainer_scout','mob/creature_names',1,1,0,0,0,1.0),			-- prev ref as 47244640525  
+  
+ 
  (101,8,1,1,'object/mobile/shared_womp_rat.iff','womprat','mob/creature_names',6,1,0,0,0,1),
  (102,8,1,1,'object/mobile/shared_greater_desert_womp_rat.iff','desert_womprat','mob/creature_names',6,1,0,0,0,1),
  (103,8,1,1,'object/mobile/shared_lesser_desert_womp_rat.iff','lesser_desert_womprat','mob/creature_names',6,1,0,0,0,1),

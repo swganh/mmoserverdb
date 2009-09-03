@@ -44,6 +44,86 @@ CREATE TABLE `non_persistent_npc_attributes` (
 
 /*!40000 ALTER TABLE `non_persistent_npc_attributes` DISABLE KEYS */;
 INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`order`) VALUES 
+-- Bandit in the Tutorial
+ (5,567,'bandit',1),		-- Type
+ (5,73,'None',2),			-- Armor Rating
+ (5,2010,'0',3),			-- Category: Armor Effectivness (Kinetic)
+ (5,2011,'0',4),			-- Category: Armor Effectivness (Energy)
+ (5,2012,'0',5),			-- Category: Armor Effectivness (Blast)
+ (5,2013,'0',6),			-- Category: Armor Effectivness (Stun)
+ (5,2014,'0',7),			-- Category: Armor Effectivness (Heat)
+ (5,2015,'0',8),			-- Category: Armor Effectivness (Cold)
+ (5,2016,'0',9),			-- Category: Armor Effectivness (Acid)
+ (5,2018,'0',10),			-- Category: Armor Effectivness (Lightsaber)
+ (5,2036,'0',11),			-- Category: Armor Vulnerability (Lightsaber)
+ (5,221,'500',12),			-- Health
+ (5,225,'50',13),			-- Strength
+ (5,218,'50',14),			-- Constitution
+ (5,216,'500',15),			-- Action
+ (5,223,'50',16),			-- Quickness
+ (5,224,'50',17),			-- Stamina
+ (5,222,'500',18),			-- Mind
+ (5,220,'50',19),			-- Focus
+ (5,228,'50',20),			-- Willpower
+ (5,45,'200',21),			-- Aggressive
+ -- (5,771,'25',30),		-- Tamable
+ -- (5,401,'3',31),			-- Ferocity
+ -- (5,654,'Bristley Hide',32), -- Hide Type
+ -- (5,656,'Carnivore Meat',33), -- Meat Type
+ -- (5,2037,'0',34),		-- Creature: Moutable
+ -- (5,2038,'0',35),		-- Creature: Herd
+ -- (5,2039,'0',36),		-- Creature: Pack
+ -- (5,2040,'0',37),		-- Creature: Bio-Engineered
+ -- (5,2041,'0',38),		-- Creature: Harvesting Quantity (Avg)
+ -- (5,2042,'0',39),		-- Creature: Cant Be Harmed
+ -- (5,2043,'0',40),		-- Creature: Healer
+ (5,2044,'250',41),			-- Creature: XP
+ (5,217,'2.0',42),			-- Attack Speed
+ (5,2053,'25',43),			-- Creature: Min damage
+ (5,2054,'75',44),			-- Creature: Max damage
+ (5,2055,'35',45),			-- Creature: Max damage range
+ (5,2056,'1',46),			-- Creature: Aggressive
+ (5,745,'0',47),			-- Stalker
+ (5,2057,'0',48),			-- Creature: Roaming
+ (5,486,'0',49),			-- Deathblows
+ (5,2050,0,59),				-- Lair: Creatures spawn delay  ... yes, creatures use this attribute when spawning without a lair. 
+ (5,2052,0,0),				-- Creature: Max spawn distance'  ... used when we have no lair telling us. Use 0 for fix pos.
+ (5,2058,'25.0',50),		-- Creature: Warning range
+ (5,2059,'20.0',51),		-- Creature: Attack range
+ (5,2060,'42.0',52),		-- Creature: Aggro range
+ (5,2061,'Come any closer and I\'ll shoot!',53),	-- Creature: Warning message
+ (5,2062,'I\'ll kill ya!',54),						-- Creature: Attacking message
+ (5,2063,'You\'ll never take me alive!',55),		-- Creature: Attacked message
+ -- (5,2064,'120000',53),	-- Creature: Roaming delay
+ -- (5,2065,'0.5',54),		-- Creature: Roaming speed
+ -- (5,2066,'1.0',55),		-- Creature: Roaming max distance
+ -- (5,2067,'4.0',56),		-- Creature: Stalking speed
+ -- (5,2068,'64.0',57),		-- Creature: Stalking max distance
+ (5,2069,'0',58),			-- Creature: Group assist
+
+
+
+-- Skill Trainers in the Tutorial.
+ (10,12,'4',0),				--	Conversation Base Attribute
+ (11,12,'4',0),				--	Conversation Base Attribute
+ (12,12,'4',0),				--	Conversation Base Attribute
+ (13,12,'5',0),				--	Conversation Base Attribute
+ (14,12,'5',0),				--	Conversation Base Attribute
+ (15,12,'5',0),				--	Conversation Base Attribute
+ (16,12,'1',0),				--	Conversation Base Attribute
+ (17,12,'1',0),				--	Conversation Base Attribute
+ (18,12,'1',0),				--	Conversation Base Attribute
+ (19,12,'2',0),				--	Conversation Base Attribute
+ (20,12,'2',0),				--	Conversation Base Attribute
+ (21,12,'2',0),				--	Conversation Base Attribute
+ (22,12,'6',0),				--	Conversation Base Attribute
+ (23,12,'6',0),				--	Conversation Base Attribute
+ (24,12,'6',0),				--	Conversation Base Attribute
+ (25,12,'3',0),				--	Conversation Base Attribute
+ (26,12,'3',0),				--	Conversation Base Attribute
+ (27,12,'3',0),				--	Conversation Base Attribute
+
+
  (101,567,'womprat',1),		-- Type
  (101,73,'None',2),			-- Armor Rating
  (101,2010,'0',3),			-- Category: Armor Effectivness (Kinetic)
@@ -64,7 +144,8 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (101,222,'1050',18),		-- Mind
  (101,220,'1050',19),		-- Focus
  (101,228,'1050',20),		-- Willpower
- (101,45,'40.0',21),		-- Aggressive
+ (101,45,'40',21),		-- Aggressive
+ -- (101,45,'No',21),			-- Aggressive
  (101,771,'25',30),			-- Tamable
  (101,401,'3',31),			-- Ferocity
  (101,654,'Bristley Hide',32), -- Hide Type
@@ -85,6 +166,8 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (101,745,'1',47),			-- Stalker
  (101,2057,'1',48),			-- Creature: Roaming
  (101,486,'0',49),			-- Deathblows
+ (101,2050,60000,59),		-- Lair: Creatures spawn delay  ... yes, creatures use this attribute when spawning without a lair. 
+ (101,2052,15,0),			-- Creature: Max spawn distance'  ... used when we have no lair telling us. Use 0 for fix pos.
  (101,2058,'20.0',50),		-- Creature: Warning range
  (101,2059,'15.0',51),		-- Creature: Attack range
  (101,2060,'65.0',52),		-- Creature: Aggro range
@@ -115,7 +198,7 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (102,222,'1050',18),		-- Mind
  (102,220,'1050',19),		-- Focus
  (102,228,'1050',20),		-- Willpower
- (102,45,'40.0',21),		-- Aggressive
+ (102,45,'40',21),			-- Aggressive
  (102,771,'25',30),			-- Tamable
  (102,401,'3',31),			-- Ferocity
  (102,654,'Bristley Hide',32), -- Hide Type
@@ -136,6 +219,8 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (102,745,'1',47),			-- Stalker
  (102,2057,'1',48),			-- Creature: Roaming
  (102,486,'0',49),			-- Deathblows 
+ (102,2050,60000,59),		-- Lair: Creatures spawn delay  ... yes, creatures use this attribute when spawning without a lair.  
+ (102,2052,0,60),			-- Creature: Max spawn distance'  ... used when we have no lair telling us. Use 0 for fix pos.
  (102,2058,'20.0',50),		-- Creature: Warning range
  (102,2059,'15.0',51),		-- Creature: Attack range
  (102,2060,'65.0',52),		-- Creature: Aggro range
@@ -166,7 +251,7 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (103,222,'1050',18),		-- Mind
  (103,220,'1050',19),		-- Focus
  (103,228,'1050',20),		-- Willpower
- (103,45,'40.0',21),		-- Aggressive
+ (103,45,'40',21),			-- Aggressive
  (103,771,'25',30),			-- Tamable
  (103,401,'3',31),			-- Ferocity
  (103,654,'Bristley Hide',32), -- Hide Type
@@ -187,6 +272,8 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (103,745,'1',47),			-- Stalker
  (103,2057,'1',48),			-- Creature: Roaming
  (103,486,'0',49),			-- Deathblows 
+ (103,2050,60000,59),		-- Lair: Creatures spawn delay  ... yes, creatures use this attribute when spawning without a lair. 
+ (103,2052,0,60),			-- Creature: Max spawn distance' ... used when we have no lair telling us. Use 0 for fix pos.
  (103,2058,'20.0',50),		-- Creature: Warning range
  (103,2059,'15.0',51),		-- Creature: Attack range
  (103,2060,'65.0',52),		-- Creature: Aggro range
@@ -217,7 +304,7 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (104,222,'1050',18),		-- Mind
  (104,220,'1050',19),		-- Focus
  (104,228,'1050',20),		-- Willpower
- (104,45,'40.0',21),		-- Aggressive
+ (104,45,'40',21),			-- Aggressive
  (104,771,'25',30),			-- Tamable
  (104,401,'3',31),			-- Ferocity
  (104,654,'Bristley Hide',32), -- Hide Type
@@ -238,6 +325,8 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (104,745,'1',47),			-- Stalker
  (104,2057,'1',48),			-- Creature: Roaming
  (104,486,'0',49),			-- Deathblows 
+ (104,2050,60000,59),		-- Lair: Creatures spawn delay  ... yes, creatures use this attribute when spawning without a lair. 
+ (104,2052,0,60),			-- Creature: Max spawn distance' ... used when we have no lair telling us. Use 0 for fix pos. 
  (104,2058,'20.0',50),		-- Creature: Warning range
  (104,2059,'15.0',51),		-- Creature: Attack range
  (104,2060,'65.0',52),		-- Creature: Aggro range
@@ -269,7 +358,7 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (105,222,'1550',18),		-- Mind
  (105,220,'1550',19),		-- Focus
  (105,228,'1550',20),		-- Willpower
- (105,45,'60.0',21),		-- Aggressive
+ (105,45,'60',21),		-- Aggressive
  (105,771,'25',30),			-- Tamable
  (105,401,'3',31),			-- Ferocity
  (105,654,'Bristley Hide',32), -- Hide Type
@@ -290,6 +379,8 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (105,745,'1',47),			-- Stalker
  (105,2057,'1',48),			-- Creature: Roaming
  (105,486,'0',49),			-- Deathblows 
+ (105,2050,60000,59),		-- Lair: Creatures spawn delay  ... yes, creatures use this attribute when spawning without a lair.  
+ (105,2052,0,60),			-- Creature: Max spawn distance' ... used when we have no lair telling us. Use 0 for fix pos.
  (105,2058,'20.0',50),		-- Creature: Warning range
  (105,2059,'15.0',51),		-- Creature: Attack range
  (105,2060,'65.0',52),		-- Creature: Aggro range
@@ -320,7 +411,8 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (106,222,'550',18),		-- Mind
  (106,220,'550',19),		-- Focus
  (106,228,'550',20),		-- Willpower
- (106,45,'30.0',21),		-- Aggressive
+ (106,45,'30',21),			-- Aggressive
+ -- (106,45,'Yes',21),		-- Aggressive
  (106,771,'25',30),			-- Tamable
  (106,401,'3',31),			-- Ferocity
  (106,654,'Bristley Hide',32), -- Hide Type
@@ -341,6 +433,8 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (106,745,'1',47),			-- Stalker
  (106,2057,'1',48),			-- Creature: Roaming
  (106,486,'0',49),			-- Deathblows 
+ (106,2050,60000,59),		-- Lair: Creatures spawn delay  ... yes, creatures use this attribute when spawning without a lair.  
+ (106,2052,16,60),			-- Creature: Max spawn distance' ... used when we have no lair telling us. Use 0 for fix pos.
  (106,2058,'35.0',50),		-- Creature: Warning range
  (106,2059,'25.0',51),		-- Creature: Attack range
  (106,2060,'65.0',52),		-- Creature: Aggro range

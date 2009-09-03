@@ -43,28 +43,54 @@ CREATE TABLE `lair_attributes` (
 
 /*!40000 ALTER TABLE `lair_attributes` DISABLE KEYS */;
 INSERT INTO `lair_attributes` (`id`,`lair_id`,`attribute_id`,`value`,`order`) VALUES
- (1,1,2044,150,0),		-- Creature: XP
- (2,1,2045,0,0),		-- Lair: Fix position
+ (1,1,2044,180,0),		-- Creature: XP
+ (2,1,2045,1,0),		-- Lair: Fix position
  (3,1,2046,5,0),		-- Lair: Wave size
  (4,1,2047,3,0),		-- Lair: Passive waves
- (5,1,2048,60000,0),	-- Lair: Respawn delay
- (6,1,2049,30,0),		-- Lair: Max spawn distance
- (7,1,2050,60000,0),	-- Lair: Creatures spawn delay
- (8,1,221,'5000',1),	-- Health
+ (5,1,2048,120000,0),	-- Lair: Respawn delay
+ -- (5,1,2048,30000,0),	-- Lair: Respawn delay
+ (6,1,2049,32,0),		-- Lair: Max spawn distance
+ (7,1,2050,10000,0),	-- Lair: Creatures spawn delay
+ (8,1,221,'6000',1),	-- Health
  (9,1,225,'500',2),		-- Strength
  (10,1,218,'500',3),	-- Constitution
-
  
- (21,2,2044,180,0),		-- Creature: XP
+ (21,2,2044,150,0),		-- Creature: XP
  (22,2,2045,1,0),		-- Lair: Fix position
- (23,2,2046,1,0),		-- Lair: Wave size
+ (23,2,2046,5,0),		-- Lair: Wave size
  (24,2,2047,3,0),		-- Lair: Passive waves
- (25,2,2048,60000,0),	-- Lair: Respawn delay
+ (25,2,2048,120000,0),	-- Lair: Respawn delay
+ -- (25,2,2048,30000,0),	-- Lair: Respawn delay
  (26,2,2049,45,0),		-- Lair: Max spawn distance
- (27,2,2050,60000,0),	-- Lair: Creatures spawn delay
- (28,2,221,'5000',1),	-- Health
+ (27,2,2050,10000,0),	-- Lair: Creatures spawn delay
+ (28,2,221,'6000',1),	-- Health
  (29,2,225,'500',2),	-- Strength
- (30,2,218,'500',3);	-- Constitution
+ (30,2,218,'500',3),	-- Constitution
+
+ (41,3,2044,180,0),		-- Creature: XP
+ (42,3,2045,0,0),		-- Lair: Fix position
+ (43,3,2046,5,0),		-- Lair: Wave size
+ (44,3,2047,3,0),		-- Lair: Passive waves
+ (45,3,2048,180000,0),	-- Lair: Respawn delay
+ -- (45,3,2048,30000,0),	-- Lair: Respawn delay
+ (46,3,2049,25,0),		-- Lair: Max spawn distance
+ (47,3,2050,10000,0),	-- Lair: Creatures spawn delay
+ (48,3,221,'6000',1),	-- Health
+ (49,3,225,'500',2),		-- Strength
+ (50,3,218,'500',3),	-- Constitution
+
+ (61,4,2044,150,0),		-- Creature: XP
+ (62,4,2045,0,0),		-- Lair: Fix position
+ (63,4,2046,5,0),		-- Lair: Wave size
+ (64,4,2047,3,0),		-- Lair: Passive waves
+ (65,4,2048,180000,0),	-- Lair: Respawn delay
+ -- (65,4,2048,30000,0),	-- Lair: Respawn delay
+ (66,4,2049,30,0),		-- Lair: Max spawn distance
+ (67,4,2050,10000,0),	-- Lair: Creatures spawn delay
+ (68,4,221,'5000',1),	-- Health
+ (69,4,225,'500',2),	-- Strength
+ (70,4,218,'500',3);	-- Constitution
+
   
 /*!40000 ALTER TABLE `lair_attributes` ENABLE KEYS */;
 
