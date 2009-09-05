@@ -196,9 +196,18 @@ charCreate:BEGIN
 	-- Fix Melon to have 5 stacks
 	-- 
 	
-	SELECT id FROM items WHERE parent_id = inventory_id AND item_type = 89 INTO melon_id;
+	-- Wen running the Tutorial there is no melon in the inventory. And it will make it impossible to create a character at the Tutorial zone.
+	-- SELECT id FROM items WHERE parent_id = inventory_id AND item_type = 89 INTO melon_id;
+	-- INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
+
+    IF start_planet = 41 THEN
+		SELECT id FROM items WHERE items.privateowner_id = character_id AND items.item_type = 89 INTO melon_id;
+		INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
+	ELSE
+		SELECT id FROM items WHERE items.parent_id = inventory_id AND items.item_type = 89 INTO melon_id;
+		INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
+	END IF;
 	
-	INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
 		
 	--
 	-- Generate Welcome Email

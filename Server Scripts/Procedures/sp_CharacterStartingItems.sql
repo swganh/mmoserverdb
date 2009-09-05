@@ -74,7 +74,10 @@ BEGIN
 								UPDATE item_attributes SET value='1' WHERE item_id=tmpId AND attribute_id=11;
 							ELSE
 								-- create item in a container, used by tutorial.
-								SELECT sf_DefaultItemCreate(familyId,typeId,tutorialcontainer_id,privateowner_id,99,0,0,0,custom_name) INTO tmpId;
+								-- Do not add any CDEF-pistol, it will be given to player by a NPC.
+								IF familyId <> 10 OR typeId <> 2326 THEN
+									SELECT sf_DefaultItemCreate(familyId,typeId,tutorialcontainer_id,privateowner_id,99,0,0,0,custom_name) INTO tmpId;
+								END IF;
 
 							END IF;
 						
