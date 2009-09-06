@@ -64,7 +64,7 @@ INSERT INTO `planet` (`planet_id`,`name`,`terrain_file`) VALUES
  (23,'space_tatooine_2','terrain/space_tatooine_2.trn'),
  (24,'space_yavin4','terrain/space_yavin4.trn'),
  (25,'09','terrain/09.trn'),
- (26,'10','terrain/10,trn'),
+ (26,'10','terrain/10.trn'),
  (27,'11','terrain/11.trn'),
  (28,'character_farm','terrain/character_farm.trn'),
  (29,'cinco_city_test_m5','terrain/cinco_city_test_m5.trn'),
