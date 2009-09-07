@@ -1,4 +1,4 @@
-/*
+﻿/*
 ---------------------------------------------------------------------------------------
 This source file is part of swgANH (Star Wars Galaxies - A New Hope - Server Emulator)
 For more information, see http://www.swganh.org
@@ -19,10 +19,9 @@ Copyright (c) 2006 - 2009 The swgANH Team
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 --
--- Create schema swganh
+-- Use schema swganh
 --
 
-CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
