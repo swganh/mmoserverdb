@@ -1,8 +1,13 @@
--- MySQL Administrator dump 1.4
---
--- ------------------------------------------------------
--- Server version	5.1.22-rc-community
+/*
+---------------------------------------------------------------------------------------
+This source file is part of swgANH (Star Wars Galaxies - A New Hope - Server Emulator)
+For more information, see http://www.swganh.org
 
+
+Copyright (c) 2006 - 2008 The swgANH Team
+
+---------------------------------------------------------------------------------------
+*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -15,10 +20,9 @@
 
 
 --
--- Create schema swganh
+-- Use schema swganh
 --
 
-CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --

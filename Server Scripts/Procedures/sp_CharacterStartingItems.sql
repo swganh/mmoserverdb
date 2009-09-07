@@ -18,7 +18,12 @@ Copyright (c) 2006 - 2008 The swgANH Team
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+
+--
+-- Use schema swganh
+--
+
+USE swganh;
 
 --
 -- Definition of procedure `sp_CharacterStartingItems`
