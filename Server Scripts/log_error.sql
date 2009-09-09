@@ -31,7 +31,7 @@ CREATE TABLE `log_error` (
   `zone` varchar(45) NOT NULL,
   `system` varchar(45) NOT NULL,
   `message` varchar(255) NOT NULL,
-  `serverstartID` bigint(20) unsigned NOT NULL,
+  `serverstartID` bigint(20) unsigned default NULL,
   PRIMARY KEY (`index`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
