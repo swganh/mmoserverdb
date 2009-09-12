@@ -37,12 +37,22 @@ CREATE TABLE `holoemote` (
 --
 
 /*!40000 ALTER TABLE `holoemote` DISABLE KEYS */;
-SET AUTOCOMMIT=0;
-INSERT INTO `holoemote` (`crc`,`effect_id`,`name`) VALUES 
+INSERT INTO `holoemote` (`crc`,`effect_id`,`name`) VALUES
+ (271843963,666,'champagne'),
  (1016410324,673,'beehive'),
+ (1031957463,674,'rebel'),
+ (1689610579,680,'imperial'),
  (1855276851,683,'blossom'),
- (3980353984,695,'bubblehead');
-COMMIT;
+ (2206631595,684,'hearts'),
+ (2353730135,685,'hologlitter'),
+ (2976881337,690,'technokitty'),
+ (3751481095,692,'phonytail'),
+ (3877296148,693,'haunted'),
+ (3965423840,694,'sparky'),
+ (3980353984,695,'bubblehead'),
+ (3986851258,696,'holonotes'),
+ (4220169270,699,'butterflies'),
+ (4289766731,700,'brainstorm');
 /*!40000 ALTER TABLE `holoemote` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
