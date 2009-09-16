@@ -89,7 +89,6 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (1,5,8,'131',0),
  (1,5,9,'161',0),
  (1,5,10,'439',0),
- (1,5,303,'-15',0),
  (1,5,566,'@item_n:survey_tool_liquid',1),
  (1,5,1270,'0',20),
  (1,6,1,'1',2),
