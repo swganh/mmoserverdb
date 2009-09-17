@@ -40,7 +40,7 @@ CREATE TABLE `inventory_types` (
 
 /*!40000 ALTER TABLE `inventory_types` DISABLE KEYS */;
 INSERT INTO `inventory_types` (`id`,`object_string`,`slots`,`name`,`file`) VALUES 
- (1,'object/tangible/inventory/shared_character_inventory.iff',50,'inventory','item_n'),
+ (1,'object/tangible/inventory/shared_character_inventory.iff',80,'inventory','item_n'),
  (2,'object/tangible/inventory/shared_creature_inventory.iff',50,'inventory','item_n'),
  (3,'object/tangible/inventory/shared_creature_inventory_1.iff',50,'inventory','item_n'),
  (4,'object/tangible/inventory/shared_creature_inventory_2.iff',50,'inventory','item_n'),
