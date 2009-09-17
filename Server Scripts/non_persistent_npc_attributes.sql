@@ -44,6 +44,63 @@ CREATE TABLE `non_persistent_npc_attributes` (
 
 /*!40000 ALTER TABLE `non_persistent_npc_attributes` DISABLE KEYS */;
 INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`order`) VALUES 
+-- Debris in the Tutorial
+ (4,567,'Debris',1), -- Type
+ (4,73,'None',2),			-- Armor Rating
+ -- (4,2010,'0',3),			-- Category: Armor Effectivness (Kinetic)
+ -- (4,2011,'0',4),			-- Category: Armor Effectivness (Energy)
+ -- (4,2012,'0',5),			-- Category: Armor Effectivness (Blast)
+ -- (4,2013,'0',6),			-- Category: Armor Effectivness (Stun)
+ -- (4,2014,'0',7),			-- Category: Armor Effectivness (Heat)
+ -- (4,2015,'0',8),			-- Category: Armor Effectivness (Cold)
+ -- (4,2016,'0',9),			-- Category: Armor Effectivness (Acid)
+ -- (4,2018,'0',10),			-- Category: Armor Effectivness (Lightsaber)
+ -- (4,2036,'0',11),			-- Category: Armor Vulnerability (Lightsaber)
+ (4,221,'500',12),			-- Health
+ (4,225,'0',13),			-- Strength
+ (4,218,'0',14),			-- Constitution
+ -- (4,216,'500',15),			-- Action
+ -- (4,223,'50',16),			-- Quickness
+ -- (4,224,'50',17),			-- Stamina
+ -- (4,222,'500',18),			-- Mind
+ -- (4,220,'50',19),			-- Focus
+ -- (4,228,'50',20),			-- Willpower
+ -- (4,45,'0',21),			-- Aggressive
+ -- (4,771,'25',30),		-- Tamable
+ -- (4,401,'3',31),			-- Ferocity
+ -- (4,654,'Bristley Hide',32), -- Hide Type
+ -- (4,656,'Carnivore Meat',33), -- Meat Type
+ -- (4,2037,'0',34),		-- Creature: Moutable
+ -- (4,2038,'0',35),		-- Creature: Herd
+ -- (4,2039,'0',36),		-- Creature: Pack
+ -- (4,2040,'0',37),		-- Creature: Bio-Engineered
+ -- (4,2041,'0',38),		-- Creature: Harvesting Quantity (Avg)
+ -- (4,2042,'0',39),		-- Creature: Cant Be Harmed
+ -- (4,2043,'0',40),		-- Creature: Healer
+ (4,2044,'0',41),			-- Creature: XP
+ -- (4,217,'2.0',42),			-- Attack Speed
+ -- (4,2053,'25',43),			-- Creature: Min damage
+ -- (4,2054,'75',44),			-- Creature: Max damage
+ -- (4,2055,'35',45),			-- Creature: Max damage range
+ -- (4,2056,'1',46),			-- Creature: Aggressive
+ -- (4,745,'0',47),			-- Stalker
+ -- (4,2057,'0',48),			-- Creature: Roaming
+ -- (4,486,'0',49),			-- Deathblows
+ (4,2050,0,59),				-- Lair: Creatures spawn delay  ... yes, creatures use this attribute when spawning without a lair. 
+ (4,2052,0,0),				-- Creature: Max spawn distance'  ... used when we have no lair telling us. Use 0 for fix pos.
+ -- (4,2058,'25.0',50),		-- Creature: Warning range
+ -- (4,2059,'20.0',51),		-- Creature: Attack range
+ -- (4,2060,'42.0',52),		-- Creature: Aggro range
+ -- (4,2061,'Come any closer and I\'ll shoot!',53),	-- Creature: Warning message
+ -- (4,2062,'I\'ll kill ya!',54),						-- Creature: Attacking message
+ -- (4,2063,'You\'ll never take me alive!',55),		-- Creature: Attacked message
+ -- (4,2064,'120000',53),	-- Creature: Roaming delay
+ -- (4,2065,'0.5',54),		-- Creature: Roaming speed
+ -- (4,2066,'1.0',55),		-- Creature: Roaming max distance
+ -- (4,2067,'4.0',56),		-- Creature: Stalking speed
+ -- (4,2068,'64.0',57),		-- Creature: Stalking max distance
+ -- (4,2069,'0',58),			-- Creature: Group assist
+
 -- Bandit in the Tutorial
  (5,567,'bandit',1),		-- Type
  (5,73,'None',2),			-- Armor Rating
