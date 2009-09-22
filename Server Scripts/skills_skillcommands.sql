@@ -1258,8 +1258,13 @@ INSERT INTO `skills_skillcommands` (`skill_id`,`skillcommand_id`) VALUES
  (1068,939),
  (1068,940),
  (1068,941),
- (1070,942),
- (1070,943),
+ (1070,942),	-- admin_sys_msg
+ (1080,943),	-- admin_warp_self
+ (1070,950),	-- broadcast
+ (1071,951),	-- broadcastPlanet
+ (1071,952),	-- broadcastGalaxy
+ (1076,953),	-- shutdownGalaxy
+ (1076,954),	-- cancelShutdownGalaxy
  (292,944),
  (281,945),
  (272,946),

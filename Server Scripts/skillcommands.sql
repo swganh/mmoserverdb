@@ -985,7 +985,12 @@ INSERT INTO `skillcommands` (`id`,`name`) VALUES
  (253,'warningShot'),
  (333,'wildShot1'),
  (337,'wildShot2'),
- (638,'wookieeRoar');
+ (638,'wookieeRoar'),
+ (950,'admin_broadcast'),			-- admin
+ (951,'admin_broadcastPlanet'),		-- admin
+ (952,'admin_broadcastGalaxy'),		-- admin
+ (953,'admin_shutdownGalaxy'),		-- admin
+ (954,'admin_cancelShutdownGalaxy'); -- admin
 /*!40000 ALTER TABLE `skillcommands` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
