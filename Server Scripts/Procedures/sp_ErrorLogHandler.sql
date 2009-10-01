@@ -43,7 +43,7 @@ BEGIN
    SELECT MAX(log_error.index)+1 FROM log_error INTO logindex;
 
    SELECT serverstartID FROM config_process_list WHERE name like zone INTO startindex;
-   INSERT INTO log_error VALUES (logindex, NOW(), zone, system, message, startindex);
+   INSERT INTO log_error VALUES (NULL, NOW(), zone, system, message, startindex);
 
 
 END $$
