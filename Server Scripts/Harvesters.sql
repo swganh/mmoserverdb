@@ -1,8 +1,13 @@
--- MySQL Administrator dump 1.4
---
--- ------------------------------------------------------
--- Server version	5.1.36-community
+﻿/*
+---------------------------------------------------------------------------------------
+This source file is part of swgANH (Star Wars Galaxies - A New Hope - Server Emulator)
+For more information, see http://www.swganh.org
 
+
+Copyright (c) 2006 - 2009 The swgANH Team
+
+---------------------------------------------------------------------------------------
+*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -13,13 +18,7 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
---
--- Create schema swganh
---
-
-CREATE DATABASE IF NOT EXISTS swganh;
-USE swganh;
+use swganh;
 
 --
 -- Definition of table `harvesters`
@@ -49,23 +48,8 @@ CREATE TABLE `harvesters` (
 --
 
 /*!40000 ALTER TABLE `harvesters` DISABLE KEYS */;
-INSERT INTO `harvesters` (`ID`,`Type`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`name`,`owner`,`currentRessource`,`condition`,`zone`) VALUES 
- (2204928835584,41,0,1,0,1,0,8,0,'hey',0,0,100,666),
- (2204928835590,41,0,0,0,0,-1331.92,12,-3676.08,'',0,0,100,8),
- (2204928835591,41,0,0,0,0,-1395.92,12,-3700.08,'',0,0,100,8),
- (2204928835592,41,0,0,0,0,-1315.92,12,-3636.08,'',0,0,100,8),
- (2204928835593,41,0,0,0,0,-1267.92,12,-3620.08,'',0,0,100,8),
- (2204928835594,41,0,0,0,0,-1283.92,12,-3580.08,'',0,0,100,8),
- (2204928835595,41,0,0.71,0,0.71,-1291.92,12,-3620.08,'',0,0,100,8),
- (2204928835596,41,0,0,0,1,-1275.92,12,-3548.08,'',0,0,100,8),
- (2204928835597,41,0,0,0,1,-1243.92,12,-3556.08,'',0,0,100,8),
- (2204928835599,41,0,0.71,0,0.71,-1459.92,12,-3652.08,'',0,0,100,8),
- (2204928835600,41,0,1,0,0,-1475.92,12,-3620.08,'',0,0,100,8),
- (2204928835601,41,0,0,0,1,-1307.92,12,-3676.08,'',0,0,100,8);
+
 /*!40000 ALTER TABLE `harvesters` ENABLE KEYS */;
-
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
