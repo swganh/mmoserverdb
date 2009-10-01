@@ -38,7 +38,7 @@ BEGIN
         DECLARE loopEnd INT DEFAULT 0;
         DECLARE cur_1 CURSOR FOR SELECT attribute_id,attribute_value,attribute_order FROM structure_attribute_defaults WHERE structure_attribute_defaults.structure_type=type_id;
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
-        INSERT INTO harvesters VALUES (NULL,type_id,oX, oY, oZ, oW, inX, inY, inZ, custom_name, parent_id,0,100);
+        INSERT INTO harvesters VALUES (NULL,type_id,oX, oY, oZ, oW, inX, inY, inZ, custom_name, privateowner_id,0,100);
 
         SET tmpId = LAST_INSERT_ID();
         OPEN cur_1;
