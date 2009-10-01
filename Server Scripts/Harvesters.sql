@@ -48,7 +48,8 @@ CREATE TABLE `harvesters` (
 --
 
 /*!40000 ALTER TABLE `harvesters` DISABLE KEYS */;
-
+INSERT INTO `harvesters` (`ID`,`Type`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`name`,`owner`,`currentRessource`,`condition`,`zone`) VALUES 
+ (2204928835584,41,0,1,0,1,0,8,0,'',0,0,100,666);
 /*!40000 ALTER TABLE `harvesters` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
