@@ -7004,6 +7004,8 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (13,1397,566,'@craft_bio_components_n:bio_component_food_medium_quantity',1),
  (13,1398,1,'1',2),
  (13,1398,566,'@craft_chemical_ingredients_n:bio_effect_controller',1),
+ (13,1398,613,'10',4),
+ (13,1398,185,'10',3),
  (13,1399,1,'1',2),
  (13,1399,566,'@craft_chemical_ingredients_n:bio_effect_controller_advanced',1),
  (13,1400,1,'1',2),
