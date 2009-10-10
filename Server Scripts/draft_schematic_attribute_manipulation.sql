@@ -33,7 +33,7 @@ CREATE TABLE `draft_schematic_attribute_manipulation` (
   `AffectedAttribute` varchar(45) NOT NULL,
   `Manipulation` int(10) unsigned NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `draft_schematic_attribute_manipulation`
@@ -41,7 +41,8 @@ CREATE TABLE `draft_schematic_attribute_manipulation` (
 
 /*!40000 ALTER TABLE `draft_schematic_attribute_manipulation` DISABLE KEYS */;
 INSERT INTO `draft_schematic_attribute_manipulation` (`ID`,`Draft_Schematic`,`Attribute`,`AffectedAttribute`,`Manipulation`) VALUES 
- (1,304,613,'756',1);
+ (1,304,613,'366',1),
+ (2,304,613,'367',1);
 /*!40000 ALTER TABLE `draft_schematic_attribute_manipulation` ENABLE KEYS */;
 
 
