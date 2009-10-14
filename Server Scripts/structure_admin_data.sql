@@ -1,8 +1,13 @@
--- MySQL Administrator dump 1.4
---
--- ------------------------------------------------------
--- Server version	5.1.36-community
+﻿/*
+---------------------------------------------------------------------------------------
+This source file is part of swgANH (Star Wars Galaxies - A New Hope - Server Emulator)
+For more information, see http://www.swganh.org
 
+
+Copyright (c) 2006 - 2009 The swgANH Team
+
+---------------------------------------------------------------------------------------
+*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -13,12 +18,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
---
--- Create schema swganh
---
-
-CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
@@ -40,9 +39,6 @@ CREATE TABLE `structure_admin_data` (
 /*!40000 ALTER TABLE `structure_admin_data` DISABLE KEYS */;
 INSERT INTO `structure_admin_data` (`ID`,`StructureID`,`PlayerID`) VALUES 
  (1,2204928835602,8589934593);
-/*!40000 ALTER TABLE `structure_admin_data` ENABLE KEYS */;
-
-
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
