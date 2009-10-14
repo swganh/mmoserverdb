@@ -119,9 +119,6 @@ INSERT INTO `draft_experiment_groups` (`id`,`name`) VALUES
  (79,'fs_exp_side_effect_one');
 /*!40000 ALTER TABLE `draft_experiment_groups` ENABLE KEYS */;
 
-
-
-
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
