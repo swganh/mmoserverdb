@@ -22,27 +22,38 @@ CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
--- Definition of table `structure_admin_data`
+-- Definition of function `sf_AddPermissionList`
 --
 
-DROP TABLE IF EXISTS `structure_admin_data`;
-CREATE TABLE `structure_admin_data` (
-  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `StructureID` bigint(20) unsigned DEFAULT NULL,
-  `PlayerID` bigint(20) unsigned DEFAULT NULL,
-  `AdminType` varchar(45) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+DROP FUNCTION IF EXISTS `sf_AddPermissionList`;
 
---
--- Dumping data for table `structure_admin_data`
---
+DELIMITER $$
 
-/*!40000 ALTER TABLE `structure_admin_data` DISABLE KEYS */;
-INSERT INTO `structure_admin_data` (`ID`,`StructureID`,`PlayerID`,`AdminType`) VALUES 
- (1,2204928835602,8589934593,'ADMIN');
-/*!40000 ALTER TABLE `structure_admin_data` ENABLE KEYS */;
+/*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `sf_AddPermissionList`(structure_id BIGINT(20), name CHAR(255), listname CHAR(255)) RETURNS int(11)
+BEGIN
+        DECLARE tmpId BIGINT(20);
+        DECLARE nameId BIGINT(20);
 
+        SELECT id FROM characters WHERE STRCMP(LOWER(firstname),name)=0 INTO nameId;
+
+        IF nameId IS NULL THEN RETURN(1);
+        END IF;
+
+        SELECT id FROM structure_admin_data WHERE (StructureId = structure_id and PlayerID = nameId and AdminType like listname) INTO tmpId;
+
+        IF tmpId IS NOT NULL THEN RETURN(2);
+        END IF;
+
+
+
+        INSERT INTO structure_admin_data VALUES (NULL,structure_id,nameId,listname);
+
+        RETURN(0);
+END $$
+/*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
+
+DELIMITER ;
 
 
 
