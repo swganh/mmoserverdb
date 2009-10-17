@@ -32,7 +32,7 @@ CREATE TABLE `structure_admin_data` (
   `PlayerID` bigint(20) unsigned DEFAULT NULL,
   `AdminType` varchar(45) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `structure_admin_data`

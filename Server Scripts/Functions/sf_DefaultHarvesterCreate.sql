@@ -1,13 +1,8 @@
-﻿/*
----------------------------------------------------------------------------------------
-This source file is part of swgANH (Star Wars Galaxies - A New Hope - Server Emulator)
-For more information, see http://www.swganh.org
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.1.36-community
 
-
-Copyright (c) 2006 - 2009 The swgANH Team
-
----------------------------------------------------------------------------------------
-*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,7 +13,13 @@ Copyright (c) 2006 - 2009 The swgANH Team
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+
+--
+-- Create schema swganh
+--
+
+CREATE DATABASE IF NOT EXISTS swganh;
+USE swganh;
 
 --
 -- Definition of function `sf_DefaultHarvesterCreate`
@@ -37,9 +38,11 @@ BEGIN
         DECLARE loopEnd INT DEFAULT 0;
         DECLARE cur_1 CURSOR FOR SELECT attribute_id,attribute_value,attribute_order FROM structure_attribute_defaults WHERE structure_attribute_defaults.structure_type=type_id;
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
-        INSERT INTO harvesters VALUES (NULL,type_id,oX, oY, oZ, oW, inX, inY, inZ, custom_name, privateowner_id,0,100,inPlanet);
+        INSERT INTO structures VALUES (NULL,type_id,oX, oY, oZ, oW, inX, inY, inZ, custom_name, privateowner_id,0,100,inPlanet);
+
 
         SET tmpId = LAST_INSERT_ID();
+        INSERT INTO structure_admin_data VALUES (NULL,tmpId,privateowner_id,'ADMIN');
         OPEN cur_1;
         REPEAT
                 FETCH cur_1 INTO att_id,att_value,att_order;
@@ -54,6 +57,8 @@ END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
 DELIMITER ;
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
