@@ -36,7 +36,7 @@ BEGIN
         DECLARE totalCount INT;
 
 
-        SELECT COUNT(harvesters.id) FROM structures WHERE (owner = charId) INTO harvesterCount;
+        SELECT COUNT(structures.id) FROM structures WHERE (owner = charId) INTO harvesterCount;
 
 
         SET totalCount = (harvesterCount);
