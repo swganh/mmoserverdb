@@ -33,7 +33,6 @@ DROP PROCEDURE IF EXISTS `sp_CharacterCreate`;
 
 DELIMITER $$
 
-/*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER' */ $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_CharacterCreate`(
 	 IN start_account_id INT,IN start_galaxy_id INT,IN start_firstname char(32),IN start_lastname char(32),
 	 IN start_profession char(64),IN start_city char(32),IN start_scale FLOAT,IN start_biography text(2048),
@@ -234,7 +233,6 @@ charCreate:BEGIN
 	SELECT(character_id);
 	
 END $$
-/*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
 DELIMITER ;
 

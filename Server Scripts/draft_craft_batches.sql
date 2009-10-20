@@ -35,6 +35,7 @@ CREATE TABLE `draft_craft_batches` (
   `id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'is the batch id of the schematic referred to in draft schematics',
   `list_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT ' the list id of the draft_craft_item_attribute_lnk',
   `expGroup` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'the link to the experiment group in draft_experiment_groups',
+  `internal_schem_tool` int(10) unsigned NOT NULL default '0' COMMENT 'used for the schem tool only',
   PRIMARY KEY (`id`,`list_id`),
   KEY `fk_draft_craft_batches_expGroup` (`expGroup`),
   KEY `Index_3` (`list_id`),
