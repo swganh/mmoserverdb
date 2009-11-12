@@ -34,6 +34,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `sf_AddPermissionList`(structure_id B
 BEGIN
         DECLARE tmpId BIGINT(20);
         DECLARE nameId BIGINT(20);
+        DECLARE listcount INT;
 
         SELECT id FROM characters WHERE STRCMP(LOWER(firstname),name)=0 INTO nameId;
 
@@ -45,7 +46,9 @@ BEGIN
         IF tmpId IS NOT NULL THEN RETURN(2);
         END IF;
 
-
+        SELECT COUNT(*) FROM structure_admin_data WHERE (StructureId = structure_id) INTO listcount;
+        IF listcount > 36 THEN RETURN(3);
+        END IF;
 
         INSERT INTO structure_admin_data VALUES (NULL,structure_id,nameId,listname);
 
