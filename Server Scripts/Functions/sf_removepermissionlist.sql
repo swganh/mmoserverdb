@@ -52,7 +52,7 @@ BEGIN
         END IF;
 
 
-        DELETE FROM structure_admin_data where playerId = nameId AND AdminType = listname;
+        DELETE FROM structure_admin_data where playerId = nameId AND AdminType = listname AND StructureID = structure_id;
 
         RETURN(0);
 END $$
