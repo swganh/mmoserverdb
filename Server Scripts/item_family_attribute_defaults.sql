@@ -1,13 +1,8 @@
-/*
----------------------------------------------------------------------------------------
-This source file is part of swgANH (Star Wars Galaxies - A New Hope - Server Emulator)
-For more information, see http://www.swganh.org
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.1.36-community
 
-
-Copyright (c) 2006 - 2009 The swgANH Team
-
----------------------------------------------------------------------------------------
-*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -89,6 +84,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (1,5,8,'131',0),
  (1,5,9,'161',0),
  (1,5,10,'439',0),
+ (1,5,303,'-15',0),
  (1,5,566,'@item_n:survey_tool_liquid',1),
  (1,5,1270,'0',20),
  (1,6,1,'1',2),
@@ -127,7 +123,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (3,11,14,'20',0),
  (3,11,15,'-15.0',3),
  (3,11,18,'@crafting:tool_status_ready',4),
- (3,11,19,'53258',0),
+ (3,11,19,'118794',0),
  (3,11,566,'@crafting:clothing_tool_name',1),
  (3,11,1270,'0',20),
  (3,12,1,'1',2),
@@ -148,7 +144,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (3,14,14,'20',0),
  (3,14,15,'-15.0',3),
  (3,14,18,'@crafting:tool_status_ready',4),
- (3,14,19,'8644',0),
+ (3,14,19,'4548',0),
  (3,14,566,'@crafting:food_tool_name',1),
  (3,14,1270,'0',20),
  (3,15,1,'1',2),
@@ -7003,9 +6999,9 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (13,1397,1,'1',2),
  (13,1397,566,'@craft_bio_components_n:bio_component_food_medium_quantity',1),
  (13,1398,1,'1',2),
+ (13,1398,185,'10',3),
  (13,1398,566,'@craft_chemical_ingredients_n:bio_effect_controller',1),
  (13,1398,613,'10',4),
- (13,1398,185,'10',3),
  (13,1399,1,'1',2),
  (13,1399,566,'@craft_chemical_ingredients_n:bio_effect_controller_advanced',1),
  (13,1400,1,'1',2),
@@ -7018,6 +7014,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (13,1403,566,'@craft_chemical_ingredients_n:infection_amplifier_advanced',1),
  (13,1404,1,'1',2),
  (13,1404,566,'@craft_chemical_ingredients_n:liquid_suspension',1),
+ (13,1404,613,'10',3),
  (13,1405,1,'1',2),
  (13,1405,566,'@craft_chemical_ingredients_n:liquid_suspension_advanced',1),
  (13,1406,1,'1',2),
@@ -7029,7 +7026,9 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (13,1409,1,'1',2),
  (13,1409,566,'@craft_chemical_ingredients_n:resilience_compound_advanced',1),
  (13,1410,1,'1',2),
+ (13,1410,185,'0',3),
  (13,1410,566,'@craft_chemical_ingredients_n:solid_delivery_shell',1),
+ (13,1410,613,'10',4),
  (13,1411,1,'1',2),
  (13,1411,566,'@craft_chemical_ingredients_n:solid_delivery_shell_advanced',1),
  (13,1412,1,'1',2),
@@ -7483,34 +7482,94 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (15,1600,1,'1',2),
  (15,1600,566,'@deed:tatooine_guild_2_deed',1),
  (15,1601,1,'1',2),
+ (15,1601,362,'3',6),
+ (15,1601,381,'3000',5),
+ (15,1601,382,'0',4),
+ (15,1601,383,'30',3),
  (15,1601,566,'@deed:flora_harvester_deed_name',1),
  (15,1602,1,'1',2),
+ (15,1602,362,'3',6),
+ (15,1602,381,'3000',5),
+ (15,1602,382,'0',4),
+ (15,1602,383,'30',3),
  (15,1602,566,'@deed:flora_harvester_heavy_deed_name',1),
  (15,1603,1,'1',2),
+ (15,1603,362,'3',6),
+ (15,1603,381,'3000',5),
+ (15,1603,382,'0',4),
+ (15,1603,383,'30',3),
  (15,1603,566,'@deed:flora_harvester_medium_deed_name',1),
  (15,1604,1,'1',2),
+ (15,1604,362,'3',6),
+ (15,1604,381,'3000',5),
+ (15,1604,382,'0',4),
+ (15,1604,383,'30',3),
  (15,1604,566,'@deed:gas_harvester_deed_name',1),
  (15,1605,1,'1',2),
+ (15,1605,362,'3',6),
+ (15,1605,381,'3000',5),
+ (15,1605,382,'0',4),
+ (15,1605,383,'30',3),
  (15,1605,566,'@deed:gas_harvester_heavy_deed_name',1),
  (15,1606,1,'1',2),
+ (15,1606,362,'3',6),
+ (15,1606,381,'3000',5),
+ (15,1606,382,'0',4),
+ (15,1606,383,'30',3),
  (15,1606,566,'@deed:gas_harvester_medium_deed_name',1),
  (15,1607,1,'1',2),
+ (15,1607,362,'3',6),
+ (15,1607,381,'3000',5),
+ (15,1607,382,'0',4),
+ (15,1607,383,'30',3),
  (15,1607,566,'@deed:liquid_harvester_deed_name',1),
  (15,1608,1,'1',2),
+ (15,1608,362,'3',6),
+ (15,1608,381,'3000',5),
+ (15,1608,382,'0',4),
+ (15,1608,383,'30',3),
  (15,1608,566,'@deed:liquid_harvester_heavy_deed_name',1),
  (15,1609,1,'1',2),
+ (15,1609,362,'3',6),
+ (15,1609,381,'3000',5),
+ (15,1609,382,'0',4),
+ (15,1609,383,'30',3),
  (15,1609,566,'@deed:liquid_harvester_medium_deed_name',1),
  (15,1610,1,'1',2),
+ (15,1610,362,'3',6),
+ (15,1610,381,'3000',5),
+ (15,1610,382,'0',4),
+ (15,1610,383,'30',3),
  (15,1610,566,'@deed:moisture_harvester_deed_name',1),
  (15,1611,1,'1',2),
+ (15,1611,362,'3',6),
+ (15,1611,381,'3000',5),
+ (15,1611,382,'0',4),
+ (15,1611,383,'30',3),
  (15,1611,566,'@deed:moisture_harvester_heavy_deed_name',1),
  (15,1612,1,'1',2),
+ (15,1612,362,'3',6),
+ (15,1612,381,'3000',5),
+ (15,1612,382,'0',4),
+ (15,1612,383,'30',3),
  (15,1612,566,'@deed:moisture_harvester_medium_deed_name',1),
  (15,1613,1,'1',2),
+ (15,1613,362,'3',6),
+ (15,1613,381,'3000',5),
+ (15,1613,382,'0',4),
+ (15,1613,383,'30',3),
  (15,1613,566,'@deed:ore_heavy_harvester_deed_name',1),
  (15,1614,1,'1',2),
+ (15,1614,362,'3',6),
+ (15,1614,381,'3000',5),
+ (15,1614,382,'0',4),
+ (15,1614,383,'30',3),
  (15,1614,566,'@deed:ore_s1_harvester_deed_name',1),
  (15,1615,1,'1',2),
+ (15,1615,362,'3',6),
+ (15,1615,381,'3000',5),
+ (15,1615,382,'0',4),
+ (15,1615,383,'30',3),
  (15,1615,566,'@deed:ore_s2_harvester_deed_name',1),
  (15,1616,1,'1',2),
  (15,1616,566,'@deed:naboo_house_small_deed',1),
@@ -8520,7 +8579,8 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (26,2138,1,'1',2),
  (26,2138,566,'@space_crafting_n:reactor_overcharger_mk4',0),
  (26,2139,1,'1',2),
- (26,2139,566,'@space_crafting_n:reactor_overcharger_mk5',0),
+ (26,2139,566,'@space_crafting_n:reactor_overcharger_mk5',0);
+INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
  (26,2140,1,'1',2),
  (26,2140,566,'@space_item:repair_kit_armor_n',0),
  (26,2141,1,'1',2),
@@ -8559,8 +8619,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (26,2157,566,'@space_crafting_n:shield_energy_saver_kit_mk1',0),
  (26,2158,1,'1',2),
  (26,2158,566,'@space_crafting_n:shield_energy_saver_kit_mk2',0),
- (26,2159,1,'1',2);
-INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
+ (26,2159,1,'1',2),
  (26,2159,566,'@space_crafting_n:shield_energy_saver_kit_mk3',0),
  (26,2160,1,'1',2),
  (26,2160,566,'@space_crafting_n:shield_energy_saver_kit_mk4',0),
@@ -8785,6 +8844,9 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (28,1948,1,'1',2),
  (28,1948,566,'@item_n:bird_cage',0);
 /*!40000 ALTER TABLE `item_family_attribute_defaults` ENABLE KEYS */;
+
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
