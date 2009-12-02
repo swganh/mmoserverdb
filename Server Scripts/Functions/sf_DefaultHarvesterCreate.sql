@@ -42,6 +42,9 @@ BEGIN
 
 
         SET tmpId = LAST_INSERT_ID();
+
+        INSERT INTO harvesters VALUES (tmpId,0,0, 0.0, 0);
+
         INSERT INTO structure_admin_data VALUES (NULL,tmpId,privateowner_id,'ADMIN');
         OPEN cur_1;
         REPEAT
