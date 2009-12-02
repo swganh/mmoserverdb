@@ -22,27 +22,26 @@ CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
--- Definition of table `harvesters`
+-- Definition of table `harvester_resources`
 --
 
-DROP TABLE IF EXISTS `harvesters`;
-CREATE TABLE `harvesters` (
-  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'the harvesters ID',
-  `ResourceID` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'this is the resource the harvester is currently harvesting',
-  `active` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '0 means not active',
-  `rate` float NOT NULL DEFAULT '0' COMMENT 'the actual rate with which the resource is harvested',
-  `hoppersize` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'the size of the hopper of the placed harvester',
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2204928835624 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `harvester_resources`;
+CREATE TABLE `harvester_resources` (
+  `ID` bigint(20) unsigned NOT NULL,
+  `resourceID` bigint(20) unsigned NOT NULL,
+  `quantity` float NOT NULL,
+  `update` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`ID`,`resourceID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `harvesters`
+-- Dumping data for table `harvester_resources`
 --
 
-/*!40000 ALTER TABLE `harvesters` DISABLE KEYS */;
-INSERT INTO `harvesters` (`ID`,`ResourceID`,`active`,`rate`,`hoppersize`) VALUES 
- (2204928835616,0,0,0,0);
-/*!40000 ALTER TABLE `harvesters` ENABLE KEYS */;
+/*!40000 ALTER TABLE `harvester_resources` DISABLE KEYS */;
+INSERT INTO `harvester_resources` (`ID`,`resourceID`,`quantity`,`update`) VALUES 
+ (2204928835623,352135132013,3.29781,0);
+/*!40000 ALTER TABLE `harvester_resources` ENABLE KEYS */;
 
 
 
