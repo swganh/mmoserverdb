@@ -66,14 +66,14 @@ BEGIN
 -- get the power rate
 --
 
-  SELECT st.maint_cost_wk FROM structures s INNER JOIN structure_type_data st ON (s.type = st.type) WHERE s.ID =hID  INTO rate;
+  SELECT st.power_used FROM structures s INNER JOIN structure_type_data st ON (s.type = st.type) WHERE s.ID =hID  INTO rate;
 
 
 --
 -- do we have power in the first place ?
 --
 
-  IF((power <= 0) OR (power < (rate/168))) THEN
+  IF((power <= 0) OR (power < (rate))) THEN
     UPDATE harvesters h SET h.active = 0 WHERE h.ID = hID;
 
 --
@@ -85,7 +85,7 @@ BEGIN
 
 
 
-  SELECT CAST((power - (rate/168)) AS CHAR(128)) INTO powerchar;
+  SELECT CAST((power - (rate)) AS CHAR(128)) INTO powerchar;
   UPDATE structure_attributes sa SET sa.VALUE = powerchar WHERE sa.structure_id =hID AND sa.attribute_id = 384;
 
 
