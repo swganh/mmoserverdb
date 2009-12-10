@@ -41,17 +41,20 @@ CREATE TABLE `structures` (
   `currentRessource` bigint(22) unsigned NOT NULL,
   `condition` int(10) unsigned NOT NULL,
   `zone` int(10) unsigned NOT NULL,
+  `lastMail` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2204928835603 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2204928835634 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `structures`
 --
 
 /*!40000 ALTER TABLE `structures` DISABLE KEYS */;
-INSERT INTO `structures` (`ID`,`Type`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`name`,`owner`,`currentRessource`,`condition`,`zone`) VALUES 
- (2204928835584,41,0,1,0,1,0,8,0,'hey',0,0,100,666),
- (2204928835602,41,0,0,0,1,-1283.92,12,-3612.08,'',8589934600,0,100,8);
+INSERT INTO `structures` (`ID`,`Type`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`name`,`owner`,`currentRessource`,`condition`,`zone`,`lastMail`) VALUES 
+ (2204928835629,51,0,0,0,1,-1275.92,12,-3588.08,'',8589934593,0,444,8,0),
+ (2204928835630,51,0,0,0,1,-1275.92,12,-3596.08,'',8589934593,0,444,8,0),
+ (2204928835631,51,0,0,0,1,-1275.92,12,-3604.08,'',8589934593,0,446,8,0),
+ (2204928835633,51,0,0,0,1,-1283.92,12,-3604.08,'',8589934593,0,444,8,0);
 /*!40000 ALTER TABLE `structures` ENABLE KEYS */;
 
 
