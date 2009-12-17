@@ -46,7 +46,11 @@ CREATE TABLE `resource_containers` (
 --
 
 /*!40000 ALTER TABLE `resource_containers` DISABLE KEYS */;
+INSERT INTO `resource_containers` (`id`,`parent_id`,`resource_id`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`planet_id`,`amount`) VALUES 
+ (1099511627776,0,0,0,0,0,1,0,0,0,99,0);
+
 /*!40000 ALTER TABLE `resource_containers` ENABLE KEYS */;
+
 
 
 --

@@ -42,7 +42,7 @@ BEGIN
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
 
 
-        SELECT s.condition FROM structures s WHERE s.type = type_id INTO cond;
+        SELECT std.max_condition FROM structure_type_data std WHERE std.type = type_id INTO cond;
 
         INSERT INTO structures VALUES (NULL,type_id,oX, oY, oZ, oW, inX, inY, inZ, custom_name, privateowner_id,0,cond,inPlanet,0);
 
