@@ -45,20 +45,6 @@ CREATE TABLE `structures` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2204928835634 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `structures`
---
-
-/*!40000 ALTER TABLE `structures` DISABLE KEYS */;
-INSERT INTO `structures` (`ID`,`Type`,`oX`,`oY`,`oZ`,`oW`,`x`,`y`,`z`,`name`,`owner`,`currentRessource`,`condition`,`zone`,`lastMail`) VALUES 
- (2204928835629,51,0,0,0,1,-1275.92,12,-3588.08,'',8589934593,0,444,8,0),
- (2204928835630,51,0,0,0,1,-1275.92,12,-3596.08,'',8589934593,0,444,8,0),
- (2204928835631,51,0,0,0,1,-1275.92,12,-3604.08,'',8589934593,0,446,8,0),
- (2204928835633,51,0,0,0,1,-1283.92,12,-3604.08,'',8589934593,0,444,8,0);
-/*!40000 ALTER TABLE `structures` ENABLE KEYS */;
-
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
