@@ -42,9 +42,11 @@ BEGIN
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
 
 
-        SELECT std.max_condition FROM structure_type_data std WHERE std.type = type_id INTO cond;
+--
+-- the condition value represents damage to the structure
+--
 
-        INSERT INTO structures VALUES (NULL,type_id,oX, oY, oZ, oW, inX, inY, inZ, custom_name, privateowner_id,0,cond,inPlanet,0);
+        INSERT INTO structures VALUES (NULL,type_id,oX, oY, oZ, oW, inX, inY, inZ, custom_name, privateowner_id,0,0,inPlanet,0);
 
         SET tmpId = LAST_INSERT_ID();
 
