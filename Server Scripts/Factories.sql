@@ -22,27 +22,26 @@ CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
--- Definition of table `harvesters`
+-- Definition of table `factories`
 --
 
-DROP TABLE IF EXISTS `harvesters`;
-CREATE TABLE `harvesters` (
-  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'the harvesters ID',
-  `ResourceID` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'this is the resource the harvester is currently harvesting',
+DROP TABLE IF EXISTS `factories`;
+CREATE TABLE `factories` (
+  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'the factories ID',
+  `ManSchematicID` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'this is the Manufacturing schematic the factory currently has loaded',
   `active` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '0 means not active',
   `rate` float NOT NULL DEFAULT '0' COMMENT 'the actual rate with which the resource is harvested',
-  `hoppersize` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'the size of the hopper of the placed harvester',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2204928835624 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `harvesters`
+-- Dumping data for table `factories`
 --
 
-/*!40000 ALTER TABLE `harvesters` DISABLE KEYS */;
-INSERT INTO `harvesters` (`ID`,`ResourceID`,`active`,`rate`,`hoppersize`) VALUES 
- (2204928835616,0,0,0,0);
-/*!40000 ALTER TABLE `harvesters` ENABLE KEYS */;
+/*!40000 ALTER TABLE `factories` DISABLE KEYS */;
+INSERT INTO `factories` (`ID`,`ManSchematicID`,`active`,`rate`) VALUES 
+ (2204928835616,0,0,0);
+/*!40000 ALTER TABLE `factories` ENABLE KEYS */;
 
 
 

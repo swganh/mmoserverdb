@@ -90,7 +90,7 @@ BEGIN
 -- update the resources quantity
 --
 
-  UPDATE harvester_resources hr SET quantity = quantity+(rate/60) WHERE hr.ID = hID AND hr.resourceID = resID;
+  UPDATE harvester_resources hr SET hr.quantity = hr.quantity+(rate/60) WHERE hr.ID = hID AND hr.resourceID = resID;
 
 --
 -- now delete all the zero quantity entries
