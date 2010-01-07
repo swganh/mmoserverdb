@@ -38,7 +38,7 @@ CREATE TABLE `item_families` (
 --
 
 /*!40000 ALTER TABLE `item_families` DISABLE KEYS */;
-INSERT INTO `item_families` (`id`,`family_name`) VALUES
+INSERT INTO `item_families` (`id`,`family_name`) VALUES 
  (12,'bug_jar'),
  (13,'component'),
  (14,'crafting'),

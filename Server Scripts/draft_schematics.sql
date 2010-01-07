@@ -45,7 +45,7 @@ CREATE TABLE `draft_schematics` (
 --
 
 /*!40000 ALTER TABLE `draft_schematics` DISABLE KEYS */;
-INSERT INTO `draft_schematics` (`object_string`,`group_id`,`weightsbatch_id`,`complexity`,`datasize`,`done`,`experience`,`status`,`subCategory`,`craftEnabled`) VALUES
+INSERT INTO `draft_schematics` (`object_string`,`group_id`,`weightsbatch_id`,`complexity`,`datasize`,`done`,`experience`,`status`,`subCategory`,`craftEnabled`) VALUES 
  ('object/draft_schematic/armor/armor_segment.iff',20,1,20,6,0,40,0,2,0),
  ('object/draft_schematic/armor/armor_segment_bone.iff',34,2,8,4,1,34,0,2,1),
  ('object/draft_schematic/armor/armor_segment_bone_advanced.iff',21,3,8,4,0,30,0,2,0),
@@ -937,7 +937,7 @@ INSERT INTO `draft_schematics` (`object_string`,`group_id`,`weightsbatch_id`,`co
  ('object/draft_schematic/food/dessert_blap_biscuit.iff',99,888,5,1,1,55,0,4,1),
  ('object/draft_schematic/food/dessert_blob_candy.iff',29,889,3,1,1,10,0,4,1),
  ('object/draft_schematic/food/dessert_bofa_treat.iff',220,890,3,1,1,20,0,4,1),
- ('object/draft_schematic/food/dessert_cavaellin_creams.iff',89,891,1,1,0,0,0,4,0),
+ ('object/draft_schematic/food/dessert_cavaellin_creams.iff',89,891,12,1,1,160,0,4,1),
  ('object/draft_schematic/food/dessert_chandad.iff',86,892,6,1,1,140,0,4,1),
  ('object/draft_schematic/food/dessert_citros_snow_cake.iff',88,893,10,1,1,120,0,4,1),
  ('object/draft_schematic/food/dessert_deneelian_fizz_pudding.iff',230,894,1,1,0,0,0,4,0),
@@ -950,10 +950,10 @@ INSERT INTO `draft_schematics` (`object_string`,`group_id`,`weightsbatch_id`,`co
  ('object/draft_schematic/food/dessert_pikatta_pie.iff',88,901,10,1,1,260,0,4,1),
  ('object/draft_schematic/food/dessert_pkneb.iff',31,902,4,1,1,80,0,4,1),
  ('object/draft_schematic/food/dessert_pyollian_cake.iff',87,903,8,1,1,120,0,4,1),
- ('object/draft_schematic/food/dessert_smugglers_delight.iff',89,904,1,1,0,0,0,4,0),
- ('object/draft_schematic/food/dessert_sweesonberry_rolls.iff',89,905,1,1,0,0,0,4,0),
+ ('object/draft_schematic/food/dessert_smugglers_delight.iff',89,904,12,1,1,160,0,4,1),
+ ('object/draft_schematic/food/dessert_sweesonberry_rolls.iff',89,905,12,1,0,200,0,4,0),
  ('object/draft_schematic/food/dessert_sweet_cake_mix.iff',87,906,8,1,1,100,0,4,1),
- ('object/draft_schematic/food/dessert_vagnerian_canape.iff',89,907,1,1,0,0,0,4,0),
+ ('object/draft_schematic/food/dessert_vagnerian_canape.iff',89,907,12,1,1,160,0,4,1),
  ('object/draft_schematic/food/dessert_won_won.iff',86,908,6,1,1,120,0,4,1),
  ('object/draft_schematic/food/dish_ahrisa.iff',92,909,10,1,1,120,0,4,1),
  ('object/draft_schematic/food/dish_bivoli_tempari.iff',93,910,12,1,1,280,0,4,1),
@@ -1287,8 +1287,8 @@ INSERT INTO `draft_schematics` (`object_string`,`group_id`,`weightsbatch_id`,`co
  ('object/draft_schematic/space/capacitor/quick_recharge_battery_mk3.iff',178,1224,1,1,0,0,0,131072,0),
  ('object/draft_schematic/space/capacitor/quick_recharge_battery_mk4.iff',179,1225,1,1,0,0,0,131072,0),
  ('object/draft_schematic/space/capacitor/quick_recharge_battery_mk5.iff',268,1226,1,1,0,0,0,131072,0),
- ('object/draft_schematic/space/chassis/awing.iff',170,1227,1,1,0,0,0,131072,0),
- ('object/draft_schematic/space/chassis/blacksun_heavy_s01.iff',170,1228,1,1,0,0,0,131072,0),
+ ('object/draft_schematic/space/chassis/awing.iff',170,1227,39,1,1,20000,0,131072,1),
+ ('object/draft_schematic/space/chassis/blacksun_heavy_s01.iff',170,1228,39,1,1,20000,0,131072,1),
  ('object/draft_schematic/space/chassis/blacksun_heavy_s02.iff',170,1229,1,1,0,0,0,131072,0),
  ('object/draft_schematic/space/chassis/blacksun_heavy_s03.iff',170,1230,1,1,0,0,0,131072,0),
  ('object/draft_schematic/space/chassis/blacksun_heavy_s04.iff',170,1231,1,1,0,0,0,131072,0),

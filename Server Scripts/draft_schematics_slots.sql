@@ -36,7 +36,7 @@ CREATE TABLE `draft_schematics_slots` (
 --
 
 /*!40000 ALTER TABLE `draft_schematics_slots` DISABLE KEYS */;
-INSERT INTO `draft_schematics_slots` (`schematic_id`,`draft_slot_id`) VALUES
+INSERT INTO `draft_schematics_slots` (`schematic_id`,`draft_slot_id`) VALUES 
  (1460478,8921),
  (1460478,8922),
  (1460478,8923),

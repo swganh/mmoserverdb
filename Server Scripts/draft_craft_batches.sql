@@ -47,7 +47,7 @@ CREATE TABLE `draft_craft_batches` (
 --
 
 /*!40000 ALTER TABLE `draft_craft_batches` DISABLE KEYS */;
-INSERT INTO `draft_craft_batches` (`id`,`list_id`,`expGroup`,`internal_schem_tool`) VALUES
+INSERT INTO `draft_craft_batches` (`id`,`list_id`,`expGroup`,`internal_schem_tool`) VALUES 
  (1118,389,60,0),
  (953,1001,42,0),
  (977,48,44,0),
@@ -103,8 +103,8 @@ INSERT INTO `draft_craft_batches` (`id`,`list_id`,`expGroup`,`internal_schem_too
  (1654,382,60,0),
  (1653,294,61,1),
  (1652,381,64,2),
- (1175,1310,1,1),
- (1175,1309,1,0),
+ (1175,1310,35,1),
+ (1175,1309,5,0),
  (1174,1213,38,2),
  (1174,1212,5,1),
  (1174,1211,35,0),
@@ -1041,7 +1041,7 @@ INSERT INTO `draft_craft_batches` (`id`,`list_id`,`expGroup`,`internal_schem_too
  (1202,1157,12,4),
  (1177,373,6,1),
  (1177,367,5,0),
- (1175,1311,1,2),
+ (1175,1311,38,2),
  (837,920,71,2),
  (839,697,65,0),
  (915,972,31,1),
@@ -1351,7 +1351,21 @@ INSERT INTO `draft_craft_batches` (`id`,`list_id`,`expGroup`,`internal_schem_too
  (901,1330,42,0),
  (901,1331,31,1),
  (901,1332,76,2),
- (901,1333,30,3);
+ (901,1333,30,3),
+ (891,1334,42,0),
+ (891,1335,76,1),
+ (891,1336,30,2),
+ (904,1337,42,0),
+ (904,1338,76,1),
+ (904,1339,30,2),
+ (907,1340,42,0),
+ (907,1341,31,1),
+ (907,1342,76,2),
+ (907,1343,30,3),
+ (1227,1344,34,0),
+ (1227,1345,39,1),
+ (1228,1346,34,0),
+ (1228,1347,39,1);
 /*!40000 ALTER TABLE `draft_craft_batches` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
