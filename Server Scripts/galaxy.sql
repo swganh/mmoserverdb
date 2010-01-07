@@ -1,11 +1,24 @@
 /*
 ---------------------------------------------------------------------------------------
-This source file is part of swgANH (Star Wars Galaxies - A New Hope - Server Emulator)
-For more information, see http://www.swganh.org
+This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
 
+For more information, visit http://www.swganh.com
 
-Copyright (c) 2006 - 2009 The swgANH Team
+Copyright (c) 2006 - 2010 The SWG:ANH Team
+---------------------------------------------------------------------------------------
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
 
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 ---------------------------------------------------------------------------------------
 */
 
@@ -47,8 +60,9 @@ CREATE TABLE `galaxy` (
 
 /*!40000 ALTER TABLE `galaxy` DISABLE KEYS */;
 INSERT INTO `galaxy` (`galaxy_id`,`name`,`address`,`port`,`pingport`,`population`,`character_retention`,`items_retention`,`account_retention`,`status`,`last_update`,`global_Tick_Count`) VALUES
- (2,'SWGANH Test Center','64.7.136.227',44991,44992,0,180,1,180,0,NOW(),0),
- (3,'Local','192.168.100.83',44991,44992,0,180,1,180,2,NOW(),0);
+ (2,'SWGANH - Test Center','0.0.0.0',44991,44992,0,180,1,180,0,NOW(),0),
+ (3,'SWGANH - Server 2','0.0.0.0',44991,44992,0,180,1,180,2,NOW(),0),
+ (3,'SWGANH - Server 3','0.0.0.0',44991,44992,0,180,1,180,2,NOW(),0);
 /*!40000 ALTER TABLE `galaxy` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

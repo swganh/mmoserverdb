@@ -1,8 +1,26 @@
--- MySQL Administrator dump 1.4
---
--- ------------------------------------------------------
--- Server version	5.1.36-community
+/*
+---------------------------------------------------------------------------------------
+This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
 
+For more information, visit http://www.swganh.com
+
+Copyright (c) 2006 - 2010 The SWG:ANH Team
+---------------------------------------------------------------------------------------
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+---------------------------------------------------------------------------------------
+*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,7 +36,6 @@
 -- Create schema swganh
 --
 
-CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
@@ -45,12 +62,12 @@ CREATE TABLE `config_process_list` (
 /*!40000 ALTER TABLE `config_process_list` DISABLE KEYS */;
 INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name`,`description`,`serverstartID`) VALUES 
  (0,'',0,0,0,'login','Handles initial connectivity and authentication of client.',1),
- (1,'192.168.1.104',5000,2,0,'connection','Handles all client connections.',3),
+ (1,'',5000,2,0,'connection','Handles all client connections.',3),
  (2,'',0,0,0,'unused','Unused server ID.',0),
  (3,'',0,0,0,'unused','Unused server ID.',0),
  (4,'',0,0,0,'unused','Unused server ID.',0),
- (5,'192.168.1.104',5100,2,1,'admin','Handles miscellaneous game functions that just don\'t fit elsewhere.',2),
- (6,'192.168.1.104',5300,2,0,'chat','Handles chat,tells,mails,tickets',2),
+ (5,'',5100,2,1,'admin','Handles miscellaneous game functions that just don\'t fit elsewhere.',2),
+ (6,'',5300,2,0,'chat','Handles chat,tells,mails,tickets',2),
  (7,'',0,0,0,'unused','Unused server ID.',0),
  (8,'',2223,0,0,'corellia','Zone server for Corellia',0),
  (9,'',2133,0,0,'dantooine','Zone server for Dantooine',0),
@@ -60,7 +77,7 @@ INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name
  (13,'',2127,0,0,'naboo','Zone server for Naboo',0),
  (14,'',2145,0,0,'rori','Zone server for Rori',0),
  (15,'',2163,0,0,'talus','Zone server for Talus',0),
- (16,'192.168.1.104',5200,0,0,'tatooine','Zone server for Tatooine',4),
+ (16,'',5200,0,0,'tatooine','Zone server for Tatooine',4),
  (17,'',2157,0,0,'yavin4','Zone server for Yavin 4',0),
  (18,'',0,0,0,'space_corellia','Zone server for Corellian Space 1',0),
  (19,'',0,0,0,'space_corellia_2','Zone server for Corellian Space 2',0),
@@ -93,7 +110,7 @@ INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name
  (46,'',1786,0,0,'simple','',0),
  (47,'',0,0,0,'space_09','',0),
  (48,'',0,0,0,'test_wearables','',0),
- (49,'192.168.1.104',6000,0,0,'tutorial','',0),
+ (49,'',6000,0,0,'tutorial','',0),
  (50,'',4104,0,0,'taanab','Zone server for Tanaab',0),
  (51,'',2416,0,0,'dagobah','Zone server for Dagobah.',0);
 /*!40000 ALTER TABLE `config_process_list` ENABLE KEYS */;
