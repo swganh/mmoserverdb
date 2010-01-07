@@ -70,6 +70,14 @@ BEGIN
 
 
 --
+-- generators dont need power
+--
+
+  IF(rate <= 0) THEN
+    RETURN 0;
+  END IF;
+
+--
 -- do we have power in the first place ?
 --
 
