@@ -51,14 +51,35 @@ BEGIN
         DECLARE t_value CHAR(255);
         DECLARE loopEnd INT DEFAULT 0;
         DECLARE cond INTEGER;
+        DECLARE maintchar VARCHAR(128);
+        DECLARE maint INTEGER;
+        DECLARE rate INTEGER;
+
         DECLARE cur_1 CURSOR FOR SELECT sa.attribute_id, sa.value FROM structure_attributes sa WHERE sa.structure_id=parent_id;
 
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
 
         SELECT i.id FROM items i WHERE i.parent_id = parent_id AND item_family = 15 INTO deed_id;
 
+--
+-- get the maintenance div by 168
+--
+
+        SELECT sa.value FROM structure_attributes sa WHERE sa.structure_id = parent_id AND sa.attribute_id = 382 INTO maintchar;
+        SELECT CAST(maintchar AS SIGNED) INTO maint;
+
+        SELECT st.maint_cost_wk FROM structures s INNER JOIN structure_type_data st ON (s.type = st.type) WHERE s.ID = parent_id  INTO rate;
+
+        IF(maint < (rate/168)*45)THEN
+           DELETE FROM items WHERE id = deed_id;
+           RETURN(1);
+        END IF;
+
+        SELECT CAST((maint-((rate/168)*45)) AS CHAR(128)) INTO maintchar;
+        UPDATE structure_attributes sa SET sa.VALUE = maintchar WHERE sa.structure_id =hID AND sa.attribute_id = 382;
+
         IF loopEnd THEN
-           RETURN(-1);
+           RETURN(0);
         END IF;
 
 
