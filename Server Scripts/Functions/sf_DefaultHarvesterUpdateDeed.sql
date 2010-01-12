@@ -70,13 +70,13 @@ BEGIN
 
         SELECT st.maint_cost_wk FROM structures s INNER JOIN structure_type_data st ON (s.type = st.type) WHERE s.ID = parent_id  INTO rate;
 
-        IF(maint < (rate/168)*45)THEN
+        IF(maint < ((rate/168)*45))THEN
            DELETE FROM items WHERE id = deed_id;
            RETURN(1);
         END IF;
 
         SELECT CAST((maint-((rate/168)*45)) AS CHAR(128)) INTO maintchar;
-        UPDATE structure_attributes sa SET sa.VALUE = maintchar WHERE sa.structure_id =hID AND sa.attribute_id = 382;
+        UPDATE structure_attributes sa SET sa.VALUE = maintchar WHERE sa.structure_id = parent_id AND sa.attribute_id = 382;
 
         IF loopEnd THEN
            RETURN(0);
