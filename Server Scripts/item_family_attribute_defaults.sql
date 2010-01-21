@@ -36,7 +36,6 @@ USE swganh;
 --
 -- Definition of table `item_family_attribute_defaults`
 --
-
 DROP TABLE IF EXISTS `item_family_attribute_defaults`;
 CREATE TABLE `item_family_attribute_defaults` (
   `family_id` int(11) unsigned NOT NULL DEFAULT '0',
@@ -7488,10 +7487,16 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (15,1593,384,'0',4),
  (15,1593,566,'@deed:structure_factory',1),
  (15,1594,1,'1',2),
+ (15,1594,381,'3000',5),
+ (15,1594,382,'0',3),
  (15,1594,566,'@deed:fusion_generator_deed_name',1),
  (15,1595,1,'1',2),
+ (15,1595,381,'3000',5),
+ (15,1595,382,'0',3),
  (15,1595,566,'@deed:solar_generator_deed_name',1),
  (15,1596,1,'1',2),
+ (15,1596,381,'3000',5),
+ (15,1596,382,'0',3),
  (15,1596,566,'@deed:wind_generator_deed_name',1),
  (15,1597,1,'1',2),
  (15,1597,566,'@deed:corellia_guild_deed',1),
@@ -8594,7 +8599,8 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (26,2128,566,'@space_crafting_n:fusion_reactor_mk4',0),
  (26,2129,1,'1',2),
  (26,2129,566,'@space_crafting_n:fusion_reactor_mk5',0),
- (26,2130,1,'1',2),
+ (26,2130,1,'1',2);
+INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
  (26,2130,566,'@space_crafting_n:reactor_limiter_mk1',0),
  (26,2131,1,'1',2),
  (26,2131,566,'@space_crafting_n:reactor_limiter_mk2',0),
@@ -8604,8 +8610,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (26,2133,566,'@space_crafting_n:reactor_limiter_mk4',0),
  (26,2134,1,'1',2),
  (26,2134,566,'@space_crafting_n:reactor_limiter_mk5',0),
- (26,2135,1,'1',2);
-INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
+ (26,2135,1,'1',2),
  (26,2135,566,'@space_crafting_n:reactor_overcharger_mk1',0),
  (26,2136,1,'1',2),
  (26,2136,566,'@space_crafting_n:reactor_overcharger_mk2',0),
