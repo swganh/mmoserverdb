@@ -100,7 +100,8 @@ BEGIN
   IF(maint >= rate)THEN
 
 
-      SELECT CAST((maint - (rate/336)) AS CHAR(128)) INTO maintchar;
+      SELECT CAST((maint - (rate/336)) AS SIGNED) INTO maintcalc;
+      SELECT CAST((maintcalc ) AS CHAR(128)) INTO maintchar;
       UPDATE structure_attributes sa SET sa.VALUE = maintchar WHERE sa.structure_id =hID AND sa.attribute_id = 382;
 
 --

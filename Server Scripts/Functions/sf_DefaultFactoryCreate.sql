@@ -64,6 +64,13 @@ BEGIN
 
         INSERT INTO factories VALUES (tmpId,0,0, 0.0);
 
+--
+-- 2774 is the output hopper 2773 the input hopper
+--
+
+        INSERT INTO items VALUES (NULL,tmpId,29,2774,0,oX,oY,oZ,oW,inX,inY,inZ,99,'',100,0,0);
+        INSERT INTO items VALUES (NULL,tmpId,29,2773,0,oX,oY,oZ,oW,inX,inY,inZ,99,'',100,0,0);
+
         INSERT INTO structure_admin_data VALUES (NULL,tmpId,privateowner_id,'ADMIN');
         OPEN cur_1;
         REPEAT
