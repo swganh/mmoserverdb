@@ -1,26 +1,8 @@
-/*
----------------------------------------------------------------------------------------
-This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.1.36-community
 
-For more information, visit http://www.swganh.com
-
-Copyright (c) 2006 - 2010 The SWG:ANH Team
----------------------------------------------------------------------------------------
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) any later version.
-
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public
-License along with this library; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
----------------------------------------------------------------------------------------
-*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,6 +13,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+
+--
+-- Create schema swganh
+--
+
+CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
@@ -52,7 +40,7 @@ CREATE TABLE `item_types` (
   `b_isSitable` int(10) unsigned NOT NULL DEFAULT '0',
   `container` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '0 for not a container, otherwise nr of items allowed',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2773 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
+) ENGINE=InnoDB AUTO_INCREMENT=2784 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
 --
 -- Dumping data for table `item_types`
@@ -2631,7 +2619,18 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (2769,'object/tangible/camp/shared_camp_chair_s2.iff','frn_chair','frn_n','unknown','frn_d',8203,0,0,'yes',1,0),
  (2770,'object/tangible/camp/shared_camp_chair_s3.iff','frn_chair','frn_n','unknown','frn_d',8203,0,0,'yes',1,0),
  (2771,'object/tangible/loot/bestine/shared_bestine_painting_schematic_blueleaf_temple.iff','bestine_painting_schematic_blueleaf_temple','unk','unk','unk',0,0,0,'No',0,0),
- (2772,'object/factory/shared_factory_crate_installation.iff','installation_crate','factory_n','installation_crate','factory_d',0,0,0,'yes',0,0);
+ (2772,'object/factory/shared_factory_crate_installation.iff','installation_crate','factory_n','installation_crate','factory_d',0,0,0,'yes',0,1),
+ (2773,'object/tangible/hopper/shared_manufacture_installation_ingredient_hopper_1.iff','ingredient_hopper','crafting','hopper','crafting_detail',0,0,0,'yes',0,100),
+ (2774,'object/tangible/hopper/shared_manufacture_installation_output_hopper_1.iff','output_hopper','crafting','hopper','crafting_detail',0,0,0,'yes',0,100),
+ (2775,'object/factory/shared_factory_crate_generic_items.iff','generic_items_crate','factory_n','generic_items_crate','factory_d',0,0,0,'yes',0,1),
+ (2776,'object/factory/shared_factory_crate_food.iff','food_crate','factory_n','food_crate','factory_d',0,0,0,'yes',0,1),
+ (2777,'object/factory/shared_factory_crate_electronics.iff','electronics_crate','factory_n','electronics_crate','factory_d',0,0,0,'yes',0,1),
+ (2778,'object/factory/shared_factory_crate_armor.iff','armor_crate','factory_n','armor_crate','factory_d',0,0,0,'yes',0,1),
+ (2779,'object/factory/shared_factory_crate_clothing.iff','clothing_factory_crate','factory_n','clothing_factory_crate','factory_d',0,0,0,'yes',0,1),
+ (2780,'object/factory/shared_factory_crate_chemicals.iff','chemicals_crate','factory_n','chemicals_crate','factory_d',0,0,0,'yes',0,1),
+ (2781,'object/factory/shared_factory_crate_furniture.iff','furniture_crate','factory_n','furniture_crate','factory_d',0,0,0,'yes',0,1),
+ (2782,'object/factory/shared_factory_crate_weapon.iff','weapon_factory_crate','factory_n','weapon_factory_crate','factory_d',0,0,0,'yes',0,1),
+ (2783,'object/factory/shared_factory_crate_installation.iff','installation_crate','factory_n','installation_crate','factory_d',0,0,0,'yes',0,1);
 /*!40000 ALTER TABLE `item_types` ENABLE KEYS */;
 
 

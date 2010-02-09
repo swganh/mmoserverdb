@@ -42,7 +42,7 @@ DROP FUNCTION IF EXISTS `sf_FactoryGetUnFinishedCrate`;
 DELIMITER $$
 
 DROP FUNCTION IF EXISTS `swganh`.`sf_FactoryGetUnFinishedCrate` $$
-CREATE DEFINER=`root`@`localhost` FUNCTION `sf_FactoryGetUnFinishedCrate`(hopperID BIGINT(20), schematicID BIGINT(20)) RETURNS int(11)
+CREATE DEFINER=`root`@`localhost` FUNCTION `sf_FactoryGetUnFinishedCrate`(hopperID BIGINT(20), schematicID BIGINT(20)) RETURNS bigint(20)
 BEGIN
 
 --
@@ -53,17 +53,15 @@ BEGIN
   DECLARE item_serial VARCHAR(128);
   DECLARE amount INTEGER;
   DECLARE tangfamily INTEGER;
-  DECLARE crc INTEGER;
+  DECLARE tangtype INTEGER;
+  DECLARE thecrc BIGINT(20);
   DECLARE rescount INTEGER;
   DECLARE itemcount INTEGER;
-  DECLARE template INTEGER;
+  DECLARE template BIGINT(20);
   DECLARE dummy INTEGER;
 
   DECLARE crate BIGINT(20);
   DECLARE crate_type INTEGER;
-
-  DECLARE decayrate INTEGER;
-  DECLARE quantity INTEGER;
 
 
 --
@@ -71,23 +69,32 @@ BEGIN
 --
 
 SELECT ms.serial FROM manufactureschematic ms WHERE ms.id = schematicID INTO item_serial;
-SELECT ms.crc FROM manufactureschematic ms WHERE ms.id = schematicID INTO crc;
-SELECT item_family FROM draft_schematic_item_link WHERE schematic_id = crc INTO tangfamily;
-SELECT i.crate_type FROM item_families i WHERE id = item_family INTO crate_type;
+SELECT ms.crc FROM manufactureschematic ms WHERE ms.id = schematicID INTO thecrc;
+SELECT item_family FROM draft_schematic_item_link WHERE schematic_id = thecrc INTO tangfamily;
+SELECT item_type FROM draft_schematic_item_link WHERE schematic_id = thecrc INTO tangtype;
+SELECT i.crate_type FROM item_families i WHERE i.id = tangfamily INTO crate_type;
 
 SELECT ms.itemTemplate FROM manufactureschematic ms WHERE ms.id = schematicID INTO template;
 
 
 
-SELECT COUNT FROM resource_containers WHERE parent_id = hopperID into rescount;
-SELECT COUNT FROM items WHERE parent_id = hopperID into itemcount;
+SELECT COUNT(*) FROM resource_containers WHERE parent_id = hopperID into rescount;
+SELECT COUNT(*) FROM items WHERE parent_id = hopperID into itemcount;
 --
 -- gets the max amount for the crates
 --
 
-SELECT crate_size FROM item_families WHERE id = item_family INTO amount;
+SELECT crate_size FROM item_families WHERE id = tangfamily INTO amount;
 
-IF (crate_size = 0) THEN
+--
+-- crate size of 0 means we dont get to create a crate
+--
+
+IF (amount = 0) THEN
+
+--
+-- returns 0 if the hopper is full returns 1 if we need to create the item without crate
+--
   IF (itemcount + rescount >= 100) THEN
       RETURN 0;
   END IF;
@@ -135,7 +142,6 @@ RETURN crate;
 END $$
 
 DELIMITER ;
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
