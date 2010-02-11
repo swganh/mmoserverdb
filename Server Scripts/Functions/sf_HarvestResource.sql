@@ -118,7 +118,6 @@ BEGIN
 
   IF(quantity>=hoppersize)THEN
      UPDATE harvesters h SET h.active = 0 WHERE h.ID = hID;
-     UPDATE harvester_resources hr SET hr.quantity = hoppersize WHERE hr.resourceID = resID;
      RETURN 1;
   END IF;
 
