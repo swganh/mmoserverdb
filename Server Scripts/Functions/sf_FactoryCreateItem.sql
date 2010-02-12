@@ -57,13 +57,13 @@ BEGIN
   DECLARE crateID BIGINT(20);
   DECLARE valuechar VARCHAR(128);
   DECLARE quantity INTEGER;
-  DECLARE dummy INTEGER;
 
 
   DECLARE hoppersize INTEGER;
 
 
   DECLARE active INTEGER;
+  DECLARE dummy INTEGER;
   DECLARE OutHopper BIGINT(20);
   DECLARE InHopper BIGINT(20);
 
@@ -90,21 +90,21 @@ BEGIN
 -- returns with the id of a crate that isnt full yet, creates if necessary an empty crate
 -- returns 0 when the hopper is full or 1 if the item is not packaged in crates
 
-  SELECT sf_FactoryUnfinishedCrate(OutHopper,manID) INTO crateID;
+  SELECT sf_FactoryGetUnfinishedCrate(OutHopper,manID) INTO crateID;
 
 --
 -- check whether the output hopper is full
 --
 
-IF (crate_id = 0) THEN
-  return 0;
+IF (crateID = 0) THEN
+  return 2;
 END IF;
 
 --
 -- if createID is 1 we need to create our item without a crate
 --
 
-IF (crate_id = 1) THEN
+IF (crateID = 1) THEN
   SELECT sf_DefaultItemCreatebyTangibleTemplate(OutHopper,templateID) INTO dummy;
   return 1;
 END IF;
@@ -114,12 +114,12 @@ END IF;
 -- look up our counter uses remaining attribute and increment it attribute
 --
 
-SELECT ia.value FROM item_attributes ia WHERE ia.item_id = crateID AND ia.attribute_id = 23 INTO valuechar;
+SELECT ia.value FROM item_attributes ia WHERE ia.item_id = crateID AND ia.attribute_id = 400 INTO valuechar;
 
 SELECT CAST(valuechar AS SIGNED) INTO quantity;
 SELECT CAST(quantity+1 AS CHAR) INTO valuechar;
 
-UPDATE item_attributes ia SET ia.VALUE = valuechar WHERE ia.structure_id = crateID AND ia.attribute_id = 23;
+UPDATE item_attributes ia SET ia.VALUE = valuechar WHERE ia.item_id = crateID AND ia.attribute_id = 400;
 
 
 
@@ -136,8 +136,6 @@ UPDATE item_attributes ia SET ia.VALUE = valuechar WHERE ia.structure_id = crate
 END $$
 
 DELIMITER ;
-
-
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
