@@ -106,7 +106,7 @@ END IF;
 -- get a crate with the same serial that is not full
 --
 
-SELECT i.id FROM items i INNER JOIN item_attributes ia ON (ia.item_id = i.id AND ia.attribute_id = 1) INNER JOIN items ii ON (i.id = ii.parent_id) INNER JOIN item_attributes iaa ON (iaa.item_id = ii.id AND iaa.attribute_id = 16) WHERE iaa.value = item_serial AND (CAST(ia.value AS signed) < amount) AND i.parent_id = hopperID LIMIT 1 INTO crate;
+SELECT i.id FROM items i INNER JOIN item_attributes ia ON (ia.item_id = i.id AND ia.attribute_id = 400) INNER JOIN items ii ON (i.id = ii.parent_id) INNER JOIN item_attributes iaa ON (iaa.item_id = ii.id AND iaa.attribute_id = 16) WHERE iaa.value like item_serial AND (CAST(ia.value AS signed) < amount) AND i.parent_id = hopperID LIMIT 1 INTO crate;
 
 IF (crate IS NOT NULL) THEN
   RETURN crate;
