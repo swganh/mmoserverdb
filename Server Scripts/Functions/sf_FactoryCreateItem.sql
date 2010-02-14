@@ -97,6 +97,7 @@ BEGIN
 --
 
 IF (crateID = 0) THEN
+  UPDATE factories f SET f.active = 0 WHERE f.ID = fID;
   return 2;
 END IF;
 

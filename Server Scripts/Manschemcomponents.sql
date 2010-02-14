@@ -28,8 +28,10 @@ USE swganh;
 DROP TABLE IF EXISTS `manschemcomponents`;
 CREATE TABLE `manschemcomponents` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `component` int(10) unsigned NOT NULL,
+  `schematic_id` bigint(22) unsigned NOT NULL,
+  `component` bigint(22) unsigned NOT NULL,
   `serial` varchar(45) NOT NULL,
+  `amount` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
