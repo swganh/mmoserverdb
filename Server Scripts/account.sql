@@ -102,7 +102,9 @@ INSERT INTO `account` (`account_id`,`username`,`password`,`station_id`,`csr`,`ba
  (33,'owen','d9a42a1e92a151c31de33f20009594d036ab3615',100000033,2,0,' owen@swganh.org','2009-08-20 21:28:48','2009-09-03 12:55:47',1,0,0,2,''),
  (34,'vostromus','25c947262b916d206cf623ff878dded9c8da60b0',100000034,2,0,'vostromus@yahoo.com','2009-10-11 14:44:52','2009-10-14 22:51:29',1,0,0,2,'');
 INSERT INTO `account` (`account_id`,`username`,`password`,`station_id`,`csr`,`banned`,`email`,`joindate`,`lastlogin`,`active`,`loggedin`,`authenticated`,`characters_allowed`,`session_key`) VALUES 
- (35,'Machine1020','82ccc6b45a69f7de9f833996894734ab2064e0c2',100000035,2,0,'vMachine1020@gmail.com','2009-10-12 10:47:02','2009-10-15 17:25:19',1,0,0,2,''),
+ (35, 'Machine1020','82ccc6b45a69f7de9f833996894734ab2064e0c2',100000035,2,0,'vMachine1020@gmail.com','2009-10-12 10:47:02','2009-10-15 17:25:19',1,0,0,2,''),
+ (36, 'apathy', '2bc4e9268958e0078398a912710e04d26f7cd419', 100000036, 2, 0, 'apathy@gmail.com', '2009-10-19 22:11:41', '2009-10-29 07:27:32', 1, 0, 0, 2, ''),
+ (37, 'Valkyra', 'c1f4de4cf474e1e6d22cadaa1f68daba7e0cd2dc', 100000037, 2, 0, 'valkyra@cox.net', '2010-02-15 17:02:46', '2010-02-15 17:02:46', 1, 0, 0, 2, ''),
  (100,'Ackob','85f51c18b746b1034fc4642f592fa882362feb9c',111111100,0,0,'mdk.alex@gmail.com','2008-05-12 00:00:00','2008-11-09 12:52:20',1,0,0,2,'0c5368341bdd90606449f42b1a755c36'),
  (101,'agestee','812b29aad1bad88767d781f1e7e55f898dab8ed3',111111101,0,0,'webmaster@just-life.de','2007-05-20 03:24:20','2008-06-04 12:13:44',1,0,0,2,NULL),
  (104,'diezen','ec38f3fe6dd0850fef8c01ab6dd95021f3e58072',111111104,0,0,'ruben997@hotmail.com','2007-06-07 17:02:43','2009-10-14 09:56:56',1,0,0,2,NULL),
