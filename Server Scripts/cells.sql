@@ -42,8 +42,7 @@ CREATE TABLE `cells` (
   `id` bigint(20) unsigned NOT NULL default '0',
   `parent_id` bigint(20) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id`),
-  KEY `fk_st_cells_parent_parent` (`parent_id`),
-  CONSTRAINT `fk_cells_building_building` FOREIGN KEY (`parent_id`) REFERENCES `buildings` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fk_st_cells_parent_parent` (`parent_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
