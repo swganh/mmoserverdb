@@ -8,10 +8,14 @@ BEGIN
         DECLARE att_value CHAR(255);
         DECLARE t_value CHAR(255);
         DECLARE loopEnd INT DEFAULT 0;
+        DECLARE cellCount INT DEFAULT 0;
+        DECLARE cellloop INT DEFAULT 0;
         DECLARE cond INTEGER;
         DECLARE cur_1 CURSOR FOR SELECT attribute_id,attribute_value,attribute_order FROM structure_attribute_defaults WHERE structure_attribute_defaults.structure_type=type_id;
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
 
+
+        Select st.cellcount FROM structure_type_data st WHERE st.type = type_id INTO cellCount;
 
 --
 -- the condition value represents damage to the structure
@@ -22,6 +26,12 @@ BEGIN
         SET tmpId = LAST_INSERT_ID();
 
         INSERT INTO houses VALUES (tmpId,0);
+
+        REPEAT
+           INSERT INTO cells VALUES(NULL,tmpId);
+           select cellloop+1 INTO cellloop;
+        UNTIL (cellloop = cellcount) END REPEAT;
+
 
 --
 -- 2774 is the output hopper 2773 the input hopper
