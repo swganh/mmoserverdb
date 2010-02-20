@@ -183,8 +183,8 @@ GOTO:MainMenu
 :DatabaseCompleteSetup 
 	call:ShortMenu
 	cd Create Scripts
-	mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "create.sql"
-	mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "swganh_logs.sql"
+	mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
+	mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "swganh_logs.sql"
 	TITLE %title%
 	ECHO.
 	ECHO.
@@ -206,7 +206,7 @@ GOTO:MainMenu
 	call:initProgress %maxcnt%
 
 	for /F %%A IN ('dir /b "*.sql"') do (
-		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "%%A"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO.Installing %%A [Done]
 		call:doProgress
 	)
@@ -235,7 +235,7 @@ GOTO:MainMenu
 	call:initProgress %maxcnt%
 	
 	for /F %%A IN ('dir /b "*.sql"') do (
-		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "%%A"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO.Installing %%A [Done]
 		call:doProgress
 	)
@@ -265,7 +265,7 @@ GOTO:MainMenu
 	call:initProgress %maxcnt%
 	
 	for /F %%A IN ('dir /b "*.sql"') do (
-		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "%%A"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO.Installing %%A [Done]
 		call:doProgress
 	)
@@ -299,8 +299,8 @@ GOTO:MainMenu
 :DatabaseSetup 
 	call:ShortMenu
 	cd Create Scripts
-	mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "create.sql"
-	mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "swganh_logs.sql"
+	mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
+	mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "swganh_logs.sql"
 	TITLE %title%
 	call:ScreenClear
 	call:ShortMenu
@@ -322,7 +322,7 @@ GOTO:MainMenu
 	call:initProgress %maxcnt%
 
 	for /F %%A IN ('dir /b "*.sql"') do (
-		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "%%A"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO.Installing %%A [Done]
 		call:doProgress
 	)
@@ -349,7 +349,7 @@ GOTO:MainMenu
 	call:initProgress %maxcnt%
 	
 	for /F %%A IN ('dir /b "*.sql"') do (
-		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "%%A"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO.Installing %%A [Done]
 		call:doProgress
 	)
@@ -377,7 +377,7 @@ GOTO:MainMenu
 	call:initProgress %maxcnt%
 	
 	for /F %%A IN ('dir /b "*.sql"') do (
-		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "%%A"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO.Installing %%A [Done]
 		call:doProgress
 	)
@@ -404,7 +404,7 @@ GOTO:MainMenu
 	call:initProgress %maxcnt%
 	
 	for /F %%A IN ('dir /b "*.sql"') do (
-		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "%%A"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		call:doProgress
 	)
@@ -430,7 +430,7 @@ GOTO:MainMenu
 	call:initProgress %maxcnt%
 	
 	for /F %%A IN ('dir /b "*.sql"') do (
-		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --comments --default-character-set=utf8 < "%%A"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		call:doProgress
 	)
