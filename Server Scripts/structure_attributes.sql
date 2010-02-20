@@ -1,4 +1,4 @@
-﻿/*
+/*
 ---------------------------------------------------------------------------------------
 This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
 
@@ -53,7 +53,6 @@ CREATE TABLE `structure_attributes` (
 
 /*!40000 ALTER TABLE `structure_attributes` DISABLE KEYS */;
 /*!40000 ALTER TABLE `structure_attributes` ENABLE KEYS */;
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
