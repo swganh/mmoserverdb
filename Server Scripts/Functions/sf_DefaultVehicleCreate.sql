@@ -82,9 +82,9 @@ BEGIN
 
   SELECT id FROM vehicle_types WHERE vehicle_object_string LIKE CONCAT('%', vehicle_name, '.iff') INTO vehicle_type;
 
-IF id = NULL THEN
-    return 0;
-END IF;
+	IF vehicle_type = NULL THEN
+	    return 0;
+	END IF;
 
   --
   -- Create the new vehicle
