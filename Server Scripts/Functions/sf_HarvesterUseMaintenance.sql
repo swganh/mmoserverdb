@@ -50,6 +50,7 @@ BEGIN
 -- it
 
   DECLARE maint INTEGER;
+  DECLARE maintcalc INTEGER;
   DECLARE maintchar VARCHAR(128);
   DECLARE rate INTEGER;
   DECLARE decayrate INTEGER;
@@ -98,10 +99,8 @@ BEGIN
 --
 
   IF(maint >= rate)THEN
-
-
       SELECT CAST((maint - (rate/336)) AS SIGNED) INTO maintcalc;
-      SELECT CAST((maintcalc ) AS CHAR(128)) INTO maintchar;
+      SELECT CAST((maintcalc) AS CHAR(128)) INTO maintchar;
       UPDATE structure_attributes sa SET sa.VALUE = maintchar WHERE sa.structure_id =hID AND sa.attribute_id = 382;
 
 --
@@ -194,8 +193,6 @@ END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
 DELIMITER ;
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
