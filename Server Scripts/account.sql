@@ -1,4 +1,4 @@
-/*
+﻿/*
 ---------------------------------------------------------------------------------------
 This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
 
@@ -227,7 +227,13 @@ INSERT INTO `account` (`account_id`,`username`,`password`,`station_id`,`csr`,`ba
  (215,'cisno','e7af8e932411677cdca3b2aa8f2f2f8e6bd0d3d3',111111215,0,0,'johnny-sundberg@hotmail.com','2009-08-30 15:12:01','2009-10-08 11:46:27',1,0,0,1,''),
  (216,'peej2','b3ef4625b8cc9de5305028ca5749c256e733083a',111111216,0,0,'pjmagee2@hotmail.com','2009-09-14 20:46:06','2009-09-14 20:46:06',1,0,0,1,''),
  (225,'adrikthorsen','57b9bce36613c31ef1832fc448a659040c0f5b59',111111225,0,0,'aethorsen@gmail.com','2009-10-15 17:32:23','2009-10-15 17:32:23',1,0,0,1,''),
- (226,'wulf','1e72916b92b291c8785c07109c490db2a84a704f',111111226,0,0,'wulf@swg-blackcompany.com','2009-10-15 17:34:08','2009-10-16 15:45:03',1,0,1,1,'');
+ (226,'wulf','1e72916b92b291c8785c07109c490db2a84a704f',111111226,0,0,'wulf@swg-blackcompany.com','2009-10-15 17:34:08','2009-10-16 15:45:03',1,0,1,1,''),
+ (227, 'danglejangles', '4e95fa85a06fd2a24ec9ea46e2deb75d0a27f595', 111111227, 0, 0, 'alexisz9@yahoo.com', '2009-10-15 17:32:23','2009-10-15 17:32:23',1,0,0,1,''),
+ (228, 'vasilli', 'f1e93fd2be119e3876c6a2f57c27c86ef000dc16', 111111228, 0, 0, 'harry.fleetwood@googlemail.com', '2009-10-15 17:32:23','2009-10-15 17:32:23',1,0,0,1,''),
+ (229, 'blade', '71abba49ae296f03522de104ae01615ae2c6b36b', 111111229, 0, 0, 'pat.white@aerglide.com', '2009-10-15 17:32:23','2009-10-15 17:32:23',1,0,0,1,'');
+
+
+
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 
 --
