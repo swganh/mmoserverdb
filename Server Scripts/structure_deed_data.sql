@@ -53,11 +53,11 @@ CREATE TABLE `structure_deed_data` (
 /*!40000 ALTER TABLE `structure_deed_data` DISABLE KEYS */;
 INSERT INTO `structure_deed_data` (`id`,`DeedType`,`StructureType`,`SkillRequirement`) VALUES
  (1,1970,1,31),
- (2,1971,2,326),
+ (2,1971,5,326),
  (3,1972,3,48),
- (4,1973,4,328),
- (5,1974,5,46),
- (6,1975,6,319),
+ (4,1973,6,328),
+ (5,1974,2,46),
+ (6,1975,4,319),
  (7,1560,7,626),
  (8,1561,8,626),
  (9,1562,9,626),
