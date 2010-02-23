@@ -39,6 +39,8 @@ DROP FUNCTION IF EXISTS `swganh`.`sf_DefaultHouseCreate` $$
 CREATE DEFINER=`root`@`localhost` FUNCTION `sf_DefaultHouseCreate`(type_id INT(11),parent_id BIGINT(20),privateowner_id BIGINT(20),inPlanet INT,oX FLOAT,oY FLOAT,oZ FLOAT, oW FLOAT,inX FLOAT,inY FLOAT,inZ FLOAT,custom_name CHAR(255),deed_id BIGINT(20)) RETURNS bigint(20)
 BEGIN
         DECLARE tmpId BIGINT(20);
+        DECLARE cellId BIGINT(20);
+        DECLARE cellTermId BIGINT(20);
         DECLARE att_id,att_order INT;
         DECLARE att_value CHAR(255);
         DECLARE t_value CHAR(255);
@@ -53,7 +55,7 @@ BEGIN
         Select st.cellcount FROM structure_type_data st WHERE st.type = type_id INTO cellCount;
 
 --
--- the condition value represents damage to the structure
+-- insert the structures cells
 --
 
         INSERT INTO structures VALUES (NULL,type_id,oX, oY, oZ, oW, inX, inY, inZ, custom_name, privateowner_id,0,0,inPlanet,0);
@@ -67,6 +69,19 @@ BEGIN
            select cellloop+1 INTO cellloop;
         UNTIL (cellloop = cellcount) END REPEAT;
 
+
+--
+-- insert the structures terminal
+--
+
+        SELECT c.id FROM cells c WHERE c.parent_id = tmpId ORDER BY c.id LIMIT 1 INTO cellId;
+        SELECT stl.cellId FROM structure_terminal_link stl WHERE stl.structure_type = type_id INTO cellTermId;
+
+        SELECT cellTermID + cellId INTO cellTermID;
+
+        INSERT INTO terminals VALUES (NULL,cellTermID,29,0,0,0,0,0.4,0.7,6.1,99,'',0,0,0,'');
+
+        UPDATE terminals t INNER JOIN structure_terminal_link stl ON (stl.structure_type = type_id) SET t.x = stl.x, t.y = stl.y, t.z = stl.z, t.ox = stl.qx, t.oy = stl.qy, t.oz = stl.qz, t.ow = stl.qw  WHERE t.id = LAST_INSERT_ID() ;
 
 --
 -- 2774 is the output hopper 2773 the input hopper
@@ -90,10 +105,8 @@ BEGIN
         CLOSE cur_1;
         RETURN(tmpId);
 END $$
-/*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
 DELIMITER ;
-
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

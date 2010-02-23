@@ -58,7 +58,7 @@ CREATE TABLE `terminals` (
   PRIMARY KEY  (`id`),
   KEY `fk_st_obj_planet_planet` (`planet_id`),
   KEY `fk_terminals_type_type` (`terminal_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4294968330 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `terminals`
