@@ -49,7 +49,7 @@ CREATE TABLE `draft_experiment_groups` (
 --
 
 /*!40000 ALTER TABLE `draft_experiment_groups` DISABLE KEYS */;
-INSERT INTO `draft_experiment_groups` (`id`,`name`) VALUES 
+INSERT INTO `draft_experiment_groups` (`id`,`name`) VALUES
  (1,'exp_accel'),
  (2,'exp_ammo'),
  (3,'exp_armor'),
