@@ -117,8 +117,7 @@ BEGIN
   -- Update the owner attribute with the character firstname / lastname
   --
 
-  UPDATE vehicle_attributes SET attribute_value = CONCAT(character_firstname, ' ', character_lastname) WHERE attribute_id = 568;
-
+    UPDATE vehicle_attributes SET attribute_value = character_firstname WHERE attribute_id = 568 AND vehicles_id = tmpId;
   --
   -- Return the new vehicle ID
   --
