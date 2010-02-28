@@ -58,8 +58,12 @@ BEGIN
         IF STRCMP(LOWER(listname),'hopper')=0  THEN
            SELECT id FROM structure_admin_data WHERE (StructureId = structure_id and PlayerID = nameId and ((AdminType like 'HOPPER') OR (AdminType like 'ADMIN')))  LIMIT 1 INTO tmpId;
         ELSE
+          IF STRCMP(LOWER(listname),'entry')=0  THEN
+             SELECT id FROM structure_admin_data WHERE (StructureId = structure_id and PlayerID = nameId and ((AdminType like 'ENTRY') OR (AdminType like 'ADMIN')))  LIMIT 1 INTO tmpId;
+          ELSE
 
-           SELECT id FROM structure_admin_data WHERE (StructureId = structure_id and PlayerID = nameId and AdminType like listname) INTO tmpId;
+             SELECT id FROM structure_admin_data WHERE (StructureId = structure_id and PlayerID = nameId and AdminType like listname) INTO tmpId;
+          END IF;
         END IF;
 
         IF tmpId IS NULL THEN RETURN(2);
