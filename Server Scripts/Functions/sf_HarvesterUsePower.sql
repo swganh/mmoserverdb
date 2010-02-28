@@ -68,13 +68,6 @@ BEGIN
 
 
 --
--- get the power reserves
---
-
-  SELECT sa.value FROM structure_attributes sa WHERE sa.structure_id =hID AND sa.attribute_id = 384 INTO powerchar;
-  SELECT CAST(powerchar AS SIGNED) INTO power;
-
---
 -- get the power rate
 --
 
@@ -88,6 +81,14 @@ BEGIN
   IF(rate <= 0) THEN
     RETURN 0;
   END IF;
+
+--
+-- get the power reserves
+--
+
+  SELECT sa.value FROM structure_attributes sa WHERE sa.structure_id =hID AND sa.attribute_id = 384 INTO powerchar;
+  SELECT CAST(powerchar AS SIGNED) INTO power;
+
 
 --
 -- do we have power in the first place ?
