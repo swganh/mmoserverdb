@@ -57,7 +57,6 @@ BEGIN
 
         RETURN totalCount;
 END $$
-/*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
 DELIMITER ;
 
