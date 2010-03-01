@@ -62,7 +62,7 @@ CREATE TABLE `galaxy` (
 INSERT INTO `galaxy` (`galaxy_id`,`name`,`address`,`port`,`pingport`,`population`,`character_retention`,`items_retention`,`account_retention`,`status`,`last_update`,`global_Tick_Count`) VALUES
  (2,'SWGANH - Test Center','0.0.0.0',44991,44992,0,180,1,180,0,NOW(),0),
  (3,'SWGANH - Server 2','0.0.0.0',44991,44992,0,180,1,180,2,NOW(),0),
- (3,'SWGANH - Server 3','0.0.0.0',44991,44992,0,180,1,180,2,NOW(),0);
+ (4,'SWGANH - Server 3','0.0.0.0',44991,44992,0,180,1,180,2,NOW(),0);
 /*!40000 ALTER TABLE `galaxy` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
