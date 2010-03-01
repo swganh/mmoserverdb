@@ -1,4 +1,4 @@
--- MySQL Administrator dump 1.4
+﻿-- MySQL Administrator dump 1.4
 --
 -- ------------------------------------------------------
 -- Server version	5.1.36-community
@@ -6851,6 +6851,14 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (11,1326,566,'@craft_furniture_ingredients_n:dual_wave_synthesizer',1),
  (12,1335,1,'1',2),
  (12,1335,566,'@craft_item_ingredients_n:bug_habitat',1),
+ (12,2784,566,'@item_n:fishing_bait',1)
+ (12,2784,1,'1',2)
+ (12,2785,566,'@item_n:fishing_bait',1)
+ (12,2785,1,'1',2)
+ (12,2786,566,'@item_n:fishing_bait',1)
+ (12,2786,1,'1',2)
+ (12,2787,566,'@item_n:fishing_bait',1)
+ (12,2787,1,'1',2)
  (13,68,1,'1',2),
  (13,68,566,'@food_name:large_glass',1),
  (13,87,1,'1',2),
