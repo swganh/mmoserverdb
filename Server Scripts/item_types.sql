@@ -2642,10 +2642,10 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (2780,'object/factory/shared_factory_crate_chemicals.iff','chemicals_crate','factory_n','chemicals_crate','factory_d',0,0,0,'yes',0,1),
  (2781,'object/factory/shared_factory_crate_furniture.iff','furniture_crate','factory_n','furniture_crate','factory_d',0,0,0,'yes',0,1),
  (2782,'object/factory/shared_factory_crate_weapon.iff','weapon_factory_crate','factory_n','weapon_factory_crate','factory_d',0,0,0,'yes',0,1),
- (2783,'object/factory/shared_factory_crate_installation.iff','installation_crate','factory_n','installation_crate','factory_d',0,0,0,'yes',0,1);
- (2784,'object/tangible/food/foraged/shared_edible_jar_bugs.iff','fishing_bait_insect','item_n','fishing_bait_insect','item_d',0,0,0,'No',0,1);
- (2785,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_worm','item_n','fishing_bait_worm','item_d',0,0,0,'No',0,1);
- (2786,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_grub','item_n','fishing_bait_grub','item_d',0,0,0,'No',0,1);
+ (2783,'object/factory/shared_factory_crate_installation.iff','installation_crate','factory_n','installation_crate','factory_d',0,0,0,'yes',0,1),
+ (2784,'object/tangible/food/foraged/shared_edible_jar_bugs.iff','fishing_bait_insect','item_n','fishing_bait_insect','item_d',0,0,0,'No',0,1),
+ (2785,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_worm','item_n','fishing_bait_worm','item_d',0,0,0,'No',0,1),
+ (2786,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_grub','item_n','fishing_bait_grub','item_d',0,0,0,'No',0,1),
  (2787,'object/tangible/food/foraged/shared_edible_jar_livers.iff','fishing_bait_chum','item_n','fishing_bait_chum','item_d',0,0,0,'No',0,1);
 /*!40000 ALTER TABLE `item_types` ENABLE KEYS */;
 

@@ -52,7 +52,7 @@ CREATE TABLE `galaxy` (
   `last_update` datetime NOT NULL,
   `global_Tick_Count` bigint(20) unsigned NOT NULL COMMENT 'Global server tickcount',
   PRIMARY KEY  (`galaxy_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `galaxy`
