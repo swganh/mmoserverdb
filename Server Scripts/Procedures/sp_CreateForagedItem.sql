@@ -43,9 +43,16 @@ DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
 
-CREATE PROCEDURE `sp_CreateForagedItem` (IN character_id BIGINT,IN profession_id INT,IN race_id INT, IN stacksize INT) RETURNS BIGINT
+CREATE PROCEDURE `sp_CreateForagedItem` (family_id INT(11),type_id INT(11),parent_id BIGINT(20),privateowner_id BIGINT(20),inPlanet INT,inX FLOAT,inY FLOAT,inZ FLOAT,custom_name CHAR(255), usecount INT)
 BEGIN
 
+  DECLARE temp_id BIGINT(20);
+
+  SELECT sf_DefaultItemCreate(family_id, type_id, parent_id, private_owner_id, inplanet, inX, inY, inZ, custom_name) INTO temp_id;
+
+  UPDATE item_attrbiutes SET item_attributes.value = usecount WHERE item_attrbiutes.item_id = temp_id AND item_attributes.attribute_id = 23;
+
+  SELECT temp_id;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
