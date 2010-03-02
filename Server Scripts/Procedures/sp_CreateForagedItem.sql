@@ -34,31 +34,21 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 use swganh;
 
 --
--- Definition of procedure `sp_ErrorLogHandler`
+-- Definition of procedure `sp_CreateForagedItem`
 --
 
-DROP PROCEDURE IF EXISTS `swganh`.`sp_ErrorLogHandler`;
+DROP PROCEDURE IF EXISTS `sp_CreateForagedItem`;
 
 DELIMITER $$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ErrorLogHandler`(
-	IN zone char(64),
-	IN system char(64),
-	IN message char(255))
-	
+/*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
+
+CREATE PROCEDURE `sp_CreateForagedItem` (IN character_id BIGINT,IN profession_id INT,IN race_id INT, IN stacksize INT) RETURNS BIGINT
 BEGIN
 
-   DECLARE startindex INT;
-   DECLARE logindex INT;
-   DECLARE currentTime BIGINT(20);
-
-   SET currentTime = UNIX_TIMESTAMP();
-   SELECT MAX(log_error.index)+1 FROM log_error INTO logindex;
-
-   SELECT serverstartID FROM config_process_list WHERE name like zone INTO startindex;
-   INSERT INTO log_error VALUES (NULL, NOW(), zone, system, message, startindex);
 
 END $$
+/*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
 DELIMITER ;
 
