@@ -74,7 +74,7 @@ BEGIN
 -- insert the structures terminal
 --
 
-        SELECT c.id FROM cells c WHERE c.parent_id = tmpId ORDER BY c.id LIMIT 1 INTO cellId;
+        SELECT c.id FROM structure_cells c WHERE c.parent_id = tmpId ORDER BY c.id LIMIT 1 INTO cellId;
         SELECT stl.cellId FROM structure_terminal_link stl WHERE stl.structure_type = type_id INTO cellTermId;
 
         SELECT cellTermID + cellId INTO cellTermID;

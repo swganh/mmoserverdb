@@ -39,7 +39,7 @@ use swganh;
 
 DROP TABLE IF EXISTS `terminals`;
 CREATE TABLE `terminals` (
-  `id` bigint(11) unsigned NOT NULL,
+  `id` bigint(11) unsigned NOT NULL auto_increment,
   `parent_id` bigint(20) unsigned NOT NULL default '0',
   `terminal_type` int(11) unsigned NOT NULL default '1',
   `oX` float NOT NULL default '0',
@@ -60,6 +60,7 @@ CREATE TABLE `terminals` (
   KEY `fk_terminals_type_type` (`terminal_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4294968330 DEFAULT CHARSET=utf8;
 
+UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- Dumping data for table `terminals`
 --
