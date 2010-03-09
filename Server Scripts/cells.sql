@@ -42,7 +42,8 @@ CREATE TABLE `cells` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
-  KEY `fk_st_cells_parent_parent` (`parent_id`)
+  KEY `fk_st_cells_parent_parent` (`parent_id`),
+  CONSTRAINT `fk_cells_building_building` FOREIGN KEY (`parent_id`) REFERENCES `buildings` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2203318222976 DEFAULT CHARSET=utf8;
 
 --
@@ -8848,8 +8849,9 @@ DROP TRIGGER /*!50030 IF EXISTS */ `tr_DeleteCell`;
 
 DELIMITER $$
 
-CREATE DEFINER = `root`@`localhost` TRIGGER `tr_DeleteCell` AFTER DELETE ON `cells` FOR EACH ROW BEGIN
+CREATE TRIGGER `tr_DeleteCell` AFTER DELETE ON `cells` FOR EACH ROW BEGIN
     DELETE FROM swganh.object_attributes WHERE object_id = OLD.id;
+
 END $$
 
 DELIMITER ;
