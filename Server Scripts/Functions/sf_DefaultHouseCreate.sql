@@ -65,7 +65,7 @@ BEGIN
         INSERT INTO houses VALUES (tmpId,0);
 
         REPEAT
-           INSERT INTO cells VALUES(NULL,tmpId);
+           INSERT INTO structure_cells VALUES(NULL,tmpId);
            select cellloop+1 INTO cellloop;
         UNTIL (cellloop = cellcount) END REPEAT;
 
