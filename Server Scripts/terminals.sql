@@ -60,7 +60,6 @@ CREATE TABLE `terminals` (
   KEY `fk_terminals_type_type` (`terminal_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4294968330 DEFAULT CHARSET=utf8;
 
-UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- Dumping data for table `terminals`
 --
