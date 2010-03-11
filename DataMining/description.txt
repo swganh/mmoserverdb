@@ -1,1 +1,2 @@
 creature_sightings.sql (http://www.swgcreatures.com - Sightings Database Export)
+creature_details.sql (internal STF name <--> CRC <--> object filename mapping)
