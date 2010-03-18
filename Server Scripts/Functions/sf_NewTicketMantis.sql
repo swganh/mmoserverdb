@@ -92,7 +92,7 @@ BEGIN
 
   SELECT name FROM swganh.csr_categories WHERE category_id = category INTO mMantisCategory;
 
-  INSERT INTO swganh_bugtracker2.mantis_bug_table VALUES (NULL, 17, character_id, 0, 0, 30, mMantisSeverity, mMantisReproducability, 10, 10, 10, mMantisCategory, NOW(), NOW(), 10, mLastMantisTextID, '', '', '', '', '', '', 0, 10, 'SWGANH - Game Submitted Bug', 0, 0, '');
+  INSERT INTO swganh_bugtracker2.mantis_bug_table VALUES (NULL, 1, character_id, 0, 0, 30, mMantisSeverity, mMantisReproducability, 10, 10, 10, mMantisCategory, NOW(), NOW(), 10, mLastMantisTextID, '', '', '', '', '', '', 0, 10, 'SWGANH - Game Submitted Bug', 0, 0, '');
   SELECT MAX(ticket_id) FROM csr_tickets INTO inserted;
   RETURN (inserted);
 END $$
