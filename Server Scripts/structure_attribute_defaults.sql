@@ -1,26 +1,8 @@
-/*
----------------------------------------------------------------------------------------
-This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.1.36-community
 
-For more information, visit http://www.swganh.com
-
-Copyright (c) 2006 - 2010 The SWG:ANH Team
----------------------------------------------------------------------------------------
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) any later version.
-
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public
-License along with this library; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
----------------------------------------------------------------------------------------
-*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,6 +13,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+
+--
+-- Create schema swganh
+--
+
+CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
@@ -45,7 +33,7 @@ CREATE TABLE `structure_attribute_defaults` (
   `attribute_value` varchar(128) NOT NULL,
   `attribute_order` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `structure_attribute_defaults`
@@ -141,7 +129,33 @@ INSERT INTO `structure_attribute_defaults` (`id`,`structure_type`,`attribute_id`
  (96,37,382,'0',2),
  (97,38,382,'0',2),
  (98,39,382,'0',2),
- (99,40,382,'0',2);
+ (99,40,382,'0',2),
+ (100,63,382,'0',1),
+ (101,64,382,'0',1),
+ (102,65,382,'0',1),
+ (103,66,382,'0',1),
+ (104,67,382,'0',1),
+ (105,68,382,'0',1),
+ (106,69,382,'0',1),
+ (107,70,382,'0',1),
+ (108,71,382,'0',1),
+ (109,72,382,'0',1),
+ (110,73,382,'0',1),
+ (111,74,382,'0',1),
+ (112,75,382,'0',1),
+ (113,76,382,'0',1),
+ (114,77,382,'0',1),
+ (115,78,382,'0',1),
+ (116,79,382,'0',1),
+ (117,80,382,'0',1),
+ (118,81,382,'0',1),
+ (119,82,382,'0',1),
+ (120,83,382,'0',1),
+ (121,84,382,'0',1),
+ (122,85,382,'0',1),
+ (123,86,382,'0',1),
+ (124,87,382,'0',1),
+ (125,88,382,'0',1);
 /*!40000 ALTER TABLE `structure_attribute_defaults` ENABLE KEYS */;
 
 
