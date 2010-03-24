@@ -93,7 +93,7 @@ BEGIN
         REPEAT
                 FETCH cur_1 INTO att_id,att_value,att_order;
                 IF NOT loopEnd THEN
-                        INSERT INTO structure_attributes VALUES(tmpId,att_id,att_value,att_order,0);
+                        INSERT INTO structure_attributes VALUES(tmpId,att_id,att_value,att_order,NULL);
                         SELECT ia.value FROM item_attributes ia WHERE ia.item_id = deed_id AND ia.attribute_id = att_id INTO t_value;
 
                         IF t_value IS NOT NULL THEN
