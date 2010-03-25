@@ -64,7 +64,7 @@ BEGIN
         REPEAT
                 FETCH cur_1 INTO att_id,att_value,att_order;
                 IF NOT loopEnd THEN
-                        INSERT INTO item_attributes VALUES(tmpId,att_id,att_value,att_order,0);
+                        INSERT INTO item_attributes VALUES(tmpId,att_id,att_value,att_order,NULL);
                 END IF;
         UNTIL loopEnd END REPEAT;
         CLOSE cur_1;
