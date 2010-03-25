@@ -39,10 +39,11 @@ use swganh;
 
 DROP TABLE IF EXISTS `structure_cells`;
 CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `parent_id` bigint(20) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  KEY `cell_parent_id` (`parent_id`),
+  CONSTRAINT `FK_structure_cells` FOREIGN KEY (`parent_id`) REFERENCES `structures` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
 
 --
