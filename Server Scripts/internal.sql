@@ -69,7 +69,8 @@ INSERT INTO `internal` (`id`,`table_name`,`column_name`) VALUES
  (9,'schem_crc','Entire table used only by the schematic tool.'),
  (10,'stf_files','Entire table not used in core.'),
  (11,'stf_variables','Entire table not used in core.'),
- (12,'terminal_elevator_data','id2 -  was added to make this table editable other wise you cant edit it.');
+ (12,'terminal_elevator_data','id2 -  was added to make this table editable other wise you cant edit it.'),
+(13,'draft_schematic_attribute_manipulation','list_id, only used by the schem tool');
 /*!40000 ALTER TABLE `craft_types` ENABLE KEYS */;
 
 
