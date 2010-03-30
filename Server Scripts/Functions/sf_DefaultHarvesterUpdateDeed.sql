@@ -75,7 +75,8 @@ BEGIN
            RETURN(1);
         END IF;
 
-        SELECT CAST((maint-((rate/168)*45)) AS CHAR(128)) INTO maintchar;
+        SELECT CAST((maint-((rate/168)*45)) AS SIGNED) INTO maint;
+        SELECT CAST(maint AS CHAR(128)) INTO maintchar;
         UPDATE structure_attributes sa SET sa.VALUE = maintchar WHERE sa.structure_id = parent_id AND sa.attribute_id = 382;
 
         IF loopEnd THEN
