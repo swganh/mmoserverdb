@@ -367,9 +367,6 @@ CREATE TABLE `MemRandomPool` (
 	END IF;
 	END LOOP loop1;
 
-	INSERT INTO MemRandomPool
-	SELECT * FROM resource_template WHERE type_swg like '%water%' ORDER BY RAND() LIMIT 1;
-
 --
 -- Minimum Pool (15 Resources):
 --
