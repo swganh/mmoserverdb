@@ -62,7 +62,7 @@ INSERT INTO `config_server` (`id`,`server_name`,`config_attributes_id`,`value`) 
  (1,'all',17,'hey all :)'),
  (2,'all',18,'128'),
  (3,'all',19,'128'),
- (4,'all',20,'120'),	-- 2 min when LD is enough imo (eru), especially since we do not save player data until player is destroyed.
+ (4,'all',20,'30'),	-- 30 seconds is the accurate SWG LD disposal time.
  (5,'all',21,'0'),
  (6,'all',22,'0'),
  (7,'all',23,'3'),
