@@ -39,47 +39,35 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 USE swganh;
 
 --
--- Definition of table `config_server`
+-- Definition of procedure `sp_GetCityCoordinateList`
 --
 
-DROP TABLE IF EXISTS `config_server`;
-CREATE TABLE `config_server` (
-  `id` bigint(20) NOT NULL,
-  `server_name` char(255) NOT NULL,
-  `config_attributes_id` bigint(20) NOT NULL,
-  `value` char(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_config_server_config_attributes` (`config_attributes_id`),
-  CONSTRAINT `fk_config_server_config_attributes` FOREIGN KEY (`config_attributes_id`) REFERENCES `config_server_attributes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP PROCEDURE IF EXISTS `sp_GetCityCoordinateList`;
 
---
--- Dumping data for table `config_server`
---
+DELIMITER $$
 
-/*!40000 ALTER TABLE `config_server` DISABLE KEYS */;
-INSERT INTO `config_server` (`id`,`server_name`,`config_attributes_id`,`value`) VALUES 
- (1,'all',17,'hey all :)'),
- (2,'all',18,'128'),
- (3,'all',19,'128'),
- (4,'all',20,'30'),	-- 30 seconds is the accurate SWG LD disposal time.
- (5,'all',21,'0'),
- (6,'all',22,'0'),
- (7,'all',23,'3'),
- (8,'all',24,'25'),
- (9,'all',25,'20000'),
- (10,'all',26,'100'),
- (11,'all',27,'100'),
- (12,'all',28,'100'),
- (13,'all',29,'30'),
- (14,'all',30,'300'),
- (15,'tatooine',17,'hey you bunch on tatooine :)');
-/*!40000 ALTER TABLE `config_server` ENABLE KEYS */;
+CREATE DEFINER=`root`@`%` PROCEDURE `sp_GetCityCoordinateList`(planet_id INT(2))
+BEGIN
 
+  --
+  -- Retrieve planet city data
+  --
 
+  SELECT
+    planet_regions.`x`,
+    planet_regions.`z`,
+    planet_regions.`width`
+  FROM
+    cities
+    INNER JOIN planet_regions ON (cities.city_region = planet_regions.region_id)
+    INNER JOIN planet ON (cities.planet_id = planet.planet_id)
+  WHERE
+    cities.planet_id = planet_id;
 
+END $$
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+DELIMITER ;
+
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
