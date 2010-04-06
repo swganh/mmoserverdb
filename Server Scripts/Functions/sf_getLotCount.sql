@@ -48,7 +48,11 @@ BEGIN
         DECLARE totalCount INT;
 
 
-        SELECT (SUM(st.lots_used)) FROM  structure_type_data st INNER JOIN structures ON structures.type = st.type WHERE (structures.owner = charId) INTO harvesterCount;
+        SELECT COUNT(structures.id) FROM structures WHERE (owner = charId) INTO harvesterCount;
+
+        IF(harvesterCount > 0) THEN
+          SELECT (SUM(st.lots_used)) FROM  structure_type_data st INNER JOIN structures ON structures.type = st.type WHERE (structures.owner = charId) INTO harvesterCount;
+        END IF;
 
 
         SET totalCount = (harvesterCount);
