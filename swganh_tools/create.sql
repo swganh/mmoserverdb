@@ -36,6 +36,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 -- Create schema swganh_tools
 --
 
+DROP DATABASE IF EXISTS swganh_tools;
 CREATE DATABASE IF NOT EXISTS swganh_tools;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
