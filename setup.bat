@@ -240,98 +240,98 @@ GOTO :PROCESS_ARGS
 	:: Install ALL Databases
 	
 	IF "%INSTALL_TYPE%" == "all" (
-		cd "%PROJECT_BASE%ServerScripts\swganh"
+		cd "%PROJECT_BASE%swganh"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_archive"
+		cd "%PROJECT_BASE%swganh_archive"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_astromech"
+		cd "%PROJECT_BASE%swganh_astromech"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_config"
+		cd "%PROJECT_BASE%swganh_config"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_logs"
+		cd "%PROJECT_BASE%swganh_logs"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
 		cd "%PROJECT_BASE%"
-		cd "%PROJECT_BASE%ServerScripts\swganh"
+		cd "%PROJECT_BASE%swganh"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh\scripts"
+		cd "%PROJECT_BASE%swganh\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh\functions"
+		cd "%PROJECT_BASE%swganh\functions"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh\procedures"
+		cd "%PROJECT_BASE%swganh\procedures"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_archive"
+		cd "%PROJECT_BASE%swganh_archive"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_archive\scripts"
+		cd "%PROJECT_BASE%swganh_archive\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_archive\functions"
+		cd "%PROJECT_BASE%swganh_archive\functions"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_archive\procedures"
+		cd "%PROJECT_BASE%swganh_archive\procedures"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_astromech"
+		cd "%PROJECT_BASE%swganh_astromech"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_astromech\scripts"
+		cd "%PROJECT_BASE%swganh_astromech\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_astromech\functions"
+		cd "%PROJECT_BASE%swganh_astromech\functions"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_astromech\procedures"
+		cd "%PROJECT_BASE%swganh_astromech\procedures"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_config"
+		cd "%PROJECT_BASE%swganh_config"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_config\scripts"
+		cd "%PROJECT_BASE%swganh_config\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_config\functions"
+		cd "%PROJECT_BASE%swganh_config\functions"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_config\procedures"
+		cd "%PROJECT_BASE%swganh_config\procedures"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_logs"
+		cd "%PROJECT_BASE%swganh_logs"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_logs\scripts"
+		cd "%PROJECT_BASE%swganh_logs\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_logs\functions"
+		cd "%PROJECT_BASE%swganh_logs\functions"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_logs\procedures"
+		cd "%PROJECT_BASE%swganh_logs\procedures"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
@@ -343,19 +343,19 @@ GOTO :PROCESS_ARGS
 	::
 	
 	IF "%INSTALL_TYPE%" == "swganh" (
-		cd "%PROJECT_BASE%ServerScripts\swganh"
+		cd "%PROJECT_BASE%swganh"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh\scripts"
+		cd "%PROJECT_BASE%swganh\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh\functions"
+		cd "%PROJECT_BASE%swganh\functions"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh\procedures"
+		cd "%PROJECT_BASE%swganh\procedures"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
@@ -368,19 +368,19 @@ GOTO :PROCESS_ARGS
 	::
 	
 	IF "%INSTALL_TYPE%" == "archive" (
-		cd "%PROJECT_BASE%ServerScripts\swganh_archive"
+		cd "%PROJECT_BASE%swganh_archive"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_archive\scripts"
+		cd "%PROJECT_BASE%swganh_archive\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_archive\functions"
+		cd "%PROJECT_BASE%swganh_archive\functions"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_archive\procedures"
+		cd "%PROJECT_BASE%swganh_archive\procedures"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
@@ -393,19 +393,19 @@ GOTO :PROCESS_ARGS
 	::
 	
 	IF "%INSTALL_TYPE%" == "astromech" (
-		cd "%PROJECT_BASE%ServerScripts\swganh_astromech"
+		cd "%PROJECT_BASE%swganh_astromech"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_astromech\scripts"
+		cd "%PROJECT_BASE%swganh_astromech\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_astromech\functions"
+		cd "%PROJECT_BASE%swganh_astromech\functions"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_astromech\procedures"
+		cd "%PROJECT_BASE%swganh_astromech\procedures"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
@@ -418,19 +418,19 @@ GOTO :PROCESS_ARGS
 	::
 	
 	IF "%INSTALL_TYPE%" == "config" (
-		cd "%PROJECT_BASE%ServerScripts\swganh_config"
+		cd "%PROJECT_BASE%swganh_config"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_config\scripts"
+		cd "%PROJECT_BASE%swganh_config\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_config\functions"
+		cd "%PROJECT_BASE%swganh_config\functions"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_config\procedures"
+		cd "%PROJECT_BASE%swganh_config\procedures"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
@@ -443,19 +443,19 @@ GOTO :PROCESS_ARGS
 	::
 	
 	IF "%INSTALL_TYPE%" == "logging" (
-		cd "%PROJECT_BASE%ServerScripts\swganh_logs"
+		cd "%PROJECT_BASE%swganh_logs"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
-		cd "%PROJECT_BASE%ServerScripts\swganh_logs\scripts"
+		cd "%PROJECT_BASE%swganh_logs\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_logs\functions"
+		cd "%PROJECT_BASE%swganh_logs\functions"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
-		cd "%PROJECT_BASE%ServerScripts\swganh_logs\procedures"
+		cd "%PROJECT_BASE%swganh_logs\procedures"
 		for /F %%A IN ('dir /b "*.sql"') do (
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
