@@ -221,7 +221,9 @@ GOTO :PROCESS_ARGS
 	
 :GENERATE_RESOURCES
 	ECHO.
-	ECHO. GENERATE INITIAL RESOURCES CALLED
+	mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 --database=swganh --execute="CALL sp_ResourceInitialSpawn()"
+	ECHO.
+	ECHO. "Intial Resources Spawn generated.
 	
 	GOTO :EOF
 	
