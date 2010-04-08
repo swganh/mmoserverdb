@@ -59,6 +59,12 @@ BEGIN
 
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
 
+--
+-- update any characters that might be in one of the houses cells
+--
+        UPDATE  characters c INNER JOIN structure_cells sc ON (c.parent_id = sc.id) INNER JOIN structures h ON (h.id = sc.parent_id) SET c.x = h.x, c.y = h.y, c.z = h.z, c.parent_id = 0 WHERE h.id = parent_id;
+
+
         SELECT i.id FROM items i WHERE i.parent_id = parent_id AND item_family = 15 INTO deed_id;
 
 --
