@@ -61,7 +61,7 @@ CREATE TABLE `structure_type_data` (
   `cellcount` int(10) unsigned NOT NULL default '0',
   `fp_length` int(10) unsigned NOT NULL default '0',
   `fp_width` int(10) unsigned NOT NULL default '0',
-  `planetMask` int(10) unsigned NOT NULL default '4294967295',
+  `planetMask` bigint(20) unsigned NOT NULL default '4294967295',
   PRIMARY KEY  (`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8;
 
