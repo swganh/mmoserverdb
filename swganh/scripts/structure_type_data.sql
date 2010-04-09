@@ -70,7 +70,7 @@ CREATE TABLE `structure_type_data` (
 --
 
 /*!40000 ALTER TABLE `structure_type_data` DISABLE KEYS */;
-INSERT INTO `structure_type_data` (`type`,`object_string`,`lots_used`,`name`,`stf_name`,`stf_file`,`healing_modifier`,`max_storage`,`city_tax_rate`,`decay_rate`,`nameable`,`max_condition`,`redeed_cost`,`city_rank_required`,`maint_cost_wk`,`power_used`,`resource_Category`,`repair_cost`,`schematicMask`,`cellcount`,`fp_length`,`fp_width`) VALUES 
+INSERT INTO `structure_type_data` (`type`,`object_string`,`lots_used`,`name`,`stf_name`,`stf_file`,`healing_modifier`,`max_storage`,`city_tax_rate`,`decay_rate`,`nameable`,`max_condition`,`redeed_cost`,`city_rank_required`,`maint_cost_wk`,`power_used`,`resource_Category`,`repair_cost`,`schematicMask`,`cellcount`,`fp_length`,`fp_width`,`planetMask`) VALUES 
  (1,'object/building/poi/shared_scout_camp_s0.iff',0,'Basic Camp','basic_name','camp',0.65,0,0,0,0,0,0,0,0,0,464,0,0,0,0,0,4294967295),
  (2,'object/building/poi/shared_scout_camp_s1.iff',0,'Elite Camp','elite_name','camp',0.65,0,0,0,0,0,0,0,0,0,464,0,0,0,0,0,4294967295),
  (3,'object/building/poi/shared_scout_camp_s2.iff',0,'Improved Camp','improved_name','camp',0.65,0,0,0,0,0,0,0,0,0,464,0,0,0,0,0,4294967295),
