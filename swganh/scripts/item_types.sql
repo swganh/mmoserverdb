@@ -52,14 +52,14 @@ CREATE TABLE `item_types` (
   `b_isSitable` int(10) unsigned NOT NULL DEFAULT '0',
   `container` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '0 for not a container, otherwise nr of items allowed',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2784 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
+) ENGINE=InnoDB AUTO_INCREMENT=2788 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
 --
 -- Dumping data for table `item_types`
 --
 
 /*!40000 ALTER TABLE `item_types` DISABLE KEYS */;
-INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`,`container`) VALUES 
+INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`,`container`) VALUES
  (1,'object/tangible/survey_tool/shared_survey_tool_wind.iff','survey_tool_wind','item_n','survey_tool_wind','item_d',32770,0,0,'No',0,0),
  (2,'object/tangible/survey_tool/shared_survey_tool_gas.iff','survey_tool_gas','item_n','survey_tool_gas','item_d',32770,0,0,'No',0,0),
  (3,'object/tangible/survey_tool/shared_survey_tool_lumber.iff','survey_tool_lumber','item_n','survey_tool_lumber','item_d',32770,0,0,'No',0,0),
@@ -2631,26 +2631,23 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (2769,'object/tangible/camp/shared_camp_chair_s2.iff','frn_chair','frn_n','unknown','frn_d',8203,0,0,'yes',1,0),
  (2770,'object/tangible/camp/shared_camp_chair_s3.iff','frn_chair','frn_n','unknown','frn_d',8203,0,0,'yes',1,0),
  (2771,'object/tangible/loot/bestine/shared_bestine_painting_schematic_blueleaf_temple.iff','bestine_painting_schematic_blueleaf_temple','unk','unk','unk',0,0,0,'No',0,0),
- (2772,'object/factory/shared_factory_crate_installation.iff','installation_crate','factory_n','installation_crate','factory_d',0,0,0,'yes',0,1),
+ (2772,'object/factory/shared_factory_crate_installation.iff','installation_crate','factory_n','installation_crate','factory_d',8209,0,0,'yes',0,1),
  (2773,'object/tangible/hopper/shared_manufacture_installation_ingredient_hopper_1.iff','ingredient_hopper','crafting','hopper','crafting_detail',0,0,0,'yes',0,100),
  (2774,'object/tangible/hopper/shared_manufacture_installation_output_hopper_1.iff','output_hopper','crafting','hopper','crafting_detail',0,0,0,'yes',0,100),
- (2775,'object/factory/shared_factory_crate_generic_items.iff','generic_items_crate','factory_n','generic_items_crate','factory_d',0,0,0,'yes',0,1),
- (2776,'object/factory/shared_factory_crate_food.iff','food_crate','factory_n','food_crate','factory_d',0,0,0,'yes',0,1),
- (2777,'object/factory/shared_factory_crate_electronics.iff','electronics_crate','factory_n','electronics_crate','factory_d',0,0,0,'yes',0,1),
- (2778,'object/factory/shared_factory_crate_armor.iff','armor_crate','factory_n','armor_crate','factory_d',0,0,0,'yes',0,1),
- (2779,'object/factory/shared_factory_crate_clothing.iff','clothing_factory_crate','factory_n','clothing_factory_crate','factory_d',0,0,0,'yes',0,1),
- (2780,'object/factory/shared_factory_crate_chemicals.iff','chemicals_crate','factory_n','chemicals_crate','factory_d',0,0,0,'yes',0,1),
- (2781,'object/factory/shared_factory_crate_furniture.iff','furniture_crate','factory_n','furniture_crate','factory_d',0,0,0,'yes',0,1),
- (2782,'object/factory/shared_factory_crate_weapon.iff','weapon_factory_crate','factory_n','weapon_factory_crate','factory_d',0,0,0,'yes',0,1),
- (2783,'object/factory/shared_factory_crate_installation.iff','installation_crate','factory_n','installation_crate','factory_d',0,0,0,'yes',0,1),
- (2784,'object/tangible/food/foraged/shared_edible_jar_bugs.iff','fishing_bait_insect','item_n','fishing_bait_insect','item_d',0,0,0,'No',0,1),
- (2785,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_worm','item_n','fishing_bait_worm','item_d',0,0,0,'No',0,1),
- (2786,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_grub','item_n','fishing_bait_grub','item_d',0,0,0,'No',0,1),
- (2787,'object/tangible/food/foraged/shared_edible_jar_livers.iff','fishing_bait_chum','item_n','fishing_bait_chum','item_d',0,0,0,'No',0,1);
+ (2775,'object/factory/shared_factory_crate_generic_items.iff','generic_items_crate','factory_n','generic_items_crate','factory_d',8209,0,0,'yes',0,1),
+ (2776,'object/factory/shared_factory_crate_food.iff','food_crate','factory_n','food_crate','factory_d',8209,0,0,'yes',0,1),
+ (2777,'object/factory/shared_factory_crate_electronics.iff','electronics_crate','factory_n','electronics_crate','factory_d',8209,0,0,'yes',0,1),
+ (2778,'object/factory/shared_factory_crate_armor.iff','armor_crate','factory_n','armor_crate','factory_d',8209,0,0,'yes',0,1),
+ (2779,'object/factory/shared_factory_crate_clothing.iff','clothing_factory_crate','factory_n','clothing_factory_crate','factory_d',8209,0,0,'yes',0,1),
+ (2780,'object/factory/shared_factory_crate_chemicals.iff','chemicals_crate','factory_n','chemicals_crate','factory_d',8209,0,0,'yes',0,1),
+ (2781,'object/factory/shared_factory_crate_furniture.iff','furniture_crate','factory_n','furniture_crate','factory_d',8209,0,0,'yes',0,1),
+ (2782,'object/factory/shared_factory_crate_weapon.iff','weapon_factory_crate','factory_n','weapon_factory_crate','factory_d',8209,0,0,'yes',0,1),
+ (2783,'object/factory/shared_factory_crate_installation.iff','installation_crate','factory_n','installation_crate','factory_d',8209,0,0,'yes',0,1),
+ (2784,'object/tangible/food/foraged/shared_edible_jar_bugs.iff','fishing_bait_insect','item_n','fishing_bait_insect','item_d',8215,0,0,'No',0,1),
+ (2785,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_worm','item_n','fishing_bait_worm','item_d',8215,0,0,'No',0,1),
+ (2786,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_grub','item_n','fishing_bait_grub','item_d',8215,0,0,'No',0,1),
+ (2787,'object/tangible/food/foraged/shared_edible_jar_livers.iff','fishing_bait_chum','item_n','fishing_bait_chum','item_d',8215,0,0,'No',0,1);
 /*!40000 ALTER TABLE `item_types` ENABLE KEYS */;
-
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

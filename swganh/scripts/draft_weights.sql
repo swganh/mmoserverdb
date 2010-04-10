@@ -52,7 +52,7 @@ CREATE TABLE `draft_weights` (
 --
 
 /*!40000 ALTER TABLE `draft_weights` DISABLE KEYS */;
-INSERT INTO `draft_weights` (`id`,`assembly_batch_id`,`experiment_batch_id`,`craft_batch_id`) VALUES 
+INSERT INTO `draft_weights` (`id`,`assembly_batch_id`,`experiment_batch_id`,`craft_batch_id`) VALUES
  (1,1,1,1),
  (2,2,2,2),
  (3,3,3,3),
@@ -1726,7 +1726,6 @@ INSERT INTO `draft_weights` (`id`,`assembly_batch_id`,`experiment_batch_id`,`cra
  (1671,1671,1671,1671),
  (1672,1672,1672,1672);
 /*!40000 ALTER TABLE `draft_weights` ENABLE KEYS */;
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

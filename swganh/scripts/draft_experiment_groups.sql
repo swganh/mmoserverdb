@@ -49,7 +49,7 @@ CREATE TABLE `draft_experiment_groups` (
 --
 
 /*!40000 ALTER TABLE `draft_experiment_groups` DISABLE KEYS */;
-INSERT INTO `draft_experiment_groups` (`id`,`name`) VALUES
+INSERT INTO `draft_experiment_groups` (`id`,`name`) VALUES 
  (1,'exp_accel'),
  (2,'exp_ammo'),
  (3,'exp_armor'),
@@ -128,7 +128,8 @@ INSERT INTO `draft_experiment_groups` (`id`,`name`) VALUES
  (76,'exp_quantity'),
  (77,'fs_exp_cure_one'),
  (78,'fs_exp_cure_two'),
- (79,'fs_exp_side_effect_one');
+ (79,'fs_exp_side_effect_one'),
+ (80,'needs_setup');
 /*!40000 ALTER TABLE `draft_experiment_groups` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
