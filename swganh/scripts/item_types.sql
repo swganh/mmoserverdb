@@ -39,19 +39,19 @@ use swganh;
 
 DROP TABLE IF EXISTS `item_types`;
 CREATE TABLE `item_types` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `object_string` char(255) NOT NULL DEFAULT 'object',
-  `stf_name` char(255) NOT NULL DEFAULT '0',
-  `stf_file` char(255) NOT NULL DEFAULT '0',
-  `stf_detail_name` char(255) NOT NULL DEFAULT '0',
-  `stf_detail_file` char(255) NOT NULL DEFAULT '0',
-  `bazaar_category` int(11) NOT NULL DEFAULT '0',
-  `equipSlots` int(10) unsigned NOT NULL DEFAULT '0',
-  `equipRestrictions` int(10) unsigned NOT NULL DEFAULT '0',
-  `complete` varchar(3) NOT NULL DEFAULT 'No',
-  `b_isSitable` int(10) unsigned NOT NULL DEFAULT '0',
-  `container` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '0 for not a container, otherwise nr of items allowed',
-  PRIMARY KEY (`id`)
+  `id` int(11) unsigned NOT NULL auto_increment,
+  `object_string` char(255) NOT NULL default 'object',
+  `stf_name` char(255) NOT NULL default '0',
+  `stf_file` char(255) NOT NULL default '0',
+  `stf_detail_name` char(255) NOT NULL default '0',
+  `stf_detail_file` char(255) NOT NULL default '0',
+  `bazaar_category` int(11) NOT NULL default '0',
+  `equipSlots` int(10) unsigned NOT NULL default '0',
+  `equipRestrictions` int(10) unsigned NOT NULL default '0',
+  `complete` varchar(3) NOT NULL default 'No',
+  `b_isSitable` int(10) unsigned NOT NULL default '0',
+  `container` int(10) unsigned NOT NULL default '0' COMMENT '0 for not a container, otherwise nr of items allowed',
+  PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2788 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
 --
@@ -59,7 +59,7 @@ CREATE TABLE `item_types` (
 --
 
 /*!40000 ALTER TABLE `item_types` DISABLE KEYS */;
-INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`,`container`) VALUES
+INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`,`container`) VALUES 
  (1,'object/tangible/survey_tool/shared_survey_tool_wind.iff','survey_tool_wind','item_n','survey_tool_wind','item_d',32770,0,0,'No',0,0),
  (2,'object/tangible/survey_tool/shared_survey_tool_gas.iff','survey_tool_gas','item_n','survey_tool_gas','item_d',32770,0,0,'No',0,0),
  (3,'object/tangible/survey_tool/shared_survey_tool_lumber.iff','survey_tool_lumber','item_n','survey_tool_lumber','item_d',32770,0,0,'No',0,0),
@@ -119,7 +119,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (57,'object/tangible/food/crafted/shared_dessert_smugglers_delight.iff','smugglers_delight','food_name','smugglers_delight','food_detail',8202,0,0,'No',0,0),
  (58,'object/tangible/food/base/shared_alcoholic_drink_base.iff','drink_base','food_name','drink_base','food_detail',8216,0,0,'No',0,0),
  (59,'object/tangible/food/crafted/shared_dessert_corellian_fried_icecream.iff','corellian_fried_icecream','food_name','corellian_fried_icecream','food_detail',8202,0,0,'No',0,0),
- (60,'object/tangible/food/shared_meat_object.iff','chicken_leg','food_d','chicken_leg','food_detail',8202,0,0,'No',0,0),
+ (60,'object/tangible/food/shared_meat_object.iff','chicken_leg','food_name','chicken_leg','food_detail',8202,0,0,'No',0,0),
  (61,'object/tangible/food/crafted/shared_drink_tatooine_sunburn.iff','tatooine_sunburn','food_name','tatooine_sunburn','food_detail',8216,0,0,'No',0,0),
  (62,'object/tangible/food/crafted/shared_dish_rakririan_burnout_sauce.iff','rakririan_burnout_sauce','food_name','rakririan_burnout_sauce','food_detail',8202,0,0,'No',0,0),
  (63,'object/tangible/food/foraged/shared_foraged_vegetable_s4.iff','foraged_vegetable_3','food_name','foraged_vegetable_3','food_detail',8202,0,0,'No',0,0),
@@ -1801,13 +1801,13 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (1736,'object/tangible/deed/vehicle_deed/shared_landspeeder_x34_deed.iff','landspeeder_x34','pet_deed','landspeeder_x34','pet_deed',8388613,0,0,'No',0,0),
  (1737,'object/tangible/deed/vehicle_deed/shared_speederbike_deed.iff','speederbike','pet_deed','speederbike','pet_deed',8388613,0,0,'No',0,0),
  (1738,'object/tangible/deed/vehicle_deed/shared_speederbike_swoop_deed.iff','speederbike_swoop','pet_deed','speederbike_swoop','pet_deed',8388613,0,0,'No',0,0),
- (1739,'object/tangible/dice/shared_eqp_chance_cube.iff','eqp_chance_cube_single','dice_details','eqp_chance_cube_single_d','dice_details',8218,0,0,'No',0,0),
- (1740,'object/tangible/dice/shared_eqp_configurable_group_dice.iff','eqp_configurable_group_dice_single','dice_details','eqp_configurable_group_dice_single_d','dice_details',8218,0,0,'No',0,0),
- (1741,'object/tangible/dice/shared_eqp_one_hundred_sided_dice_set.iff','eqp_one_hundred_sided_dice_set_single','dice_details','eqp_one_hundred_sided_dice_set_single_d','dice_details',8218,0,0,'No',0,0),
- (1742,'object/tangible/dice/shared_eqp_six_sided_dice_set.iff','eqp_six_sided_dice_set_single','dice_details','eqp_six_sided_dice_set_single_d','dice_details',8218,0,0,'No',0,0),
- (1743,'object/tangible/dice/shared_eqp_ten_sided_dice_set.iff','eqp_ten_sided_dice_set_single','dice_details','eqp_ten_sided_dice_set_single_d','dice_details',8218,0,0,'No',0,0),
- (1744,'object/tangible/dice/shared_eqp_twelve_sided_dice_set.iff','eqp_twelve_sided_dice_set_single','dice_details','eqp_twelve_sided_dice_set_single_d','dice_details',8218,0,0,'No',0,0),
- (1745,'object/tangible/dice/shared_eqp_twenty_sided_dice_set.iff','eqp_twenty_sided_dice_set_single','dice_details','eqp_twenty_sided_dice_set_single_d','dice_details',8218,0,0,'No',0,0),
+ (1739,'object/tangible/dice/shared_eqp_chance_cube.iff','eqp_chance_cube_single','dice/dice_details','eqp_chance_cube_single_d','dice/dice_details',8218,0,0,'No',0,0),
+ (1740,'object/tangible/dice/shared_eqp_configurable_group_dice.iff','eqp_configurable_group_dice_single','dice/dice_details','eqp_configurable_group_dice_single_d','dice/dice_details',8218,0,0,'No',0,0),
+ (1741,'object/tangible/dice/shared_eqp_one_hundred_sided_dice_set.iff','eqp_one_hundred_sided_dice_set_single','dice/dice_details','eqp_one_hundred_sided_dice_set_single_d','dice/dice_details',8218,0,0,'No',0,0),
+ (1742,'object/tangible/dice/shared_eqp_six_sided_dice_set.iff','eqp_six_sided_dice_set_single','dice/dice_details','eqp_six_sided_dice_set_single_d','dice/dice_details',8218,0,0,'No',0,0),
+ (1743,'object/tangible/dice/shared_eqp_ten_sided_dice_set.iff','eqp_ten_sided_dice_set_single','dice/dice_details','eqp_ten_sided_dice_set_single_d','dice/dice_details',8218,0,0,'No',0,0),
+ (1744,'object/tangible/dice/shared_eqp_twelve_sided_dice_set.iff','eqp_twelve_sided_dice_set_single','dice/dice_details','eqp_twelve_sided_dice_set_single_d','dice/dice_details',8218,0,0,'No',0,0),
+ (1745,'object/tangible/dice/shared_eqp_twenty_sided_dice_set.iff','eqp_twenty_sided_dice_set_single','dice/dice_details','eqp_twenty_sided_dice_set_single_d','dice/dice_details',8218,0,0,'No',0,0),
  (1746,'object/tangible/droid/shared_droid_space_memory_module_1.iff','memory_module','craft_furniture_ingredients_n','memory_module','craft_furniture_ingredients_d',262149,0,0,'No',0,0),
  (1747,'object/tangible/droid/shared_navicomputer_1.iff','navicomp_1','item_n','navicomp_1','item_d',1073741824,0,0,'No',0,0),
  (1748,'object/tangible/droid/shared_navicomputer_2.iff','navicomp_2','item_n','navicomp_2','item_d',1073741824,0,0,'No',0,0),
@@ -2200,17 +2200,17 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (2137,'object/tangible/ship/crafted/reactor/shared_reactor_overcharger_mk3.iff','reactor_overcharger_mk3','space_crafting_n','reactor_overcharger_mk3','space_crafting_d',1073741825,0,0,'No',0,0),
  (2138,'object/tangible/ship/crafted/reactor/shared_reactor_overcharger_mk4.iff','reactor_overcharger_mk4','space_crafting_n','reactor_overcharger_mk4','space_crafting_d',1073741825,0,0,'No',0,0),
  (2139,'object/tangible/ship/crafted/reactor/shared_reactor_overcharger_mk5.iff','reactor_overcharger_mk5','space_crafting_n','reactor_overcharger_mk5','space_crafting_d',1073741825,0,0,'No',0,0),
- (2140,'object/tangible/ship/crafted/repair/shared_repair_kit_armor.iff','repair_kit_armor_n','space_item','repair_kit_armor_n','space_item',32773,0,0,'No',0,0),
- (2141,'object/tangible/ship/crafted/repair/shared_repair_kit_booster.iff','repair_kit_booster_n','space_item','repair_kit_booster_n','space_item',32773,0,0,'No',0,0),
- (2142,'object/tangible/ship/crafted/repair/shared_repair_kit_chassis.iff','repair_kit_chassis','space_item','repair_kit_chassis','space_item',32773,0,0,'No',0,0),
- (2143,'object/tangible/ship/crafted/repair/shared_repair_kit_droid_interface.iff','repair_kit_droid_interface_n','space_item','repair_kit_droid_interface_n','space_item',32773,0,0,'No',0,0),
- (2144,'object/tangible/ship/crafted/repair/shared_repair_kit_engine.iff','repair_kit_engine_n','space_item','repair_kit_engine_n','space_item',32773,0,0,'No',0,0),
- (2145,'object/tangible/ship/crafted/repair/shared_repair_kit_plasma_conduit.iff','repair_kit_conduit_d','space_item','repair_kit_conduit_d','space_item',32773,0,0,'No',0,0),
- (2146,'object/tangible/ship/crafted/repair/shared_repair_kit_reactor.iff','repair_kit_reactor_n','space_item','repair_kit_reactor_n','space_item',32773,0,0,'No',0,0),
- (2147,'object/tangible/ship/crafted/repair/shared_repair_kit_shield_generator.iff','repair_kit_shield_n','space_item','repair_kit_shield_n','space_item',32773,0,0,'No',0,0),
- (2148,'object/tangible/ship/crafted/repair/shared_repair_kit_ship.iff','repair_kit_ship_n','space_item','repair_kit_ship_n','space_item',32773,0,0,'No',0,0),
- (2149,'object/tangible/ship/crafted/repair/shared_repair_kit_weapon.iff','repair_kit_weapon_n','space_item','repair_kit_weapon_n','space_item',32773,0,0,'No',0,0),
- (2150,'object/tangible/ship/crafted/repair/shared_repair_kit_weapon_capacitor.iff','repair_kit_capacitor_n','space_item','repair_kit_capacitor_n','space_item',32773,0,0,'No',0,0),
+ (2140,'object/tangible/ship/crafted/repair/shared_repair_kit_armor.iff','repair_kit_armor_n','space/space_item','repair_kit_armor_n','space/space_item',32773,0,0,'No',0,0),
+ (2141,'object/tangible/ship/crafted/repair/shared_repair_kit_booster.iff','repair_kit_booster_n','space/space_item','repair_kit_booster_n','space/space_item',32773,0,0,'No',0,0),
+ (2142,'object/tangible/ship/crafted/repair/shared_repair_kit_chassis.iff','repair_kit_chassis','space/space_item','repair_kit_chassis','space/space_item',32773,0,0,'No',0,0),
+ (2143,'object/tangible/ship/crafted/repair/shared_repair_kit_droid_interface.iff','repair_kit_droid_interface_n','space/space_item','repair_kit_droid_interface_n','space/space_item',32773,0,0,'No',0,0),
+ (2144,'object/tangible/ship/crafted/repair/shared_repair_kit_engine.iff','repair_kit_engine_n','space/space_item','repair_kit_engine_n','space/space_item',32773,0,0,'No',0,0),
+ (2145,'object/tangible/ship/crafted/repair/shared_repair_kit_plasma_conduit.iff','repair_kit_conduit_d','space/space_item','repair_kit_conduit_d','space/space_item',32773,0,0,'No',0,0),
+ (2146,'object/tangible/ship/crafted/repair/shared_repair_kit_reactor.iff','repair_kit_reactor_n','space/space_item','repair_kit_reactor_n','space/space_item',32773,0,0,'No',0,0),
+ (2147,'object/tangible/ship/crafted/repair/shared_repair_kit_shield_generator.iff','repair_kit_shield_n','space/space_item','repair_kit_shield_n','space/space_item',32773,0,0,'No',0,0),
+ (2148,'object/tangible/ship/crafted/repair/shared_repair_kit_ship.iff','repair_kit_ship_n','space/space_item','repair_kit_ship_n','space/space_item',32773,0,0,'No',0,0),
+ (2149,'object/tangible/ship/crafted/repair/shared_repair_kit_weapon.iff','repair_kit_weapon_n','space/space_item','repair_kit_weapon_n','space/space_item',32773,0,0,'No',0,0),
+ (2150,'object/tangible/ship/crafted/repair/shared_repair_kit_weapon_capacitor.iff','repair_kit_capacitor_n','space/space_item','repair_kit_capacitor_n','space/space_item',32773,0,0,'No',0,0),
  (2151,'object/tangible/ship/crafted/reverse_engineering/shared_analysis_tool.iff','analysis_tool','space_crafting_n','analysis_tool','space_crafting_d',32768,0,0,'No',0,0),
  (2152,'object/tangible/ship/crafted/shields/shared_adv_deflector_shields.iff','adv_deflector_shields','space_crafting_n','adv_deflector_shields','space_crafting_d',1073741827,0,0,'No',0,0),
  (2153,'object/tangible/ship/crafted/shields/shared_deflector_shields.iff','deflector_shields','space_crafting_n','deflector_shields','space_crafting_d',1073741827,0,0,'No',0,0),
@@ -2297,9 +2297,9 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (2234,'object/tangible/ship/crafted/weapon/shared_quick_shot_upgrade_mk5.iff','quick_shot_upgrade_mk5','space_crafting_n','quick_shot_upgrade_mk5','space_crafting_d',1073741837,0,0,'No',0,0),
  (2235,'object/tangible/ship/crafted/weapon/shared_shield_effectiveness_intensifier_mk1.iff','shield_effectiveness_intensifier_mk1','space_crafting_n','shield_effectiveness_intensifier_mk1','space_crafting_d',1073741837,0,0,'No',0,0),
  (2236,'object/tangible/ship/crafted/weapon/shared_shield_effectiveness_intensifier_mk2.iff','shield_effectiveness_intensifier_mk2','space_crafting_n','shield_effectiveness_intensifier_mk2','space_crafting_d',1073741837,0,0,'No',0,0),
- (2237,'object/tangible/ship/crafted/weapon/shared_shield_effectiveness_intensifier_mk3.iff','shield_effectiveness_intensifier_mk3','space_crafting_n','shield_effectiveness_intensifier_mk3','space_crafting_d',1073741837,0,0,'No',0,0),
- (2238,'object/tangible/ship/crafted/weapon/shared_shield_effectiveness_intensifier_mk4.iff','shield_effectiveness_intensifier_mk4','space_crafting_n','shield_effectiveness_intensifier_mk4','space_crafting_d',1073741837,0,0,'No',0,0);
+ (2237,'object/tangible/ship/crafted/weapon/shared_shield_effectiveness_intensifier_mk3.iff','shield_effectiveness_intensifier_mk3','space_crafting_n','shield_effectiveness_intensifier_mk3','space_crafting_d',1073741837,0,0,'No',0,0);
 INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`,`container`) VALUES 
+ (2238,'object/tangible/ship/crafted/weapon/shared_shield_effectiveness_intensifier_mk4.iff','shield_effectiveness_intensifier_mk4','space_crafting_n','shield_effectiveness_intensifier_mk4','space_crafting_d',1073741837,0,0,'No',0,0),
  (2239,'object/tangible/ship/crafted/weapon/shared_shield_effectiveness_intensifier_mk5.iff','shield_effectiveness_intensifier_mk5','space_crafting_n','shield_effectiveness_intensifier_mk5','space_crafting_d',1073741837,0,0,'No',0,0),
  (2240,'object/tangible/ship/crafted/weapon/shared_speed_limiter_upgrade_mk1.iff','speed_limiter_upgrade_mk1','space_crafting_n','speed_limiter_upgrade_mk1','space_crafting_d',1073741837,0,0,'No',0,0),
  (2241,'object/tangible/ship/crafted/weapon/shared_speed_limiter_upgrade_mk2.iff','speed_limiter_upgrade_mk2','space_crafting_n','speed_limiter_upgrade_mk2','space_crafting_d',1073741837,0,0,'No',0,0),
@@ -2645,9 +2645,13 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (2783,'object/factory/shared_factory_crate_installation.iff','installation_crate','factory_n','installation_crate','factory_d',8209,0,0,'yes',0,1),
  (2784,'object/tangible/food/foraged/shared_edible_jar_bugs.iff','fishing_bait_insect','item_n','fishing_bait_insect','item_d',8215,0,0,'No',0,1),
  (2785,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_worm','item_n','fishing_bait_worm','item_d',8215,0,0,'No',0,1),
- (2786,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_grub','item_n','fishing_bait_grub','item_d',8215,0,0,'No',0,1),
+ (2786,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_grub','item_n','fishing_bait_grub','item_d',8215,0,0,'No',0,1);
+INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`,`container`) VALUES 
  (2787,'object/tangible/food/foraged/shared_edible_jar_livers.iff','fishing_bait_chum','item_n','fishing_bait_chum','item_d',8215,0,0,'No',0,1);
 /*!40000 ALTER TABLE `item_types` ENABLE KEYS */;
+
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
