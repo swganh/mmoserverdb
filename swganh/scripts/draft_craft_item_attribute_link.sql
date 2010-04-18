@@ -49,6 +49,7 @@ CREATE TABLE `draft_craft_item_attribute_link` (
   `attribute_min` float(10,2) NOT NULL DEFAULT '0.00',
   `attribute_max` float(10,2) NOT NULL DEFAULT '0.00',
   `attribute_type` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `id` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`list_id`,`item_attribute`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
@@ -2111,7 +2112,7 @@ INSERT INTO `draft_craft_item_attribute_link` (`list_id`,`item_attribute`,`attri
  (1546,80,270.00,365.00,0,2051),
  (1547,321,10200.00,13800.00,0,2052),
  (1548,321,-975.00,-525.00,0,2053);
-INSERT INTO `draft_craft_item_attribute_link` (`list_id`,`item_attribute`,`attribute_min`,`attribute_max`,`attribute_type`,`id`) VALUES 
+INSERT INTO `draft_craft_item_attribute_link` (`list_id`,`item_attribute`,`attribute_min`,`attribute_max`,`attribute_type`,`id`) VALUES
  (1549,509,-650.00,-350.00,0,2054),
  (1550,321,525.00,975.00,0,2055),
  (1551,509,350.00,650.00,0,2056),
@@ -2743,7 +2744,6 @@ INSERT INTO `draft_craft_item_attribute_link` (`list_id`,`item_attribute`,`attri
  (2159,185,25.00,50.00,0,2688),
  (2159,89,67.00,124.00,0,2689),
  (2159,90,36.00,60.00,0,2690),
- (2159,90,36.00,60.00,0,2691),
  (2160,526,0.00,0.00,0,2692),
  (2161,531,53.00,98.00,0,2693),
  (2161,512,235.00,436.00,0,2694),
