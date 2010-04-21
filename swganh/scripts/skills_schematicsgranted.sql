@@ -125,6 +125,7 @@ INSERT INTO `skills_schematicsgranted` (`skill_id`,`schem_group_id`) VALUES
  (473,70),
  (474,71),
  (475,72),
+ (475,269),
  (476,73),
  (471,74),
  (471,75),
