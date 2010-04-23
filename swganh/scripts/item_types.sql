@@ -1825,7 +1825,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (1760,'object/tangible/firework/shared_firework_three.iff','firework_three','firework_n','firework_three','firework_d',8217,0,0,'No',0,0),
  (1761,'object/tangible/firework/shared_firework_two.iff','firework_two','firework_n','firework_two','firework_d',8217,0,0,'No',0,0),
  (1762,'object/tangible/firework/shared_show.iff','show','firework_n','show','firework_d',8217,0,0,'No',0,0),
- (1763,'object/tangible/fishing/shared_fishing_pole.iff','fishing_pole','item_n','fishing_pole','firework_d',8217,0,0,'No',0,0),
+ (1763,'object/tangible/fishing/shared_fishing_pole.iff','fishing_pole','item_n','fishing_pole','item_d',8214,0,0,'No',0,0),
  (1764,'object/tangible/furniture/all/shared_frn_all_lamp_desk_s01.iff','frn_lamp_desk','frn_n','frn_lamp_desk','frn_d',8203,0,0,'No',0,0),
  (1768,'object/tangible/medicine/crafted/shared_crafted_stimpack_sm_s1_a.iff','stimpack_sm_s1_a','medicine_name','stimpack_sm_s1_a','medicine_detail',8205,0,0,'No',0,0),
  (1769,'object/tangible/medicine/crafted/shared_crafted_stimpack_sm_s1_b.iff','stimpack_sm_s1_b','medicine_name','stimpack_sm_s1_b','medicine_detail',8205,0,0,'No',0,0),
