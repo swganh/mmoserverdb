@@ -865,7 +865,7 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513076137,1028647,2,'object/mobile/shared_dressed_commoner_tatooine_nikto_male_05.iff','Deohapim','Ena',0,0,0,1,1,0,0.29,0,0.96,-11.39,-0.89,1.2,8,'nikto_base_male','npc_name',1),
  (47513076141,1028646,2,'object/mobile/shared_dressed_victor_questn_cantina.iff','Ssicare','Gawin',0,0,0,1,1,0,-0.12,0,0.99,32.25,0.1,-7.74,8,'twilek_base_male','npc_name',1),
  (47513076145,0,2,'object/mobile/shared_dressed_stormtrooper_sand_trooper_m.iff',NULL,NULL,0,0,0,1,3,0,0.7,0,-0.69,-1446.55,10,-3738.11,8,'crackdown_elite_sand_trooper','mob/creature_names',1),
- (47513076151,0,2,'object/mobile/shared_dark_trooper.iff','','',0,0,0,1,3,0,0.99,0,0.11,-1486.88,12,-3627.77,8,'crackdown_elite_dark_trooper','mob/creature_names',1.1),
+ (47513076151,0,2,'object/mobile/shared_dark_trooper.iff','','',0,0,0,1,3,0,0.99,0,0.11,-1484.2,12,-3631.7,8,'crackdown_elite_dark_trooper','mob/creature_names',1.1),
  (47513076153,0,2,'object/mobile/shared_dressed_commoner_tatooine_trandoshan_female_03.iff',NULL,NULL,0,0,0,1,1,0,-0.28,0,0.96,-1429.79,10,-3773.31,8,'commoner','mob/creature_names',1),
  (47513076161,0,2,'object/mobile/shared_dressed_imperial_medic1_human_male_01.iff',NULL,NULL,0,0,0,1,3,0,0.95,0,-0.3,-1413,10,-3780.9,8,'crackdown_imperial_medic_hard','mob/creature_names',1),
  (47513076169,0,2,'object/mobile/shared_dressed_scout_trooper_white_white.iff',NULL,NULL,0,0,0,1,3,0,0.27,0,0.96,-1485.56,12,-3639.62,8,'crackdown_scout_trooper','mob/creature_names',1),
