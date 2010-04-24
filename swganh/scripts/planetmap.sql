@@ -341,7 +341,7 @@ INSERT INTO `planetmap` (`id`,`category_id`,`planet_id`,`x`,`y`,`z`,`icon`,`name
  (552,30,0,-6517.00,0.00,405.00,0,'Rebel Recruiter'),
  (553,30,0,-5276.00,0.00,-2509.00,0,'Rebel Recruiter'),
  (554,30,4,-4748.00,0.00,4.00,0,'Rebel Recruiter'),
- (555,30,5,-5470.00,0.00,4414.00,0,'Rebel Recruiter'),
+ (555,30,5,-5470.00,0.00,4414.00,0,'Imperial Recruiter'),
  (556,30,5,4869.00,0.00,-4593.00,0,'Rebel Recruiter'),
  (557,30,8,134.00,0.00,-5351.00,0,'Rebel Recruiter'),
  (558,30,8,-5296.00,0.00,-6530.00,0,'Rebel Recruiter'),
