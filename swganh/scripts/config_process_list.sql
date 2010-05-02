@@ -61,13 +61,13 @@ CREATE TABLE `config_process_list` (
 
 /*!40000 ALTER TABLE `config_process_list` DISABLE KEYS */;
 INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name`,`description`,`serverstartID`) VALUES 
- (0,'',0,0,0,'login','Handles initial connectivity and authentication of client.',1),
- (1,'',5000,2,0,'connection','Handles all client connections.',3),
+ (0,'',0,0,1,'login','Handles initial connectivity and authentication of client.',1),
+ (1,'',5000,0,1,'connection','Handles all client connections.',3),
  (2,'',0,0,0,'unused','Unused server ID.',0),
  (3,'',0,0,0,'unused','Unused server ID.',0),
  (4,'',0,0,0,'unused','Unused server ID.',0),
- (5,'',5100,2,0,'admin','Handles miscellaneous game functions that just don\'t fit elsewhere.',2),
- (6,'',5300,2,1,'chat','Handles chat,tells,mails,tickets',2),
+ (5,'',5100,0,1,'admin','Handles miscellaneous game functions that just don\'t fit elsewhere.',2),
+ (6,'',5300,0,1,'chat','Handles chat,tells,mails,tickets',2),
  (7,'',0,0,0,'unused','Unused server ID.',0),
  (8,'',2223,0,0,'corellia','Zone server for Corellia',0),
  (9,'',2133,0,0,'dantooine','Zone server for Dantooine',0),
@@ -110,7 +110,7 @@ INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name
  (46,'',1786,0,0,'simple','',0),
  (47,'',0,0,0,'space_09','',0),
  (48,'',0,0,0,'test_wearables','',0),
- (49,'',6000,0,0,'tutorial','',0),
+ (49,'',6000,0,1,'tutorial','',0),
  (50,'',4104,0,0,'taanab','Zone server for Tanaab',0),
  (51,'',2416,0,0,'dagobah','Zone server for Dagobah.',0);
 /*!40000 ALTER TABLE `config_process_list` ENABLE KEYS */;
