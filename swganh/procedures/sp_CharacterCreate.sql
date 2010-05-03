@@ -184,7 +184,7 @@ charCreate:BEGIN
 		
         INSERT INTO characters VALUES (character_id, start_account_id, start_galaxy_id, start_firstname, start_lastname, race_id, character_parent_id, start_planet, start_x, start_y, start_z, oX, oY, oZ, oW, 0, NULL, 0, CURDATE() + 0);
 
-        INSERT INTO inventories VALUES (inventory_id,1,1000000);
+        INSERT INTO inventories VALUES (inventory_id,1,1000);
         INSERT INTO banks VALUES (bank_id,1000,-1);
         INSERT INTO datapads VALUES (datapad_id,1);
         INSERT INTO character_attributes VALUES (character_id, 1, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, battlefatigue,0,0,NULL,0,0,1,0,0,0,3);
