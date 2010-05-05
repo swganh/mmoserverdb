@@ -1,4 +1,4 @@
-/*
+﻿/*
 ---------------------------------------------------------------------------------------
 This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
 
@@ -176,11 +176,15 @@ charCreate:BEGIN
         SELECT skill_id from skills where skill_name like start_profession INTO profession_id;
 
 		-- Don't set any default skills or XP when creating player in the Tutorial.
-        IF start_planet = 41 THEN
+        IF start_city = 'tutorial' THEN
 			SET character_parent_id = 2203318222960;
-			SET tutorialcontainer_id = 2533274790395904;
+			SET tutorialcontainer_id = 2533274790395905;
 			SET privateowner_id = character_id;
         END IF;
+		
+		IF start_city = 'default_location' THEN
+			SET character_parent_id = 2203318222975;
+		END IF;
 		
         INSERT INTO characters VALUES (character_id, start_account_id, start_galaxy_id, start_firstname, start_lastname, race_id, character_parent_id, start_planet, start_x, start_y, start_z, oX, oY, oZ, oW, 0, NULL, 0, CURDATE() + 0);
 
@@ -192,7 +196,7 @@ charCreate:BEGIN
         INSERT INTO character_movement VALUES(character_id,5.75,1.50,1.00,0.0125);
         INSERT INTO character_tutorial VALUES(character_id,1,1,start_profession);
         
-        IF start_planet <> 41 THEN
+        IF start_city <> 'tutorial' THEN
 			SET base_skill_id = profession_id + 1;
 			CALL sp_CharacterSkillsCreate(character_id,base_skill_id,race_id);
 			CALL sp_CharacterXpCreate(character_id,base_skill_id);
@@ -216,7 +220,7 @@ charCreate:BEGIN
 	-- SELECT id FROM items WHERE parent_id = inventory_id AND item_type = 89 INTO melon_id;
 	-- INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
 
-    IF start_planet = 41 THEN
+    IF start_city = 'tutorial' THEN
 		SELECT id FROM items WHERE items.privateowner_id = character_id AND items.item_type = 89 INTO melon_id;
 		INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
 	ELSE
