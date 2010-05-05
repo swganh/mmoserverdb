@@ -178,7 +178,7 @@ charCreate:BEGIN
 		-- Don't set any default skills or XP when creating player in the Tutorial.
         IF start_city = 'tutorial' THEN
 			SET character_parent_id = 2203318222960;
-			SET tutorialcontainer_id = 2533274790395905;
+			SET tutorialcontainer_id = 2533274790395904;
 			SET privateowner_id = character_id;
         END IF;
 		
