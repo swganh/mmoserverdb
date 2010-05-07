@@ -75,7 +75,7 @@ INSERT INTO `starting_location` (`location_id`,`location`,`planet_id`,`x`,`y`,`z
  (14,'moenia',5,4800.000000,0.000000,-4700.000000,'Moenia, Naboo',3,180),
  (15,'keren',5,1441.000000,0.000000,2771.000000,'Keren, Naboo',3,180),
  (16,'kaadara',5,5209.000000,0.000000,6677.000000,'Kaadara, Naboo',3,180),
- (17,'tutorial',41,0.000000,0.000000,0.000000,'Tutorial',3,180);
+ (17,'tutorial',41,0.000000,0.000000,0.000000,'Tutorial',3,180),
  (18,'default_location',41, 27.4, -42, -161.1, 'Skipped Tutorial', 3, 180);
 /*!40000 ALTER TABLE `starting_location` ENABLE KEYS */;
 
