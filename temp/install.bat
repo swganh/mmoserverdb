@@ -40,13 +40,18 @@ TITLE %title%
 ::
 
 @ECHO OFF
+	call:READ_CFG
 	call:ScreenIntro
-	call:Setup
 	call:MainMenu
 
 	::
 	:: Functions
 	::
+
+:READ_CFG
+        FOR /F "tokens=2 delims==" %%a IN ('find "username" ^< setup.cfg') DO SET db_user=%%a
+        FOR /F "tokens=2 delims==" %%a IN ('find "password" ^< setup.cfg') DO SET db_pass=%%a
+        FOR /F "tokens=2 delims==" %%a IN ('find "host" ^< setup.cfg') DO SET db_host=%%a
 
 :ScreenIntro
 	CLS
