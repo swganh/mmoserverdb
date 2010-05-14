@@ -37,22 +37,22 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 USE swganh;
 --
--- Definition of table `mood_animations`
+-- Definition of table `npc_mood_animations`
 --
 
-DROP TABLE IF EXISTS `mood_animations`;
-CREATE TABLE `mood_animations` (
+DROP TABLE IF EXISTS `npc_mood_animations`;
+CREATE TABLE `npc_mood_animations` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `animation_type` varchar(45) NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='animations for the npcs';
 
 --
--- Dumping data for table `mood_animations`
+-- Dumping data for table `npc_mood_animations`
 --
 
-/*!40000 ALTER TABLE `mood_animations` DISABLE KEYS */;
-INSERT INTO `mood_animations` (`id`,`animation_type`) VALUES 
+/*!40000 ALTER TABLE `npc_mood_animations` DISABLE KEYS */;
+INSERT INTO `npc_mood_animations` (`id`,`animation_type`) VALUES 
  (1,'bored'),
  (2,'calm'),
  (3,'conversation'),
@@ -76,7 +76,7 @@ INSERT INTO `mood_animations` (`id`,`animation_type`) VALUES
  (21,'npc_use_console_ag'),
  (22,'npc_use_terminal_high'),
  (23,'npc_use_terminal_low');
-/*!40000 ALTER TABLE `mood_animations` ENABLE KEYS */;
+/*!40000 ALTER TABLE `npc_mood_animations` ENABLE KEYS */;
 
 
 
