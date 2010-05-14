@@ -51,7 +51,7 @@ CREATE TABLE `attributes` (
   `item_tool_internal_2` int(10) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `pk_attributes_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2060 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2086 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `attributes`
@@ -74,8 +74,8 @@ INSERT INTO `attributes` (`id`,`name`,`internal`,`attribute_internal_description
  (13,'npc_chat',1,'NPCs Chatter',0,0),
  (14,'complexity',1,'Complexity:',0,0),
  (15,'craft_tool_effectiveness',0,'Tool Effectiveness:',0,0),
- (16,'serial_number',0,'[*] Serial Number:',0,0),
- (17,'crafter',0,'[*] Object Creator:',0,0),
+ (16,'serial_number',0,'Serial Number:',0,0),
+ (17,'crafter',0,'Object Creator:',0,0),
  (18,'craft_tool_status',0,'Crafting Tool Status:',0,0),
  (19,'craft_tool_typemask',1,'Bitmask type for tool',0,0),
  (20,'xp',0,'Experience',0,0),
@@ -457,7 +457,7 @@ INSERT INTO `attributes` (`id`,`name`,`internal`,`attribute_internal_description
  (396,'experiment_bonus_eff',0,'Experimentation Bonus',0,0),
  (397,'extractrate',0,'Extraction Rate',0,0),
  (398,'faction_restriction',0,'Faction Restriction',0,0),
- (399,'factory_attribs',0,'Item Attributes',0,0),
+ (399,'factory_attribs',0,'- - - - - - Item Attributes - - - - - -',0,0),
  (400,'factory_count',0,'Item Count',0,0),
  (401,'ferocity',0,'Ferocity',0,0),
  (402,'fierceness',0,'Fierceness',0,0),
@@ -624,7 +624,7 @@ INSERT INTO `attributes` (`id`,`name`,`internal`,`attribute_internal_description
  (563,'orange_rug_thread_05',0,'Orange Rug Thread - Fifth Section',0,0),
  (564,'orange_rug_thread_06',0,'Orange Rug Thread - Sixth Section',0,0),
  (565,'orange_rug_thread_07',0,'Orange Rug Thread - Seventh Section',0,0),
- (566,'original_name',0,'[*] Variation Of:',0,0),
+ (566,'original_name',0,'Variation Of:',0,0),
  (567,'original_name_creature',0,'Type',0,0),
  (568,'owner',0,'Master',0,0),
  (569,'parking_spot',0,'Hangar Location:',0,0),
@@ -852,7 +852,7 @@ INSERT INTO `attributes` (`id`,`name`,`internal`,`attribute_internal_description
  (791,'wpn_attack_cost_health',0,'Special Move Health Cost',0,0),
  (792,'wpn_attack_cost_mind',0,'Special Move Mind Cost',0,0),
  (793,'wpn_attack_speed',0,'Attack Speed:',0,0),
- (794,'wpn_attr',0,'[*] Weapon Attributes:',0,0),
+ (794,'wpn_attr',0,'Weapon Attributes:',0,0),
  (795,'wpn_comp_damage_max',0,'Maximum Damage:',0,0),
  (796,'wpn_comp_damage_min',0,'Minimum Damge:',0,0),
  (797,'wpn_damage_max',0,'Max:',0,0),
@@ -1412,10 +1412,13 @@ INSERT INTO `attributes` (`id`,`name`,`internal`,`attribute_internal_description
  (2081,'cat_pup.pup_wpn_wound_chance',0,'Wound Chance:',7,0),
  (2082,'cat_armor_encumbrance.armor_health_encumbrance',0,'Health:',11,1),
  (2083,'cat_armor_encumbrance.armor_action_encumbrance',0,'Action:',11,0),
- (2084,'cat_armor_encumbrance.armor_mind_encumbrance',0,'Mind:',11,0);
- 
-
+ (2084,'cat_armor_encumbrance.armor_mind_encumbrance',0,'Mind:',11,0),
+ (2085,'needs_setup',1,'schem_tool use only',0,0);
 /*!40000 ALTER TABLE `attributes` ENABLE KEYS */;
+
+
+
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
