@@ -40,16 +40,18 @@ use swganh;
 
 DROP TABLE IF EXISTS `character_buffs`;
 CREATE TABLE `character_buffs` (
-  	`buff_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-	`character_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-	`instigator_id` bigint(20) unsigned DEFAULT '0',
-	`max_ticks` bigint(20) unsigned NOT NULL DEFAULT '0',
-	`tick_length` bigint(20) unsigned NOT NULL DEFAULT '0',
-	`current_tick` bigint(20) unsigned DEFAULT '0',
-	`icon` integer unsigned NOT NULL DEFAULT '0',
-	`current_global_tick` bigint(20) unsigned NOT NULL DEFAULT '0',
-	`start_global_tick` bigint(20) unsigned NOT NULL DEFAULT '0',
-	PRIMARY KEY (`buff_id`,`character_id`)
+  `buff_id` bigint(20) unsigned NOT NULL default '0',
+  `character_id` bigint(20) unsigned NOT NULL default '0',
+  `instigator_id` bigint(20) unsigned default '0',
+  `max_ticks` bigint(20) unsigned NOT NULL default '0',
+  `tick_length` bigint(20) unsigned NOT NULL default '0',
+  `current_tick` bigint(20) unsigned default '0',
+  `icon` int(10) unsigned NOT NULL default '0',
+  `current_global_tick` bigint(20) unsigned NOT NULL default '0',
+  `start_global_tick` bigint(20) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`buff_id`,`character_id`),
+  KEY `FK_Buffs` (`character_id`),
+  CONSTRAINT `FK_Buffs` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40000 ALTER TABLE `character_buffs` ENABLE KEYS */;
