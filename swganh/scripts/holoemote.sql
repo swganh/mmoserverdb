@@ -65,7 +65,8 @@ INSERT INTO `holoemote` (`crc`,`effect_id`,`name`) VALUES
  (3980353984,695,'bubblehead'),
  (3986851258,696,'holonotes'),
  (4220169270,699,'butterflies'),
- (4289766731,700,'brainstorm');
+ (4289766731,700,'brainstorm'),
+ (0,0,'all');
 /*!40000 ALTER TABLE `holoemote` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
