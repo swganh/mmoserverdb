@@ -61,12 +61,12 @@ CREATE TABLE `config_process_list` (
 
 /*!40000 ALTER TABLE `config_process_list` DISABLE KEYS */;
 INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name`,`description`,`serverstartID`) VALUES 
- (0,'',0,0,1,'login','Handles initial connectivity and authentication of client.',1),
- (1,'',5000,0,1,'connection','Handles all client connections.',3),
+ (0,'',0,0,0,'login','Handles initial connectivity and authentication of client.',1),
+ (1,'',5000,0,0,'connection','Handles all client connections.',3),
  (2,'',0,0,0,'unused','Unused server ID.',0),
  (3,'',0,0,0,'unused','Unused server ID.',0),
  (4,'',0,0,0,'unused','Unused server ID.',0),
- (5,'',5100,0,1,'admin','Handles miscellaneous game functions that just don\'t fit elsewhere.',2),
+ (5,'',5100,0,0,'admin','Handles miscellaneous game functions that just don\'t fit elsewhere.',2),
  (6,'',5300,0,1,'chat','Handles chat,tells,mails,tickets',2),
  (7,'',0,0,0,'unused','Unused server ID.',0),
  (8,'',2223,0,0,'corellia','Zone server for Corellia',0),
@@ -77,7 +77,7 @@ INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name
  (13,'',2127,0,0,'naboo','Zone server for Naboo',0),
  (14,'',2145,0,0,'rori','Zone server for Rori',0),
  (15,'',2163,0,0,'talus','Zone server for Talus',0),
- (16,'',5200,0,0,'tatooine','Zone server for Tatooine',4),
+ (16,'',5200,0,1,'tatooine','Zone server for Tatooine',4),
  (17,'',2157,0,0,'yavin4','Zone server for Yavin 4',0),
  (18,'',0,0,0,'space_corellia','Zone server for Corellian Space 1',0),
  (19,'',0,0,0,'space_corellia_2','Zone server for Corellian Space 2',0),
