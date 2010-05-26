@@ -243,6 +243,7 @@ GOTO :PROCESS_ARGS
 	
 	IF "%INSTALL_TYPE%" == "all" (
 		cd "%PROJECT_BASE%swganh"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create_users.sql"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
 		cd "%PROJECT_BASE%swganh_archive"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
@@ -346,6 +347,7 @@ GOTO :PROCESS_ARGS
 	
 	IF "%INSTALL_TYPE%" == "swganh" (
 		cd "%PROJECT_BASE%swganh"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create_users.sql"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
 		cd "%PROJECT_BASE%swganh\scripts"
 		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
