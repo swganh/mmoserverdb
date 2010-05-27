@@ -33,26 +33,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 use swganh_config;
 
---
--- Definition of procedure `sp_AdminAddAccount` 
---
--- Use: CALL sp_AdminAddAccount('username', 'userpass', 'useremail');
---
--- (Returns:
---	OK = 0,
---      NotFound = 1,
---      SQLException = 2,
---      SQLWarning = 3,
--- )
---
-
 DELIMITER $$
 
 DROP PROCEDURE IF EXISTS `sp_AdminAddAccount` $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='' */ $$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_AdminAddAccount`(IN username CHAR(32), userpass CHAR(64), email CHAR(64))
+CREATE PROCEDURE `sp_AdminAddAccount`(IN username CHAR(32), userpass CHAR(64), email CHAR(64))
 BEGIN
 
   ##
@@ -61,50 +48,31 @@ BEGIN
   DECLARE mAccount_id BIGINT(20);
   DECLARE mStation_id BIGINT(20);
   DECLARE mAccount_password CHAR(64);
-  DECLARE exit_status INT;
 
-  DECLARE EXIT HANDLER FOR NOT FOUND
-      BEGIN
-        SET exit_status = 1;
-          ROLLBACK;
-        SELECT exit_status;
-      END;
-
-
-  DECLARE EXIT HANDLER FOR SQLEXCEPTION
-      BEGIN
-        SET exit_status = 2;
-          ROLLBACK;
-        SELECT exit_status;
-      END;
-
-  DECLARE EXIT HANDLER FOR SQLWARNING
-      BEGIN
-        SET exit_status = 3;
-          ROLLBACK;
-        SELECT exit_status;
-      END;
 
   ##
   ## Prefetch the data neeeded
 
-  SELECT SHA1(userpass) INTO maccount_password;
-
-  SET exit_status = 0;
+  SELECT SHA1(userpass) INTO mAccount_password;
 
   ##
   ## Insert the new User Account
 
-  START TRANSACTION;
+  SELECT MAX(account_id) + 1 FROM swganh.account INTO mAccount_id FOR UPDATE;
 
-        SELECT MAX(account_id) + 1 FROM account INTO mAccount_id FOR UPDATE;
-        SELECT MAX(station_id) + 1 FROM account INTO mStation_id;
+    IF mAccount_id IS NULL THEN
+      SET mAccount_id = 1;
+    END IF;
 
-        INSERT INTO account VALUES (NULL, username, mAccount_password, mStation_id, 0, 0, email, NOW(), NOW(), 1, 0, 0, 1, '');
+  SELECT MAX(station_id) + 1 FROM swganh.account INTO mStation_id;
 
-  COMMIT;
+    IF mStation_id IS NULL THEN
+      SET mStation_id = 1000000;
+    END IF;
 
-  SELECT exit_status;
+   INSERT INTO swganh.account VALUES (NULL, username, mAccount_password, mStation_id, 0, 0, email, NOW(), NOW(), 1, 0, 0, 1, NULL);
+
+  SELECT mAccount_id;
 
 END $$
 
