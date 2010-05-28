@@ -360,7 +360,7 @@ CREATE TABLE `MemRandomPool` (
 
 	loop1: LOOP
 	INSERT INTO MemRandomPool
-  SELECT * from resource_template where type like 'mineral_resource' AND type_swg NOT LIKE '%smelted%' AND type_swg NOT LIKE '%fiberplast%' AND type_swg NOT LIKE '%iron%' AND id != 682 AND id != 683 AND id != 683 AND id != 684 AND id != 685 AND id != 686 AND id != 687 AND id != 688 AND id != 689 ORDER BY RAND() LIMIT 1;
+  	SELECT * from resource_template WHERE TYPE LIKE 'mineral_resource' OR namefile_name LIKE 'reactive' OR namefile_name LIKE 'inert' AND type_swg NOT LIKE '%smelted%' AND type_swg NOT LIKE '%fiberplast%' AND type_swg NOT LIKE '%iron%' AND id != 682 AND id != 683 AND id != 683 AND id != 684 AND id != 685 AND id != 686 AND id != 687 AND id != 688 AND id != 689 ORDER BY RAND() LIMIT 1;
 	IF loop_counter = 22 THEN
 	LEAVE loop1;
 	ELSE SET loop_counter = loop_counter + 1;
