@@ -54,7 +54,7 @@ BEGIN
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
         SELECT item_family,item_type INTO mFamily_id,mType_id FROM draft_schematic_item_link WHERE schematic_id = schemCrc;
         
-        INSERT INTO items VALUES (NULL,parent_id,mFamily_id,mType_id,parent_id,0,0,0,0,inX,inY,inZ,inPlanet,custom_name,100,0,schemCrc);
+        INSERT INTO items VALUES (NULL,parent_id,mFamily_id,mType_id,parent_id,0,0,0,1,inX,inY,inZ,inPlanet,custom_name,100,0,schemCrc);
         SET tmpId = LAST_INSERT_ID();
         
         IF mFamily_id = 7 THEN
