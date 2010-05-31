@@ -53,7 +53,7 @@ BEGIN
 
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
 
-        INSERT INTO items VALUES (NULL,parent_id,21,1166,0,0,0,0,0,0,0,0,99,"",100,0,0);
+        INSERT INTO items VALUES (NULL,parent_id,21,1166,0,0,0,0,1,0,0,0,99,"",100,0,0);
 
         SET tmpId = LAST_INSERT_ID();
 
