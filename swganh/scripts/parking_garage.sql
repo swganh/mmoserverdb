@@ -50,7 +50,9 @@ CREATE TABLE `parking_garage` (
   `z` float NOT NULL,
   `planet` int(2) NOT NULL,
   `radius` bigint(4) NOT NULL default '0',
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY  (`id`),
+  KEY `FK_planet` (`planet`),
+  CONSTRAINT `FK_planet` FOREIGN KEY (`planet`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
