@@ -62,23 +62,23 @@ CREATE TABLE `config_process_list` (
 /*!40000 ALTER TABLE `config_process_list` DISABLE KEYS */;
 INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name`,`description`,`serverstartID`) VALUES 
  (0,'',0,0,0,'login','Handles initial connectivity and authentication of client.',1),
- (1,'',5000,0,0,'connection','Handles all client connections.',3),
+ (1,'',0,0,0,'connection','Handles all client connections.',3),
  (2,'',0,0,0,'unused','Unused server ID.',0),
  (3,'',0,0,0,'unused','Unused server ID.',0),
  (4,'',0,0,0,'unused','Unused server ID.',0),
- (5,'',5100,0,0,'admin','Handles miscellaneous game functions that just don\'t fit elsewhere.',2),
- (6,'',5300,0,1,'chat','Handles chat,tells,mails,tickets',2),
+ (5,'',0,0,0,'admin','Handles miscellaneous game functions that just don\'t fit elsewhere.',2),
+ (6,'',0,0,1,'chat','Handles chat,tells,mails,tickets',2),
  (7,'',0,0,0,'unused','Unused server ID.',0),
- (8,'',2223,0,0,'corellia','Zone server for Corellia',0),
- (9,'',2133,0,0,'dantooine','Zone server for Dantooine',0),
- (10,'',2169,0,0,'dathomir','Zone server for Dathomir',0),
- (11,'',2139,0,0,'endor','Zone server for Endor',0),
- (12,'',2151,0,0,'lok','Zone server for Lok',0),
- (13,'',2127,0,0,'naboo','Zone server for Naboo',0),
- (14,'',2145,0,0,'rori','Zone server for Rori',0),
- (15,'',2163,0,0,'talus','Zone server for Talus',0),
- (16,'',5200,0,1,'tatooine','Zone server for Tatooine',4),
- (17,'',2157,0,0,'yavin4','Zone server for Yavin 4',0),
+ (8,'',0,0,0,'corellia','Zone server for Corellia',0),
+ (9,'',0,0,0,'dantooine','Zone server for Dantooine',0),
+ (10,'',0,0,0,'dathomir','Zone server for Dathomir',0),
+ (11,'',0,0,0,'endor','Zone server for Endor',0),
+ (12,'',0,0,0,'lok','Zone server for Lok',0),
+ (13,'',0,0,0,'naboo','Zone server for Naboo',0),
+ (14,'',0,0,0,'rori','Zone server for Rori',0),
+ (15,'',0,0,0,'talus','Zone server for Talus',0),
+ (16,'',0,0,0,'tatooine','Zone server for Tatooine',4),
+ (17,'',0,0,0,'yavin4','Zone server for Yavin 4',0),
  (18,'',0,0,0,'space_corellia','Zone server for Corellian Space 1',0),
  (19,'',0,0,0,'space_corellia_2','Zone server for Corellian Space 2',0),
  (20,'',0,0,0,'space_dantooine','Zone server for Dantooine Space',0),
@@ -94,7 +94,7 @@ INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name
  (30,'',0,0,0,'space_tatooine','Zone server for Tatooine Space 1',0),
  (31,'',0,0,0,'space_tatooine_2','Zone server for Tatooine Space 2',0),
  (32,'',0,0,0,'space_yavin4','Zone server to Yavin 4 Space',0),
- (33,'',1216,0,0,'09','',0),
+ (33,'',0,0,0,'09','',0),
  (34,'',0,0,0,'10','',0),
  (35,'',0,0,0,'11','',0),
  (36,'',0,0,0,'character_farm','',0),
@@ -107,16 +107,13 @@ INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name
  (43,'',0,0,0,'otoh_gunga','',0),
  (44,'',0,0,0,'rivertest','',0),
  (45,'',0,0,0,'runtimerules','',0),
- (46,'',1786,0,0,'simple','',0),
+ (46,'',0,0,0,'simple','',0),
  (47,'',0,0,0,'space_09','',0),
  (48,'',0,0,0,'test_wearables','',0),
- (49,'',6000,0,1,'tutorial','',0),
- (50,'',4104,0,0,'taanab','Zone server for Tanaab',0),
- (51,'',2416,0,0,'dagobah','Zone server for Dagobah.',0);
+ (49,'',0,0,0,'tutorial','',0),
+ (50,'',0,0,0,'taanab','Zone server for Tanaab',0),
+ (51,'',0,0,0,'dagobah','Zone server for Dagobah.',0);
 /*!40000 ALTER TABLE `config_process_list` ENABLE KEYS */;
-
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
