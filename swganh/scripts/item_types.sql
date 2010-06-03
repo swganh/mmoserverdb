@@ -39,19 +39,19 @@ use swganh;
 
 DROP TABLE IF EXISTS `item_types`;
 CREATE TABLE `item_types` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `object_string` char(255) NOT NULL default 'object',
-  `stf_name` char(255) NOT NULL default '0',
-  `stf_file` char(255) NOT NULL default '0',
-  `stf_detail_name` char(255) NOT NULL default '0',
-  `stf_detail_file` char(255) NOT NULL default '0',
-  `bazaar_category` int(11) NOT NULL default '0',
-  `equipSlots` char(255) default NULL,
-  `equipRestrictions` int(10) unsigned NOT NULL default '0',
-  `complete` varchar(3) NOT NULL default 'No',
-  `b_isSitable` int(10) unsigned NOT NULL default '0',
-  `container` int(10) unsigned NOT NULL default '0' COMMENT '0 for not a container, otherwise nr of items allowed',
-  PRIMARY KEY  (`id`)
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `object_string` char(255) NOT NULL DEFAULT 'object',
+  `stf_name` char(255) NOT NULL DEFAULT '0',
+  `stf_file` char(255) NOT NULL DEFAULT '0',
+  `stf_detail_name` char(255) NOT NULL DEFAULT '0',
+  `stf_detail_file` char(255) NOT NULL DEFAULT '0',
+  `bazaar_category` int(11) NOT NULL DEFAULT '0',
+  `equipSlots` char(255) DEFAULT NULL,
+  `equipRestrictions` int(10) unsigned NOT NULL DEFAULT '0',
+  `complete` varchar(3) NOT NULL DEFAULT 'No',
+  `b_isSitable` int(10) unsigned NOT NULL DEFAULT '0',
+  `container` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '0 for not a container, otherwise nr of items allowed',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2788 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
 --
@@ -59,7 +59,7 @@ CREATE TABLE `item_types` (
 --
 
 /*!40000 ALTER TABLE `item_types` DISABLE KEYS */;
-INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`,`container`) VALUES 
+INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`,`container`) VALUES
  (1,'object/tangible/survey_tool/shared_survey_tool_wind.iff','survey_tool_wind','item_n','survey_tool_wind','item_d',32770,'0',0,'No',0,0),
  (2,'object/tangible/survey_tool/shared_survey_tool_gas.iff','survey_tool_gas','item_n','survey_tool_gas','item_d',32770,'0',0,'No',0,0),
  (3,'object/tangible/survey_tool/shared_survey_tool_lumber.iff','survey_tool_lumber','item_n','survey_tool_lumber','item_d',32770,'0',0,'No',0,0),
