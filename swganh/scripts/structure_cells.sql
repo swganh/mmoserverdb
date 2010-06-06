@@ -50,8 +50,6 @@ CREATE TABLE `structure_cells` (
 --
 
 /*!40000 ALTER TABLE `cells` DISABLE KEYS */;
-INSERT INTO `structure_cells` (`id`,`parent_id`) VALUES
- (2210000000000,0);
 /*!40000 ALTER TABLE `cells` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
