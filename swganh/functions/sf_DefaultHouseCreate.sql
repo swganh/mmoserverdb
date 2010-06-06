@@ -33,80 +33,203 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 USE swganh;
 
+--
+-- Definition of function `sf_DefaultHouseCreate`
+--
+
+DROP FUNCTION IF EXISTS `sf_DefaultHouseCreate`;
+
 DELIMITER $$
 
-DROP FUNCTION IF EXISTS `swganh`.`sf_DefaultHouseCreate` $$
-CREATE DEFINER=`root`@`localhost` FUNCTION `sf_DefaultHouseCreate`(type_id INT(11),parent_id BIGINT(20),privateowner_id BIGINT(20),inPlanet INT,oX FLOAT,oY FLOAT,oZ FLOAT, oW FLOAT,inX FLOAT,inY FLOAT,inZ FLOAT,custom_name CHAR(255),deed_id BIGINT(20)) RETURNS bigint(20)
+/*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='' */ $$
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `sf_DefaultHouseCreate`(type_id INT(11), parent_id BIGINT(20), privateowner_id BIGINT(20), inPlanet INT, oX FLOAT, oY FLOAT, oZ FLOAT, oW FLOAT, inX FLOAT, inY FLOAT, inZ FLOAT, custom_name CHAR(255), deed_id BIGINT(20)) RETURNS bigint(20)
 BEGIN
-        DECLARE tmpId BIGINT(20);
-        DECLARE cellId BIGINT(20);
-        DECLARE cellTermId BIGINT(20);
-        DECLARE att_id,att_order INT;
-        DECLARE att_value CHAR(255);
-        DECLARE t_value CHAR(255);
-        DECLARE loopEnd INT DEFAULT 0;
-        DECLARE cellCount INT DEFAULT 0;
-        DECLARE cellloop INT DEFAULT 0;
-        DECLARE cond INTEGER;
-        DECLARE cur_1 CURSOR FOR SELECT attribute_id,attribute_value,attribute_order FROM structure_attribute_defaults WHERE structure_attribute_defaults.structure_type=type_id;
-        DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
+
+  ##
+  ## sd_DefaultHouseCreate (type_id, parent_id, privateowner_id, inPlanet, oX, oY, oZ, oW, inX, inY, inZ, custom_name, deed_id)
+  ##
+  ## Returns: new structure ID (BIGINT)
+  ##
+
+  ##
+  ## Declare our VARs
+
+  DECLARE tmpCells INT;
+  DECLARE structureID BIGINT(20);
+  DECLARE structureCellID BIGINT(20);
+  DECLARE attr_id INT;
+  DECLARE attr_order INT;
+  DECLARE attr_value CHAR(255);
+  DECLARE loop_counter INT DEFAULT 0;
+  DECLARE loopEnd INT DEFAULT 0;
+  DECLARE startingCellID BIGINT DEFAULT 0;
+  DECLARE TerminalOffset INT DEFAULT 0;
+  DECLARE TerminalCell BIGINT DEFAULT 0;
+  DECLARE t_value INT DEFAULT 0;
+
+  ##
+  ## Declare Terminal Vars
+
+  DECLARE terminal_count INT;        ## Number of Terminals in structure
+  DECLARE final_terminal_id INT;
+  DECLARE final_terminal_type INT;
+  DECLARE final_structure_type INT;
+  DECLARE final_cell_id INT;
+  DECLARE final_x FLOAT;
+  DECLARE final_y FLOAT;
+  DECLARE final_z FLOAT;
+  DECLARE final_qx FLOAT;
+  DECLARE final_qy FLOAT;
+  DECLARE final_qz FLOAT;
+  DECLARE final_qw FLOAT;
+  DECLARE final_planet INT DEFAULT 99;
+
+  ##
+  ## Declare Cursors
+
+  DECLARE cur_1 CURSOR FOR SELECT attribute_id,attribute_value,attribute_order FROM structure_attribute_defaults WHERE structure_attribute_defaults.structure_type=type_id;
+  DECLARE CTerminal CURSOR FOR SELECT * FROM swganh.structure_terminal_link WHERE structure_type = type_id;
+  DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
+
+  ##
+  ## Start
+
+  ##
+  ## Determine the structure cell count
+
+  SELECT cellcount FROM structure_type_data WHERE structure_type_data.type = type_id LIMIT 1 INTO tmpCells;
+
+  ##
+  ## Determine the new strucutre ID
+
+  SELECT MAX(id) FROM structures into structureID;
+
+  ##
+  ## Make sure our starting id is correct
+
+  IF structureID IS NULL THEN SET structureID = 2204928835634;
+    ELSE SET structureID = structureID + 1;
+  END IF;
+
+  ##
+  ## Create the structure
+
+  INSERT INTO structures VALUES (structureID, type_id, oX, oY, oZ, oW, inX, inY, inZ, custom_name, privateowner_id, 0, 0, inPlanet, 0);
+
+  INSERT INTO houses VALUES (structureID, 0);  ## NEEDS TO BE REMOVED
+
+  ##
+  ## Create the structure cells
+
+  ##
+  ## Determine the structure_cells ID
+
+  SELECT MAX(id) FROM structure_cells INTO structureCellID;
+
+  IF structureCellID IS NULL THEN SET structureCellID = 2210000000000;
+    ELSE SET structureCellID = structureCellID + 1;
+  END IF;
+
+  ##
+  ## Insert the cells
+
+	SET loop_counter = 0;
+
+	loop1: LOOP
+
+	  IF loop_counter = tmpCells THEN
+      	LEAVE loop1;
+    	ELSE SET loop_counter = loop_counter + 1;
+  	END IF;
+
+  	INSERT INTO structure_cells VALUES (structureCellID, structureID);
+
+    SET structureCellID = structureCellID + 1;
+
+	END LOOP loop1;
+
+  ##
+  ## Create the structure terminal(s)
+
+  SELECT id FROM structure_cells WHERE structure_cells.parent_id = structureID ORDER BY id LIMIT 1 INTO startingCellID;
+
+  SET loopend = 0;
+
+  ##
+  ## Determine the number of terminals in the structure
+
+  SELECT COUNT(*) from structure_terminal_link WHERE id = type_id INTO terminal_count;
+
+  ## Create terminals
+
+    OPEN CTerminal;
+      REPEAT
+      FETCH CTerminal INTO
+       final_terminal_id,
+       final_terminal_type,
+       final_structure_type,
+       final_cell_id,
+       final_x,
+       final_y,
+       final_z,
+       final_qx,
+       final_qy,
+       final_qz,
+       final_qw;
+
+  ##
+  ## Set the Terminal cell ID (structure cell ID + Offset)
+
+  SET TerminalCell = startingCellID + final_cell_id;
+
+      IF NOT loopEnd THEN
+
+        INSERT INTO terminals VALUES (NULL, TerminalCell, final_terminal_type, final_qx, final_qy, final_qz, final_qw, final_x, final_y, final_z, final_planet, NULL, 0, 0, 0, NULL);
+
+      END IF;
+
+    UNTIL loopEnd END REPEAT;
+
+    CLOSE CTerminal;
 
 
-        Select st.cellcount FROM structure_type_data st WHERE st.type = type_id INTO cellCount;
+  ##
+  ## Create the permissions for the structure
 
---
--- insert the structures cells
---
+  INSERT INTO structure_admin_data VALUES (NULL, structureID, privateowner_id, 'ADMIN');
 
-        INSERT INTO structures VALUES (NULL,type_id,oX, oY, oZ, oW, inX, inY, inZ, custom_name, privateowner_id,0,0,inPlanet,0);
+  OPEN cur_1;
+    REPEAT
+      FETCH cur_1 INTO attr_id, attr_value, attr_order;
+        IF NOT loopEnd THEN
+          INSERT INTO structure_attributes VALUES (structureID, attr_id, attr_value, attribute_order, NULL);
 
-        SET tmpId = LAST_INSERT_ID();
+          SELECT ia.value FROM item_attributes ia WHERE ia.item_id = deed_id AND ia.attribute_id = attr_id INTO t_value;
 
-        INSERT INTO houses VALUES (tmpId,0);
+          IF t_value IS NOT NULL THEN
 
-        REPEAT
-           INSERT INTO structure_cells VALUES(NULL,tmpId);
-           select cellloop+1 INTO cellloop;
-        UNTIL (cellloop = cellcount) END REPEAT;
+            UPDATE structure_attributes sa SET sa.value = t_value WHERE sa.structure_id = structureID AND sa.attribute_id = attr_id;
 
+          END IF;
+        END IF;
+    UNTIL loopEnd END REPEAT;
 
---
--- insert the structures terminal
---
+    CLOSE cur_1;
 
-        SELECT c.id FROM structure_cells c WHERE c.parent_id = tmpId ORDER BY c.id LIMIT 1 INTO cellId;
-        SELECT stl.cellId FROM structure_terminal_link stl WHERE stl.structure_type = type_id INTO cellTermId;
+  ##
+  ## Commit & return the new structure ID
 
-        SELECT cellTermID + cellId INTO cellTermID;
+  SELECT MAX(id) FROM structures INTO structureID;
 
-        INSERT INTO terminals VALUES (NULL,cellTermID,29,0,0,0,0,0.4,0.7,6.1,99,'',0,0,0,'');
+  RETURN(structureID);
 
-        UPDATE terminals t INNER JOIN structure_terminal_link stl ON (stl.structure_type = type_id) SET t.x = stl.x, t.y = stl.y, t.z = stl.z, t.ox = stl.qx, t.oy = stl.qy, t.oz = stl.qz, t.ow = stl.qw  WHERE t.id = LAST_INSERT_ID() ;
-
---
--- 2774 is the output hopper 2773 the input hopper
---
-
-
-        INSERT INTO structure_admin_data VALUES (NULL,tmpId,privateowner_id,'ADMIN');
-        OPEN cur_1;
-        REPEAT
-                FETCH cur_1 INTO att_id,att_value,att_order;
-                IF NOT loopEnd THEN
-                        INSERT INTO structure_attributes VALUES(tmpId,att_id,att_value,att_order,NULL);
-                        SELECT ia.value FROM item_attributes ia WHERE ia.item_id = deed_id AND ia.attribute_id = att_id INTO t_value;
-
-                        IF t_value IS NOT NULL THEN
-                            UPDATE structure_attributes sa SET sa.value = t_value WHERE sa.structure_id = tmpId AND sa.attribute_id = att_id;
-                        END IF;
-                END IF;
-        UNTIL loopEnd END REPEAT;
-
-        CLOSE cur_1;
-        RETURN(tmpId);
-END $$
+  END $$
+  
+/*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
 DELIMITER ;
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
