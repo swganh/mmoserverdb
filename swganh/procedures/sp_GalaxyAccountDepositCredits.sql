@@ -31,33 +31,20 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+USE swganh;
 
 --
--- Definition of procedure `sp_GalaxyAccountFinesDepositCredits`
+-- Definition of procedure `sp_GalaxyAccountDepositCredits`
 --
 
-DROP PROCEDURE IF EXISTS `sp_GalaxyAccountFinesDepositCredits`;
+DROP PROCEDURE IF EXISTS `sp_GalaxyAccountDepositCredits`;
 
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='' */ $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_GalaxyAccountFinesDepositCredits`(IN galaxy_id INT, character_id BIGINT, credits BIGINT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_GalaxyAccountDepositCredits`(IN galaxy_id INT, deposit_account_type BIGINT, character_id BIGINT, credits BIGINT)
 BEGIN
 
-  ##
-  ## Stored Procedure
-  ##
-  ## Use: CALL sp_GalaxyAccountFinesDepositCredits(galaxy_id, character_id, credits);
-  ##
-  ## Returns:
-  ##
-  ##  (0) successful
-  ##  (1) NOT FOUND
-  ##  (2) SQL Exception
-  ##  (3) SQL Warning
-  ##
-  
   ##
   ## Declare Vars
 
@@ -87,24 +74,73 @@ BEGIN
 		SELECT error;
 	END;
 
-	##
-	## Start Transaction
+  ##
+  ## Stored Procedure
+  ##
+  ## Use: CALL sp_GalaxyAccountDepositCredits(galaxy_id, account_type, character_id, credits);
+  ##
+  ## Returns:
+  ##
+  ##  (0) successful
+  ##  (1) NOT FOUND
+  ##  (2) SQL Exception
+  ##  (3) SQL Warning
+  ##
+  ## Galaxy Account Types Listing
+  ##
+  ## 01 - Character Creation
+  ## 02 - Newbie Tutorial
+  ## 03 - Customer Service
+  ## 04 - Dynamic Mission System
+  ## 05 - Player Mission System
+  ## 06 - Bounty Mission System
+  ## 07 - Cloning System
+  ## 08 - Insurance System
+  ## 09 - Galactic Travel Commission
+  ## 10 - Galactic Shipping Commission
+  ## 11 - Galactic Trade Commission
+  ## 12 - Dispenser System
+  ## 13 - Skill Training Union
+  ## 14 - Rebellion
+  ## 15 - Empire
+  ## 16 - Jabba The Hutt
+  ## 17 - POI System
+  ## 18 - Corpse Expiration Tracking
+  ## 19 - Testing
+  ## 20 - Structure Maintenance
+  ## 21 - Tip Surcharge
+  ## 22 - Vendor Wages
+  ## 23 - NPC Loot
+  ## 24 - Junk Dealer
+  ## 25 - Cantina Drink
+  ## 26 - Beta Test Fund
+  ## 27 - Group Split Error Account
+  ## 28 - Standard Slot Machine Account
+  ## 29 - Roulette Account
+  ## 30 - Sabacc Account
+  ## 31 - Vehicle Repair System
+  ## 32 - Relic Dealer
+  ## 33 - New Player Quests
+  ## 34 - Contraband Scanning Fines
+  ## 35 - Bank
 
-	START TRANSACTION;
-  
-	##
-	## Deposit credits into the Galaxy Account (Contraband Scanning Fees, account_id = 34)
 
-	UPDATE swganh.galaxy_account SET account_credits = account_credits + credits WHERE account_id = 34;
 
-	##
-	## Update server_logs db
+  ##
+  ## Deposit credits into the Galaxy Account (Contraband Scanning Fees, account_id = 34)
 
-	INSERT INTO swganh_logs.server_accounting VALUES (NULL, NOW(), character_id, 34, credits);
+  START TRANSACTION;
 
-	COMMIT;
+  UPDATE swganh.galaxy_account SET account_credits = account_credits + credits WHERE account_id = deposit_account_type;
 
-	SELECT error;
+  ##
+  ## Update server_logs db
+
+  INSERT INTO swganh_logs.server_accounting VALUES (NULL, NOW(), character_id, deposit_account_type, credits);
+
+  COMMIT;
+
+  SELECT error;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

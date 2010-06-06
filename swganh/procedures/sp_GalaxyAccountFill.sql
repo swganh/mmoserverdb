@@ -57,6 +57,43 @@ BEGIN
   ##  (2) SQL Exception
   ##  (3) SQL Warning
   ##
+  ## Galaxy Account Types Listing
+  ##
+  ## 01 - Character Creation
+  ## 02 - Newbie Tutorial
+  ## 03 - Customer Service
+  ## 04 - Dynamic Mission System
+  ## 05 - Player Mission System
+  ## 06 - Bounty Mission System
+  ## 07 - Cloning System
+  ## 08 - Insurance System
+  ## 09 - Galactic Travel Commission
+  ## 10 - Galactic Shipping Commission
+  ## 11 - Galactic Trade Commission
+  ## 12 - Dispenser System
+  ## 13 - Skill Training Union
+  ## 14 - Rebellion
+  ## 15 - Empire
+  ## 16 - Jabba The Hutt
+  ## 17 - POI System
+  ## 18 - Corpse Expiration Tracking
+  ## 19 - Testing
+  ## 20 - Structure Maintenance
+  ## 21 - Tip Surcharge
+  ## 22 - Vendor Wages
+  ## 23 - NPC Loot
+  ## 24 - Junk Dealer
+  ## 25 - Cantina Drink
+  ## 26 - Beta Test Fund
+  ## 27 - Group Split Error Account
+  ## 28 - Standard Slot Machine Account
+  ## 29 - Roulette Account
+  ## 30 - Sabacc Account
+  ## 31 - Vehicle Repair System
+  ## 32 - Relic Dealer
+  ## 33 - New Player Quests
+  ## 34 - Contraband Scanning Fines
+  ## 35 - Bank
   
 	DECLARE account_id INT;
 	DECLARE error INT DEFAULT 0;
