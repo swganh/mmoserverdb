@@ -31,26 +31,29 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_tools;
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `server_accounting`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `swganh_logs`.`server_accounting`;
+CREATE TABLE  `swganh_logs`.`server_accounting` (
+  `id` bigint(22) unsigned NOT NULL auto_increment,
+  `timestamp` datetime NOT NULL,
+  `source_account` bigint(22) unsigned NOT NULL,
+  `destination_account` bigint(22) unsigned NOT NULL,
+  `amount` bigint(22) unsigned NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=182 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `server_accounting`
 --
 
-/*!40000 ALTER TABLE `cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `server_accounting` DISABLE KEYS */;
+/*!40000 ALTER TABLE `server_accounting` ENABLE KEYS */;
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

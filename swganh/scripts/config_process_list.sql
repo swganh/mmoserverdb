@@ -66,7 +66,7 @@ INSERT INTO `config_process_list` (`id`,`address`,`port`,`status`,`active`,`name
  (2,'',0,0,0,'unused','Unused server ID.',0),
  (3,'',0,0,0,'unused','Unused server ID.',0),
  (4,'',0,0,0,'unused','Unused server ID.',0),
- (5,'',0,0,0,'admin','Handles miscellaneous game functions that just don\'t fit elsewhere.',2),
+ (5,'',0,0,0,'unused','Unused server ID.',0),
  (6,'',0,0,1,'chat','Handles chat,tells,mails,tickets',2),
  (7,'',0,0,0,'unused','Unused server ID.',0),
  (8,'',0,0,0,'corellia','Zone server for Corellia',0),
