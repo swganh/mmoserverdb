@@ -40,6 +40,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `sf_DefaultHouseCreate`(type_id INT(1
 BEGIN
         DECLARE tmpId BIGINT(20);
         DECLARE cellId BIGINT(20);
+        DECLARE terminal_type BIGINT(20);
         DECLARE cellTermId BIGINT(20);
         DECLARE att_id,att_order INT;
         DECLARE att_value CHAR(255);
@@ -49,8 +50,8 @@ BEGIN
         DECLARE cellloop INT DEFAULT 0;
         DECLARE cond INTEGER;
         DECLARE cur_1 CURSOR FOR SELECT attribute_id,attribute_value,attribute_order FROM structure_attribute_defaults WHERE structure_attribute_defaults.structure_type=type_id;
+    	DECLARE cur_2 CURSOR FOR SELECT stl.cellid, stl.terminal_type FROM structure_terminal_link stl WHERE stl.structure_type = type_id;
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
-		DECLARE cur_2 CURSOR FOR SELECT stl_.cellid FROM structure_terminal_link stl WHERE stl.structure_type = type_id;
 
 
         Select st.cellcount FROM structure_type_data st WHERE st.type = type_id INTO cellCount;
@@ -79,15 +80,14 @@ BEGIN
         OPEN cur_2;
 
 		REPEAT
-			FETCH cur_2 INTO cellTermId;
+			FETCH cur_2 INTO cellTermId, terminal_type;
 			IF NOT loopEnd THEN
 				SELECT cellTermID + cellId INTO cellTermID;
 
-				INSERT INTO terminals VALUES (NULL,cellTermID,29,0,0,0,0,0.4,0.7,6.1,99,'',0,0,0,'');
+				INSERT INTO terminals VALUES (NULL,cellTermID,terminal_type,0,0,0,0,0.4,0.7,6.1,99,'',0,0,0,'');
+				UPDATE terminals t INNER JOIN structure_terminal_link stl ON (stl.structure_type = type_id) SET t.x = stl.x, t.y = stl.y, t.z = stl.z, t.ox = stl.qx, t.oy = stl.qy, t.oz = stl.qz, t.ow = stl.qw  WHERE t.id = LAST_INSERT_ID() ;
 			END IF;
 		UNTIL loopEnd END REPEAT;
-
-        UPDATE terminals t INNER JOIN structure_terminal_link stl ON (stl.structure_type = type_id) SET t.x = stl.x, t.y = stl.y, t.z = stl.z, t.ox = stl.qx, t.oy = stl.qy, t.oz = stl.qz, t.ow = stl.qw  WHERE t.id = LAST_INSERT_ID() ;
 		CLOSE cur_2;
 		SELECT 0 INTO loopEnd;
 --
