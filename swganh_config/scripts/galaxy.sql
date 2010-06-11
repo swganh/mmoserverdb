@@ -31,53 +31,35 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh_config;
+USE swganh_config;
 
 --
--- Definition of table `config_attributes`
+-- Definition of table `galaxy`
 --
 
-DROP TABLE IF EXISTS `config_attributes`;
-CREATE TABLE `config_attributes` (
-  `id` bigint(22) unsigned NOT NULL auto_increment,
-  `name` char(255) NOT NULL,
-  `description` text NOT NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `galaxy`;
+CREATE TABLE `galaxy` (
+  `galaxy_id` int(10) unsigned NOT NULL auto_increment COMMENT 'Galaxy ID',
+  `name` char(32) NOT NULL default '' COMMENT 'Galaxy Name',
+  `address` char(16) NOT NULL default '' COMMENT 'Galaxy IP Address',
+  `port` int(8) NOT NULL default '0' COMMENT 'Galaxy Listen Port',
+  `pingport` int(8) default NULL COMMENT 'Galaxy PING port',
+  `population` int(4) NOT NULL default '0' COMMENT 'Server Population (Administrative Feature)',
+  `character_retention` int(4) NOT NULL COMMENT 'Character retention period (Administrative Feature)',
+  `items_retention` int(4) NOT NULL COMMENT 'Item retention period (Administrative Feature)',
+  `account_retention` int(4) NOT NULL COMMENT 'Account retention period (Administrative Feature)',
+  `status` int(10) unsigned NOT NULL default '0',
+  `last_update` datetime NOT NULL,
+  `global_Tick_Count` bigint(20) unsigned NOT NULL COMMENT 'Global server tickcount',
+  PRIMARY KEY  (`galaxy_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `config_attributes`
+-- Dumping data for table `galaxy`
 --
 
-/*!40000 ALTER TABLE `config_attributes` DISABLE KEYS */;
-INSERT INTO `config_attributes` (`id`,`name`,`description`) VALUES 
- (1,'zone.spatial.index.fillfactor','-'),
- (2,'zone.spatial.index.indexcap','-'),
- (3,'zone.spatial.index.leafcap','-'),
- (4,'zone.spatial.index.horizon','-'),
- (5,'zone.resource.maps.write','-'),
- (6,'server.logging.console.priority','-'),
- (7,'server.logging.file.priority','-'),
- (8,'server.logging.file.name','-'),
- (9,'server.network.bind.address','-'),
- (10,'server.network.bind.port','-'),
- (11,'server.process.name','-'),
- (12,'server.network.cluster.address','-'),
- (13,'server.network.cluster.port','-'),
- (14,'game.player.viewing.range','-'),
- (15,'game.player.chat.range','-'),
- (16,'server.player.logged.timeout','-'),
- (17,'server.time.update.frequency','-'),
- (18,'server.time.speed','-'),
- (19,'server.weather.update.frequency','-'),
- (20,'server.weather.max.typeid','-'),
- (21,'game.player.health.regen.divider','-'),
- (22,'game.player.action.regen.divider','-'),
- (23,'game.player.mind.regen.divider','-'),
- (24,'game.player.max.incaps','-'),
- (25,'game.player.base.incap.duration','-'),
- (26,'game.player.base.incap.reset','-');
-/*!40000 ALTER TABLE `config_attributes` ENABLE KEYS */;
+/*!40000 ALTER TABLE `galaxy` DISABLE KEYS */;
+/*!40000 ALTER TABLE `galaxy` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

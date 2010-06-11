@@ -39,15 +39,19 @@ use swganh_config;
 
 DROP TABLE IF EXISTS `config_server`;
 CREATE TABLE `config_server` (
-  `id` int(20) unsigned NOT NULL auto_increment,
-  `galaxy_id` int(20) unsigned NOT NULL,
-  `process_id` int(20) unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `galaxy_id` int(10) unsigned NOT NULL,
+  `process_id` int(10) unsigned NOT NULL,
   `config_option` bigint(22) unsigned NOT NULL,
   `config_value` char(255) NOT NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK_configuration_attributes` (`config_option`),
-  CONSTRAINT `FK_configuration_attributes` FOREIGN KEY (`config_option`) REFERENCES `config_attributes` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  KEY `FK_configuration_galaxy` (`galaxy_id`),
+  KEY `FK_configuration_process` (`process_id`),
+  KEY `FK_configuration_attribute` (`config_option`),
+  CONSTRAINT `FK_configuration_galaxy` FOREIGN KEY (`galaxy_id`) REFERENCES `galaxy` (`galaxy_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_configuration_process` FOREIGN KEY (`process_id`) REFERENCES `config_process_list` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_configuration_attribute` FOREIGN KEY (`config_option`) REFERENCES `config_attributes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `config_server`
