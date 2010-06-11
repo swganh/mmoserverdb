@@ -117,7 +117,7 @@ INSERT INTO `structure_type_data` (`type`,`object_string`,`lots_used`,`name`,`st
  (44,'object/building/player/shared_player_guildhall_corellia_style_01.iff',5,'Guildhall','housing_tatt_style01_guildhall','building_name',0.65,400,0,5,1,1000,5000,0,16800,0,464,41,0,17,56,64,129),
  (45,'object/building/player/shared_player_guildhall_generic_style_01.iff',5,'Guildhall','housing_tatt_style01_guildhall','building_name',0.65,400,0,5,1,1000,5000,0,16800,0,464,41,0,17,56,64,4398046511603),
  (46,'object/building/player/shared_player_guildhall_naboo_style_01.iff',5,'Guildhall','housing_tatt_style01_guildhall','building_name',0.65,400,0,5,1,1000,5000,0,16800,0,464,41,0,17,56,64,4398046511202),
- (47,'object/building/player/shared_player_guildhall_tatooine_style_01.iff',5,'Guildhall','housing_tatt_style01_guildhall','building_name',0.65,400,0,5,1,1000,5000,0,16800,0,464,41,0,17,56,64,274),
+ (47,'object/building/player/shared_player_guildhall_tatooine_style_02.iff',5,'Guildhall','housing_tatt_style01_guildhall','building_name',0.65,400,0,5,1,1000,5000,0,16800,0,464,41,0,21,56,64,274),
  (48,'object/installation/mining_organic/shared_mining_organic_flora_farm.iff',1,'Micro Flora Farm','flora_farm_small','installation_n',0,0,0,6,1,1000,1500,0,5040,25,228,30,0,0,8,8,4398046512127),
  (49,'object/installation/mining_organic/shared_mining_organic_flora_farm_heavy.iff',2,'High Capacity Flora Farm','flora_farm_heavy','installation_n',0,0,0,6,1,1000,4500,0,15120,75,228,60,0,0,24,24,4398046512127),
  (50,'object/installation/mining_organic/shared_mining_organic_flora_farm_medium.iff',1,'Automated Flora Farm','flora_farm','installation_n',0,0,0,6,1,1000,3000,0,10080,50,228,90,0,0,24,24,4398046512127),
@@ -158,7 +158,7 @@ INSERT INTO `structure_type_data` (`type`,`object_string`,`lots_used`,`name`,`st
  (85,'object/building/player/shared_player_house_tatooine_medium_style_01.iff',2,'Medium Tatooine House','housing_tatt_style01_med','building_name',0.65,200,0,4,1,5760,1700,0,5712,0,464,12,0,8,40,40,274),
  (86,'object/building/player/shared_player_house_tatooine_small_style_01.iff',2,'Small Tatooine House','housing_tatt_style01_small','building_name',0.65,200,0,3,1,4320,800,0,2688,0,464,4,0,3,24,32,274),
  (87,'object/building/player/shared_player_house_tatooine_small_style_02.iff',2,'Small Tatooine House','housing_tatt_style01_small','building_name',0.65,200,0,3,1,4320,800,0,2688,0,464,4,0,3,24,32,274),
- (88,'object/building/player/shared_player_guildhall_tatooine_style_02.iff',5,'Guildhall','housing_tatt_style02_guildhall','building_name',0.65,400,0,5,1,1000,5000,0,16800,0,464,41,0,21,72,40,274);
+ (88,'object/building/player/shared_player_guildhall_tatooine_style_01.iff',5,'Guildhall','housing_tatt_style02_guildhall','building_name',0.65,400,0,5,1,1000,5000,0,16800,0,464,41,0,17,72,40,274);
 /*!40000 ALTER TABLE `structure_type_data` ENABLE KEYS */;
 
 
