@@ -59,6 +59,8 @@ CREATE TABLE `galaxy` (
 --
 
 /*!40000 ALTER TABLE `galaxy` DISABLE KEYS */;
+INSERT INTO `galaxy` (`galaxy_id`,`name`,`address`,`port`,`pingport`,`population`,`character_retention`,`items_retention`,`account_retention`,`status`,`last_update`,`global_Tick_Count`) VALUES
+ (2,'SWGANH - Test Centre','127.0.0.1',44990,44991,0,0,0,0,0,'0000-00-00 00:00:00',0);
 /*!40000 ALTER TABLE `galaxy` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
