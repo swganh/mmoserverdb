@@ -59,9 +59,13 @@ CREATE TABLE `config_server` (
 
 /*!40000 ALTER TABLE `config_server` DISABLE KEYS */;
 INSERT INTO `config_server` (`id`,`galaxy_id`,`process_id`,`config_option`,`config_value`) VALUES
- (1,2,0,9,'127.0.0.1'),
- (2,2,1,9,'127.0.0.1'),
- (3,2,6,9,'127.0.0.1');
+ (1,2,0,1000,'127.0.0.1'),
+ (2,2,0,1001,'44990'),
+ (3,2,0,1010,'8192'),
+ (4,2,0,1011,'8192'),
+ (5,2,0,1005,'8'),
+ (6,2,0,1006,'8'),
+ (7,2,0,1007,'logs/LoginServer.log');
 /*!40000 ALTER TABLE `config_server` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
