@@ -1662,7 +1662,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (1597,'object/tangible/deed/guild_deed/shared_corellia_guild_deed.iff','corellia_guild_deed','deed','corellia_guild_deed','deed_detail',8388609,'0',0,'No',0,0),
  (1598,'object/tangible/deed/guild_deed/shared_generic_guild_deed.iff','generic_guild_deed','deed','generic_guild_deed','deed_detail',8388609,'0',0,'No',0,0),
  (1599,'object/tangible/deed/guild_deed/shared_naboo_guild_deed.iff','naboo_guild_deed','deed','naboo_guild_deed','deed_detail',8388609,'0',0,'No',0,0),
- (1600,'object/tangible/deed/guild_deed/shared_tatooine_guild_deed.iff','tatooine_guild_2_deed','deed','tatooine_guild_2_deed','deed_detail',8388609,'0',0,'No',0,0),
+ (1600,'object/tangible/deed/guild_deed/shared_tatooine_guild_style_02_deed.iff','tatooine_guild_2_deed','deed','tatooine_guild_2_deed','deed_detail',8388609,'0',0,'No',0,0),
  (1601,'object/tangible/deed/harvester_deed/shared_harvester_flora_deed.iff','flora_harvester_deed_name','deed','flora_harvester_deed_name','deed_detail',8388610,'8',0,'Yes',0,0),
  (1602,'object/tangible/deed/harvester_deed/shared_harvester_flora_deed_heavy.iff','flora_harvester_heavy_deed_name','deed','flora_harvester_heavy_deed_name','deed_detail',8388610,'8',0,'Yes',0,0),
  (1603,'object/tangible/deed/harvester_deed/shared_harvester_flora_deed_medium.iff','flora_harvester_medium_deed_name','deed','flora_harvester_medium_deed_name','deed_detail',8388610,'8',0,'Yes',0,0),
