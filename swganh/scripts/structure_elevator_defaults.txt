@@ -1,0 +1,91 @@
+/*
+---------------------------------------------------------------------------------------
+This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
+
+For more information, visit http://www.swganh.com
+
+Copyright (c) 2006 - 2010 The SWG:ANH Team
+---------------------------------------------------------------------------------------
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+---------------------------------------------------------------------------------------
+*/
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+use swganh;
+
+--
+-- Definition of table `structure_elevator_defaults`
+--
+
+DROP TABLE IF EXISTS `structure_elevator_defaults`;
+CREATE TABLE `structure_elevator_defaults` (
+  `id` bigint(22) unsigned NOT NULL AUTO_INCREMENT,
+  `terminal_type` int(10) unsigned NOT NULL,
+  `structure_type` int(10) unsigned NOT NULL,
+  `cell_id` bigint(25) unsigned NOT NULL,
+  `x` float NOT NULL,
+  `y` float NOT NULL,
+  `z` float NOT NULL,
+  `qx` float NOT NULL,
+  `qy` float NOT NULL,
+  `qz` float NOT NULL,
+  `qw` float NOT NULL,
+  `dst_oX` float NOT NULL,
+  `dst_oY` float NOT NULL,
+  `dst_oZ` float NOT NULL,
+  `dst_oW` float NOT NULL,
+  `dst_x` float NOT NULL,
+  `dst_y` float NOT NULL,
+  `dst_z` float NOT NULL,
+  `effect_id` int(10) unsigned NOT NULL,
+  `direction` tinyint(3) unsigned NOT NULL,
+  `internal_description` char(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='player structure';
+
+--
+-- Dumping data for table `structure_elevator_defaults`
+--
+
+/*!40000 ALTER TABLE `structure_elevator_defaults` DISABLE KEYS */;
+INSERT INTO `structure_elevator_defaults` (`id`,`terminal_type`,`structure_type`,`cell_id`,`x`,`y`,`z`,`qx`,`qy`,`qz`,`qw`,`dst_oX`,`dst_oY`,`dst_oZ`,`dst_oW`,`dst_x`,`dst_y`,`dst_z`,`effect_id`,`direction`,`internal_description`) VALUES 
+ (1,42,44,8,0,-8.6,13.6,0,1,0,0,0,0,0,1,0,2.7,12,220,0,'Elevator UP in player PA halls.'),
+ (2,42,45,8,0,-8.6,13.6,0,1,0,0,0,0,0,1,0,2.7,12,220,0,'Elevator UP in player PA halls.'),
+ (3,42,46,8,0,-8.6,13.6,0,1,0,0,0,0,0,1,0,2.7,12,220,0,'Elevator UP in player PA halls.'),
+ (4,42,88,8,0,-8.6,13.6,0,1,0,0,0,0,0,1,0,2.7,12,220,0,'Elevator UP in player PA halls.'),
+ (5,43,44,8,0,2.6,13.6,0,1,0,0,0,0,0,1,0,-8.5,12,56,1,'Elevator DOWN in player PA halls.'),
+ (6,43,45,8,0,2.6,13.6,0,1,0,0,0,0,0,1,0,-8.5,12,56,1,'Elevator DOWN in player PA halls.'),
+ (7,43,46,8,0,2.6,13.6,0,1,0,0,0,0,0,1,0,-8.5,12,56,1,'Elevator DOWN in player PA halls.'),
+ (8,43,88,8,0,2.6,13.6,0,1,0,0,0,0,0,1,0,-8.5,12,56,1,'Elevator DOWN in player PA halls.');
+/*!40000 ALTER TABLE `structure_elevator_defaults` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
