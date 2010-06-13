@@ -53,6 +53,8 @@ CREATE TABLE `account` (
   `authenticated` tinyint(1) NOT NULL default '0' COMMENT 'Account - Authenticated Status',
   `characters_allowed` tinyint(3) unsigned NOT NULL default '2' COMMENT 'Number of characters allowed',
   `session_key` varchar(32) default NULL COMMENT 'Client Launcher - Session Key',
+  `oauth_token` varchar(90) default NULL COMMENT '',
+  `oauth_token_secret` varchar(90) default NULL COMMENT '',
   PRIMARY KEY  (`account_id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=utf8;
@@ -63,16 +65,16 @@ CREATE TABLE `account` (
 
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
 INSERT INTO `account` (`account_id`,`username`,`password`,`station_id`,`csr`,`banned`,`email`,`joindate`,`lastlogin`,`active`,`loggedin`,`authenticated`,`characters_allowed`,`session_key`) VALUES
- (1,'swganh0','41d14978522cc50b70e73f6f0007e82a000a95d5',100000001,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL),
- (2,'swganh1','41d14978522cc50b70e73f6f0007e82a000a95d5',100000002,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL),
- (3,'swganh2','41d14978522cc50b70e73f6f0007e82a000a95d5',100000003,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL),
- (4,'swganh3','41d14978522cc50b70e73f6f0007e82a000a95d5',100000004,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL),
- (5,'swganh4','41d14978522cc50b70e73f6f0007e82a000a95d5',100000005,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL),
- (6,'swganh5','41d14978522cc50b70e73f6f0007e82a000a95d5',100000006,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL),
- (7,'swganh6','41d14978522cc50b70e73f6f0007e82a000a95d5',100000007,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL),
- (8,'swganh7','41d14978522cc50b70e73f6f0007e82a000a95d5',100000008,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL),
- (9,'swganh8','41d14978522cc50b70e73f6f0007e82a000a95d5',100000009,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL),
- (10,'swganh9','41d14978522cc50b70e73f6f0007e82a000a95d5',100000010,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL);
+ (1,'swganh0','41d14978522cc50b70e73f6f0007e82a000a95d5',100000001,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,NULL,NULL),
+ (2,'swganh1','41d14978522cc50b70e73f6f0007e82a000a95d5',100000002,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,NULL,NULL),
+ (3,'swganh2','41d14978522cc50b70e73f6f0007e82a000a95d5',100000003,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,NULL,NULL),
+ (4,'swganh3','41d14978522cc50b70e73f6f0007e82a000a95d5',100000004,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,NULL,NULL),
+ (5,'swganh4','41d14978522cc50b70e73f6f0007e82a000a95d5',100000005,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,NULL,NULL),
+ (6,'swganh5','41d14978522cc50b70e73f6f0007e82a000a95d5',100000006,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,NULL,NULL),
+ (7,'swganh6','41d14978522cc50b70e73f6f0007e82a000a95d5',100000007,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,NULL,NULL),
+ (8,'swganh7','41d14978522cc50b70e73f6f0007e82a000a95d5',100000008,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,NULL,NULL),
+ (9,'swganh8','41d14978522cc50b70e73f6f0007e82a000a95d5',100000009,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,NULL,NULL),
+ (10,'swganh9','41d14978522cc50b70e73f6f0007e82a000a95d5',100000010,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 
 --
