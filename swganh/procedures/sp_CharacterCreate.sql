@@ -1,26 +1,8 @@
-﻿/*
----------------------------------------------------------------------------------------
-This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.1.47-community
 
-For more information, visit http://www.swganh.com
-
-Copyright (c) 2006 - 2010 The SWG:ANH Team
----------------------------------------------------------------------------------------
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) any later version.
-
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public
-License along with this library; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
----------------------------------------------------------------------------------------
-*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -33,9 +15,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 --
--- Use schema swganh
+-- Create schema swganh
 --
 
+CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
@@ -46,6 +29,7 @@ DROP PROCEDURE IF EXISTS `sp_CharacterCreate`;
 
 DELIMITER $$
 
+/*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_CharacterCreate`(
 	 IN start_account_id INT,IN start_galaxy_id INT,IN start_firstname char(32),IN start_lastname char(32),
 	 IN start_profession char(64),IN start_city char(32),IN start_scale FLOAT,IN start_biography text(2048),
@@ -146,9 +130,9 @@ charCreate:BEGIN
         SET oZ = 0;
         SET oW = 0;
 		
-	--
-	-- Transaction Start
-	--
+	
+	
+	
 
    START TRANSACTION;
         SELECT MAX(id) + 1000 FROM characters INTO character_id FOR UPDATE;
@@ -156,9 +140,9 @@ charCreate:BEGIN
                 SET character_id = 8589934593;
         END IF;
 		
-		--
-		-- Set the initial IDs
-		--
+		
+		
+		
 
         SET inventory_id = character_id + 1;
         SET bank_id = character_id + 4;
@@ -175,7 +159,7 @@ charCreate:BEGIN
 
         SELECT skill_id from skills where skill_name like start_profession INTO profession_id;
 
-		-- Don't set any default skills or XP when creating player in the Tutorial.
+		
         IF start_city = 'tutorial' THEN
 			SET character_parent_id = 2203318222960;
 			SET tutorialcontainer_id = 2533274790395904;
@@ -212,13 +196,13 @@ charCreate:BEGIN
         CALL sp_CharacterCreateFactions(character_id);
         CALL sp_CharacterStartingItems(inventory_id,tutorialcontainer_id,privateowner_id,race_id,profession_id,gender);
 		
-	--
-	-- Fix Melon to have 5 stacks
-	-- 
 	
-	-- Wen running the Tutorial there is no melon in the inventory. And it will make it impossible to create a character at the Tutorial zone.
-	-- SELECT id FROM items WHERE parent_id = inventory_id AND item_type = 89 INTO melon_id;
-	-- INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
+	
+	
+	
+	
+	
+	
 
     IF start_city = 'tutorial' THEN
 		SELECT id FROM items WHERE items.privateowner_id = character_id AND items.item_type = 89 INTO melon_id;
@@ -229,29 +213,23 @@ charCreate:BEGIN
 	END IF;
 	
 		
-	--
-	-- Generate Welcome Email
-	--
-	
-	SET currentTime = UNIX_TIMESTAMP();
-
-    INSERT INTO chat_mail VALUES (NULL, 'SWG\:ANH', character_id, '@newbie_tutorial/newbie_mail:welcome_subject', '@newbie_tutorial/newbie_mail:welcome_body', 0, currentTime, NULL, 0);
-
-	--
-	-- Commit Transaction
-	--
-	
-   COMMIT;
+        
+        
+        
+	 COMMIT;
    
-	--
-	-- Return new character ID
-	--
+	
+	
+	
 	
 	SELECT(character_id);
 	
 END $$
+/*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
 DELIMITER ;
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
