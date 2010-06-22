@@ -34,7 +34,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 use swganh;
 
 --
--- Definition of table `persistent_npc_families`
+-- Definition of table `creature_families`
 --
 
 DROP TABLE IF EXISTS `creature_families`;
@@ -45,7 +45,7 @@ CREATE TABLE `creature_families` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=REDUNDANT;
 
 --
--- Dumping data for table `persistent_npc_families`
+-- Dumping data for table `creature_families`
 --
 
 /*!40000 ALTER TABLE `creature_families` DISABLE KEYS */;
