@@ -27,14 +27,14 @@ use swganh;
 DROP TABLE IF EXISTS `creatures`;
 CREATE TABLE `creatures` (
   `id` bigint(20) NOT NULL,
-  `creature_species_id` bigint(20) default NULL,
-  `loot_group_id` bigint(20) default NULL,
+  `creature_species_id` bigint(20) unsigned default NULL,
+  `loot_group_id` bigint(20) unsigned default NULL,
   `creature_type` char(255) default NULL,
   `stf_variable_id` char(255) default NULL,
   `stf_file_id` char(255) default NULL,
   `creature_level` int(11) default NULL,
-  `creature_faction` int(8) default NULL,
-  `creature_family` int(11) default NULL,
+  `creature_faction` int(8) unsigned default NULL,
+  `creature_family` int(11) unsigned default NULL,
   `creature_posture` int(11) default NULL,
   `creature_moodID` int(11) default NULL,
   `creature_state` int(11) default NULL,

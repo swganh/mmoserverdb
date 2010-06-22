@@ -53,10 +53,8 @@ CREATE TABLE `non_persistent_npcs` (
   `state` int(11) default NULL,
   `scale` float default NULL,
   PRIMARY KEY  (`id`),
-  KEY `fk_non_persistent_npcs_species` (`species_id`),
-  KEY `fk_non_persistent_npcs_loot_groups` (`loot_group_id`),
-  CONSTRAINT `fk_non_persistent_npcs_species` FOREIGN KEY (`species_id`) REFERENCES `creature_species` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_non_persistent_npcs_loot_groups` FOREIGN KEY (`loot_group_id`) REFERENCES `loot_groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fk_non_persistent_npcs_family` (`family`),
+  CONSTRAINT `fk_non_persistent_npcs_family` FOREIGN KEY (`family`) REFERENCES `creature_families` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

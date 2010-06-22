@@ -39,17 +39,17 @@ use swganh;
 
 DROP TABLE IF EXISTS `creature_families`;
 CREATE TABLE `creature_families` (
-  `id` int(11) unsigned NOT NULL auto_increment,
+  `id` int(11) unsigned NOT NULL,
   `name` char(255) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=REDUNDANT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=REDUNDANT;
 
 --
 -- Dumping data for table `creature_families`
 --
 
 /*!40000 ALTER TABLE `creature_families` DISABLE KEYS */;
-INSERT INTO `creature_families` (`id`,`name`) VALUES 
+INSERT INTO `creature_families` (`id`, `name`) VALUES 
  (1,'trainers'),
  (2,'fillers'),
  (3,'quest_givers'),

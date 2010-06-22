@@ -39,8 +39,8 @@ use swganh;
 
 DROP TABLE IF EXISTS `creature_species`;
 CREATE TABLE `creature_species` (
-  `id` bigint(20) NOT NULL,
-  `name` char(255) default NULL,
+  `id` bigint(20) unsigned NOT NULL,
+  `name` char(255) DEFAULT NULL,
   `species_internal_description` char(255) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
