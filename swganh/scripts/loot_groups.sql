@@ -39,7 +39,7 @@ use swganh;
 
 DROP TABLE IF EXISTS `loot_groups`;
 CREATE TABLE `loot_groups` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(20) unsigned NOT NULL,
   `loot_group` bigint(20) NOT NULL,
   `loot_templates_id` bigint(20) NOT NULL,
   PRIMARY KEY  USING BTREE (`id`,`loot_group`),
