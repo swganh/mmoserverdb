@@ -61,7 +61,9 @@ INSERT INTO `creatures` (`id`,`creature_species_id`,`loot_group_id`,`creature_ty
  (3,1,1,'object/mobile/shared_lesser_desert_womp_rat.iff','lesser_desert_womprat','mob/creature_names',6,1,0,0,0,1),
  (4,1,1,'object/mobile/shared_variegated_womp_rat.iff','variegated_womprat','mob/creature_names',6,1,0,0,0,1),
  (5,1,1,'object/mobile/shared_womp_rat_hue.iff','womprat','mob/creature_names',6,1,0,0,0,1),
- (6,2,1,'object/mobile/shared_rill.iff','rill','mob/creature_names',6,1,0,0,0,1);
+ (6,2,1,'object/mobile/shared_rill.iff','rill','mob/creature_names',6,1,0,0,0,1)
+ (7,7,1,'object/tangible/newbie_tutorial/shared_debris.iff','newbie_tutorial_debris','container_name', 1,1,0,0,0,1)
+ (8,8,1,'object/mobile/shared_dressed_cobral_bandit_bith_male_01.iff','bandit','mob/creature_names',10,1,0,0,0,1);
 /*!40000 ALTER TABLE `creatures` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

@@ -32,8 +32,8 @@ CREATE TABLE `creature_attributes` (
   `value` char(255) default NULL,
   `order` int(11) default NULL,
   PRIMARY KEY  (`creature_id`,`id`),
-  KEY `fk_creature_attributes_creatures` (`creature_id`),
-  CONSTRAINT `fk_creature_attributes_creatures` FOREIGN KEY (`creature_id`) REFERENCES `creatures` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fk_creature_attributes` (`creature_id`),
+  CONSTRAINT `fk_creature_attributes` FOREIGN KEY (`creature_id`) REFERENCES `creatures` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -353,9 +353,6 @@ INSERT INTO `creature_attributes` (`id`,`creature_id`,`attribute_id`,`value`,`or
  (548,6,2067,'4.5',56),			-- Creature: Stalking speed
  (549,6,2068,'75.0',57),		-- Creature: Stalking max distance
  (550,6,2069,'1',58);			-- Creature: Group assist
-  
- 
-
 /*!40000 ALTER TABLE `creature_attributes` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

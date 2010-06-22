@@ -48,8 +48,8 @@ CREATE TABLE `creature_families` (
 -- Dumping data for table `persistent_npc_families`
 --
 
-/*!40000 ALTER TABLE `persistent_npc_families` DISABLE KEYS */;
-INSERT INTO `persistent_npc_families` (`id`,`name`) VALUES 
+/*!40000 ALTER TABLE `creature_families` DISABLE KEYS */;
+INSERT INTO `creature_families` (`id`,`name`) VALUES 
  (1,'trainers'),
  (2,'fillers'),
  (3,'quest_givers'),
@@ -61,7 +61,7 @@ INSERT INTO `persistent_npc_families` (`id`,`name`) VALUES
  (9,'natural_lairs'),
  (10,'mission_lairs'),
  (11,'invisible_lairs');
-/*!40000 ALTER TABLE `persistent_npc_families` ENABLE KEYS */;
+/*!40000 ALTER TABLE `creature_families` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
