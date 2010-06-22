@@ -37,8 +37,8 @@ use swganh;
 -- Definition of table `persistent_npc_families`
 --
 
-DROP TABLE IF EXISTS `persistent_npc_families`;
-CREATE TABLE `persistent_npc_families` (
+DROP TABLE IF EXISTS `creature_families`;
+CREATE TABLE `creature_families` (
   `id` int(11) unsigned NOT NULL auto_increment,
   `name` char(255) default NULL,
   PRIMARY KEY  (`id`)

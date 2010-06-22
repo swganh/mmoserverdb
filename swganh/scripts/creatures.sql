@@ -33,16 +33,21 @@ CREATE TABLE `creatures` (
   `stf_variable_id` char(255) default NULL,
   `stf_file_id` char(255) default NULL,
   `creature_level` int(11) default NULL,
-  `creature_faction` int(11) default NULL,
+  `creature_faction` int(8) default NULL,
+  `creature_family` int(11) default NULL,
   `creature_posture` int(11) default NULL,
   `creature_moodID` int(11) default NULL,
   `creature_state` int(11) default NULL,
   `creature_scale` float default NULL,
   PRIMARY KEY  (`id`),
-  KEY `fk_creatures_creature_species` (`creature_species_id`),
-  KEY `fk_creatures_loot_groups` (`loot_group_id`),
-  CONSTRAINT `fk_creatures_creature_species` FOREIGN KEY (`creature_species_id`) REFERENCES `creature_species` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_creatures_loot_groups` FOREIGN KEY (`loot_group_id`) REFERENCES `loot_groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fk_creature_species` (`creature_species_id`),
+  KEY `fk_creature_family` (`creature_family`),
+  KEY `fk_creature_faction` (`creature_faction`),
+  KEY `fk_creature_loot_groups` (`loot_group_id`),
+  CONSTRAINT `fk_creature_species` FOREIGN KEY (`creature_species_id`) REFERENCES `creature_species` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_creature_family` FOREIGN KEY (`creature_family`) REFERENCES `creature_families` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_creature_faction` FOREIGN KEY (`creature_faction`) REFERENCES `faction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_creature_loot_groups` FOREIGN KEY (`loot_group_id`) REFERENCES `loot_groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

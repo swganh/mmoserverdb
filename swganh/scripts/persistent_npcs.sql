@@ -61,7 +61,11 @@ CREATE TABLE `persistent_npcs` (
   `stf_variable_id` char(255) NOT NULL default '0',
   `stf_file_id` char(255) NOT NULL default '0',
   `scale` float NOT NULL default '1',
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY  (`id`),
+  KEY `fk_persistantnpc_family` (`family`),
+  KEY `fk_persistantnpc_faction` (`faction`),
+  CONSTRAINT `fk_persistantnpc_family` FOREIGN KEY (`family`) REFERENCES `creature_families` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_persistantnpc_faction` FOREIGN KEY (`faction`) REFERENCES `faction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=REDUNDANT;
 
 --
