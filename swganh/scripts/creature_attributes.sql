@@ -352,7 +352,59 @@ INSERT INTO `creature_attributes` (`id`,`creature_id`,`attribute_id`,`value`,`or
  (547,6,2066,'32.0',55),		-- Creature: Roaming max distance
  (548,6,2067,'4.5',56),			-- Creature: Stalking speed
  (549,6,2068,'75.0',57),		-- Creature: Stalking max distance
- (550,6,2069,'1',58);			-- Creature: Group assist
+ (550,6,2069,'1',58),			-- Creature: Group assist
+ 
+ (600,7,567,'Debris',1), -- Type
+ (601,7,73,'None',2),			-- Armor Rating
+ (602,7,221,'500',12),			-- Health
+ (603,7,225,'0',13),			-- Strength
+ (604,7,218,'0',14),			-- Constitution
+ (605,7,2044,'0',41),			-- Creature: XP
+ (606,7,2050,0,59),				-- Lair: Creatures spawn delay  ... yes, creatures use this attribute when spawning without a lair. 
+ (607,7,2052,0,0),				-- Creature: Max spawn distance'  ... used when we have no lair telling us. Use 0 for fix pos.
+
+ (650,8,567,'bandit',1),		-- Type
+ (651,8,73,'None',2),			-- Armor Rating
+ (652,8,2010,'0',3),			-- Category: Armor Effectivness (Kinetic)
+ (653,8,2011,'0',4),			-- Category: Armor Effectivness (Energy)
+ (654,8,2012,'0',5),			-- Category: Armor Effectivness (Blast)
+ (655,8,2013,'0',6),			-- Category: Armor Effectivness (Stun)
+ (656,8,2014,'0',7),			-- Category: Armor Effectivness (Heat)
+ (657,8,2015,'0',8),			-- Category: Armor Effectivness (Cold)
+ (658,8,2016,'0',9),			-- Category: Armor Effectivness (Acid)
+ (659,8,2018,'0',10),			-- Category: Armor Effectivness (Lightsaber)
+ (660,8,2036,'0',11),			-- Category: Armor Vulnerability (Lightsaber)
+ (661,8,221,'500',12),			-- Health
+ (662,8,225,'50',13),			-- Strength
+ (663,8,218,'50',14),			-- Constitution
+ (664,8,216,'500',15),			-- Action
+ (665,8,223,'50',16),			-- Quickness
+ (666,8,224,'50',17),			-- Stamina
+ (667,8,222,'500',18),			-- Mind
+ (668,8,220,'50',19),			-- Focus
+ (669,8,228,'50',20),			-- Willpower
+ (670,8,45,'200',21),			-- Aggressive
+ (671,8,2044,'250',41),			-- Creature: XP
+ (672,8,217,'2.0',42),			-- Attack Speed
+ (673,8,2053,'25',43),			-- Creature: Min damage
+ (674,8,2054,'75',44),			-- Creature: Max damage
+ (675,8,2055,'35',45),			-- Creature: Max damage range
+ (676,8,2056,'1',46),			-- Creature: Aggressive
+ (677,8,745,'0',47),			-- Stalker
+ (678,8,2057,'0',48),			-- Creature: Roaming
+ (679,8,486,'0',49),			-- Deathblows
+ (680,8,2050,0,59),				-- Lair: Creatures spawn delay  ... yes, creatures use this attribute when spawning without a lair. 
+ (681,8,2052,0,0),				-- Creature: Max spawn distance'  ... used when we have no lair telling us. Use 0 for fix pos.
+ (682,8,2058,'25.0',50),		-- Creature: Warning range
+ (683,8,2059,'20.0',51),		-- Creature: Attack range
+ (684,8,2060,'42.0',52),		-- Creature: Aggro range
+ (685,8,2061,'Come any closer and I\'ll shoot!',53),	-- Creature: Warning message
+ (686,8,2062,'I\'ll kill ya!',54),						-- Creature: Attacking message
+ (687,8,2063,'You\'ll never take me alive!',55),		-- Creature: Attacked message
+ (688,8,2069,'0',58);			-- Creature: Group assist
+
+ 
+ 
 /*!40000 ALTER TABLE `creature_attributes` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
