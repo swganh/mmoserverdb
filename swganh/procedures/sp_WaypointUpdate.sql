@@ -42,33 +42,33 @@ DROP PROCEDURE IF EXISTS `sp_WaypointUpdate`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='' */ $$
-CREATE PROCEDURE `sp_WaypointUpdate`(IN wp_id BIGINT(20), wp_name CHAR(255), wp_x FLOAT, wp_y FLOAT, wp_z FLOAT, wp_planet INT(3), wp_state TINYINT(1))
+CREATE PROCEDURE `sp_WaypointUpdate`(IN wp_name CHAR(255), wp_id BIGINT(20), wp_x FLOAT, wp_y FLOAT, wp_z FLOAT, wp_planet INT(3), wp_state TINYINT(1))
 BEGIN
 
-  ##
-  ## Stored Procedure
-  ##
-  ## sp_WaypointUpdate
-  ##
-  ## Usage:
-  ##
-  ## CALL sp_WaypointUpdate (wp_id, wp_name, wp_x, wp_y, wp_z, wp_planet, wp_state);
-  ##
-  ## Returns:
-  ##
-  ##  (0) successful
-  ##  (1) NOT FOUND
-  ##  (2) SQL Exception
-  ##  (3) SQL Warning
+	##
+	## Stored Procedure
+	##
+	## sp_WaypointUpdate
+	##
+	## Usage:
+	##
+	## CALL sp_WaypointUpdate (wp_id, wp_name, wp_x, wp_y, wp_z, wp_planet, wp_state);
+	##
+	## Returns:
+	##
+	##  (0) successful
+	##  (1) NOT FOUND
+	##  (2) SQL Exception
+	##  (3) SQL Warning
 
-  ##
-  ## Declare Vars
+	##
+	## Declare Vars
 
-  DECLARE w_name CHAR(255);
+	DECLARE w_name CHAR(255);
 	DECLARE error INT DEFAULT 0;
 
-  ##
-  ## Declare Handlers for Transactional Support
+	##
+	## Declare Handlers for Transactional Support
 
 	DECLARE EXIT HANDLER FOR NOT FOUND
 	BEGIN
@@ -96,38 +96,38 @@ BEGIN
 
 	START TRANSACTION;
 
-  ##
-  ## Get out waypoint name
+	##
+	## Get out waypoint name
 
-  SELECT name FROM swganh.waypoints WHERE waypoint_id = w_id INTO w_name;
+	SELECT name FROM swganh.waypoints WHERE waypoint_id = wp_id INTO w_name;
 
-  ##
-  ## Check the waypoint name
+	##
+	## Check the waypoint name
 
-  IF wp_name IS NULL OR wp_name NOT LIKE w_name THEN
-    SET wp_name = w_name;
-  END IF;
+	IF wp_name IS NULL OR wp_name NOT LIKE w_name THEN
+		SET wp_name = w_name;
+	END IF;
 
-  ##
-  ## Update our waypoint
+	##
+	## Update our waypoint
 
-  UPDATE swganh.waypoints SET
-    waypoint_name = wp_name,
-    x = wp_x,
-    y = wp_y,
-    z = wp_z,
-    planet_id = wp_planet,
-    active = wp_state
-  WHERE
-    waypoint_id = wp_id;
+	UPDATE swganh.waypoints SET
+		name = wp_name,
+		x = wp_x,
+		y = wp_y,
+		z = wp_z,
+		planet_id = wp_planet,
+		active = wp_state
+	WHERE
+		waypoint_id = wp_id;
 
-  ##
-  ## Commit
+	##
+	## Commit
 
-  COMMIT;
+	COMMIT;
 
-  ##
-  ## Return & Exit
+	##
+	## Return & Exit
 
 	SELECT error;
 
