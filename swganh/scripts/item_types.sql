@@ -708,7 +708,7 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (646,'object/tangible/wearables/hat/shared_singing_mountain_clan_hat_s02.iff','singing_mountain_clan_hat_s02','wearables_name','singing_mountain_clan_hat_s02','wearables_detail',16777226,'1048577',517,'No',0,0),
  (647,'object/tangible/wearables/pants/shared_pants_s18.iff','pants_s18','wearables_name','pants_s18','wearables_detail',16777228,'402653184',3007,'No',0,0),
  (648,'object/tangible/wearables/armor/ithorian_guardian/shared_ith_armor_s02_bicep_r.iff','ith_armor_s02_bicep_r','wearables_name','ith_armor_s02_bicep_r','wearables_detail',261,'16',1027,'No',0,0),
- (649,'object/tangible/wearables/robe/shared_robe_s05_h1.iff','robe_s05_h1','wearables_name','robe_s05_h1','wearables_detail',16777229,'1528',3007,'No',0,0),
+ (649,'object/tangible/wearables/robe/shared_robe_s05_h1.iff','robe_s05b','wearables_name','robe_s05b','wearables_detail',16777229,'1528',3007,'No',0,0),
  (650,'object/tangible/wearables/goggles/shared_goggles_s01.iff','goggles_s01','wearables_name','goggles_s01','wearables_detail',16777225,'131072',3071,'No',0,0),
  (651,'object/tangible/wearables/necklace/shared_necklace_complex_pattern.iff','necklace_complex_pattern','wearables_name','necklace_complex_pattern','wearables_detail',2097155,'67108864',4095,'No',0,0),
  (652,'object/tangible/wearables/wookiee/shared_wke_gloves_s01.iff','wke_gloves_s01','wearables_name','wke_gloves_s01','wearables_detail',16777232,'262144',67,'No',0,0),
