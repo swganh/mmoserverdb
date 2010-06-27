@@ -56,7 +56,7 @@ CREATE TABLE `draft_slots` (
 --
 
 /*!40000 ALTER TABLE `draft_slots` DISABLE KEYS */;
-INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES 
+INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES
  (1,'craft_armor_ingredients_n','armor_layer_frame','metal_nonferrous',25,0,4),
  (2,'craft_armor_ingredients_n','defensive_layer_microlattice','gemstone_crystalline',10,0,4),
  (3,'craft_armor_ingredients_n','chemical_neutralization_medium','gas_reactive_skevon',14,0,4),
@@ -4721,14 +4721,14 @@ INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name
  (4675,'craft_droid_ingredients_n','module_frame','copper',50,0,4),
  (4676,'craft_droid_ingredients_n','data_storage_matrix','gas_inert',20,0,4),
  (4677,'craft_droid_ingredients_n','voice_modulator','aluminum',40,0,4),
- (4678,'craft_droid_ingredients_n','expansion_board',NULL,0,0,4),
- (4679,'craft_droid_ingredients_n','connector_socket',NULL,0,0,4),
- (4680,'craft_droid_ingredients_n','attachment_bracket',NULL,0,0,4),
- (4681,'craft_droid_ingredients_n','shock_buffering',NULL,0,0,4),
- (4682,'craft_droid_ingredients_n','support_strut',NULL,0,0,4),
- (4683,'craft_droid_ingredients_n','general_droid_module',NULL,0,0,4),
- (4684,'craft_droid_ingredients_n','general_droid_module2',NULL,0,0,4),
- (4685,'craft_droid_ingredients_n','general_droid_module3',NULL,0,0,4),
+ (4678,'craft_droid_ingredients_n','expansion_board','metal',30,0,4),
+ (4679,'craft_droid_ingredients_n','connector_socket','metal',15,0,4),
+ (4680,'craft_droid_ingredients_n','attachment_bracket','metal',7,0,4),
+ (4681,'craft_droid_ingredients_n','shock_buffering','chemical',7,0,4),
+ (4682,'craft_droid_ingredients_n','support_strut','ore',7,0,4),
+ (4683,'craft_droid_ingredients_n','general_droid_module','object/tangible/component/droid/shared_droid_combat_service_module_base.iff',1,1,5),
+ (4684,'craft_droid_ingredients_n','general_droid_module2','object/tangible/component/droid/shared_droid_combat_service_module_base.iff',1,1,5),
+ (4685,'craft_droid_ingredients_n','general_droid_module3','object/tangible/component/droid/shared_droid_combat_service_module_base.iff',1,1,5),
  (4686,'craft_droid_ingredients_n','module_frame','steel',40,0,4),
  (4687,'craft_droid_ingredients_n','data_storage_matrix','gas_inert',20,0,4),
  (4688,'craft_droid_ingredients_n','light_crystals','gemstone_crystalline',30,0,4),
@@ -4890,11 +4890,11 @@ INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name
  (4844,'craft_droid_ingredients_n','electronic_sealant_light','armophous_vendusii',320,0,4),
  (4845,'craft_droid_ingredients_n','diagnostic_circuit','object/tangible/component/droid/repair/shared_diagnostic_circuit.iff',1,0,5),
  (4846,'craft_droid_ingredients_n','capacitor_discharge_unit','object/tangible/component/droid/repair/shared_capacitor_high_discharge.iff',1,0,5),
- (4847,'craft_droid_ingredients_n','delivery_cartridge','object/tangible/component/droid/repair/shared_unit_delivery_cartridge.iff',1,0,5),
+ (4847,'craft_droid_ingredients_n','delivery_cartridge','object/tangible/component/droid/repair/shared_unit_delivery_cartridge.iff',1,0,5);
+INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES 
  (4848,'craft_droid_ingredients_n','primary_frame','metal',30,0,4),
  (4849,'craft_droid_ingredients_n','body_shell','chemical',15,0,4),
- (4850,'craft_droid_ingredients_n','system_hardening','metal',15,0,4);
-INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES 
+ (4850,'craft_droid_ingredients_n','system_hardening','metal',15,0,4),
  (4851,'craft_droid_ingredients_n','droid_brain','metal',12,0,4),
  (4852,'craft_droid_ingredients_n','manipulator_arm','object/tangible/component/droid/shared_manipulator_arm.iff',1,0,5),
  (4853,'craft_droid_ingredients_n','motivator','object/tangible/component/droid/shared_droid_motive_system.iff',1,0,5),
@@ -5593,10 +5593,10 @@ INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name
  (5546,'craft_food_ingredients_n','talusian_fruit','fruit_fruits',20,0,4),
  (5547,'craft_food_ingredients_n','talusian_berries','fruit_berries',20,0,4),
  (5548,'craft_food_ingredients_n','glass','object/tangible/component/food/shared_glass.iff',1,0,5),
- (5549,'craft_food_ingredients_n','additive','object/tangible/food/crafted/additive/shared_additive_medium.iff',1,1,5),
- (5550,'craft_food_ingredients_n','alcohol','object/tangible/component/food/shared_ingredient_alcohol.iff',2,0,5),
- (5551,'craft_food_ingredients_n','deep_green_extract','vegetable_greens',15,0,4);
+ (5549,'craft_food_ingredients_n','additive','object/tangible/food/crafted/additive/shared_additive_medium.iff',1,1,5);
 INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES 
+ (5550,'craft_food_ingredients_n','alcohol','object/tangible/component/food/shared_ingredient_alcohol.iff',2,0,5),
+ (5551,'craft_food_ingredients_n','deep_green_extract','vegetable_greens',15,0,4),
  (5552,'craft_food_ingredients_n','freshwater_fungus','vegetable_fungi',10,0,4),
  (5553,'craft_food_ingredients_n','flavoring','creature_structural',10,0,4),
  (5554,'craft_food_ingredients_n','thickener','creature_structural',15,0,4),
@@ -5830,9 +5830,9 @@ INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name
  (5782,'craft_furniture_ingredients_n','lamp_body',NULL,0,0,4),
  (5783,'craft_furniture_ingredients_n','lamp_assembly',NULL,0,0,4),
  (5784,'craft_furniture_ingredients_n','shade',NULL,0,0,4),
- (5785,'craft_furniture_ingredients_n','lamp_body',NULL,0,0,4),
- (5786,'craft_furniture_ingredients_n','lamp_assembly',NULL,0,0,4),
- (5787,'craft_furniture_ingredients_n','shade',NULL,0,0,4),
+ (5785,'craft_furniture_ingredients_n','lamp_body','metal',35,0,4),
+ (5786,'craft_furniture_ingredients_n','lamp_assembly','metal',15,0,4),
+ (5787,'craft_furniture_ingredients_n','shade','mineral',20,0,4),
  (5788,'craft_furniture_ingredients_n','lamp_body','metal',40,0,4),
  (5789,'craft_furniture_ingredients_n','lamp_assembly','metal',15,0,4),
  (5790,'craft_furniture_ingredients_n','shade','mineral',20,0,4),
@@ -6460,11 +6460,11 @@ INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name
  (6415,'craft_item_ingredients_n','native_animal_skins','hide_scaley_dantooine',45,0,4),
  (6416,'craft_item_ingredients_n','musk_extract','meat_carnivore_dathomir',30,0,4),
  (6417,'craft_item_ingredients_n','native_animal_skins','hide_leathery_dathomir',40,0,4),
- (6418,'craft_item_ingredients_n','camo_dye','bone_mammal_dathomir',25,0,4),
+ (6418,'craft_item_ingredients_n','camo_dye','bone_mammal_dathomir',25,0,4);
+INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES 
  (6420,'craft_item_ingredients_n','musk_extract','meat_insect_endor',30,0,4),
  (6421,'craft_item_ingredients_n','native_animal_skins','hide_leathery_endor',40,0,4),
- (6422,'craft_item_ingredients_n','camo_dye','bone_avian_endor',20,0,4);
-INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES 
+ (6422,'craft_item_ingredients_n','camo_dye','bone_avian_endor',20,0,4),
  (6424,'craft_item_ingredients_n','musk_extract','meat_domesticated_lok',30,0,4),
  (6425,'craft_item_ingredients_n','native_animal_skins','hide_leathery_lok',40,0,4),
  (6426,'craft_item_ingredients_n','camo_dye','bone_mammal_lok',20,0,4),
@@ -7288,12 +7288,12 @@ INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name
  (7250,'craft_item_ingredients_n','casing','steel',2000,0,4),
  (7251,'craft_item_ingredients_n','shield_overcharger_mechanism','fiberplast_gravitonic',500,0,4),
  (7252,'craft_item_ingredients_n','casing',NULL,0,0,4),
- (7253,'craft_item_ingredients_n','core',NULL,0,0,4),
+ (7253,'craft_item_ingredients_n','core',NULL,0,0,4);
+INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES 
  (7254,'craft_item_ingredients_n','casing',NULL,0,0,4),
  (7255,'craft_item_ingredients_n','chaff_bits',NULL,0,0,4),
  (7256,'craft_item_ingredients_n','casing',NULL,0,0,4),
- (7257,'craft_item_ingredients_n','core',NULL,0,0,4);
-INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES 
+ (7257,'craft_item_ingredients_n','core',NULL,0,0,4),
  (7258,'craft_item_ingredients_n','casing',NULL,0,0,4),
  (7259,'craft_item_ingredients_n','warhead',NULL,0,0,4),
  (7260,'craft_item_ingredients_n','casing','steel',150,0,4),
@@ -7983,10 +7983,10 @@ INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name
  (7944,'craft_structure_ingredients_n','semi_automated_assembly_mechanism','object/tangible/component/structure/shared_manufacturing_mechanism.iff',1,0,5),
  (7945,'craft_structure_ingredients_n','load_bearing_frame','steel',300,0,4),
  (7946,'craft_structure_ingredients_n','body_shell_structure','metal',700,0,4),
- (7947,'craft_structure_ingredients_n','ore_extractor_mill','object/tangible/component/structure/shared_ore_mining_unit.iff',1,0,5),
- (7948,'craft_structure_ingredients_n','structure_foundation','metal',250,0,4),
- (7949,'craft_structure_ingredients_n','pile_containment_shielding','ore',250,0,4);
+ (7947,'craft_structure_ingredients_n','ore_extractor_mill','object/tangible/component/structure/shared_ore_mining_unit.iff',1,0,5);
 INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES 
+ (7948,'craft_structure_ingredients_n','structure_foundation','metal',250,0,4),
+ (7949,'craft_structure_ingredients_n','pile_containment_shielding','ore',250,0,4),
  (7950,'craft_structure_ingredients_n','pile_containment_unit','object/tangible/component/structure/shared_wall_module.iff',5,0,5),
  (7951,'craft_structure_ingredients_n','pile_containment_coolant','chemical',300,0,4),
  (7952,'craft_structure_ingredients_n','matched_turbine_cluster','object/tangible/component/structure/shared_generator_turbine.iff',3,0,5),
@@ -8769,10 +8769,10 @@ INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name
  (8729,'craft_weapon_ingredients_n','activator','aluminum_titanium',22,0,4),
  (8730,'craft_weapon_ingredients_n','handgrip','petrochem_inert_polymer',28,0,4),
  (8731,'craft_weapon_ingredients_n','focusing_crystals','object/tangible/component/weapon/lightsaber/shared_lightsaber_refined_crystal_pack.iff',1,0,5),
- (8732,'craft_weapon_ingredients_n','power_field_insulator','gas_inert_culsion',28,0,4),
- (8733,'craft_weapon_ingredients_n','energizers','copper_polysteel',28,0,4),
- (8734,'craft_weapon_ingredients_n','emitter_shroud',NULL,0,0,4);
+ (8732,'craft_weapon_ingredients_n','power_field_insulator','gas_inert_culsion',28,0,4);
 INSERT INTO `draft_slots` (`id`,`component_file`,`component_name`,`resource_name`,`amount`,`optional`,`type`) VALUES 
+ (8733,'craft_weapon_ingredients_n','energizers','copper_polysteel',28,0,4),
+ (8734,'craft_weapon_ingredients_n','emitter_shroud',NULL,0,0,4),
  (8735,'craft_weapon_ingredients_n','primary_crystal',NULL,0,0,4),
  (8736,'craft_weapon_ingredients_n','activator',NULL,0,0,4),
  (8737,'craft_weapon_ingredients_n','handgrip',NULL,0,0,4),

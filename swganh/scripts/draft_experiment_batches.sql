@@ -51,7 +51,7 @@ CREATE TABLE `draft_experiment_batches` (
 --
 
 /*!40000 ALTER TABLE `draft_experiment_batches` DISABLE KEYS */;
-INSERT INTO `draft_experiment_batches` (`id`,`list_id`) VALUES 
+INSERT INTO `draft_experiment_batches` (`id`,`list_id`) VALUES
  (1,6716),
  (1,6717),
  (1,6718),
@@ -3451,6 +3451,26 @@ INSERT INTO `draft_experiment_batches` (`id`,`list_id`) VALUES
  (806,3010),
  (806,3011),
  (806,3012),
+ (807,8618),
+ (807,8619),
+ (807,8620),
+ (807,8621),
+ (807,8622),
+ (807,8623),
+ (807,8624),
+ (807,8625),
+ (807,8626),
+ (807,8627),
+ (807,8628),
+ (807,8629),
+ (807,8630),
+ (807,8631),
+ (807,8632),
+ (807,8633),
+ (807,8634),
+ (807,8635),
+ (807,8636),
+ (807,8637),
  (808,2590),
  (808,2591),
  (808,2592),
@@ -4583,6 +4603,14 @@ INSERT INTO `draft_experiment_batches` (`id`,`list_id`) VALUES
  (1011,313),
  (1011,314),
  (1011,315),
+ (1012,8610),
+ (1012,8611),
+ (1012,8612),
+ (1012,8613),
+ (1013,8614),
+ (1013,8615),
+ (1013,8616),
+ (1013,8617),
  (1014,316),
  (1014,317),
  (1014,318),
@@ -5014,7 +5042,8 @@ INSERT INTO `draft_experiment_batches` (`id`,`list_id`) VALUES
  (1120,1645),
  (1120,1646),
  (1120,1647),
- (1120,1648),
+ (1120,1648);
+INSERT INTO `draft_experiment_batches` (`id`,`list_id`) VALUES 
  (1120,1649),
  (1120,1650),
  (1120,1651),
@@ -5040,8 +5069,7 @@ INSERT INTO `draft_experiment_batches` (`id`,`list_id`) VALUES
  (1122,1611),
  (1122,1612),
  (1122,1613),
- (1122,1614);
-INSERT INTO `draft_experiment_batches` (`id`,`list_id`) VALUES 
+ (1122,1614),
  (1122,1615),
  (1122,1616),
  (1122,1617),

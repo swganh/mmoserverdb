@@ -58,7 +58,7 @@ CREATE TABLE `draft_craft_item_attribute_link` (
 --
 
 /*!40000 ALTER TABLE `draft_craft_item_attribute_link` DISABLE KEYS */;
-INSERT INTO `draft_craft_item_attribute_link` (`list_id`,`item_attribute`,`attribute_min`,`attribute_max`,`attribute_type`,`id`) VALUES 
+INSERT INTO `draft_craft_item_attribute_link` (`list_id`,`item_attribute`,`attribute_min`,`attribute_max`,`attribute_type`,`id`) VALUES
  (1,94,35.00,60.00,0,4707),
  (2,91,29.00,42.00,0,2),
  (2,512,28.00,52.00,0,3),
@@ -4526,7 +4526,12 @@ INSERT INTO `draft_craft_item_attribute_link` (`list_id`,`item_attribute`,`attri
  (1326,97,225.00,375.00,0,4719),
  (1727,27,375.00,625.00,0,4722),
  (1727,95,375.00,625.00,0,4723),
- (1340,99,150.00,240.00,0,4724);
+ (1340,99,150.00,240.00,0,4724),
+ (3620,471,100.00,150.00,0,4729),
+ (3620,246,1.00,100.00,0,4728),
+ (3621,521,-10.00,15.00,0,4730),
+ (3622,29,1.00,100.00,0,4731),
+ (3623,29,1.00,100.00,0,4732);
 /*!40000 ALTER TABLE `draft_craft_item_attribute_link` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

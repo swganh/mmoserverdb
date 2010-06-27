@@ -52,7 +52,7 @@ CREATE TABLE `draft_assembly_lists` (
 --
 
 /*!40000 ALTER TABLE `draft_assembly_lists` DISABLE KEYS */;
-INSERT INTO `draft_assembly_lists` (`id`,`datatype`,`distribution`) VALUES 
+INSERT INTO `draft_assembly_lists` (`id`,`datatype`,`distribution`) VALUES
  (1,0,0),
  (2,0,0),
  (3,0,0),
@@ -12814,7 +12814,40 @@ INSERT INTO `draft_assembly_lists` (`id`,`datatype`,`distribution`) VALUES
  (8606,0,0),
  (8607,0,0),
  (8608,0,0),
- (8609,0,0);
+ (8609,0,0),
+ (8610,0,0),
+ (8611,0,0),
+ (8612,0,0),
+ (8613,3,1),
+ (8614,0,0),
+ (8615,0,0),
+ (8616,0,0),
+ (8617,3,1),
+ (8618,0,0),
+ (8619,0,0),
+ (8620,2,1),
+ (8621,2,1),
+ (8622,2,1),
+ (8623,0,0),
+ (8620,8,1),
+ (8621,8,1),
+ (8622,8,1),
+ (8624,0,0),
+ (8625,0,0),
+ (8626,0,0),
+ (8627,0,0),
+ (8628,0,0),
+ (8629,0,0),
+ (8630,0,0),
+ (8631,0,0),
+ (8632,0,0),
+ (8633,0,0),
+ (8634,0,0),
+ (8635,0,0),
+ (8636,0,0),
+ (8637,0,0),
+ (8613,8,1),
+ (8617,8,1);
 /*!40000 ALTER TABLE `draft_assembly_lists` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

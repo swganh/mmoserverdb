@@ -55,7 +55,7 @@ CREATE TABLE `draft_craft_attribute_weights` (
 --
 
 /*!40000 ALTER TABLE `draft_craft_attribute_weights` DISABLE KEYS */;
-INSERT INTO `draft_craft_attribute_weights` (`id`,`type`,`distribution`) VALUES 
+INSERT INTO `draft_craft_attribute_weights` (`id`,`type`,`distribution`) VALUES
  (1,7,2.00),
  (1,8,1.00),
  (2,9,1.00),
@@ -6064,6 +6064,7 @@ INSERT INTO `draft_craft_attribute_weights` (`id`,`type`,`distribution`) VALUES
  (3114,7,1.00),
  (3115,8,2.00),
  (3115,3,3.00),
+ (3623,8,1.00),
  (3117,8,2.00),
  (3117,7,1.00),
  (3118,8,2.00),
@@ -6074,6 +6075,8 @@ INSERT INTO `draft_craft_attribute_weights` (`id`,`type`,`distribution`) VALUES
  (3120,7,1.00),
  (3121,8,2.00),
  (3121,3,3.00),
+ (3623,3,1.00),
+ (3622,3,1.00),
  (3123,8,2.00),
  (3123,7,1.00),
  (3124,8,2.00),
@@ -6084,6 +6087,8 @@ INSERT INTO `draft_craft_attribute_weights` (`id`,`type`,`distribution`) VALUES
  (3126,7,1.00),
  (3127,8,2.00),
  (3127,3,3.00),
+ (3621,2,1.00),
+ (3622,8,1.00),
  (3129,8,2.00),
  (3129,7,1.00),
  (3130,8,2.00),
@@ -6094,6 +6099,8 @@ INSERT INTO `draft_craft_attribute_weights` (`id`,`type`,`distribution`) VALUES
  (3132,7,1.00),
  (3133,8,2.00),
  (3133,3,3.00),
+ (3620,2,1.00),
+ (3621,8,1.00),
  (3135,8,2.00),
  (3135,7,1.00),
  (3136,8,2.00),
@@ -6107,6 +6114,7 @@ INSERT INTO `draft_craft_attribute_weights` (`id`,`type`,`distribution`) VALUES
  (3140,8,2.00),
  (3140,3,3.00),
  (999,3,1.00),
+ (3620,8,1.00),
  (3142,8,2.00),
  (3142,7,1.00),
  (3143,8,2.00),

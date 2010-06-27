@@ -51,7 +51,7 @@ CREATE TABLE `draft_schematic_item_link` (
 --
 
 /*!40000 ALTER TABLE `draft_schematic_item_link` DISABLE KEYS */;
-INSERT INTO `draft_schematic_item_link` (`schematic_id`,`item_family`,`item_type`) VALUES 
+INSERT INTO `draft_schematic_item_link` (`schematic_id`,`item_family`,`item_type`) VALUES
  (4037562,13,1459),
  (4980410,7,683),
  (5645596,13,1457),
@@ -673,7 +673,7 @@ INSERT INTO `draft_schematic_item_link` (`schematic_id`,`item_family`,`item_type
  (1542284227,7,1165),
  (1543208719,15,1613),
  (1549050933,21,1384),
- (1555131837,0,1766),
+ (1555131837,5,240),
  (1555153692,22,1828),
  (1555967559,26,2226),
  (1557933596,15,1696),
@@ -997,7 +997,7 @@ INSERT INTO `draft_schematic_item_link` (`schematic_id`,`item_family`,`item_type
  (2341645274,7,754),
  (2343309848,15,1612),
  (2352553481,26,2213),
- (2352769980,0,1767),
+ (2352769980,5,377),
  (2357203295,26,2022),
  (2359702568,7,702),
  (2361580915,10,2330),
@@ -1192,7 +1192,7 @@ INSERT INTO `draft_schematic_item_link` (`schematic_id`,`item_family`,`item_type
  (2904479442,7,920),
  (2905996607,7,915),
  (2910061894,22,1939),
- (2910297856,0,1498),
+ (2910297856,13,1498),
  (2910848469,13,1471),
  (2912736913,15,1698),
  (2914524854,3,12),

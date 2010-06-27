@@ -53,7 +53,7 @@ CREATE TABLE `draft_schematic_manufacture_defaults` (
 --
 
 /*!40000 ALTER TABLE `draft_schematic_manufacture_defaults` DISABLE KEYS */;
-INSERT INTO `draft_schematic_manufacture_defaults` (`schematic_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
+INSERT INTO `draft_schematic_manufacture_defaults` (`schematic_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES
  (4037562,20,'90',0),
  (4037562,21,'20',0),
  (4980410,20,'330',0),
@@ -1297,7 +1297,7 @@ INSERT INTO `draft_schematic_manufacture_defaults` (`schematic_id`,`attribute_id
  (1549050933,20,'100',0),
  (1549050933,21,'2',0),
  (1555131837,20,'150',0),
- (1555131837,21,'0',0),
+ (1555131837,21,'25',0),
  (1555153692,20,'100',0),
  (1555153692,21,'23',0),
  (1555967559,20,'63',0),
@@ -1945,7 +1945,7 @@ INSERT INTO `draft_schematic_manufacture_defaults` (`schematic_id`,`attribute_id
  (2352553481,20,'313',0),
  (2352553481,21,'47',0),
  (2352769980,20,'140',0),
- (2352769980,21,'0',0),
+ (2352769980,21,'25',0),
  (2357203295,20,'1250',0),
  (2357203295,21,'47',0),
  (2359702568,20,'50',0),
@@ -2335,7 +2335,7 @@ INSERT INTO `draft_schematic_manufacture_defaults` (`schematic_id`,`attribute_id
  (2910061894,20,'75',0),
  (2910061894,21,'2',0),
  (2910297856,20,'132',0),
- (2910297856,21,'0',0),
+ (2910297856,21,'20',0),
  (2910848469,20,'45',0),
  (2910848469,21,'20',0),
  (2912736913,20,'235',0),

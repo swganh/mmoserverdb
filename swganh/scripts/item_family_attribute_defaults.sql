@@ -2584,7 +2584,8 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (7,571,198,'###/###',2),
  (7,571,566,'@wearables_name:ring_s04',1),
  (7,571,1270,'0',0),
- (7,572,1,'1',3),
+ (7,572,1,'1',3);
+INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
  (7,572,11,'0',0),
  (7,572,198,'###/###',2),
  (7,572,566,'@wearables_name:robe_jedi_light_s03',1),
@@ -2877,8 +2878,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (7,592,16,'',5),
  (7,592,17,'',4),
  (7,592,198,'###/###',2),
- (7,592,566,'@wearables_name:bodysuit_s06',1);
-INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
+ (7,592,566,'@wearables_name:bodysuit_s06',1),
  (7,592,1270,'0',0),
  (7,593,1,'1',3),
  (7,593,11,'0',0),
@@ -3824,7 +3824,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (7,649,16,'',5),
  (7,649,17,'',4),
  (7,649,198,'###/###',2),
- (7,649,566,'@wearables_name:robe_s05_h1',1),
+ (7,649,566,'@wearables_name:robe_s05b',1),
  (7,649,1270,'0',0),
  (7,650,1,'1',3),
  (7,650,11,'0',0),
@@ -5347,7 +5347,8 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (7,760,17,'',4),
  (7,760,198,'###/###',2),
  (7,760,566,'@wearables_name:ith_shirt_s05',1),
- (7,760,1270,'0',0),
+ (7,760,1270,'0',0);
+INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
  (7,761,1,'1',3),
  (7,761,11,'0',0),
  (7,761,566,'@wearables_name:base_jacket_shortsleeve',1),
@@ -5641,8 +5642,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (7,781,11,'0',0),
  (7,781,198,'###/###',2),
  (7,781,566,'@wearables_name:singing_mountain_clan_mask_s01',1),
- (7,781,1270,'0',0);
-INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
+ (7,781,1270,'0',0),
  (7,782,1,'1',3),
  (7,782,11,'0',0),
  (7,782,16,'',5),
@@ -8106,7 +8106,8 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (7,949,17,'',4),
  (7,949,198,'###/###',2),
  (7,949,566,'@wearables_name:skirt_s05',1),
- (7,949,1270,'0',0),
+ (7,949,1270,'0',0);
+INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
  (7,950,1,'1',3),
  (7,950,11,'0',0),
  (7,950,198,'###/###',2),
@@ -8396,8 +8397,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (7,970,1270,'0',0),
  (7,971,1,'1',3),
  (7,971,11,'0',0),
- (7,971,16,'',5);
-INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
+ (7,971,16,'',5),
  (7,971,17,'',4),
  (7,971,198,'###/###',2),
  (7,971,566,'@wearables_name:necklace_s07',1),
@@ -10761,7 +10761,8 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (7,1167,1,'1',3),
  (7,1167,11,'0',0),
  (7,1167,16,'',5),
- (7,1167,17,'',4),
+ (7,1167,17,'',4);
+INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
  (7,1167,198,'###/###',2),
  (7,1167,566,'@wearables_name:ith_pants_s03',1),
  (7,1167,1270,'0',0),
@@ -11037,8 +11038,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (7,1196,2082,'-',33),
  (7,1196,2083,'-',34),
  (7,1196,2084,'-',35),
- (7,1197,1,'1',3);
-INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
+ (7,1197,1,'1',3),
  (7,1197,11,'0',0),
  (7,1197,16,'',5),
  (7,1197,17,'',4),
@@ -13366,7 +13366,8 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (10,2312,2008,'28',17),
  (10,2312,2009,'15',18),
  (10,2313,1,'1',4),
- (10,2313,11,'0',0),
+ (10,2313,11,'0',0);
+INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
  (10,2313,16,'',6),
  (10,2313,17,'',5),
  (10,2313,198,'1000/1000',3),
@@ -13632,8 +13633,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (10,2325,2001,'100',10),
  (10,2325,2002,'500',11),
  (10,2325,2003,'24',12),
- (10,2325,2004,'-30',13);
-INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
+ (10,2325,2004,'-30',13),
  (10,2325,2005,'50',14),
  (10,2325,2006,'-80',15),
  (10,2325,2007,'95',16),
@@ -15850,7 +15850,8 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (10,2720,1,'1',4),
  (10,2720,11,'0',0),
  (10,2720,566,'@weapon_name:sword_lightsaber_gen1',1),
- (10,2720,1268,'256',0),
+ (10,2720,1268,'256',0);
+INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
  (10,2720,1270,'0',0),
  (10,2721,1,'1',4),
  (10,2721,11,'0',0),
@@ -16100,8 +16101,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (10,2750,2009,'-',18),
  (10,2751,1,'1',4),
  (10,2751,11,'0',0),
- (10,2751,16,'',6);
-INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
+ (10,2751,16,'',6),
  (10,2751,17,'',5),
  (10,2751,198,'1000/1000',3),
  (10,2751,566,'@weapon_name:grenade_fallback',1),
@@ -16487,6 +16487,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (11,1319,16,'',5),
  (11,1319,17,'',4),
  (11,1319,198,'###/###',2),
+ (11,1319,229,'Players Name here (Needs code)',6),
  (11,1319,566,'@obj_n:obj_ommni_box',1),
  (11,1319,1270,'0',0),
  (11,1320,1,'1',3),
@@ -16494,6 +16495,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (11,1320,16,'',5),
  (11,1320,17,'',4),
  (11,1320,198,'###/###',2),
+ (11,1320,229,'Players Name here (Needs code)',6),
  (11,1320,566,'@obj_n:obj_nalargon',1),
  (11,1320,1270,'0',0),
  (11,1321,1,'1',2),
@@ -17330,12 +17332,24 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (15,1596,382,'0',3),
  (15,1596,566,'@deed:wind_generator_deed_name',1),
  (15,1597,1,'1',2),
+ (15,1597,16,'',4),
+ (15,1597,17,'',3),
+ (15,1597,387,'-',5),
  (15,1597,566,'@deed:corellia_guild_deed',1),
  (15,1598,1,'1',2),
+ (15,1598,16,'',4),
+ (15,1598,17,'',3),
+ (15,1598,387,'-',5),
  (15,1598,566,'@deed:generic_guild_deed',1),
  (15,1599,1,'1',2),
+ (15,1599,16,'',4),
+ (15,1599,17,'',3),
+ (15,1599,387,'-',5),
  (15,1599,566,'@deed:naboo_guild_deed',1),
  (15,1600,1,'1',2),
+ (15,1600,16,'',4),
+ (15,1600,17,'',3),
+ (15,1600,387,'',5),
  (15,1600,566,'@deed:tatooine_guild_2_deed',1),
  (15,1601,1,'1',2),
  (15,1601,362,'3',6),
@@ -17814,7 +17828,8 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (17,1749,566,'@item_n:navicomp_3',1),
  (17,1750,1,'1',2),
  (17,1750,566,'@item_n:navicomp_4',1),
- (17,1751,1,'1',2),
+ (17,1751,1,'1',2);
+INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
  (17,1751,566,'@item_n:navicomp_5',1),
  (17,1752,1,'1',2),
  (17,1752,566,'@item_n:navicomp_6',1),
@@ -18073,8 +18088,7 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (22,1800,1,'1',2),
  (22,1800,16,'',5),
  (22,1800,17,'',4),
- (22,1800,459,'',9);
-INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attribute_id`,`attribute_value`,`attribute_order`) VALUES 
+ (22,1800,459,'',9),
  (22,1800,566,'@medicine_name:medic_disease_area_health_b',1),
  (22,1801,1,'1',2),
  (22,1801,16,'',5),
@@ -19502,9 +19516,6 @@ INSERT INTO `item_family_attribute_defaults` (`family_id`,`item_type_id`,`attrib
  (30,2783,400,'0',2),
  (30,2783,566,'@factory_n:installation_crate',1);
 /*!40000 ALTER TABLE `item_family_attribute_defaults` ENABLE KEYS */;
-
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
