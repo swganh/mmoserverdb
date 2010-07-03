@@ -40,18 +40,17 @@ use swganh;
 DROP PROCEDURE IF EXISTS `sp_PlanetNoBuildRegions`;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_PlanetNoBuildRegions`(IN planet INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_PlanetNoBuildRegions`()
 BEGIN
 
   ##
-  ## sp_PlanetNoBuildRegions (planet)
+  ## sp_PlanetNoBuildRegions ()
   ##
-  ## Returns (region_id, region_name, x, z, width, height, build, no_build_type)
+  ## Returns (region_id, region_name, x, z, width, height, planet_id, build, no_build_type)
 
   ## Grab our no build regions
 
-  SELECT region_id, region_name, x, z, width, height, build, no_build_type FROM planet_regions WHERE planet_id = planet AND region_file = 'no_build_region';
-
+  SELECT region_id, region_name, x, z, width, height, planet_id, build, no_build_type FROM planet_regions WHERE region_file = 'no_build_region';
   ##
   ## Exit
 
