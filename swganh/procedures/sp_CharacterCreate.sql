@@ -202,6 +202,9 @@ charCreate:BEGIN
 			CALL sp_CharacterXpCreate(character_id,base_skill_id);
 		END IF;
 		
+		IF start_biography IS NULL THEN SET start_biography = '';
+		END IF;
+		
         INSERT INTO character_biography VALUES (character_id, start_biography);
         INSERT INTO character_matchmaking VALUES (character_id,0,0,0,0,0);
 		
