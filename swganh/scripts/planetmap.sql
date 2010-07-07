@@ -1739,7 +1739,8 @@ INSERT INTO `planetmap` (`id`,`category_id`,`planet_id`,`x`,`y`,`z`,`icon`,`name
  (999999676,34,6,3696.00,0.00,-6457.00,0,'General Ufwol (Crimson Phoenix Squadron)'),
  (999999677,20,0,-3138.00,0.00,2815.00,0,'Kor Vella'),
  (999999678,80,5,4786.00,0.00,-4729.00,0,'Moenia'),
- (999999679,7,8,-3030.00,0.00,1910.00,0,'Mos Espa');
+ (999999679,7,8,-3030.00,0.00,1910.00,0,'Mos Espa'),
+ (999999680,22,9,4032.00,0.00,-6234.00,0,'an Imperial Outpost');
 /*!40000 ALTER TABLE `planetmap` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
