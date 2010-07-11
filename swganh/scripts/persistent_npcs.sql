@@ -3001,7 +3001,6 @@ INSERT INTO `persistent_npcs` (`id`,`parentId`,`family`,`type`,`firstName`,`last
  (47513081689,1945390,2,'object/mobile/shared_dressed_criminal_assassin_human_female_01.iff','','',0,0,0,1,1,0,1,0,0,5.49,0.3,3.81,5,'spacer','mob/creature_names',1),
  (47513081691,1945390,2,'object/mobile/shared_dressed_goon_twk_female_01.iff','','',0,0,0,1,1,0,0,0,1,16.38,1.3,10.32,5,'scoundrel','mob/creature_names',1),
  (47513081693,1945390,2,'object/mobile/shared_dressed_plainsfolk.iff','','',0,0,0,1,1,0,1,0,0,16.38,1.3,11.32,5,'plainsfolk','mob/creature_names',1),
- (47513081697,0,2,'object/mobile/shared_dressed_naboo_police.iff','','',0,0,0,1,1,0,-0.37,0,0.93,4911.19,3.75,-4832.06,5,'thief','mob/creature_names',0.98),
  (47513081699,0,2,'object/mobile/shared_dressed_naboo_police.iff','','',0,0,0,1,1,0,-0.36,0,0.93,4935.59,3.75,-4801.37,5,'thief','mob/creature_names',1),
  (47513081701,0,2,'object/mobile/shared_dressed_naboo_police.iff','','',0,0,0,1,1,0,0.93,0,-0.37,4934.91,3.75,-4802.07,5,'thief','mob/creature_names',0.96),
  (47513081703,0,2,'object/mobile/shared_dressed_naboo_police.iff','','',0,0,0,1,1,0,-0.37,0,0.93,4911.19,3.75,-4832.06,5,'thief','mob/creature_names',1),
