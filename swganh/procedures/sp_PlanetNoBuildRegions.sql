@@ -50,7 +50,7 @@ BEGIN
   ##
   ## Returns (region_id, region_name, x, z, width, height, planet, build, no_build_type)
     
-  SELECT region_id, region_name, x, z, width, height, planet_id, build, no_build_type FROM planet_regions WHERE region_file = 'no_build_region';
+  SELECT region_id, region_name, x, z, width, height, planet_id, build, no_build_type FROM planet_regions WHERE build != 0;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
