@@ -160,9 +160,9 @@ INSERT INTO `non_persistent_npc_attributes` (`npc_id`,`attribute_id`,`value`,`or
  (5,2058,'25.0',50),		-- Creature: Warning range
  (5,2059,'20.0',51),		-- Creature: Attack range
  (5,2060,'42.0',52),		-- Creature: Aggro range
- (5,2061,'Come any closer and I\'ll shoot!',53),	-- Creature: Warning message
- (5,2062,'I\'ll kill ya!',54),						-- Creature: Attacking message
- (5,2063,'You\'ll never take me alive!',55),		-- Creature: Attacked message
+ (5,2061,'@newbie_tutorial/newbie_convo:pirate_taunt1',53),	-- Creature: Warning message
+ (5,2062,'@newbie_tutorial/newbie_convo:pirate_attack',54),						-- Creature: Attacking message
+ (5,2063,'@newbie_tutorial/newbie_convo:pirate_taunt2',55),		-- Creature: Attacked message
  -- (5,2064,'120000',53),	-- Creature: Roaming delay
  -- (5,2065,'0.5',54),		-- Creature: Roaming speed
  -- (5,2066,'1.0',55),		-- Creature: Roaming max distance

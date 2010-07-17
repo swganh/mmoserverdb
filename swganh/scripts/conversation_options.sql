@@ -1336,7 +1336,7 @@ INSERT INTO `conversation_options` (`id`,`customText`,`stf_file`,`stf_variable`,
  (1269,NULL,'newbie_tutorial/newbie_convo','off_1_reply_2',0,3),	-- "Combat isn't really my thing."
  
  (1270,NULL,'newbie_tutorial/newbie_convo','mission_1_reply_1',4,2), -- "Where is the Quartermaster?"
- (1271,NULL,'newbie_tutorial/newbie_convo','mission_1_reply_2',4,0), -- "Will do!"
+ (1271,NULL,'newbie_tutorial/newbie_convo','mission_1_reply_2',4,2), -- "Will do!"
   
  (1272,NULL,'newbie_tutorial/newbie_convo','quarter_1_reply_1',4,2), -- "Can I leave now?"
  (1273,NULL,'newbie_tutorial/newbie_convo','quarter_1_reply_2',4,2); -- "Where are you sending me?" 
