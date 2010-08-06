@@ -66,14 +66,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_CharacterCreate`(
          IN 70FF INT, IN ABFF INT, IN AB2FF INT, IN start_hair_model CHAR(64), IN hair1 INT,IN hair2 INT, IN base_model_string CHAR(64))
 charCreate:BEGIN
 
-    DECLARE oX FLOAT;DECLARE oY FLOAT;DECLARE oZ FLOAT;DECLARE oW FLOAT;
-    DECLARE battlefatigue INT;
+    	DECLARE oX FLOAT;DECLARE oY FLOAT;DECLARE oZ FLOAT;DECLARE oW FLOAT;
+    	DECLARE battlefatigue INT;
 	DECLARE race_id INT;
 	DECLARE character_id BIGINT(20);
-    DECLARE character_parent_id BIGINT(20);
-    DECLARE inventory_id BIGINT(20);
-    DECLARE tutorialcontainer_id BIGINT(20);
-    DECLARE privateowner_id BIGINT(20);
+    	DECLARE character_parent_id BIGINT(20);
+    	DECLARE inventory_id BIGINT(20);
+    	DECLARE tutorialcontainer_id BIGINT(20);
+    	DECLARE privateowner_id BIGINT(20);
 	DECLARE bank_id BIGINT(20);
 	DECLARE datapad_id BIGINT(20);
 	DECLARE planet_name char(32);
@@ -91,8 +91,8 @@ charCreate:BEGIN
 	DECLARE start_x FLOAT;DECLARE start_y FLOAT;DECLARE start_z FLOAT;
 	DECLARE shortSpecies CHAR(32);
 	DECLARE gender INT(3);
-    DECLARE base_skill_id INT;
-    DECLARE nameCheck INT;
+    	DECLARE base_skill_id INT;
+    	DECLARE nameCheck INT;
 	DECLARE currentTime BIGINT(20);
 	DECLARE melon_id BIGINT(20);
         DECLARE EXIT HANDLER FOR NOT FOUND
@@ -142,7 +142,7 @@ charCreate:BEGIN
         SET privateowner_id = 0;
         SET battlefatigue = 0;
         SET oX = 0;
-        SET oY = 0;
+        SET oY = 1;
         SET oZ = 0;
         SET oW = 0;
 		
@@ -177,9 +177,9 @@ charCreate:BEGIN
 
 		-- Don't set any default skills or XP when creating player in the Tutorial.
         IF start_city = 'tutorial' THEN
-			SET character_parent_id = 2203318222960;
-			SET tutorialcontainer_id = 2533274790395904;
-			SET privateowner_id = character_id;
+		SET character_parent_id = 2203318222960;
+		SET tutorialcontainer_id = 2533274790395904;
+		SET privateowner_id = character_id;
         END IF;
 		
 		IF start_city = 'default_location' THEN
