@@ -1730,7 +1730,7 @@ INSERT INTO `draft_schematics` (`object_string`,`group_id`,`weightsbatch_id`,`co
  ('object/draft_schematic/weapon/staff_metal.iff',191,1652,17,4,0,84,0,1,1),
  ('object/draft_schematic/weapon/staff_reinforced.iff',34,1653,8,3,1,80,0,1,1),
  ('object/draft_schematic/weapon/sword.iff',191,1654,15,2,0,45,0,1,1),
- ('object/draft_schematic/weapon/sword_curved.iff',193,1655,90,3,0,90,0,1,1),
+ ('object/draft_schematic/weapon/sword_curved.iff',193,1655,14,3,0,90,0,1,1),
  ('object/draft_schematic/weapon/sword_ryyk_blade.iff',194,1656,20,3,0,110,0,1,1);
 /*!40000 ALTER TABLE `draft_schematics` ENABLE KEYS */;
 
