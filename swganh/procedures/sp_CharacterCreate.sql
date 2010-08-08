@@ -68,18 +68,18 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_CharacterCreate`(
 
 charCreate:BEGIN
 
-	--
-	-- Declare Vars
-	--
+  --
+  -- Declare Vars
+  --
 
-	DECLARE oX FLOAT;DECLARE oY FLOAT;DECLARE oZ FLOAT;DECLARE oW FLOAT;
-	DECLARE battlefatigue INT;
+  DECLARE oX FLOAT;DECLARE oY FLOAT;DECLARE oZ FLOAT;DECLARE oW FLOAT;
+  DECLARE battlefatigue INT;
 	DECLARE race_id INT;
 	DECLARE character_id BIGINT(20);
-	DECLARE character_parent_id BIGINT(20);
-	DECLARE inventory_id BIGINT(20);
-	DECLARE tutorialcontainer_id BIGINT(20);
-	DECLARE privateowner_id BIGINT(20);
+  DECLARE character_parent_id BIGINT(20);
+  DECLARE inventory_id BIGINT(20);
+  DECLARE tutorialcontainer_id BIGINT(20);
+  DECLARE privateowner_id BIGINT(20);
 	DECLARE bank_id BIGINT(20);
 	DECLARE datapad_id BIGINT(20);
 	DECLARE planet_name char(32);
@@ -97,206 +97,201 @@ charCreate:BEGIN
 	DECLARE start_x FLOAT;DECLARE start_y FLOAT;DECLARE start_z FLOAT;
 	DECLARE shortSpecies CHAR(32);
 	DECLARE gender INT(3);
-	DECLARE base_skill_id INT;
-	DECLARE nameCheck INT;
+  DECLARE base_skill_id INT;
+  DECLARE nameCheck INT;
 	DECLARE currentTime BIGINT(20);
-	DECLARE tool_id BIGINT(20);
+  DECLARE tool_id BIGINT(20);
 	DECLARE melon_id BIGINT(20);
-	
-	--
-	-- Transactional Support
-	--
+  DECLARE charactersAllowed INT;
+  DECLARE charactersCurrent INT;
 
-	DECLARE EXIT HANDLER FOR NOT FOUND
-		BEGIN
-			SET character_id = 4;
-			ROLLBACK;
-			SELECT character_id;
-		END;
+  --
+  -- Transactional Support
+  --
 
-	DECLARE EXIT HANDLER FOR SQLEXCEPTION
-		BEGIN
-			SET character_id = 4;
-			ROLLBACK;
-			SELECT character_id;
-		END;
+  DECLARE EXIT HANDLER FOR NOT FOUND
+    BEGIN
+      SET character_id = 4;
+      ROLLBACK;
+      SELECT character_id;
+    END;
 
-	DECLARE EXIT HANDLER FOR SQLWARNING
-		BEGIN
-			SET character_id = 4;
-			ROLLBACK;
-			SELECT character_id;
-		END;
+  DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+      SET character_id = 4;
+      ROLLBACK;
+      SELECT character_id;
+    END;
 
-	SELECT sf_CharacterNameDeveloperCheck(start_firstname) INTO nameCheck;
-		IF nameCheck <> 666 THEN
-			SELECT(nameCheck);
-			LEAVE charCreate;
-		END IF;
+  DECLARE EXIT HANDLER FOR SQLWARNING
+    BEGIN
+    SET character_id = 4;
+    ROLLBACK;
+    SELECT character_id;
+  END;
 
-	SELECT sf_CharacterNameFictionalCheck(start_firstname) INTO nameCheck;
-		IF nameCheck <> 666 THEN
-			SELECT(nameCheck);
-			LEAVE charCreate;
-		END IF;
+  --
+  -- Check if the account is allowed to have another character
+  --
 
-	SELECT sf_CharacterNameInUseCheck(start_firstname) INTO nameCheck;
-		IF nameCheck <> 666 THEN
-			SELECT(nameCheck);
-			LEAVE charCreate;
-		END IF;
+  SELECT characters_allowed FROM account WHERE account_id = start_account_id INTO charactersAllowed;
+  SELECT COUNT(account_id) FROM characters WHERE account_id = start_account_id INTO charactersCurrent;
 
-	--
-	-- Set our gender
-	--
+  IF (charactersCurrent + 1) >= charactersAllowed THEN
+    SET character_id = 15;
+    SELECT character_id;
+    LEAVE charCreate;
+  END IF;
 
-	IF base_model_string like '%female%' THEN
-		SET gender = 0;
-	ELSE
-		SET gender = 1;
-	END IF;
+  --
+  -- Check the new character name for validity
+  --
 
-	--
-	-- Set defaults (battle fatigue, world orientation)
-	--
+  SELECT sf_CharacterNameDeveloperCheck(start_firstname) INTO nameCheck;
+    IF nameCheck <> 666 THEN
+      SELECT(nameCheck);
+      LEAVE charCreate;
+    END IF;
 
-	SET character_parent_id = 0;
-	SET privateowner_id = 0;
-	SET battlefatigue = 0;
-	SET oX = 0;
-	SET oY = 1;
-	SET oZ = 0;
-	SET oW = 0;
+  SELECT sf_CharacterNameFictionalCheck(start_firstname) INTO nameCheck;
+    IF nameCheck <> 666 THEN
+      SELECT(nameCheck);
+      LEAVE charCreate;
+    END IF;
 
+  SELECT sf_CharacterNameInUseCheck(start_firstname) INTO nameCheck;
+    IF nameCheck <> 666 THEN
+      SELECT(nameCheck);
+      LEAVE charCreate;
+    END IF;
+
+  --
+  -- Set the gender
+  --
+
+  IF base_model_string like '%female%' THEN
+    SET gender = 0;
+  ELSE
+    SET gender = 1;
+  END IF;
+
+  --
+  -- Set defaults (battle fatigue, world orientation)
+  --
+
+  SET character_parent_id = 0;
+  SET privateowner_id = 0;
+  SET battlefatigue = 0;
+  SET oX = 0;
+  SET oY = 1;
+  SET oZ = 0;
+  SET oW = 0;
+		
 	--
 	-- Transaction Start
 	--
 
-	START TRANSACTION;
+  START TRANSACTION;
 
-	--
-	-- Get our new characater ID
-	--
+  SELECT MAX(id) + 1000 FROM characters INTO character_id FOR UPDATE;
 
-	SELECT MAX(id) + 1000 FROM characters INTO character_id FOR UPDATE;
+  IF character_id IS NULL THEN
+    SET character_id = 8589934593;
+  END IF;
 
-	IF character_id IS NULL THEN
-		SET character_id = 8589934593;
-	END IF;
+  --
+  -- Set the initial IDs
+  --
 
-	--
-	-- Set the initial IDs
-	--
+  SET inventory_id = character_id + 1;
+  SET bank_id = character_id + 4;
+  SET datapad_id = character_id + 3;
+  SET tutorialcontainer_id = 0;
 
-	SET inventory_id = character_id + 1;
-	SET bank_id = character_id + 4;
-	SET datapad_id = character_id + 3;
-	SET tutorialcontainer_id = 0;
+  SELECT planet_id, x, y, z FROM starting_location WHERE location LIKE start_city INTO start_planet, start_x, start_y, start_z;
 
-	--
-	-- Select our starting location
-	--
+  SELECT f_speciesShort(base_model_string) INTO shortSpecies;
 
-	SELECT planet_id, x, y, z FROM starting_location WHERE location LIKE start_city INTO start_planet, start_x, start_y, start_z;
+  SELECT health, strength, constitution, action, quickness, stamina, mind, focus, willpower FROM starting_attributes WHERE starting_attributes.species like shortSpecies AND starting_attributes.profession like start_profession INTO t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower;
 
-	--
-	-- Select our species type
-	--
+  SELECT id from race where race.name like shortSpecies into race_id;
 
-	SELECT f_speciesShort(base_model_string) INTO shortSpecies;
+  SELECT skill_id from skills where skill_name like start_profession INTO profession_id;
 
-	--
-	-- Select our base stats
-	--
+  -- Don't set any default skills or XP when creating player in the Tutorial.
 
-	SELECT health, strength, constitution, action, quickness, stamina, mind, focus, willpower FROM starting_attributes WHERE starting_attributes.species like shortSpecies AND starting_attributes.profession like start_profession INTO t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower;
+  IF start_city = 'tutorial' THEN
+    SET character_parent_id = 2203318222960;
+    SET tutorialcontainer_id = 2533274790395904;
+    SET privateowner_id = character_id;
+  END IF;
 
-	--
-	-- Select our race ID
-	--
+  IF start_city = 'default_location' THEN
+    SET character_parent_id = 2203318222975;
+  END IF;
 
-	SELECT id from race where race.name like shortSpecies into race_id;
+  INSERT INTO characters VALUES (character_id, start_account_id, start_galaxy_id, start_firstname, start_lastname, race_id, character_parent_id, start_planet, start_x, start_y, start_z, oX, oY, oZ, oW, 0, NULL, 0, CURDATE() + 0);
 
-	--
-	-- Select our base skills
-	--
-
-	SELECT skill_id from skills where skill_name like start_profession INTO profession_id;
-
-	-- Don't set any default skills or XP when creating player in the Tutorial.
-
-	IF start_city = 'tutorial' THEN
-		SET character_parent_id = 2203318222960;
-		SET tutorialcontainer_id = 2533274790395904;
-		SET privateowner_id = character_id;
-	END IF;
-
-	IF start_city = 'default_location' THEN
-		SET character_parent_id = 2203318222975;
-	END IF;
-
-	--
-	-- Create our character
-	--
-
-	INSERT INTO characters VALUES (character_id, start_account_id, start_galaxy_id, start_firstname, start_lastname, race_id, character_parent_id, start_planet, start_x, start_y, start_z, oX, oY, oZ, oW, 0, NULL, 0, CURDATE() + 0);
-	INSERT INTO inventories VALUES (inventory_id,1,1000);
-	INSERT INTO banks VALUES (bank_id,1000,-1);
-	INSERT INTO datapads VALUES (datapad_id,1);
-	INSERT INTO character_attributes VALUES (character_id, 1, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, battlefatigue,0,0,NULL,0,0,1,0,0,0,3);
-	INSERT INTO character_appearance VALUES (character_id, 00FF, 01FF, 02FF, 03FF, 04FF, 05FF, 06FF, 07FF, 08FF, 09FF, 0AFF, 0BFF, 0CFF, 0DFF, 0EFF, 0FFF, 10FF, 11FF, 12FF, 13FF, 14FF, 15FF, 16FF, 17FF, 18FF, 19FF, 1AFF, 1BFF, 1CFF, 1DFF, 1EFF, 1FFF, 20FF, 21FF, 22FF, 23FF, 24FF, 25FF, 26FF, 27FF, 28FF, 29FF, 2AFF, 2BFF, 2CFF, 2DFF, 2EFF, 2FFF, 30FF, 31FF, 32FF, 33FF, 34FF, 35FF, 36FF, 37FF, 38FF, 39FF, 3AFF, 3BFF, 3CFF, 3DFF, 3EFF, 3FFF, 40FF, 41FF, 42FF, 43FF, 44FF, 45FF, 46FF, 47FF, 48FF, 49FF, 4AFF, 4BFF, 4CFF, 4DFF, 4EFF, 4FFF, 50FF, 51FF, 52FF, 53FF, 54FF, 55FF, 56FF, 57FF, 58FF, 59FF, 5AFF, 5BFF, 5CFF, 5DFF, 5EFF, 5FFF, 60FF, 61FF, 62FF, 63FF, 64FF, 65FF, 66FF, 67FF, 68FF, 69FF, 6AFF, 6BFF, 6CFF, 6DFF, 6EFF, 6FFF, 70FF, ABFF, AB2FF, start_hair_model, hair1,hair2, base_model_string,start_scale);
-	INSERT INTO character_movement VALUES(character_id,5.75,1.50,1.00,0.0125);
-	INSERT INTO character_tutorial VALUES(character_id,1,1,start_profession);
-
-	IF start_city <> 'tutorial' THEN
-		SET base_skill_id = profession_id + 1;
-		CALL sp_CharacterSkillsCreate(character_id,base_skill_id,race_id);
-		CALL sp_CharacterXpCreate(character_id,base_skill_id);
-	END IF;
-
-	IF start_biography IS NULL THEN SET start_biography = '';
-	END IF;
-
-	INSERT INTO character_biography VALUES (character_id, start_biography);
-	INSERT INTO character_matchmaking VALUES (character_id,0,0,0,0,0);
-
-	CALL sp_CharacterCreateFactions(character_id);
-	CALL sp_CharacterStartingItems(inventory_id,tutorialcontainer_id,privateowner_id,race_id,profession_id,gender);
-
+  INSERT INTO inventories VALUES (inventory_id,1,1000);
+  INSERT INTO banks VALUES (bank_id,1000,-1);
+  INSERT INTO datapads VALUES (datapad_id,1);
+  INSERT INTO character_attributes VALUES (character_id, 1, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, battlefatigue,0,0,NULL,0,0,1,0,0,0,3);
+  INSERT INTO character_appearance VALUES (character_id, 00FF, 01FF, 02FF, 03FF, 04FF, 05FF, 06FF, 07FF, 08FF, 09FF, 0AFF, 0BFF, 0CFF, 0DFF, 0EFF, 0FFF, 10FF, 11FF, 12FF, 13FF, 14FF, 15FF, 16FF, 17FF, 18FF, 19FF, 1AFF, 1BFF, 1CFF, 1DFF, 1EFF, 1FFF, 20FF, 21FF, 22FF, 23FF, 24FF, 25FF, 26FF, 27FF, 28FF, 29FF, 2AFF, 2BFF, 2CFF, 2DFF, 2EFF, 2FFF, 30FF, 31FF, 32FF, 33FF, 34FF, 35FF, 36FF, 37FF, 38FF, 39FF, 3AFF, 3BFF, 3CFF, 3DFF, 3EFF, 3FFF, 40FF, 41FF, 42FF, 43FF, 44FF, 45FF, 46FF, 47FF, 48FF, 49FF, 4AFF, 4BFF, 4CFF, 4DFF, 4EFF, 4FFF, 50FF, 51FF, 52FF, 53FF, 54FF, 55FF, 56FF, 57FF, 58FF, 59FF, 5AFF, 5BFF, 5CFF, 5DFF, 5EFF, 5FFF, 60FF, 61FF, 62FF, 63FF, 64FF, 65FF, 66FF, 67FF, 68FF, 69FF, 6AFF, 6BFF, 6CFF, 6DFF, 6EFF, 6FFF, 70FF, ABFF, AB2FF, start_hair_model, hair1,hair2, base_model_string,start_scale);
+  INSERT INTO character_movement VALUES(character_id,5.75,1.50,1.00,0.0125);
+  INSERT INTO character_tutorial VALUES(character_id,1,1,start_profession);
+        
+  IF start_city <> 'tutorial' THEN
+    SET base_skill_id = profession_id + 1;
+    CALL sp_CharacterSkillsCreate(character_id,base_skill_id,race_id);
+    CALL sp_CharacterXpCreate(character_id,base_skill_id);
+  END IF;
+		
+  IF start_biography IS NULL THEN SET start_biography = '';
+  END IF;
+		
+  INSERT INTO character_biography VALUES (character_id, start_biography);
+  INSERT INTO character_matchmaking VALUES (character_id,0,0,0,0,0);
+		
+  CALL sp_CharacterCreateFactions(character_id);
+  CALL sp_CharacterStartingItems(inventory_id,tutorialcontainer_id,privateowner_id,race_id,profession_id,gender);
+		
 	--
 	-- Fix Melon to have 5 stacks
-	--
+	-- 
 
 	-- Wen running the Tutorial there is no melon in the inventory. And it will make it impossible to create a character at the Tutorial zone.
 	-- SELECT id FROM items WHERE parent_id = inventory_id AND item_type = 89 INTO melon_id;
 	-- INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
 
-	IF start_city = 'tutorial' THEN
-		SELECT id FROM items WHERE items.privateowner_id = character_id AND items.item_type = 89 INTO melon_id;
-		INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
+  IF start_city = 'tutorial' THEN
+    SELECT id FROM items WHERE items.privateowner_id = character_id AND items.item_type = 89 INTO melon_id;
+    INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
 	ELSE
-		SELECT id FROM items WHERE items.parent_id = inventory_id AND items.item_type = 89 INTO melon_id;
-		INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
+    SELECT id FROM items WHERE items.parent_id = inventory_id AND items.item_type = 89 INTO melon_id;
+    INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
 	END IF;
+	
 
-	--
-	-- Fix tools to have effectivness of 0
-	--
+  --
+  -- Fix tools to have effectivness of 0
+  --
 
-	SELECT id FROM items where parent_id = inventory_id AND item_family = 3 INTO tool_id;
-	UPDATE item_attributes SET item_attributes.value = '0' WHERE attribute_id = 15 and item_id = tool_id;
+  IF start_profession LIKE '%crafting%' OR start_profession LIKE '%scout%' THEN
+    SELECT id FROM items where parent_id = inventory_id AND item_family = 3 INTO tool_id;
+    UPDATE item_attributes SET item_attributes.value = '0' WHERE attribute_id = 15 and item_id = tool_id;
+  END IF;
 
 	--
 	-- Commit Transaction
 	--
-
-	COMMIT;
-
+	
+  COMMIT;
+   
 	--
 	-- Return new character ID
 	--
-
-	SELECT(character_id);
+	
+  SELECT(character_id);
 
 END $$
 
