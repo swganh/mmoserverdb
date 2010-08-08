@@ -39,20 +39,21 @@ USE swganh;
 
 DROP TABLE IF EXISTS `draft_schematic_attribute_manipulation`;
 CREATE TABLE `draft_schematic_attribute_manipulation` (
-  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `ID` bigint(20) unsigned NOT NULL auto_increment,
   `Draft_Schematic` int(10) unsigned NOT NULL,
   `Attribute` int(10) unsigned NOT NULL,
   `AffectedAttribute` varchar(45) NOT NULL,
   `Manipulation` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `list_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `draft_schematic_attribute_manipulation`
 --
 
 /*!40000 ALTER TABLE `draft_schematic_attribute_manipulation` DISABLE KEYS */;
-INSERT INTO `draft_schematic_attribute_manipulation` (`ID`,`Draft_Schematic`,`Attribute`,`AffectedAttribute`,`Manipulation`,`list_id`) VALUES 
+INSERT INTO `draft_schematic_attribute_manipulation` (`ID`,`Draft_Schematic`,`Attribute`,`AffectedAttribute`,`Manipulation`,`list_id`) VALUES
  (8,140,613,'303',1,113),
  (9,140,185,'185',1,114),
  (10,304,613,'366',1,2137),
