@@ -137,7 +137,7 @@ charCreate:BEGIN
   SELECT characters_allowed FROM account WHERE account_id = start_account_id INTO charactersAllowed;
   SELECT COUNT(account_id) FROM characters WHERE account_id = start_account_id INTO charactersCurrent;
 
-  IF (charactersCurrent + 1) >= charactersAllowed THEN
+  IF (charactersCurrent + 1) > charactersAllowed THEN
     SET character_id = 15;
     SELECT character_id;
     LEAVE charCreate;
