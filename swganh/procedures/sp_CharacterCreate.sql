@@ -129,20 +129,6 @@ charCreate:BEGIN
     ROLLBACK;
     SELECT character_id;
   END;
-
-  --
-  -- Check if the account is allowed to have another character
-  --
-
-  SELECT characters_allowed FROM account WHERE account_id = start_account_id INTO charactersAllowed;
-  SELECT COUNT(account_id) FROM characters WHERE account_id = start_account_id INTO charactersCurrent;
-
-  IF (charactersCurrent + 1) > charactersAllowed THEN
-    SET character_id = 15;
-    SELECT character_id;
-    LEAVE charCreate;
-  END IF;
-
   --
   -- Check the new character name for validity
   --
