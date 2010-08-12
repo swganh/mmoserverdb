@@ -1,4 +1,4 @@
-/*
+﻿/*
 ---------------------------------------------------------------------------------------
 This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
 
@@ -34,11 +34,11 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 USE swganh_config;
 
 --
--- Definition of table `galaxy`
+-- Definition of table `config_galaxy`
 --
 
-DROP TABLE IF EXISTS `galaxy`;
-CREATE TABLE `galaxy` (
+DROP TABLE IF EXISTS `config_galaxy`;
+CREATE TABLE `config_galaxy` (
   `galaxy_id` int(10) unsigned NOT NULL auto_increment COMMENT 'Galaxy ID',
   `name` char(32) NOT NULL default '' COMMENT 'Galaxy Name',
   `address` char(16) NOT NULL default '' COMMENT 'Galaxy IP Address',
@@ -58,10 +58,10 @@ CREATE TABLE `galaxy` (
 -- Dumping data for table `galaxy`
 --
 
-/*!40000 ALTER TABLE `galaxy` DISABLE KEYS */;
+/*!40000 ALTER TABLE `config_galaxy` DISABLE KEYS */;
 INSERT INTO `galaxy` (`galaxy_id`,`name`,`address`,`port`,`pingport`,`population`,`character_retention`,`items_retention`,`account_retention`,`status`,`last_update`,`global_Tick_Count`) VALUES
  (2,'SWGANH - Test Centre','127.0.0.1',44990,44991,0,0,0,0,0,'0000-00-00 00:00:00',0);
-/*!40000 ALTER TABLE `galaxy` ENABLE KEYS */;
+/*!40000 ALTER TABLE `config_galaxy` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
