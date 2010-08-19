@@ -34,31 +34,24 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 use swganh;
 
 --
--- Definition of procedure `sp_ReturnUserAccount`
+-- Definition of procedure `sp_AccountStatusUpdate`
 --
 
-DROP PROCEDURE IF EXISTS `sp_ReturnUserAccount`;
+DROP PROCEDURE IF EXISTS `sp_AccountStatusUpdate`;
 
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnUserAccount`(IN usrName CHAR(255),IN pwrd CHAR(255))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_AccountStatusUpdate`(IN account_status INT, accountID BIGINT)
 BEGIN
 
   ##
-  ## Stored Procedure
+  ## sp_AccountStatusUpdate(status, accountID)
   ##
-  ## Use: CALL sp_ReturnUserAccount(username, password);
+  ## Update account status
   ##
-  ## Returns: (server global tick)
-  
-  --
-  -- Declare Vars
-  --
-  
-DECLARE shaPwrd  CHAR(255);
-SET shaPwrd = SHA1(pwrd);
-SELECT account_id, username, password, station_id, banned, active, characters_allowed, csr FROM swganh.account WHERE banned = 0 AND authenticated = 0 AND A.loggedin=0 AND username = usrName AND password = shaPwrd;
+
+  UPDATE account SET lastlogin=NOW(), loggedin = account_status WHERE account_id = accountID;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

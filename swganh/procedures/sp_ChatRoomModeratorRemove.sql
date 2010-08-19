@@ -34,31 +34,26 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 use swganh;
 
 --
--- Definition of procedure `sp_ReturnUserAccount`
+-- Definition of procedure `sp_ChatRoomModeratorRemove`
 --
 
-DROP PROCEDURE IF EXISTS `sp_ReturnUserAccount`;
+DROP PROCEDURE IF EXISTS `sp_ChatRoomModeratorRemove`;
 
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnUserAccount`(IN usrName CHAR(255),IN pwrd CHAR(255))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ChatRoomModeratorRemove`(IN roomID BIGINT, characterName CHAR)
 BEGIN
 
   ##
-  ## Stored Procedure
+  ## sp_ChatRoomModeratorRemove (roomID, characterName)
   ##
-  ## Use: CALL sp_ReturnUserAccount(username, password);
+  ## Removes a Moderator from a created chatroom
   ##
-  ## Returns: (server global tick)
-  
-  --
-  -- Declare Vars
-  --
-  
-DECLARE shaPwrd  CHAR(255);
-SET shaPwrd = SHA1(pwrd);
-SELECT account_id, username, password, station_id, banned, active, characters_allowed, csr FROM swganh.account WHERE banned = 0 AND authenticated = 0 AND A.loggedin=0 AND username = usrName AND password = shaPwrd;
+  ## Returns nothing
+  ##
+
+  DELETE FROM chat_channels_moderators WHERE char_name = characterName AND channel_id = room_id;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

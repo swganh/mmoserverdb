@@ -34,31 +34,25 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 use swganh;
 
 --
--- Definition of procedure `sp_ReturnUserAccount`
+-- Definition of procedure `sp_CSRKnowledgeBaseArticleFind`
 --
 
-DROP PROCEDURE IF EXISTS `sp_ReturnUserAccount`;
+DROP PROCEDURE IF EXISTS `sp_CSRKnowledgeBaseArticleFind`;
 
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnUserAccount`(IN usrName CHAR(255),IN pwrd CHAR(255))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_CSRKnowledgeBaseArticleFind`(IN result TEXT)
 BEGIN
 
   ##
-  ## Stored Procedure
+  ## sp_CSRKnowledgeBaseArticleFind (search text)
   ##
-  ## Use: CALL sp_ReturnUserAccount(username, password);
+  ## Retrieve a Knowledge Base Article
   ##
-  ## Returns: (server global tick)
-  
-  --
-  -- Declare Vars
-  --
-  
-DECLARE shaPwrd  CHAR(255);
-SET shaPwrd = SHA1(pwrd);
-SELECT account_id, username, password, station_id, banned, active, characters_allowed, csr FROM swganh.account WHERE banned = 0 AND authenticated = 0 AND A.loggedin=0 AND username = usrName AND password = shaPwrd;
+  ## Returns (id, title) of article
+
+  SELECT id, title FROM csr_knowledgebase WHERE body LIKE (CONCAT('%',result,'%')) OR title LIKE (CONCAT('%',result,'%'));
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

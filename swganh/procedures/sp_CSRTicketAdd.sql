@@ -34,32 +34,36 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 use swganh;
 
 --
--- Definition of procedure `sp_ReturnUserAccount`
+-- Definition of procedure `sp_CSRTicketAdd`
 --
 
-DROP PROCEDURE IF EXISTS `sp_ReturnUserAccount`;
+DROP PROCEDURE IF EXISTS `sp_CSRTicketAdd`;
 
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnUserAccount`(IN usrName CHAR(255),IN pwrd CHAR(255))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_CSRTicketAdd`(IN playerName TEXT, category INT, subCategory INT, ticketcomment TEXT, info TEXT, harrassing TEXT, lang CHAR(2), bugreport TINYINT(1))
 BEGIN
 
   ##
   ## Stored Procedure
   ##
-  ## Use: CALL sp_ReturnUserAccount(username, password);
+  ## Use: CALL sp_CSRTicketAdd(playerName, category, subcategory, comment, info, harrassing, language, bugreport);
   ##
-  ## Returns: (server global tick)
+  ## Returns: (ticket id)
   
-  --
-  -- Declare Vars
-  --
-  
-DECLARE shaPwrd  CHAR(255);
-SET shaPwrd = SHA1(pwrd);
-SELECT account_id, username, password, station_id, banned, active, characters_allowed, csr FROM swganh.account WHERE banned = 0 AND authenticated = 0 AND A.loggedin=0 AND username = usrName AND password = shaPwrd;
+  DECLARE character_id BIGINT(20);
+  DECLARE subcategory_id INT;
+  DECLARE inserted INT;
 
+  SELECT id FROM characters WHERE characters.firstname = SUBSTRING_INDEX(playerName, ' ', 1) INTO character_id;
+  SELECT csr_subcategories.subcategory_index FROM csr_subcategories WHERE (csr_subcategories.subcategory_id = subCategory) AND (csr_subcategories.category_id = category) INTO subcategory_id;
+
+  INSERT INTO csr_tickets VALUES (NULL, subcategory_id, ticketcomment, info, harrassing, lang, bugreport, character_id, 0, 0, UNIX_TIMESTAMP());
+
+  SELECT MAX(ticket_id) FROM csr_tickets INTO inserted;
+
+  SELECT inserted;
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
