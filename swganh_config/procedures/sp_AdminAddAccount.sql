@@ -70,7 +70,7 @@ BEGIN
       SET mStation_id = 1000000;
     END IF;
 
-   INSERT INTO swganh.account VALUES (NULL, username, mAccount_password, mStation_id, 0, 0, email, NOW(), NOW(), 1, 0, 0, 1, NULL);
+   INSERT INTO swganh.account VALUES (NULL, mUsername, mAccount_password, mStation_id, mAccountType, 0, mEmail, NOW(), NOW(), 1, 0, 0, 1, NULL, NOW());
 
   SELECT mAccount_id;
 

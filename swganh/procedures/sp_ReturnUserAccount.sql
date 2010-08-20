@@ -58,7 +58,17 @@ BEGIN
   
 DECLARE shaPwrd  CHAR(255);
 SET shaPwrd = SHA1(pwrd);
-SELECT account_id, username, password, station_id, banned, active, characters_allowed, csr FROM swganh.account WHERE banned = 0 AND authenticated = 0 AND A.loggedin=0 AND username = usrName AND password = shaPwrd;
+SELECT 
+	account_id, 
+	account_username, 
+	account_password, 
+	account_station_id, 
+	account_banned, 
+	account_active, 
+	account_characters_allowed, 
+	account_csr 
+FROM swganh.account 
+WHERE account_banned=0 AND account_authenticated = 0 AND account_loggedin = 0 AND account_username= usrName AND account_password = shaPwrd;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

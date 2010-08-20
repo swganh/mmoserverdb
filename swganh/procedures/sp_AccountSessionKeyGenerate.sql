@@ -68,7 +68,7 @@ BEGIN
   ##
   ## Update the account table with the new key
 
-  UPDATE account SET session_key = newkey WHERE account_id = maccount_id;
+  UPDATE account SET account_session_key = newkey WHERE account_id = maccount_id;
 
   ##
   ## Return the session key
