@@ -34,31 +34,51 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 use swganh;
 
 --
--- Definition of procedure `sp_ReturnUserAccount`
+-- Definition of procedure `sp_CSRTicketGet`
 --
 
-DROP PROCEDURE IF EXISTS `sp_ReturnUserAccount`;
+DROP PROCEDURE IF EXISTS `sp_CSRTicketGet`;
 
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnUserAccount`(IN usrName CHAR(255),IN pwrd CHAR(255))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_CSRTicketGet`(IN charID BIGINT)
 BEGIN
 
   ##
-  ## Stored Procedure
+  ## sp_CSRTicketGet (character_id)
   ##
-  ## Use: CALL sp_ReturnUserAccount(username, password);
+  ## Retrieves the open CSR tickets by character ID
   ##
-  ## Returns: (server global tick)
-  
-  --
-  -- Declare Vars
-  --
-  
-DECLARE shaPwrd  CHAR(255);
-SET shaPwrd = SHA1(pwrd);
-SELECT account_id, username, password, station_id, banned, active, characters_allowed, csr FROM swganh.account WHERE banned = 0 AND authenticated = 0 AND A.loggedin=0 AND username = usrName AND password = shaPwrd;
+  ## Returns (tickets)
+  ##
+
+  SELECT
+    csr_tickets.ticket_id,
+    characters.firstname,
+    csr_categories.category_id,
+    csr_subcategories.subcategory_id,
+    csr_tickets.comment,
+    csr_tickets.info,
+    csr_tickets.harrasing_user,
+    csr_tickets.language,
+    csr_tickets.bugreport,
+    csr_tickets.activity,
+    csr_tickets.closed,
+    csr_tickets.lastmodified
+  FROM
+    csr_tickets
+  JOIN
+    characters ON
+    (csr_tickets.character_id = characters.id)
+  JOIN
+    csr_subcategories ON
+    (csr_tickets.subcategory_id = csr_subcategories.subcategory_index)
+  JOIN
+    csr_categories ON
+    (csr_subcategories.category_id = csr_categories.category_id)
+  WHERE
+    (csr_tickets.bugreport = 1) && (csr_tickets.character_id = charID);
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

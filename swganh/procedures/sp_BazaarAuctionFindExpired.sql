@@ -34,31 +34,38 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 use swganh;
 
 --
--- Definition of procedure `sp_ReturnUserAccount`
+-- Definition of procedure `sp_BazaarAuctionFindExpired`
 --
 
-DROP PROCEDURE IF EXISTS `sp_ReturnUserAccount`;
+DROP PROCEDURE IF EXISTS `sp_BazaarAuctionFindExpired`;
 
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnUserAccount`(IN usrName CHAR(255),IN pwrd CHAR(255))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_BazaarAuctionFindExpired`(IN timeframe BIGINT)
 BEGIN
 
   ##
-  ## Stored Procedure
+  ## sp_BazaarAuctionFindExpired(time)
   ##
-  ## Use: CALL sp_ReturnUserAccount(username, password);
+  ## Returns the list of expired bazaar auctions
   ##
-  ## Returns: (server global tick)
-  
-  --
-  -- Declare Vars
-  --
-  
-DECLARE shaPwrd  CHAR(255);
-SET shaPwrd = SHA1(pwrd);
-SELECT account_id, username, password, station_id, banned, active, characters_allowed, csr FROM swganh.account WHERE banned = 0 AND authenticated = 0 AND A.loggedin=0 AND username = usrName AND password = shaPwrd;
+
+  SELECT
+    commerce_auction.auction_id,
+    commerce_auction.owner_id,
+    commerce_auction.`type`,
+    commerce_auction.price,
+    commerce_auction.name,
+    commerce_auction.bidder_name,
+    commerce_auction.bazaar_id,
+    characters.firstname,
+    characters.id
+  FROM
+    characters
+  INNER JOIN commerce_auction ON (characters.firstname = commerce_auction.bidder_name)
+  AND (characters.id = commerce_auction.owner_id)
+  WHERE timeframe > commerce_auction.start;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
