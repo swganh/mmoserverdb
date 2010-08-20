@@ -53,7 +53,7 @@ CREATE TABLE `account` (
   `account_authenticated` tinyint(1) NOT NULL default '0' COMMENT 'Account - Authenticated Status',
   `account_characters_allowed` tinyint(3) unsigned NOT NULL default '2' COMMENT 'Number of characters allowed',
   `account_session_key` varchar(32) default NULL COMMENT 'Client Launcher - Session Key',
-  `account_lastcreate` datetime` NOT NULL default '0000-00-00 00:00:00' COMMENT 'Account - Last Character Create TimeStamp',
+  `account_lastcreate` datetime NOT NULL default '0000-00-00 00:00:00' COMMENT 'Account - Last Character Create TimeStamp',
   PRIMARY KEY  (`account_id`),
   UNIQUE KEY `account_username` (`account_username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=utf8;
@@ -63,7 +63,7 @@ CREATE TABLE `account` (
 --
 
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` (`account_id`,`account_username`,`account_password`,`account_station_id`,`account_csr`,`account_banned`,`account_email`,`account_joindate`,`account_lastlogin`,`account_active`,`account_loggedin`,`account_authenticated`,`account_characters_allowed`,`account_session_key`, `account_lastcreate` datetime`) VALUES
+INSERT INTO `account` (`account_id`,`account_username`,`account_password`,`account_station_id`,`account_csr`,`account_banned`,`account_email`,`account_joindate`,`account_lastlogin`,`account_active`,`account_loggedin`,`account_authenticated`,`account_characters_allowed`,`account_session_key`, `account_lastcreate`) VALUES
  (1,'swganh0','41d14978522cc50b70e73f6f0007e82a000a95d5',100000001,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,'0000-00-00 00:00:00'),
  (2,'swganh1','41d14978522cc50b70e73f6f0007e82a000a95d5',100000002,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,'0000-00-00 00:00:00'),
  (3,'swganh2','41d14978522cc50b70e73f6f0007e82a000a95d5',100000003,0,0,'test@swganh.org','0000-00-00 00:00:00','0000-00-00 00:00:00',1,0,0,2,NULL,'0000-00-00 00:00:00'),
