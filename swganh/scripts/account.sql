@@ -55,7 +55,7 @@ CREATE TABLE `account` (
   `account_session_key` varchar(32) default NULL COMMENT 'Client Launcher - Session Key',
   `account_lastcreate` datetime` NOT NULL default '0000-00-00 00:00:00' COMMENT 'Account - Last Character Create TimeStamp',
   PRIMARY KEY  (`account_id`),
-  UNIQUE KEY `username` (`username`)
+  UNIQUE KEY `account_username` (`account_username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=utf8;
 
 --
