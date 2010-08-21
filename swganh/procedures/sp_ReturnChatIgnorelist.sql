@@ -47,7 +47,7 @@ BEGIN
 	
 	SELECT B.firstname 
     FROM swganh.chat_ignorelist A 
-	INNER JOIN swganh.characters B ON (A.friend_id = B.id) 
+	INNER JOIN swganh.characters B ON (A.character_id = B.id) 
 	WHERE (A.character_id = charId);
 
 END $$
