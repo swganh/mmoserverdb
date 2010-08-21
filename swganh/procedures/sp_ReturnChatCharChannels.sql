@@ -46,7 +46,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnChatCharChannels`(IN charI
 BEGIN
 	
 	SELECT A.channel_id
-    FROM swganh.chat_char_channels
+    FROM swganh.chat_char_channels A
     WHERE A.character_id = charId;
 
 END $$

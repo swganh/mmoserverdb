@@ -58,7 +58,7 @@ CREATE TABLE `attributes` (
 --
 
 /*!40000 ALTER TABLE `attributes` DISABLE KEYS */;
-INSERT INTO `attributes` (`id`,`name`,`internal`,`attribute_internal_description`,`item_tool_internal`,`item_tool_internal_2`) VALUES 
+INSERT INTO `attributes` (`id`,`name`,`internal`,`attribute_internal_description`,`item_tool_internal`,`item_tool_internal_2`) VALUES
  (1,'volume',0,'Volume:',0,0),
  (2,'travel_departure_planet',0,'Departure Planet',0,0),
  (3,'travel_departure_point',0,'Departure Location',0,0),
@@ -1415,9 +1415,6 @@ INSERT INTO `attributes` (`id`,`name`,`internal`,`attribute_internal_description
  (2084,'cat_armor_encumbrance.armor_mind_encumbrance',0,'Mind:',11,0),
  (2085,'needs_setup',1,'schem_tool use only',0,0);
 /*!40000 ALTER TABLE `attributes` ENABLE KEYS */;
-
-
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
