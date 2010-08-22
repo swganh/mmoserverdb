@@ -133,23 +133,17 @@ charCreate:BEGIN
   -- Check the new character name for validity
   --
 
-  SELECT sf_CharacterNameDeveloperCheck(start_firstname) INTO nameCheck;
+  SELECT sf_CharacterNameCheck(start_firstname, start_lastname, start_account_id) INTO nameCheck;
     IF nameCheck <> 666 THEN
       SELECT(nameCheck);
       LEAVE charCreate;
     END IF;
 
-  SELECT sf_CharacterNameFictionalCheck(start_firstname) INTO nameCheck;
-    IF nameCheck <> 666 THEN
-      SELECT(nameCheck);
-      LEAVE charCreate;
-    END IF;
-
-  SELECT sf_CharacterNameInUseCheck(start_firstname) INTO nameCheck;
-    IF nameCheck <> 666 THEN
-      SELECT(nameCheck);
-      LEAVE charCreate;
-    END IF;
+  --
+  -- Update the character creation time
+  --
+  
+  UPDATE swganh.account SET account_lastcreate = NOW() WHERE account_id = start_account_id;
 
   --
   -- Set the gender
