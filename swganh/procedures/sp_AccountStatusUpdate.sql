@@ -51,7 +51,7 @@ BEGIN
   ## Update account status
   ##
 
-  UPDATE account SET lastlogin=NOW(), loggedin = account_status WHERE account_id = accountID;
+  UPDATE account SET account_lastlogin=NOW(), loggedin = account_status WHERE account_id = accountID;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
