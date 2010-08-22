@@ -31,35 +31,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
 
 --
--- Definition of table `name_reserved`
+-- Create schema swganh_static
 --
 
-DROP TABLE IF EXISTS `name_reserved`;
-CREATE TABLE `name_reserved` (
-  `id` int(10) unsigned NOT NULL auto_increment,
-  `name` char(32) NOT NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `name_reserved`
---
-
-/*!40000 ALTER TABLE `name_reserved` DISABLE KEYS */;
-INSERT INTO `name_reserved` (`id`,`name`) VALUES 
- (1,'Luke'),
- (2,'Darth'),
- (3,'Vader'),
- (4,'Leia'),
- (5,'Chewbacca'),
- (6,'Yoda'),
- (7,'Emperor'),
- (8,'stormtrooper'),
- (9,'TK');
-/*!40000 ALTER TABLE `name_reserved` ENABLE KEYS */;
+DROP DATABASE IF EXISTS swganh_static;
+CREATE DATABASE IF NOT EXISTS swganh_static;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

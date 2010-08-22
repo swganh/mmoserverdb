@@ -31,43 +31,35 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `name_developer`
+-- Definition of table `name_reserved`
 --
 
-DROP TABLE IF EXISTS `name_developer`;
-CREATE TABLE `name_developer` (
+DROP TABLE IF EXISTS `name_reserved`;
+CREATE TABLE `name_reserved` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `name` char(32) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `name_developer`
+-- Dumping data for table `name_reserved`
 --
 
-/*!40000 ALTER TABLE `name_developer` DISABLE KEYS */;
-INSERT INTO `name_developer` (`id`,`name`) VALUES 
- (1,'snow'),
- (2,'htx'),
- (3,'wookiee'),
- (4,'jack'),
- (5,'rouse'),
- (6,'ketusringa'),
- (7,'yosh'),
- (8,'jay'),
- (9,'schmunzel'),
- (10,'ready'),
- (11,'spety'),
- (12,'narook'),
- (13,'tmr'),
- (14,'o_0'),
- (15,'starko'),
- (16,'cieto'),
- (18,'pope');
-/*!40000 ALTER TABLE `name_developer` ENABLE KEYS */;
+/*!40000 ALTER TABLE `name_reserved` DISABLE KEYS */;
+INSERT INTO `name_reserved` (`id`,`name`) VALUES 
+ (1,'Luke'),
+ (2,'Darth'),
+ (3,'Vader'),
+ (4,'Leia'),
+ (5,'Chewbacca'),
+ (6,'Yoda'),
+ (7,'Emperor'),
+ (8,'stormtrooper'),
+ (9,'TK');
+/*!40000 ALTER TABLE `name_reserved` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
