@@ -263,8 +263,13 @@ charCreate:BEGIN
   --
 
   IF start_profession LIKE '%crafting%' OR start_profession LIKE '%scout%' THEN
-    SELECT id FROM items where parent_id = inventory_id AND item_family = 3 INTO tool_id;
-    UPDATE item_attributes SET item_attributes.value = '0' WHERE attribute_id = 15 and item_id = tool_id;
+    IF start_city = 'tutorial' THEN
+      SELECT id FROM items where items.privateowner_id = character_id AND items.item_family = 3 INTO tool_id;
+      UPDATE item_attributes SET item_attributes.value = '0' WHERE attribute_id = 15 and item_id = tool_id;
+    ELSE
+      SELECT id FROM items where items.parent_id = inventory_id AND items.item_family = 3 INTO tool_id;
+      UPDATE item_attributes SET item_attributes.value = '0' WHERE attribute_id = 15 and item_id = tool_id;
+    END IF;
   END IF;
 
 	--
