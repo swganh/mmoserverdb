@@ -32,7 +32,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
-USE swganh;
+USE swganh_static;
 
 --
 -- Definition of table `zone_regions`
@@ -45,10 +45,10 @@ CREATE TABLE `zone_regions` (
   `planet_id` int(2) NOT NULL default '0',
   `qtDepth` int(2) unsigned NOT NULL default '8',
   PRIMARY KEY  (`Id`),
-  KEY `fk_zone_regions_region` (`region_id`),
-  KEY `fk_zone_region_planet` (`planet_id`),
-  CONSTRAINT `fk_zone_regions_region` FOREIGN KEY (`region_id`) REFERENCES `planet_regions` (`region_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_zone_region_planet` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `PK_zone_region` (`region_id`),
+  KEY `PK_zone_planet` (`planet_id`),
+  CONSTRAINT `fk_zone_region` FOREIGN KEY (`region_id`) REFERENCES `planet_regions` (`region_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_zone_planet` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --

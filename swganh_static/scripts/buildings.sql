@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
 -- Definition of table `buildings`
@@ -50,12 +50,10 @@ CREATE TABLE `buildings` (
   `type_id` int(11) NOT NULL default '1',
   `planet_id` int(2) NOT NULL default '0',
   PRIMARY KEY  (`id`),
-  KEY `fk_static_buildings_planet_planet` (`planet_id`),
-  KEY `fk_st_build_type_type` (`type_id`),
-  CONSTRAINT `buildings_ibfk_1` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `buildings_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `building_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `buildings_ibfk_3` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `buildings_ibfk_4` FOREIGN KEY (`type_id`) REFERENCES `building_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `PK_static_building_planet` (`planet_id`),
+  KEY `PK_static_building_type` (`type_id`),
+  CONSTRAINT `FK_building_planet` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_building_type` FOREIGN KEY (`type_id`) REFERENCES `building_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

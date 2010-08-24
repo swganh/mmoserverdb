@@ -1,4 +1,4 @@
-/*
+﻿/*
 ---------------------------------------------------------------------------------------
 This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
 
@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
 -- Definition of table `building_types`
@@ -44,13 +44,13 @@ CREATE TABLE `building_types` (
   `cells` tinyint(2) unsigned NOT NULL default '1',
   `width` float NOT NULL default '128',
   `height` float NOT NULL default '128',
-  `file` char(255) NOT NULL default 'building_name',
+  `filename` char(255) NOT NULL default 'building_name',
   `name` char(255) NOT NULL default 'housing_general_small_style_1',
   `family` int(11) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id`),
-  UNIQUE KEY `pk_buildingtypes_objstr` (`model`),
-  KEY `FK_building_types_1` (`family`),
-  CONSTRAINT `FK_building_types_1` FOREIGN KEY (`family`) REFERENCES `building_families` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  UNIQUE KEY `PK_building_model` (`model`),
+  KEY `FK_building_family` (`family`),
+  CONSTRAINT `FK_building_family` FOREIGN KEY (`family`) REFERENCES `building_families` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1040 DEFAULT CHARSET=utf8;
 
 --
@@ -58,7 +58,7 @@ CREATE TABLE `building_types` (
 --
 
 /*!40000 ALTER TABLE `building_types` DISABLE KEYS */;
-INSERT INTO `building_types` (`id`,`model`,`cells`,`width`,`height`,`file`,`name`,`family`) VALUES 
+INSERT INTO `building_types` (`id`,`model`,`cells`,`width`,`height`,`filename`,`name`,`family`) VALUES 
  (1,'object/building/naboo/shared_cantina_naboo.iff',15,50,128,'building_name','housing_general_small_style_1',2),
  (2,'object/building/naboo/shared_association_hall_civilian_naboo.iff',17,55,128,'building_name','housing_general_small_style_1',0),
  (3,'object/building/dathomir/shared_night_sister_stronghold.iff',12,128,128,'building_name','housing_general_small_style_1',0),
@@ -555,7 +555,7 @@ INSERT INTO `building_types` (`id`,`model`,`cells`,`width`,`height`,`file`,`name
  (494,'object/building/player/shared_player_house_naboo_large_style_01.iff',14,128,128,'building_name','housing_general_small_style_1',0),
  (495,'object/building/poi/shared_tatooine_evil_settlers_medium2.iff',1,128,128,'building_name','housing_general_small_style_1',0),
  (496,'object/building/poi/shared_dathomir_imperialprisonscout_small1.iff',1,128,128,'building_name','housing_general_small_style_1',0);
-INSERT INTO `building_types` (`id`,`model`,`cells`,`width`,`height`,`file`,`name`,`family`) VALUES 
+INSERT INTO `building_types` (`id`,`model`,`cells`,`width`,`height`,`filename`,`name`,`family`) VALUES 
  (497,'object/building/poi/shared_tatooine_spicefiend_large2.iff',1,128,128,'building_name','housing_general_small_style_1',0),
  (498,'object/building/player/city/shared_garden_corellia_lrg_03.iff',1,128,128,'building_name','housing_general_small_style_1',0),
  (499,'object/building/player/shared_player_house_corellia_small_style_02_floorplan_02.iff',2,128,128,'building_name','housing_general_small_style_1',0),
@@ -1050,7 +1050,7 @@ INSERT INTO `building_types` (`id`,`model`,`cells`,`width`,`height`,`file`,`name
  (988,'object/building/poi/shared_lok_imperial_medium6.iff',1,128,128,'building_name','housing_general_small_style_1',0),
  (989,'object/building/general/shared_starport_general.iff',1,128,128,'building_name','housing_general_small_style_1',7),
  (990,'object/building/poi/shared_naboo_mvillager_medium.iff',1,128,128,'building_name','housing_general_small_style_1',0);
-INSERT INTO `building_types` (`id`,`model`,`cells`,`width`,`height`,`file`,`name`,`family`) VALUES 
+INSERT INTO `building_types` (`id`,`model`,`cells`,`width`,`height`,`filename`,`name`,`family`) VALUES 
  (991,'object/building/poi/shared_lok_imperial_medium.iff',1,128,128,'building_name','housing_general_small_style_1',0),
  (992,'object/building/base/shared_base_shuttleport.iff',1,128,128,'building_name','housing_general_small_style_1',6),
  (993,'object/building/poi/shared_naboo_tradefederationloyalist_large2.iff',1,128,128,'building_name','housing_general_small_style_1',0),

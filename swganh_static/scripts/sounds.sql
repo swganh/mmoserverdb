@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
 -- Definition of table `sounds`
@@ -42,7 +42,7 @@ CREATE TABLE `sounds` (
   `Id` int(11) unsigned NOT NULL auto_increment,
   `name` char(255) default NULL,
   PRIMARY KEY  (`Id`),
-  UNIQUE KEY `pk_sounds_bname` (`name`)
+  UNIQUE KEY `PK_sound_name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4723 DEFAULT CHARSET=utf8 ROW_FORMAT=REDUNDANT;
 
 --
