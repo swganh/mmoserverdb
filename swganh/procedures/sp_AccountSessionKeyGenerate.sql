@@ -56,9 +56,9 @@ BEGIN
   ##
   ## Get our seeds
 
-  SELECT LENGTH(email) + LENGTH(username) FROM account WHERE account_id = maccount_id INTO account_seed ;
+  SELECT LENGTH(account_email) + LENGTH(account_username) FROM account WHERE account_id = maccount_id INTO account_seed ;
 
-  SELECT SHA1(UNIX_TIMESTAMP()+LENGTH(username)) FROM account WHERE account_id = maccount_id INTO seed;
+  SELECT SHA1(UNIX_TIMESTAMP()+LENGTH(account_username)) FROM account WHERE account_id = maccount_id INTO seed;
 
   ##
   ## Generate the session key
