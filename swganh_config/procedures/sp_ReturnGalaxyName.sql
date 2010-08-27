@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_config;
 
 --
 -- Definition of procedure `sp_ReturnGalaxyName`
@@ -44,7 +44,7 @@ DELIMITER $$
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnGalaxyName`(IN galaxyId INT)
 BEGIN
-	SELECT name FROM swganh.galaxy WHERE galaxy_id = galaxyId;	
+	SELECT name FROM swganh_config.galaxy WHERE galaxy_id = galaxyId;	
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

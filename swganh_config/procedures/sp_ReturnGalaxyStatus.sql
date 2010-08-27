@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_config;
 
 --
 -- Definition of procedure `sp_ReturnGalaxyStatus`
@@ -45,7 +45,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnGalaxyStatus`()
 BEGIN
 	
-	SELECT galaxy_id, name, address, port, pingport, population, status, UNIX_TIMESTAMP(last_update) FROM galaxy;
+	SELECT galaxy_id, name, address, port, pingport, population, status, UNIX_TIMESTAMP(last_update) FROM swganh_config.galaxy;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
