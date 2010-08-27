@@ -31,26 +31,36 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `mission_terminal_mission_types`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `mission_terminal_mission_types`;
+CREATE TABLE `mission_terminal_mission_types` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `terminal` bigint(20) unsigned NOT NULL,
+  `mission_type` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `mission_terminal_mission_types`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `mission_terminal_mission_types` DISABLE KEYS */;
+INSERT INTO `mission_terminal_mission_types` (`id`,`terminal`,`mission_type`) VALUES 
+ (1,6076112,40),
+ (2,6076112,43),
+ (3,6076112,45),
+ (4,6076112,48),
+ (5,6076112,50),
+ (6,6076112,53);
+/*!40000 ALTER TABLE `mission_terminal_mission_types` ENABLE KEYS */;
+
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -31,26 +31,36 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
+
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `item_attributes`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
+DROP TABLE IF EXISTS `item_attributes`;
+CREATE TABLE `item_attributes` (
+  `item_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `attribute_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `value` char(255) NOT NULL DEFAULT '""',
+  `order` int(11) unsigned NOT NULL DEFAULT '0',
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+  PRIMARY KEY USING BTREE(`id`),
+  KEY `fk_item_attributes_attribute` (`attribute_id`),
+  KEY `Index_3fk_item_items` (`item_id`),
+  CONSTRAINT `fk_itemattributes_item` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_item_attributes_attribute` FOREIGN KEY (`attribute_id`) REFERENCES `attributes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=REDUNDANT;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `item_attributes`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `item_attributes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `item_attributes` ENABLE KEYS */;
+
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

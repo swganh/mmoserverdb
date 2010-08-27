@@ -31,26 +31,41 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `draft_lists_datatypes`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `draft_lists_datatypes`;
+CREATE TABLE `draft_lists_datatypes` (
+  `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `description` char(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `draft_lists_datatypes`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `draft_lists_datatypes` DISABLE KEYS */;
+INSERT INTO `draft_lists_datatypes` (`id`,`description`) VALUES 
+ (0,'Potency'),
+ (1,'Cold Resistance'),
+ (2,'Conductivity'),
+ (3,'Decay Resistance'),
+ (4,'Heat Resistance'),
+ (5,'Flavor'),
+ (6,'Mallebility'),
+ (7,'Potential Energy'),
+ (8,'Overall Quality'),
+ (9,'Shock Resistance'),
+ (10,'Unit Toughness'),
+ (11,'Bulk');
+/*!40000 ALTER TABLE `draft_lists_datatypes` ENABLE KEYS */;
+
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

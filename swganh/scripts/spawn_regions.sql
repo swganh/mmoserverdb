@@ -48,8 +48,8 @@ CREATE TABLE `spawn_regions` (
   PRIMARY KEY (`id`),
   KEY `fk_spawn_regions` (`region_id`),
   KEY `fk_spawn_planet` (`planet_id`),
-  CONSTRAINT `fk_spawn_planet` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_spawn_regions` FOREIGN KEY (`region_id`) REFERENCES `planet_regions` (`region_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `fk_spawn_planet` FOREIGN KEY (`planet_id`) REFERENCES `swganh_tools`.`planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_spawn_regions` FOREIGN KEY (`region_id`) REFERENCES `swganh_tools`.`planet_regions` (`region_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=64961380353 DEFAULT CHARSET=utf8;
 
 --

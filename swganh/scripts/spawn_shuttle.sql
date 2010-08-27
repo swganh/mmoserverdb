@@ -49,7 +49,7 @@ CREATE TABLE `spawn_shuttle` (
   `planet_id` int(2) NOT NULL default '0',
   PRIMARY KEY  (`id`),
   KEY `spawn_shuttle_planetid` (`planet_id`),
-  CONSTRAINT `spawn_shuttle_ibfk_1` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `spawn_shuttle_ibfk_1` FOREIGN KEY (`planet_id`) REFERENCES `swganh_tools`.`planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

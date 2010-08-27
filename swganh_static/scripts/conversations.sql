@@ -31,47 +31,66 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `craft_types`
+-- Definition of table `conversations`
 --
 
-CREATE DATABASE IF NOT EXISTS swganh;
-USE swganh;
-
---
--- Definition of table `internal`
---
-
-DROP TABLE IF EXISTS `internal`;
-CREATE TABLE `internal` (
-  `id` int(10) unsigned NOT NULL auto_increment,
-  `table_name` varchar(45) NOT NULL,
-  `column_name` varchar(255) NOT NULL,
+DROP TABLE IF EXISTS `conversations`;
+CREATE TABLE `conversations` (
+  `id` int(11) unsigned NOT NULL auto_increment,
+  `description` varchar(1024) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='List all internal tables for easy removal once we go live.';
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `internal`
+-- Dumping data for table `conversations`
 --
 
-/*!40000 ALTER TABLE `internal` DISABLE KEYS */;
-INSERT INTO `internal` (`id`,`table_name`,`column_name`) VALUES 
- (1,'attributes','item_tool_internal, item_tool_internal2 - Used only by the item tool.'),
- (2,'attributes','Attribute_internal_description - Used internally to identify the name table.'),
- (3,'craft_type','Entire table only used for the schematic tool.'),
- (4,'draft_craft_batches','Internal_schem_tool - used by schemtool only.'),
- (5,'draft_schematics','Done, Status - used only by the schematic tool.'),
- (6,'item_types','Complete - Only used by the item tool.'),
- (7,'name_developer','used in core to stop ppl from using ANH Devs names.'),
- (8,'planetmapcategory','Description - just used for easily identifing the items in this table.'),
- (9,'schem_crc','Entire table used only by the schematic tool.'),
- (10,'stf_files','Entire table not used in core.'),
- (11,'stf_variables','Entire table not used in core.'),
- (12,'terminal_elevator_data','id2 -  was added to make this table editable other wise you cant edit it.'),
-(13,'draft_schematic_attribute_manipulation','list_id, only used by the schem tool');
-/*!40000 ALTER TABLE `internal` ENABLE KEYS */;
+/*!40000 ALTER TABLE `conversations` DISABLE KEYS */;
+INSERT INTO `conversations` (`id`,`description`) VALUES 
+ (1,'brawler trainer dialog'),
+ (2,'entertainer trainer dialog'),
+ (3,'scout trainer dialog'),
+ (4,'medic trainer dialog'),
+ (5,'artisan trainer dialog'),
+ (6,'marksman trainer dialog'),
+ (7,'rifleman trainer dialog'),
+ (8,'pistol trainer dialog'),
+ (9,'carbine trainer dialog'),
+ (10,'unarmed trainer dialog'),
+ (11,'fencer trainer dialog'),
+ (12,'swordman trainer dialog'),
+ (13,'polearm trainer dialog'),
+ (14,'dancer trainer dialog'),
+ (15,'musician trainer dialog'),
+ (16,'doctor trainer dialog'),
+ (17,'ranger trainer dialog'),
+ (18,'creature handler dialog'),
+ (19,'bioengineer trainer dialog'),
+ (20,'armorsmith trainer dialog'),
+ (21,'weaponsmith trainer dialog'),
+ (22,'chef trainer dialog'),
+ (23,'tailor trainer dialog'),
+ (24,'architect trainer dialog'),
+ (25,'droidengineer trainer dialog'),
+ (26,'merchant trainer dialog'),
+ (27,'smuggler trainer dialog'),
+ (28,'bountyhunter trainer dialog'),
+ (29,'commando trainer dialog'),
+ (30,'combat medic trainer dialog'),
+ (31,'image designer trainer dialog'),
+ (32,'squad leader trainer dialog'),
+ (33,'politician trainer dialog'),
+ (34,'tutorial item room imperial officer dialog'),
+ (35,'tutorial bank and bazzar room imperial officer dialog'),
+ (36,'tutorial cloning and insurance room droid dialog'), 
+ (37,'tutorial covard imperial officer room dialog'),
+ (38,'tutorial imperial officer with trainer room dialog'),  
+ (39,'tutorial imperial officer in mission terminal room dialog'),
+ (40,'tutorial quartermaster room dialog');
+/*!40000 ALTER TABLE `conversations` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

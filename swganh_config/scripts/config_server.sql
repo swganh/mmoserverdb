@@ -31,26 +31,53 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
 
 --
--- Definition of table `structure_cells`
+-- Create schema swganh
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+USE swganh_config;
+
+--
+-- Definition of table `config_server`
+--
+
+DROP TABLE IF EXISTS `config_server`;
+CREATE TABLE `config_server` (
+  `id` bigint(20) NOT NULL,
+  `server_name` char(255) NOT NULL,
+  `config_attributes_id` bigint(20) NOT NULL,
+  `value` char(255) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+  KEY `fk_config_server_config_attributes` (`config_attributes_id`),
+  CONSTRAINT `fk_config_server_config_attributes` FOREIGN KEY (`config_attributes_id`) REFERENCES `config_server_attributes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `config_server`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `config_server` DISABLE KEYS */;
+INSERT INTO `config_server` (`id`,`server_name`,`config_attributes_id`,`value`) VALUES 
+ (1,'all',17,'hey all :)'),
+ (2,'all',18,'128'),
+ (3,'all',19,'128'),
+ (4,'all',20,'30'),	-- 30 seconds is the accurate SWG LD disposal time.
+ (5,'all',21,'0'),
+ (6,'all',22,'0'),
+ (7,'all',23,'3'),
+ (8,'all',24,'25'),
+ (9,'all',25,'20000'),
+ (10,'all',26,'100'),
+ (11,'all',27,'100'),
+ (12,'all',28,'100'),
+ (13,'all',29,'30'),
+ (14,'all',30,'300'),
+ (15,'tatooine',17,'hey you bunch on tatooine :)');
+/*!40000 ALTER TABLE `config_server` ENABLE KEYS */;
+
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

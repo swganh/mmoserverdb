@@ -31,26 +31,35 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `badge_categories`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `badge_categories`;
+CREATE TABLE `badge_categories` (
+  `Id` int(11) unsigned NOT NULL default '0',
+  `name` char(255) default NULL,
+  PRIMARY KEY  (`Id`),
+  UNIQUE KEY `pk_name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=REDUNDANT;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `badge_categories`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `badge_categories` DISABLE KEYS */;
+INSERT INTO `badge_categories` (`Id`,`name`) VALUES 
+ (1,'accumulation'),
+ (7,'content'),
+ (6,'events'),
+ (4,'exploration_dangerous'),
+ (5,'exploration_easy'),
+ (3,'exploration_jedi'),
+ (2,'interest'),
+ (8,'master');
+/*!40000 ALTER TABLE `badge_categories` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

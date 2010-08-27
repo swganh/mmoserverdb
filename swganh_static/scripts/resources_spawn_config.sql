@@ -31,26 +31,39 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `resources_spawn_config`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `resources_spawn_config`;
+CREATE TABLE `resources_spawn_config` (
+  `resource_id` bigint(20) unsigned NOT NULL default '0',
+  `planet_id` int(2) NOT NULL default '0',
+  `noiseMapBoundsX1` double NOT NULL default '1',
+  `noiseMapBoundsX2` double NOT NULL default '3',
+  `noiseMapBoundsY1` double NOT NULL default '1',
+  `noiseMapBoundsY2` double NOT NULL default '4',
+  `noiseMapOctaves` tinyint(3) unsigned NOT NULL default '4',
+  `noiseMapFrequency` double NOT NULL default '4',
+  `noiseMapPersistence` double NOT NULL default '0.2',
+  `noiseMapScale` double NOT NULL default '1',
+  `noiseMapBias` double NOT NULL default '0',
+  `unitsTotal` bigint(20) unsigned NOT NULL default '10000000',
+  `unitsLeft` bigint(20) unsigned default '10000000',
+  PRIMARY KEY  (`resource_id`,`planet_id`),
+  KEY `fk_resourcespawnconfig_planet_planet` (`planet_id`),
+  CONSTRAINT `fk_resourcespawnconfig_planet_planet` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_resourcespawnconfig_resource_resource` FOREIGN KEY (`resource_id`) REFERENCES `resources` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `resources_spawn_config`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `resources_spawn_config` DISABLE KEYS */;
+/*!40000 ALTER TABLE `resources_spawn_config` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

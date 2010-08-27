@@ -31,26 +31,31 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `csr_knowledgebase`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `csr_knowledgebase`;
+CREATE TABLE `csr_knowledgebase` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `title` varchar(45) NOT NULL,
+  `body` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `csr_knowledgebase`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `csr_knowledgebase` DISABLE KEYS */;
+INSERT INTO `csr_knowledgebase` VALUES
+ (1,'swganh article','swganh is a server emulator'),
+ (2,'emulator article','a server emulator emulates servers'),
+ (3,'unrelated article','this article is totally unrelated to the other two');
+/*!40000 ALTER TABLE `csr_knowledgebase` ENABLE KEYS */;
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

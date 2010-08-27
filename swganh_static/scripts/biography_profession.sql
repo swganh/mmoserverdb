@@ -31,26 +31,56 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `biography_profession`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `biography_profession`;
+CREATE TABLE `biography_profession` (
+  `profession` char(255) NOT NULL default '',
+  PRIMARY KEY  (`profession`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=REDUNDANT;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `biography_profession`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `biography_profession` DISABLE KEYS */;
+INSERT INTO `biography_profession` (`profession`) VALUES 
+ ('Architect'),
+ ('Armorsmith'),
+ ('Artisan'),
+ ('Bio-Engineer'),
+ ('Bounty Hunter'),
+ ('Brawler'),
+ ('Carbineer'),
+ ('Chef'),
+ ('Combat Medic'),
+ ('Commando'),
+ ('Creature Handler'),
+ ('Dancer'),
+ ('Doctor'),
+ ('Droid Engineer'),
+ ('Entertainer'),
+ ('Fencer'),
+ ('Image Designer'),
+ ('Jedi'),
+ ('Marksman'),
+ ('Medic'),
+ ('Musician'),
+ ('Pikerman'),
+ ('Pistoleer'),
+ ('Ranger'),
+ ('Rifleman'),
+ ('Scout'),
+ ('Smuggler'),
+ ('Swordsman'),
+ ('Tailor'),
+ ('Teras Kasi Artist'),
+ ('Weaponsmith');
+/*!40000 ALTER TABLE `biography_profession` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

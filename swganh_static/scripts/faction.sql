@@ -31,47 +31,104 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `craft_types`
+-- Definition of table `faction`
 --
 
-CREATE DATABASE IF NOT EXISTS swganh;
-USE swganh;
-
---
--- Definition of table `internal`
---
-
-DROP TABLE IF EXISTS `internal`;
-CREATE TABLE `internal` (
-  `id` int(10) unsigned NOT NULL auto_increment,
-  `table_name` varchar(45) NOT NULL,
-  `column_name` varchar(255) NOT NULL,
+DROP TABLE IF EXISTS `faction`;
+CREATE TABLE `faction` (
+  `id` int(8) unsigned NOT NULL auto_increment COMMENT 'Faction ID',
+  `name` char(32) NOT NULL COMMENT 'Faction Name',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='List all internal tables for easy removal once we go live.';
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `internal`
+-- Dumping data for table `faction`
 --
 
-/*!40000 ALTER TABLE `internal` DISABLE KEYS */;
-INSERT INTO `internal` (`id`,`table_name`,`column_name`) VALUES 
- (1,'attributes','item_tool_internal, item_tool_internal2 - Used only by the item tool.'),
- (2,'attributes','Attribute_internal_description - Used internally to identify the name table.'),
- (3,'craft_type','Entire table only used for the schematic tool.'),
- (4,'draft_craft_batches','Internal_schem_tool - used by schemtool only.'),
- (5,'draft_schematics','Done, Status - used only by the schematic tool.'),
- (6,'item_types','Complete - Only used by the item tool.'),
- (7,'name_developer','used in core to stop ppl from using ANH Devs names.'),
- (8,'planetmapcategory','Description - just used for easily identifing the items in this table.'),
- (9,'schem_crc','Entire table used only by the schematic tool.'),
- (10,'stf_files','Entire table not used in core.'),
- (11,'stf_variables','Entire table not used in core.'),
- (12,'terminal_elevator_data','id2 -  was added to make this table editable other wise you cant edit it.'),
-(13,'draft_schematic_attribute_manipulation','list_id, only used by the schem tool');
-/*!40000 ALTER TABLE `internal` ENABLE KEYS */;
+/*!40000 ALTER TABLE `faction` DISABLE KEYS */;
+INSERT INTO `faction` (`id`,`name`) VALUES 
+ (1,'neutral'),
+ (2,'rebel'),
+ (3,'imperial'),
+ (4,'aakuans'),
+ (5,'afarathu'),
+ (6,'alkhara'),
+ (7,'bandit'),
+ (8,'beldonnas_league'),
+ (9,'binayre'),
+ (10,'bloodrazor'),
+ (11,'borvo'),
+ (12,'canyon_corsair'),
+ (13,'cobral'),
+ (14,'cor_swoop'),
+ (15,'corsec'),
+ (16,'dantari_raiders'),
+ (17,'desert_demon'),
+ (18,'donkuwah_tribe'),
+ (19,'drall'),
+ (20,'endor_marauder'),
+ (21,'fed_dub'),
+ (22,'flail'),
+ (23,'followers_of_lord_nyax'),
+ (24,'fs_villager'),
+ (25,'garyn'),
+ (26,'gondula_tribe'),
+ (27,'gorax'),
+ (28,'gungan'),
+ (29,'hidden_daggers'),
+ (30,'hsskor'),
+ (31,'hutt'),
+ (32,'jabba'),
+ (33,'janta_tribe'),
+ (34,'jawa'),
+ (35,'kobola'),
+ (36,'korga_tribe'),
+ (37,'kunga_tribe'),
+ (38,'liberation_party'),
+ (39,'lok_mercenaries'),
+ (40,'lost_aqualish'),
+ (41,'marauder'),
+ (42,'meatlump'),
+ (43,'mokk_tribe'),
+ (44,'monumenter'),
+ (45,'mtn_clan'),
+ (46,'naboo'),
+ (47,'naboo_pirate'),
+ (48,'naboo_security_force'),
+ (49,'narmle'),
+ (50,'nightsister'),
+ (51,'nym'),
+ (52,'olag_greck'),
+ (53,'panshee_tribe'),
+ (54,'pirate'),
+ (55,'plasma_thief'),
+ (56,'pubam'),
+ (57,'restuss'),
+ (58,'rogue_corsec'),
+ (59,'rorgungan'),
+ (60,'sif'),
+ (61,'sith_shadow'),
+ (62,'sith_shadow_nonaggro'),
+ (63,'smashball'),
+ (64,'spice_collective'),
+ (65,'spider_nightsister'),
+ (66,'swamp_rat'),
+ (67,'swoop'),
+ (68,'thug'),
+ (69,'townsperson'),
+ (70,'trade_federation'),
+ (71,'tusken_raider'),
+ (72,'valarian'),
+ (73,'warren_cyborg'),
+ (74,'warren_huurton'),
+ (75,'warren_imperial'),
+ (76,'warren_imperial_worker'),
+ (77,'warren_scientist'),
+ (78,'warren_teraud');
+/*!40000 ALTER TABLE `faction` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

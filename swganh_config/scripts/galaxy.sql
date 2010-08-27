@@ -31,26 +31,37 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+USE swganh_config;
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `galaxy`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `galaxy`;
+CREATE TABLE `galaxy` (
+  `galaxy_id` int(5) NOT NULL auto_increment COMMENT 'Server ID',
+  `name` char(32) NOT NULL default '' COMMENT 'Server Name',
+  `address` char(16) NOT NULL default '' COMMENT 'Server IP Address',
+  `port` int(8) NOT NULL default '0' COMMENT 'Server Listen Port',
+  `pingport` int(8) default NULL COMMENT 'Server PING port',
+  `population` int(4) NOT NULL default '0' COMMENT 'Server Population (Administrative Feature)',
+  `character_retention` int(4) NOT NULL COMMENT 'Character retention period (Administrative Feature)',
+  `items_retention` int(4) NOT NULL COMMENT 'Item retention period (Administrative Feature)',
+  `account_retention` int(4) NOT NULL COMMENT 'Account retention period (Administrative Feature)',
+  `status` int(10) unsigned NOT NULL default '0',
+  `last_update` datetime NOT NULL,
+  `global_Tick_Count` bigint(20) unsigned NOT NULL COMMENT 'Global server tickcount',
+  PRIMARY KEY  (`galaxy_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `galaxy`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `galaxy` DISABLE KEYS */;
+INSERT INTO `galaxy` (`galaxy_id`,`name`,`address`,`port`,`pingport`,`population`,`character_retention`,`items_retention`,`account_retention`,`status`,`last_update`,`global_Tick_Count`) VALUES
+ (2,'SWGANH - Test Center','127.0.0.1',44991,44992,0,180,1,180,0,NOW(),0);
+/*!40000 ALTER TABLE `galaxy` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

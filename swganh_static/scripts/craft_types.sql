@@ -31,26 +31,47 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `craft_types`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `craft_types`;
+CREATE TABLE `craft_types` (
+  `id` int(11) unsigned NOT NULL default '0',
+  `description` char(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `craft_types`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `craft_types` DISABLE KEYS */;
+INSERT INTO `craft_types` (`id`,`description`) VALUES 
+ (1,'weapons'),
+ (2,'armor'),
+ (4,'food'),
+ (8,'clothing'),
+ (16,'vehicle'),
+ (32,'droid'),
+ (64,'chemical'),
+ (128,'tissue'),
+ (256,'creatures'),
+ (512,'furniture'),
+ (1024,'installation'),
+ (2048,'lightsaber'),
+ (4096,'generic'),
+ (8192,'genetics'),
+ (16384,'tailor,mandalorian'),
+ (32768,'armor,mandalorian'),
+ (65536,'droid,mandalorian'),
+ (131072,'starship components'),
+ (262144,'ship tools'),
+ (524288,'misc');
+/*!40000 ALTER TABLE `craft_types` ENABLE KEYS */;
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

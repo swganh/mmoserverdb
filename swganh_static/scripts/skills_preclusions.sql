@@ -31,26 +31,37 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_static;
 
 --
--- Definition of table `structure_cells`
+-- Definition of table `skills_preclusions`
 --
 
-DROP TABLE IF EXISTS `structure_cells`;
-CREATE TABLE `structure_cells` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `cell_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2210000000001 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `skills_preclusions`;
+CREATE TABLE `skills_preclusions` (
+  `skill_id` int(11) unsigned NOT NULL,
+  `prec_skill_id` int(11) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`skill_id`,`prec_skill_id`),
+  KEY `fk_skills_prec_prec_prec` (`prec_skill_id`),
+  CONSTRAINT `fk_skills_prec_prec_prec` FOREIGN KEY (`prec_skill_id`) REFERENCES `skills` (`skill_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_skill_prec_skill_skill` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`skill_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_cells`
+-- Dumping data for table `skills_preclusions`
 --
 
-/*!40000 ALTER TABLE `structure_cells` DISABLE KEYS */;
-/*!40000 ALTER TABLE `structure_cells` ENABLE KEYS */;
+/*!40000 ALTER TABLE `skills_preclusions` DISABLE KEYS */;
+INSERT INTO `skills_preclusions` (`skill_id`,`prec_skill_id`) VALUES 
+ (745,707),
+ (707,745),
+ (1031,1012),
+ (1050,1012),
+ (1012,1031),
+ (1050,1031),
+ (1012,1050),
+ (1031,1050);
+/*!40000 ALTER TABLE `skills_preclusions` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

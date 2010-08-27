@@ -59,17 +59,17 @@ CREATE TABLE `characters` (
   `jedistate` int(11) unsigned NOT NULL default '0',
   `bornyear` char(8) DEFAULT NULL COMMENT 'Year character was created.',
   PRIMARY KEY  (`id`),
-  UNIQUE KEY `pk_firstname` (`firstname`),
-  KEY `fk_character_acc_acc` (`account_id`),
-  KEY `fk_character_gal_gal` (`galaxy_id`),
-  KEY `fk_character_race_race` (`race_id`),
-  KEY `fk_character_planetid_planetid` (`planet_id`),
-  KEY `FK_characters_jedistate_state` (`jedistate`),
-  CONSTRAINT `characters_ibfk_1` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `characters_ibfk_2` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `characters_ibfk_3` FOREIGN KEY (`galaxy_id`) REFERENCES `galaxy` (`galaxy_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `characters_ibfk_4` FOREIGN KEY (`race_id`) REFERENCES `race` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_characters_jedistate_state` FOREIGN KEY (`jedistate`) REFERENCES `skills_jedi_states` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  UNIQUE KEY `PK_character_firstname` (`firstname`),
+  KEY `PK_character_account` (`account_id`),
+  KEY `PK_character_galaxy` (`galaxy_id`),
+  KEY `PK_character_race` (`race_id`),
+  KEY `PK_character_planetid` (`planet_id`),
+  KEY `PK_characters_jedistate` (`jedistate`),
+  CONSTRAINT `FK_character_planet` FOREIGN KEY (`planet_id`) REFERENCES `swganh_static`.`planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_character_account` FOREIGN KEY (`account_id`) REFERENCES `swganh`.`account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_character_galaxy` FOREIGN KEY (`galaxy_id`) REFERENCES `swganh_config`.`galaxy` (`galaxy_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_character_race` FOREIGN KEY (`race_id`) REFERENCES `swganh_static`.`race` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_characters_jedistate` FOREIGN KEY (`jedistate`) REFERENCES `swganh_static`.`skills_jedi_states` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=8589935594 DEFAULT CHARSET=utf8;
 
 --
