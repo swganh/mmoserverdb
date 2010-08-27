@@ -57,20 +57,20 @@ BEGIN
   ## Update ip address, port & status of service
 
   IF serverAddress IS NOT NULL THEN
-    UPDATE config_process_list SET address = serverAddress, port = serverPort, status = serverStatus WHERE name = serverName;
+    UPDATE swganh_config.config_process_list SET address = serverAddress, port = serverPort, status = serverStatus WHERE name = serverName;
   END IF;
 
   ##
   ## Update status
 
   IF serverAddress AND serverPort IS NULL THEN
-    UPDATE config_process_list SET status = serverStatus WHERE name = serverName;
+    UPDATE swganh_config.config_process_list SET status = serverStatus WHERE name = serverName;
   END IF;
 
   ## Update ServerID
 
   IF serverStatus AND serverAddress AND serverPort IS NULL THEN
-    UPDATE config_process_list SET serverstartID = serverstartID + 1 WHERE name like servername;
+    UPDATE swganh_config.config_process_list SET serverstartID = serverstartID + 1 WHERE name like servername;
   END IF;
 
 END $$

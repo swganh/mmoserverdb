@@ -51,7 +51,7 @@ BEGIN
   ## Retrieves the status of the server
   ##
 
-  SELECT id, address, port, status, active FROM config_process_list WHERE name = serverName;
+  SELECT id, address, port, status, active FROM swganh_config.config_process_list WHERE name = serverName;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

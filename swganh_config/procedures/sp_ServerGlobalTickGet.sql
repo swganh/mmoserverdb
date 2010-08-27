@@ -51,7 +51,7 @@ BEGIN
   ##
   ## Returns: (server global tick)
 
-  SELECT Global_Tick_Count FROM galaxy WHERE galaxy_id = galaxyID;
+  SELECT Global_Tick_Count FROM swganh_config.galaxy WHERE galaxy_id = galaxyID;
   
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

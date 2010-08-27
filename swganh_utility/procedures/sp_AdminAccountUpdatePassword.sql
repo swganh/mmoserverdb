@@ -31,29 +31,37 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh_config;
+USE swganh_config;
 
-  
 --
--- Definition of procedure `sp_ServerGlobalTickUpdate`
+-- Definition of procedure `sp_AdminAccountUpdatePassword`
 --
 
-DROP PROCEDURE IF EXISTS `sp_ServerGlobalTickUpdate`;
+DROP PROCEDURE IF EXISTS `sp_AdminAccountUpdatePassword`;
+
 DELIMITER $$
 
-/*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='' */ $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ServerGlobalTickUpdate`(IN galaxyID BIGINT, currentTick BIGINT)
+/*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_AccountUpdatePassword`(IN accountID BIGINT, userpass CHAR(64))
 BEGIN
 
   ##
-  ## Stored Procedure
+  ## sp_AccountUpdate(accountID, password)
   ##
-  ## Use: CALL sp_ServerGlobalTickUpdate(galaxy_id, currentTick);
-  ##
-  ## Returns: (nothing)
+  ## Returns (nothing)
 
-  UPDATE swganh_config.galaxy SET Global_Tick_Count = currentTick WHERE galaxy_id = galaxyID;
-  
+  DECLARE mAccountSHAPassword CHAR(64);
+
+  ##
+  ## Generate our password
+
+  SELECT SHA1(userpass) INTO mAccountSHAPassword;
+
+  ##
+  ## Update account
+
+  UPDATE swganh.account SET account_password = mAccountSHAPassword WHERE account_id = accountID;
+
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 

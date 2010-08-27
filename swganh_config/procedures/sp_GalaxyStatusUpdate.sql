@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+use swganh_config;
 
 --
 -- Definition of procedure `sp_GalaxyStatusUpdate`
@@ -51,7 +51,7 @@ BEGIN
   ## Update galaxy status
   ##
 
-  UPDATE galaxy SET status = galaxy_status, last_update=NOW() WHERE galaxy_id = galaxyID;
+  UPDATE swganh_config.galaxy SET status = galaxy_status, last_update=NOW() WHERE galaxy_id = galaxyID;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
