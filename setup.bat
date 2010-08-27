@@ -358,6 +358,23 @@ GOTO :PROCESS_ARGS
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
+		cd "%PROJECT_BASE%swganh_utility"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
+		cd "%PROJECT_BASE%swganh_utility\scripts"
+		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+		cd "%PROJECT_BASE%swganh_utility\functions"
+		for /F %%A IN ('dir /b "*.sql"') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+		cd "%PROJECT_BASE%swganh_utility\procedures"
+		for /F %%A IN ('dir /b "*.sql"') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
 	)
 	
 	::
