@@ -42,18 +42,18 @@ DROP PROCEDURE IF EXISTS `sp_AdminAccountUpdate`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_AdminAccountUpdate`(IN mAccoundID BIGINT, mAccountUsername CHAR(32), mAccountStationID BIGINT, mAccountCSR INT, mAccountEmail CHAR(64), mAccountBanned INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_AdminAccountUpdate`(IN mAccoundID BIGINT, mAccountUsername CHAR(32), mAccountStationID BIGINT, mAccountCSR INT, mAccountEmail CHAR(64), mAccountBanned INT, mAccountCharactersAllowed INT)
 BEGIN
 
   ##
-  ## sp_AccountUpdate(accountID, username, password, stationID, CSRFlag, Email, BannedFlag)
+  ## sp_AccountUpdate(accountID, username, password, stationID, CSRFlag, Email, BannedFlag, CharactersAllowed)
   ##
   ## Returns (nothing)
 
   ##
   ## Update account
 
-  UPDATE swganh.account SET account_username = mAccoundUsername, account_CSR = mAccountCSR, account_banned = mAccountBanned, account_email = mAccountEmail WHERE account_id = mAccoundID;
+  UPDATE swganh.account SET account_username = mAccoundUsername, account_CSR = mAccountCSR, account_banned = mAccountBanned, account_email = mAccountEmail, account_characters_allowed = mAccountCharactersAllowed WHERE account_id = mAccoundID;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
