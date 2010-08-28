@@ -62,27 +62,28 @@ TITLE %title%
 	ECHO.  DB IP: %db_host%     DB Username: %db_user%    DB Password: %db_pass%
 	ECHO. ----------------------------------------------------------------------
 	ECHO.                                   ^|
-	ECHO.           Database Setup          ^|       Database Maintenance
+	ECHO.          Database Setup           ^|       Database Maintenance
 	ECHO.                                   ^|
 	ECHO.   (1) Complete DB Install         ^|  (a) Backup accounts table
-	ECHO.   (2) -------------------         ^|  (b) ----
-	ECHO.   (3) -------------------         ^|  (c) Complete Database Backup
-	ECHO.   (4) -------------------         ^|  (d) Delete Databases
-	ECHO.   (5) -------------------         ^| 
-	ECHO.                                   ^|  
-	ECHO.   (6) -------------------         ^|          Script Settings
-	ECHO.   (7) -------------------         ^|
+	ECHO.                                   ^|  (b) ----
+	ECHO.       Individual DB Setup         ^|
+	ECHO.                                   ^|
+	ECHO.   (2) swganh                      ^|  (c) Complete Database Backup
+	ECHO.   (3) swganh_archive              ^|  (d) Delete Databases
+	ECHO.   (4) swganh_astromech            ^|  
+	ECHO.   (5) swganh_config               ^| 
+	ECHO.   (6) swganh_logs                 ^|          Script Settings
+	ECHO.   (7) swganh_static               ^|
+	ECHO.   (8) swganh_user                 ^|
+	ECHO.   (9) swganh_utility              ^|
 	ECHO.                                   ^|  (e) ----
 	ECHO.        Server Configuration       ^|  (f) ----
 	ECHO.                                   ^|  (g) ----
-	ECHO.   (8) -------------------         ^|
-	ECHO.   (9) -------------------         ^|               Help
-	ECHO.   (0) -------------------         ^|
-	ECHO.   (@) -------------------         ^|  (h) Help
+	ECHO.   (-) -------------------         ^|
+	ECHO.   (-) -------------------         ^|               Help
+	ECHO.   (-) -------------------         ^|
+	ECHO.   (-) -------------------         ^|  (h) Help
 	ECHO.                                   ^|  (s) Stats
-	ECHO.                                   ^|
-	ECHO.                                   ^|
-	ECHO.                                   ^|
 	ECHO.                                   ^|
 	ECHO.                                   ^|
 	ECHO.                                   ^|
@@ -91,47 +92,91 @@ TITLE %title%
 	ECHO. ----------------------------------------------------------------------
 	SET /P Choice=Make a choice or ^(q^) quit : 
 
-IF /I '%Choice%'=='1' GOTO :DatabaseCompleteSetup 
+	IF /I '%Choice%'=='1' GOTO :DatabaseCompleteSetup 
 
-IF /I '%Choice%'=='2' GOTO :DatabaseSetup 
+	IF /I '%Choice%'=='2' GOTO :SchemaSWGANH 
 
-IF /I '%Choice%'=='3' GOTO :SchemaSetup
+	IF /I '%Choice%'=='3' GOTO :SchemaSWGANH_ARCHIVE
 
-IF /I '%Choice%'=='4' GOTO :ProcedureSetup
+	IF /I '%Choice%'=='4' GOTO :SchemaSWGANH_ASTROMECH
 
-IF /I '%Choice%'=='5' GOTO :FunctionSetup
+	IF /I '%Choice%'=='5' GOTO :SchemaSWGANH_CONFIG
 
-IF /I '%Choice%'=='6' GOTO :AdminScriptSetup
+	IF /I '%Choice%'=='6' GOTO :SchemaSWGANH_LOGS
 
-IF /I '%Choice%'=='7' GOTO :AstroMechSetup
+	IF /I '%Choice%'=='7' GOTO :SchemaSWGANH_STATIC
 
-IF /I '%Choice%'=='8' GOTO :GenerateResources
+	IF /I '%Choice%'=='8' GOTO :SchemaSWGANH_USER
 
-IF /I '%Choice%'=='9' GOTO :GenerateBots
+	IF /I '%Choice%'=='9' GOTO :SchemaSWGANH_UTILITY
 
-IF /I '%Choice%'=='0' GOTO :ResetGlobalTimer
+	IF /I '%Choice%'=='0' GOTO :ResetGlobalTimer
 
-IF /I '%Choice%'=='@' GOTO :SetMOTD
+	IF /I '%Choice%'=='@' GOTO :SetMOTD
 
-IF /I '%Choice%'=='a' GOTO :AccountsBackup
+	IF /I '%Choice%'=='a' GOTO :AccountsBackup
 
-IF /I '%Choice%'=='c' GOTO :CompleteBackup 
+	IF /I '%Choice%'=='c' GOTO :CompleteBackup 
 
-IF /I '%Choice%'=='d' GOTO :DatabaseRemove
+	IF /I '%Choice%'=='d' GOTO :DatabaseRemove
 
-IF /I '%Choice%'=='e' GOTO :UserChange 
+	IF /I '%Choice%'=='e' GOTO :UserChange 
 
-IF /I '%Choice%'=='f' GOTO :PassChange 
+	IF /I '%Choice%'=='f' GOTO :PassChange 
 
-IF /I '%Choice%'=='g' GOTO :IPChange
+	IF /I '%Choice%'=='g' GOTO :IPChange
 
-IF /I '%Choice%'=='h' GOTO :Help 
+	IF /I '%Choice%'=='h' GOTO :HelpMenu 
 
-IF /I '%Choice%'=='s' GOTO :Stats
+	IF /I '%Choice%'=='s' GOTO :Stats
 
-IF /I '%Choice%'=='Q' GOTO :end 
+	IF /I '%Choice%'=='Q' GOTO :end 
 
-GOTO:MainMenu
+	GOTO:MainMenu
+
+:HelpMenu
+	CLS
+	ECHO. ----------------------------------------------------------------------
+	ECHO.  SWGANH Database Install Script                              (v.0.03)
+	ECHO. ----------------------------------------------------------------------
+	ECHO.  DB IP: %db_host%     DB Username: %db_user%    DB Password: %db_pass%
+	ECHO. ----------------------------------------------------------------------
+	ECHO.                                   ^|
+	ECHO.                Help               ^|              Help
+	ECHO.                                   ^|
+	ECHO.   (1) -------------------         ^|  (a) Backup accounts table
+	ECHO.                                   ^|  (b) ----
+	ECHO.       Individual DB Setup         ^|
+	ECHO.                                   ^|
+	ECHO.   (2) swganh                      ^|  (c) Complete Database Backup
+	ECHO.   (3) swganh_archive              ^|  (d) Delete Databases
+	ECHO.   (4) swganh_astromech            ^|  
+	ECHO.   (5) swganh_config               ^| 
+	ECHO.   (6) swganh_logs                 ^|          Script Settings
+	ECHO.   (7) swganh_static               ^|
+	ECHO.   (8) swganh_user                 ^|
+	ECHO.   (9) swganh_utility              ^|
+	ECHO.                                   ^|  (e) ----
+	ECHO.        Server Configuration       ^|  (f) ----
+	ECHO.                                   ^|  (g) ----
+	ECHO.   (-) -------------------         ^|
+	ECHO.   (-) -------------------         ^|               Help
+	ECHO.   (-) -------------------         ^|
+	ECHO.   (-) -------------------         ^|  (h) Help
+	ECHO.                                   ^|  (s) Stats
+	ECHO.                                   ^|
+	ECHO.                                   ^|
+	ECHO.                                   ^|
+	ECHO.                                   ^|
+	ECHO.                                   ^|
+	ECHO. ----------------------------------------------------------------------
+	SET /P HelpChoice=Make a choice or ^(b^) to go back to the main menu : 
+
+	IF /I '%HelpChoice%'=='1' GOTO :MainMenu 
+	
+	GOTO:HelpMenu
+	
+
 
 :DatabaseCompleteSetup
 	CALL:ScreenClear
@@ -157,6 +202,12 @@ GOTO:MainMenu
 	cd "%PROJECT_BASE%swganh_config"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
 	cd "%PROJECT_BASE%swganh_logs"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
+	cd "%PROJECT_BASE%swganh_static"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
+	cd "%PROJECT_BASE%swganh_user"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
+	cd "%PROJECT_BASE%swganh_utility"
 		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
 	
 	:: Populate the data
@@ -263,10 +314,106 @@ GOTO:MainMenu
 			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
 		ECHO. Installing %%A [Done]
 		)
+	
+	:: (swganh_static)
+	
+	cd "%PROJECT_BASE%"
+	cd "%PROJECT_BASE%swganh_static\scripts"
+		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+	
+	cd "%PROJECT_BASE%swganh_static\functions"
+		for /F %%A IN ('dir /b "*.sql"') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+
+	cd "%PROJECT_BASE%swganh_static\procedures"
+		for /F %%A IN ('dir /b "*.sql"') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+	
+	:: (swganh_user)
+	
+	cd "%PROJECT_BASE%"
+	cd "%PROJECT_BASE%swganh_user\scripts"
+		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+	
+	cd "%PROJECT_BASE%swganh_user\functions"
+		for /F %%A IN ('dir /b "*.sql"') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+
+	cd "%PROJECT_BASE%swganh_user\procedures"
+		for /F %%A IN ('dir /b "*.sql"') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+	
+	:: (swganh_utility)
+	
+	cd "%PROJECT_BASE%"
+	cd "%PROJECT_BASE%swganh_utility\scripts"
+		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+	
+	cd "%PROJECT_BASE%swganh_utility\functions"
+		for /F %%A IN ('dir /b "*.sql"') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+
+	cd "%PROJECT_BASE%swganh_utility\procedures"
+		for /F %%A IN ('dir /b "*.sql"') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
 
 	GOTO:MainMenu
 	
-:DatabaseSetup
+:SchemaSWGANH
+	CALL:ScreenClear
+	CALL:ShortMenu
+	ECHO.                         Installing swganh schema
+	ECHO.
+	ECHO.                              Please Wait
+	ECHO.
+	
+	:: Create the schema
+	
+	cd "%PROJECT_BASE%swganh"
+		mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "create.sql"
+		
+	:: (swganh)
+	
+	cd "%PROJECT_BASE%"
+	cd "%PROJECT_BASE%swganh\scripts"
+		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+		
+	cd "%PROJECT_BASE%swganh\functions"
+		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 < "%%A"
+		ECHO. Installing %%A [Done]
+		)
+		
+	cd "%PROJECT_BASE%swganh\procedures"
+		for /F %%A IN ('dir /b "*.sql" ^| sort') do (
+			mysql --password=%db_pass% --host=%db_host% --user=%db_user% --default-character-set=utf8 --comments < "%%A"
+		ECHO. Installing %%A [Done]
+		)		
+		
 	GOTO:MainMenu
 	
 :SchemaSetup

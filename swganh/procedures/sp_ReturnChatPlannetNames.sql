@@ -45,7 +45,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnChatPlanetNames`()
 BEGIN
 	
-	SELECT planet.name FROM planet ORDER BY planet.planet_id;
+	SELECT planet.name FROM swganh_static.planet ORDER BY swganh_static.planet.planet_id;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

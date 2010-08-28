@@ -43,14 +43,17 @@ DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
 CREATE DEFINER = 'root'@'localhost' PROCEDURE `sp_ReturnChatChannels`()
-    DETERMINISTIC
-    CONTAINS SQL
-    SQL SECURITY DEFINER
-    COMMENT ''
 BEGIN
-	SELECT A.id,A.name,A.private,A.moderated,
-	    A.creator, A.owner, A.title 
-	    FROM swganh.chat_channels A;
+	SELECT
+		id,
+		name,
+		private,
+		moderated,
+		creator,
+		owner,
+		title
+	FROM
+		swganh.chat_channels;
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
