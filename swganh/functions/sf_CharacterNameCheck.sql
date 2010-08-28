@@ -186,15 +186,15 @@ charNameCheck:BEGIN
   SELECT start_firstname REGEXP('[0-9]') INTO check_value;
 
 	IF check_value > 0 THEN SET error_code = 10;
-    RETURN error_code;
-    LEAVE charNameCheck;
+		RETURN error_code;
+		LEAVE charNameCheck;
 	END IF;
 
   SELECT start_lastname REGEXP('[0-9]') INTO check_value;
 
 	IF check_value > 0 THEN SET error_code = 10;
-    RETURN error_code;
-    LEAVE charNameCheck;
+		RETURN error_code;
+		LEAVE charNameCheck;
 	END IF;
 
   ##
@@ -205,15 +205,15 @@ charNameCheck:BEGIN
   SELECT COUNT(*) FROM swganh_static.name_profane WHERE name LIKE LOWER(start_firstname) INTO check_value;
 
 	IF check_value > 0 THEN SET error_code = 11;
-    RETURN error_code;
-    LEAVE charNameCheck;
+		RETURN error_code;
+		LEAVE charNameCheck;
 	END IF;
 
   SELECT COUNT(*) FROM swganh_static.name_profane WHERE name LIKE LOWER(start_lastname) INTO check_value;
 
 	IF check_value > 0 THEN SET error_code = 11;
-    RETURN error_code;
-    LEAVE charNameCheck;
+		RETURN error_code;
+		LEAVE charNameCheck;
 	END IF;
 
   ##

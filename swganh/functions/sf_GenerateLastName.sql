@@ -50,10 +50,10 @@ BEGIN
   DECLARE raceId INT(8);
 
   
-  SELECT id FROM race WHERE name = start_species INTO raceId;
+  SELECT id FROM swganh_static.race WHERE name = start_species INTO raceId;
 
   
-  SELECT lastname FROM swganh.namegen_lastname WHERE species = raceId AND gender = start_gender ORDER BY RAND() LIMIT 1 INTO gen_lastname;
+  SELECT lastname FROM swganh_static.namegen_lastname WHERE species = raceId AND gender = start_gender ORDER BY RAND() LIMIT 1 INTO gen_lastname;
 
   RETURN gen_lastname;
 

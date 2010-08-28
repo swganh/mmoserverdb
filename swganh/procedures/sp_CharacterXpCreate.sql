@@ -47,7 +47,7 @@ BEGIN
 
   declare loopEnd INT default 0;
   declare xp_type_id INT;
-  declare cur_1 cursor for select skills_base_xp_groups.xp_type_id from skills_base_xp_groups where skills_base_xp_groups.skill_id = profession_id;
+  declare cur_1 cursor for select skills_base_xp_groups.xp_type_id from swganh_static.skills_base_xp_groups where skills_base_xp_groups.skill_id = profession_id;
   declare continue handler for sqlstate '02000' set loopEnd = 1;
 
   open cur_1;
@@ -58,7 +58,7 @@ BEGIN
 
      if NOT loopEnd then
         if(xp_type_id is not NULL) then
-           INSERT INTO character_xp VALUES (character_id,xp_type_id,0);
+           INSERT INTO character_xp VALUES (character_id, xp_type_id, 0);
         end if;
      end if;
 

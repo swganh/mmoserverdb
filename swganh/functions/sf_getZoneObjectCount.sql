@@ -60,18 +60,18 @@ BEGIN
 	DECLARE creatureSpawnRegionCount INT;
 	DECLARE totalCount INT;
 
-	SELECT COUNT(id) FROM buildings WHERE planet_id = zoneId INTO buildingCount;
-	SELECT COUNT(cells.id) FROM cells INNER JOIN buildings ON (cells.parent_id = buildings.id) WHERE (buildings.planet_id = zoneId) INTO cellCount;
-	SELECT COUNT(terminals.id) FROM terminals INNER JOIN terminal_types ON(terminals.terminal_type = terminal_types.id) WHERE (terminals.planet_id = zoneId) AND (terminal_types.name NOT LIKE 'unknown') INTO terminalCount;
+	SELECT COUNT(id) FROM swganh_static.buildings WHERE planet_id = zoneId INTO buildingCount;
+	SELECT COUNT(cells.id) FROM swganh_static.cells INNER JOIN buildings ON (cells.parent_id = buildings.id) WHERE (buildings.planet_id = zoneId) INTO cellCount;
+	SELECT COUNT(terminals.id) FROM swganh_static.terminals INNER JOIN terminal_types ON(terminals.terminal_type = terminal_types.id) WHERE (terminals.planet_id = zoneId) AND (terminal_types.name NOT LIKE 'unknown') INTO terminalCount;
    	SELECT COUNT(containers.id) FROM containers INNER JOIN container_types ON(containers.container_type = container_types.id) WHERE (containers.planet_id = zoneId) AND (container_types.name NOT LIKE 'unknown') INTO containerCount;
-	SELECT COUNT(id) FROM ticket_collectors WHERE planet_id = zoneId INTO ticketCollectorCount;
-	SELECT COUNT(id) FROM persistent_npcs WHERE planet_id = zoneId INTO persistentNPCCount;
-	SELECT COUNT(id) FROM shuttles WHERE planet_id = zoneId INTO shuttleCount;
+	SELECT COUNT(id) FROM swganh_static.ticket_collectors WHERE planet_id = zoneId INTO ticketCollectorCount;
+	SELECT COUNT(id) FROM swganh_static.persistent_npcs WHERE planet_id = zoneId INTO persistentNPCCount;
+	SELECT COUNT(id) FROM swganh_static.shuttles WHERE planet_id = zoneId INTO shuttleCount;
    	SELECT COUNT(id) FROM items WHERE planet_id = zoneId INTO itemCount;
     SELECT COUNT(id) FROM resource_containers WHERE planet_id = zoneId INTO resourceContainerCount;
-    SELECT COUNT(id) FROM cities WHERE planet_id = zoneId INTO cityCount;
-    SELECT COUNT(id) FROM badge_regions WHERE planet_id = zoneId INTO badgeRegionCount;
-    SELECT COUNT(id) FROM zone_regions WHERE planet_id = zoneId INTO zoneRegionCount;
+    SELECT COUNT(id) FROM swganh_static.cities WHERE planet_id = zoneId INTO cityCount;
+    SELECT COUNT(id) FROM swganh_static.badge_regions WHERE planet_id = zoneId INTO badgeRegionCount;
+    SELECT COUNT(id) FROM swganh_static.zone_regions WHERE planet_id = zoneId INTO zoneRegionCount;
     SELECT COUNT(id) FROM spawns WHERE spawn_planet = zoneId INTO creatureSpawnRegionCount;
     
     SET totalCount = (buildingCount + cellCount + terminalCount + resourceContainerCount + containerCount + ticketCollectorCount + persistentNPCCount + shuttleCount + itemCount + cityCount + badgeRegionCount + zoneRegionCount + creatureSpawnRegionCount);

@@ -72,14 +72,14 @@ charCreate:BEGIN
   -- Declare Vars
   --
 
-  DECLARE oX FLOAT;DECLARE oY FLOAT;DECLARE oZ FLOAT;DECLARE oW FLOAT;
-  DECLARE battlefatigue INT;
+	DECLARE oX FLOAT;DECLARE oY FLOAT;DECLARE oZ FLOAT;DECLARE oW FLOAT;
+	DECLARE battlefatigue INT;
 	DECLARE race_id INT;
 	DECLARE character_id BIGINT(20);
-  DECLARE character_parent_id BIGINT(20);
-  DECLARE inventory_id BIGINT(20);
-  DECLARE tutorialcontainer_id BIGINT(20);
-  DECLARE privateowner_id BIGINT(20);
+	DECLARE character_parent_id BIGINT(20);
+	DECLARE inventory_id BIGINT(20);
+	DECLARE tutorialcontainer_id BIGINT(20);
+	DECLARE privateowner_id BIGINT(20);
 	DECLARE bank_id BIGINT(20);
 	DECLARE datapad_id BIGINT(20);
 	DECLARE planet_name char(32);
@@ -97,13 +97,13 @@ charCreate:BEGIN
 	DECLARE start_x FLOAT;DECLARE start_y FLOAT;DECLARE start_z FLOAT;
 	DECLARE shortSpecies CHAR(32);
 	DECLARE gender INT(3);
-  DECLARE base_skill_id INT;
-  DECLARE nameCheck INT;
+	DECLARE base_skill_id INT;
+	DECLARE nameCheck INT;
 	DECLARE currentTime BIGINT(20);
-  DECLARE tool_id BIGINT(20);
+	DECLARE tool_id BIGINT(20);
 	DECLARE melon_id BIGINT(20);
-  DECLARE charactersAllowed INT;
-  DECLARE charactersCurrent INT;
+	DECLARE charactersAllowed INT;
+	DECLARE charactersCurrent INT;
 
   --
   -- Transactional Support
@@ -133,7 +133,7 @@ charCreate:BEGIN
   -- Check the new character name for validity
   --
 
-  SELECT sf_CharacterNameCheck(start_firstname, start_lastname, start_account_id) INTO nameCheck;
+  SELECT swganh.sf_CharacterNameCheck(start_firstname, start_lastname, start_account_id) INTO nameCheck;
     IF nameCheck <> 666 THEN
       SELECT(nameCheck);
       LEAVE charCreate;
@@ -173,7 +173,7 @@ charCreate:BEGIN
 
   START TRANSACTION;
 
-  SELECT MAX(id) + 1000 FROM characters INTO character_id FOR UPDATE;
+  SELECT MAX(id) + 1000 FROM swganh.characters INTO character_id FOR UPDATE;
 
   IF character_id IS NULL THEN
     SET character_id = 8589934593;
@@ -188,15 +188,15 @@ charCreate:BEGIN
   SET datapad_id = character_id + 3;
   SET tutorialcontainer_id = 0;
 
-  SELECT planet_id, x, y, z FROM starting_location WHERE location LIKE start_city INTO start_planet, start_x, start_y, start_z;
+  SELECT planet_id, x, y, z FROM swganh_static.starting_location WHERE location LIKE start_city INTO start_planet, start_x, start_y, start_z;
 
-  SELECT f_speciesShort(base_model_string) INTO shortSpecies;
+  SELECT swganh.f_speciesShort(base_model_string) INTO shortSpecies;
 
-  SELECT health, strength, constitution, action, quickness, stamina, mind, focus, willpower FROM starting_attributes WHERE starting_attributes.species like shortSpecies AND starting_attributes.profession like start_profession INTO t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower;
+  SELECT health, strength, constitution, action, quickness, stamina, mind, focus, willpower FROM swganh_static.starting_attributes WHERE starting_attributes.species like shortSpecies AND starting_attributes.profession like start_profession INTO t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower;
 
-  SELECT id from race where race.name like shortSpecies into race_id;
+  SELECT id from swganh_static.race where race.name like shortSpecies into race_id;
 
-  SELECT skill_id from skills where skill_name like start_profession INTO profession_id;
+  SELECT skill_id from swganh_static.skills where skill_name like start_profession INTO profession_id;
 
   -- Don't set any default skills or XP when creating player in the Tutorial.
 
@@ -210,30 +210,30 @@ charCreate:BEGIN
     SET character_parent_id = 2203318222975;
   END IF;
 
-  INSERT INTO characters VALUES (character_id, start_account_id, start_galaxy_id, start_firstname, start_lastname, race_id, character_parent_id, start_planet, start_x, start_y, start_z, oX, oY, oZ, oW, 0, NULL, 0, CURDATE() + 0);
+  INSERT INTO swganh.characters VALUES (character_id, start_account_id, start_galaxy_id, start_firstname, start_lastname, race_id, character_parent_id, start_planet, start_x, start_y, start_z, oX, oY, oZ, oW, 0, NULL, 0, CURDATE() + 0);
 
-  INSERT INTO inventories VALUES (inventory_id,1,1000);
-  INSERT INTO banks VALUES (bank_id,1000,-1);
-  INSERT INTO datapads VALUES (datapad_id,1);
-  INSERT INTO character_attributes VALUES (character_id, 1, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, battlefatigue,0,0,NULL,0,0,1,0,0,0,3);
-  INSERT INTO character_appearance VALUES (character_id, 00FF, 01FF, 02FF, 03FF, 04FF, 05FF, 06FF, 07FF, 08FF, 09FF, 0AFF, 0BFF, 0CFF, 0DFF, 0EFF, 0FFF, 10FF, 11FF, 12FF, 13FF, 14FF, 15FF, 16FF, 17FF, 18FF, 19FF, 1AFF, 1BFF, 1CFF, 1DFF, 1EFF, 1FFF, 20FF, 21FF, 22FF, 23FF, 24FF, 25FF, 26FF, 27FF, 28FF, 29FF, 2AFF, 2BFF, 2CFF, 2DFF, 2EFF, 2FFF, 30FF, 31FF, 32FF, 33FF, 34FF, 35FF, 36FF, 37FF, 38FF, 39FF, 3AFF, 3BFF, 3CFF, 3DFF, 3EFF, 3FFF, 40FF, 41FF, 42FF, 43FF, 44FF, 45FF, 46FF, 47FF, 48FF, 49FF, 4AFF, 4BFF, 4CFF, 4DFF, 4EFF, 4FFF, 50FF, 51FF, 52FF, 53FF, 54FF, 55FF, 56FF, 57FF, 58FF, 59FF, 5AFF, 5BFF, 5CFF, 5DFF, 5EFF, 5FFF, 60FF, 61FF, 62FF, 63FF, 64FF, 65FF, 66FF, 67FF, 68FF, 69FF, 6AFF, 6BFF, 6CFF, 6DFF, 6EFF, 6FFF, 70FF, ABFF, AB2FF, start_hair_model, hair1,hair2, base_model_string,start_scale);
-  INSERT INTO character_movement VALUES(character_id,5.75,1.50,1.00,0.0125);
-  INSERT INTO character_tutorial VALUES(character_id,1,1,start_profession);
+  INSERT INTO swganh.inventories VALUES (inventory_id,1,1000);
+  INSERT INTO swganh.banks VALUES (bank_id,1000,-1);
+  INSERT INTO swganh.datapads VALUES (datapad_id,1);
+  INSERT INTO swganh.character_attributes VALUES (character_id, 1, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, t_health, t_strength, t_constitution, t_action, t_quickness, t_stamina, t_mind, t_focus, t_willpower, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, battlefatigue,0,0,NULL,0,0,1,0,0,0,3);
+  INSERT INTO swganh.character_appearance VALUES (character_id, 00FF, 01FF, 02FF, 03FF, 04FF, 05FF, 06FF, 07FF, 08FF, 09FF, 0AFF, 0BFF, 0CFF, 0DFF, 0EFF, 0FFF, 10FF, 11FF, 12FF, 13FF, 14FF, 15FF, 16FF, 17FF, 18FF, 19FF, 1AFF, 1BFF, 1CFF, 1DFF, 1EFF, 1FFF, 20FF, 21FF, 22FF, 23FF, 24FF, 25FF, 26FF, 27FF, 28FF, 29FF, 2AFF, 2BFF, 2CFF, 2DFF, 2EFF, 2FFF, 30FF, 31FF, 32FF, 33FF, 34FF, 35FF, 36FF, 37FF, 38FF, 39FF, 3AFF, 3BFF, 3CFF, 3DFF, 3EFF, 3FFF, 40FF, 41FF, 42FF, 43FF, 44FF, 45FF, 46FF, 47FF, 48FF, 49FF, 4AFF, 4BFF, 4CFF, 4DFF, 4EFF, 4FFF, 50FF, 51FF, 52FF, 53FF, 54FF, 55FF, 56FF, 57FF, 58FF, 59FF, 5AFF, 5BFF, 5CFF, 5DFF, 5EFF, 5FFF, 60FF, 61FF, 62FF, 63FF, 64FF, 65FF, 66FF, 67FF, 68FF, 69FF, 6AFF, 6BFF, 6CFF, 6DFF, 6EFF, 6FFF, 70FF, ABFF, AB2FF, start_hair_model, hair1,hair2, base_model_string,start_scale);
+  INSERT INTO swganh.character_movement VALUES(character_id,5.75,1.50,1.00,0.0125);
+  INSERT INTO swganh.character_tutorial VALUES(character_id,1,1,start_profession);
         
   IF start_city <> 'tutorial' THEN
     SET base_skill_id = profession_id + 1;
-    CALL sp_CharacterSkillsCreate(character_id,base_skill_id,race_id);
-    CALL sp_CharacterXpCreate(character_id,base_skill_id);
+    CALL swganh.sp_CharacterSkillsCreate(character_id,base_skill_id,race_id);
+    CALL swganh.sp_CharacterXpCreate(character_id,base_skill_id);
   END IF;
 		
   IF start_biography IS NULL THEN SET start_biography = '';
   END IF;
 		
-  INSERT INTO character_biography VALUES (character_id, start_biography);
-  INSERT INTO character_matchmaking VALUES (character_id,0,0,0,0,0);
+  INSERT INTO swganh.character_biography VALUES (character_id, start_biography);
+  INSERT INTO swganh.character_matchmaking VALUES (character_id, 0, 0, 0, 0, 0);
 		
-  CALL sp_CharacterCreateFactions(character_id);
-  CALL sp_CharacterStartingItems(inventory_id,tutorialcontainer_id,privateowner_id,race_id,profession_id,gender);
+  CALL swganh.sp_CharacterCreateFactions(character_id);
+  CALL swganh.sp_CharacterStartingItems(inventory_id,tutorialcontainer_id,privateowner_id,race_id,profession_id,gender);
 		
 	--
 	-- Fix Melon to have 5 stacks
@@ -244,11 +244,11 @@ charCreate:BEGIN
 	-- INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
 
   IF start_city = 'tutorial' THEN
-    SELECT id FROM items WHERE items.privateowner_id = character_id AND items.item_type = 89 INTO melon_id;
-    INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
+    SELECT id FROM swganh.items WHERE items.privateowner_id = character_id AND items.item_type = 89 INTO melon_id;
+    INSERT INTO swganh.item_attributes VALUES (melon_id, 23, 5, 3, NULL);
 	ELSE
-    SELECT id FROM items WHERE items.parent_id = inventory_id AND items.item_type = 89 INTO melon_id;
-    INSERT INTO item_attributes VALUES (melon_id, 23, 5, 3, NULL);
+    SELECT id FROM swganh.items WHERE items.parent_id = inventory_id AND items.item_type = 89 INTO melon_id;
+    INSERT INTO swganh.item_attributes VALUES (melon_id, 23, 5, 3, NULL);
 	END IF;
 	
 
@@ -258,11 +258,11 @@ charCreate:BEGIN
 
   IF start_profession LIKE '%crafting%' OR start_profession LIKE '%scout%' THEN
     IF start_city = 'tutorial' THEN
-      SELECT id FROM items where items.privateowner_id = character_id AND items.item_family = 3 INTO tool_id;
-      UPDATE item_attributes SET item_attributes.value = '0' WHERE attribute_id = 15 and item_id = tool_id;
+      SELECT id FROM swganh.items where items.privateowner_id = character_id AND items.item_family = 3 INTO tool_id;
+      UPDATE swganh.item_attributes SET item_attributes.value = '0' WHERE attribute_id = 15 and item_id = tool_id;
     ELSE
-      SELECT id FROM items where items.parent_id = inventory_id AND items.item_family = 3 INTO tool_id;
-      UPDATE item_attributes SET item_attributes.value = '0' WHERE attribute_id = 15 and item_id = tool_id;
+      SELECT id FROM swganh.items where items.parent_id = inventory_id AND items.item_family = 3 INTO tool_id;
+      UPDATE swganh.item_attributes SET item_attributes.value = '0' WHERE attribute_id = 15 and item_id = tool_id;
     END IF;
   END IF;
 

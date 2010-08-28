@@ -34,23 +34,19 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 use swganh;
 
 --
--- Definition of function `f_player_planet`
+-- Definition of procedure `sp_ReturnChatPlanetNames`
 --
 
-DROP FUNCTION IF EXISTS `f_player_planet`;
+DROP PROCEDURE IF EXISTS `sp_ReturnChatPlanetNames`;
 
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`root`@`localhost` FUNCTION `f_player_planet`(player_id INT) RETURNS char(64) CHARSET utf8
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ReturnChatPlanetNames`()
 BEGIN
-	DECLARE player_planet CHAR(64);
-   	DECLARE player_planet_id int(8);
 	
-	SELECT planet_id FROM swganh.characters WHERE player_id like id INTO player_planet_id;
-	SELECT name FROM swganh.planet WHERE planet_id like player_planet_id INTO player_planet;
-	
-	RETURN player_planet;
+	SELECT planet.name FROM planet ORDER BY planet.planet_id;
+
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 

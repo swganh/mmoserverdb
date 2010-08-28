@@ -34,39 +34,24 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 use swganh;
 
 --
--- Definition of function `sf_CharacterNameCreate`
+-- Definition of function `sf_CharacterPlanetGet`
 --
 
-DROP FUNCTION IF EXISTS `sf_CharacterNameCreate`;
+DROP FUNCTION IF EXISTS `sf_CharacterPlanetGet`;
 
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */ $$
-CREATE DEFINER=`root`@`localhost` FUNCTION `sf_CharacterNameCreate`(base_model_string CHAR(64)) RETURNS char(64) CHARSET utf8
+CREATE DEFINER=`root`@`localhost` FUNCTION `sf_CharacterPlanetGet`(player_id INT) RETURNS char(64) CHARSET utf8
 BEGIN
-	DECLARE shortSpecies CHAR(16);
-	DECLARE gender INT(11);
-	DECLARE gen_firstname CHAR(16);
-	DECLARE gen_lastname CHAR(16);
-	DECLARE gen_fullname CHAR(64);
-
-	IF base_model_string like '%female%' then SET gender = 0;
-		ELSE SET gender = 1;
-	END IF;
-
-  SELECT swganh.f_speciesShort(base_model_string) INTO shortSpecies;
-
-  SELECT swganh.sf_GenerateFirstName(shortSpecies, gender) INTO gen_firstname;
-  SELECT swganh.sf_GenerateLastName(shortSpecies, gender) INTO gen_lastname;
-
-  IF shortSpecies = 'wookiee' THEN SET gen_lastname = NULL;
-  END IF;
-
-	SELECT CONCAT_WS(' ', gen_firstname, gen_lastname) INTO gen_fullname;
-
-	RETURN gen_fullname;
-
-	END $$
+	DECLARE player_planet CHAR(64);
+   	DECLARE player_planet_id int(8);
+	
+	SELECT planet_id FROM swganh.characters WHERE player_id like id INTO player_planet_id;
+	SELECT name FROM swganh_static.planet WHERE planet_id like player_planet_id INTO player_planet;
+	
+	RETURN player_planet;
+END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
 
 DELIMITER ;

@@ -48,15 +48,15 @@ BEGIN
         DECLARE att_id,att_order INT;
         DECLARE att_value CHAR(255);
         DECLARE loopEnd INT DEFAULT 0;
-        DECLARE cur_1 CURSOR FOR SELECT attribute_id,attribute_value,attribute_order FROM item_family_attribute_defaults WHERE item_family_attribute_defaults.family_id=family_id AND item_family_attribute_defaults.item_type_id=type_id;
+        DECLARE cur_1 CURSOR FOR SELECT attribute_id,attribute_value,attribute_order FROM swganh_static.item_family_attribute_defaults WHERE item_family_attribute_defaults.family_id=family_id AND item_family_attribute_defaults.item_type_id=type_id;
         DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loopEnd = 1;
-        INSERT INTO items VALUES (NULL,parent_id,family_id,type_id,privateowner_id,0,0,0,1,inX,inY,inZ,inPlanet,custom_name,100,0,0);
+        INSERT INTO swganh.items VALUES (NULL,parent_id,family_id,type_id,privateowner_id,0,0,0,1,inX,inY,inZ,inPlanet,custom_name,100,0,0);
         SET tmpId = LAST_INSERT_ID();
         OPEN cur_1;
         REPEAT
                 FETCH cur_1 INTO att_id,att_value,att_order;
                 IF NOT loopEnd THEN
-                        INSERT INTO item_attributes VALUES(tmpId,att_id,att_value,att_order,0);
+                        INSERT INTO swganh.item_attributes VALUES(tmpId,att_id,att_value,att_order,0);
                 END IF;
         UNTIL loopEnd END REPEAT;
         

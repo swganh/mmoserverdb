@@ -47,10 +47,10 @@ BEGIN
 
   declare loopEnd INT default 0;
   declare skill_id INT;
-  declare cur_1 cursor for select skills_species_required.skill_id from skills_species_required where skills_species_required.species_id = race_id;
+  declare cur_1 cursor for select skills_species_required.skill_id from swganh_static.skills_species_required where skills_species_required.species_id = race_id;
   declare continue handler for sqlstate '02000' set loopEnd = 1;
 
-  INSERT INTO character_skills VALUES (character_id,profession_id);
+  INSERT INTO character_skills VALUES (character_id, profession_id);
 
   open cur_1;
 
@@ -60,7 +60,7 @@ BEGIN
 
      if NOT loopEnd then
         if(skill_id is not NULL) then
-           INSERT INTO character_skills VALUES (character_id,skill_id);
+           INSERT INTO character_skills VALUES (character_id, skill_id);
         end if;
      end if;
 
