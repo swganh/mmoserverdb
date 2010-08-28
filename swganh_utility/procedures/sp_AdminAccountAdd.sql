@@ -89,7 +89,7 @@ BEGIN
   ##
   ## Create the account
 
-  INSERT INTO swganh.account VALUES (NULL, username, shapassword, mStation_id, mAccountType, accounttype, mEmail, NOW(), NOW(), 1, 0, maxcharsallowed, 1, NULL, NOW() - INTERVAL 30 MINUTE);
+  INSERT INTO swganh.account VALUES (mAccount_id, username, shapassword, mStation_id, accounttype, 0, Email, NOW(), NOW(), 1, 0, maxcharsallowed, 1, NULL, NOW() - INTERVAL 30 MINUTE);
 
   ##
   ## Return new account ID and Exit
