@@ -51,7 +51,7 @@ BEGIN
   ## Returns CSR category subcategories
   ##
 
-  SELECT subcategory_id, name FROM csr_subcategories WHERE category_id = catID;
+  SELECT subcategory_id, name FROM swganh_static.csr_subcategories WHERE category_id = catID;
   
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$

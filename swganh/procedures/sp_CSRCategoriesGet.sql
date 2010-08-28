@@ -52,7 +52,7 @@ BEGIN
   ##
   ##
 
-  SELECT * FROM csr_categories;
+  SELECT * FROM swganh_static.csr_categories;
 
 END $$
 /*!50003 SET SESSION SQL_MODE=@TEMP_SQL_MODE */  $$
