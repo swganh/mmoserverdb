@@ -42,9 +42,9 @@ CREATE TABLE `character_skills` (
   `character_id` bigint(20) unsigned NOT NULL default '0',
   `skill_id` int(10) unsigned NOT NULL,
   PRIMARY KEY  (`character_id`,`skill_id`),
-  KEY `fk_charskills_skill_skill` (`skill_id`),
-  CONSTRAINT `character_skillsID` FOREIGN KEY (`skill_id`) REFERENCES `swganh_static`.`skills` (`skill_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `character_skills_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `PK_charskills_skill_skill` (`skill_id`),
+  CONSTRAINT `FK_character_skillsID` FOREIGN KEY (`skill_id`) REFERENCES `swganh_static`.`skills` (`skill_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_character_skills_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

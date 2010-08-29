@@ -43,8 +43,8 @@ CREATE TABLE `character_holoemotes` (
   `emote_id` int(10) unsigned default NULL,
   `charges` int(10) unsigned default NULL,
   PRIMARY KEY  (`character_id`),
-  CONSTRAINT `FK_character_holoemotes_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_character_holoemoteID` FOREIGN KEY (`emote_id`) REFERENCES `swganh_static`.`holoemote` (`effect_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_character_holoemoteID` FOREIGN KEY (`emote_id`) REFERENCES `swganh_static`.`holoemote` (`effect_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_character_holoemote_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
