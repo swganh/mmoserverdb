@@ -41,11 +41,11 @@ DROP TABLE IF EXISTS `character_xp`;
 CREATE TABLE `character_xp` (
   `character_id` bigint(20) unsigned NOT NULL default '0',
   `xp_id` int(11) unsigned NOT NULL default '49',
-  `value` int(10) NOT NULL default '0',
-  PRIMARY KEY  (`character_id`,`xp_id`),
+  `xp_value` int(10) NOT NULL default '0',
+  PRIMARY KEY  (`character_id`, `xp_id`),
   KEY `fk_charxp_xp_xp` (`xp_id`),
-  CONSTRAINT `character_xp_ibfk_2` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_charxp_xp_xp` FOREIGN KEY (`xp_id`) REFERENCES `xp_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `character_xp_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_charxp_xpID` FOREIGN KEY (`xp_id`) REFERENCES `swganh_static`.`xp_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

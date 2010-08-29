@@ -71,9 +71,9 @@ CREATE TABLE `character_attributes` (
   `action_encum` int(6) unsigned NOT NULL default '0' COMMENT 'Character - Action Encumberance',
   `mind_encum` int(6) unsigned NOT NULL default '0' COMMENT 'Character - Mind Encumberance',
   `battlefatigue` int(6) unsigned NOT NULL default '0' COMMENT 'Character - Battle Fatigue',
-  `posture` int(3) unsigned NOT NULL default '0',
-  `moodId` int(11) unsigned NOT NULL default '0',
-  `title` char(255) default NULL,
+  `posture` int(3) unsigned NOT NULL default '0' COMMENT 'Character - Posture',
+  `moodId` int(11) unsigned NOT NULL default '0' COMMENT 'Character - Mood',
+  `title` char(255) default NULL COMMENT 'Character - Profession Title',
   `character_flags` int(11) unsigned NOT NULL default '0',
   `states` bigint(20) unsigned NOT NULL default '0',
   `language` int(11) unsigned NOT NULL default '1',
@@ -82,11 +82,11 @@ CREATE TABLE `character_attributes` (
   `force_max` int(11) unsigned NOT NULL default '0',
   `new_player_exemptions` int(2) unsigned NOT NULL default '3',
   PRIMARY KEY  (`character_id`),
-  KEY `fk_charattributes_fac_fac` (`faction_id`),
-  KEY `fk_charattributes_mood_mood` (`moodId`),
-  CONSTRAINT `fk_charattributes_char_char` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_charattributes_fac_fac` FOREIGN KEY (`faction_id`) REFERENCES `faction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_charattributes_mood_mood` FOREIGN KEY (`moodId`) REFERENCES `moods` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `PK_charattributes_faction` (`faction_id`),
+  KEY `PK_charattributes_mood` (`moodId`),
+  CONSTRAINT `FK_charattributes_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_charattributes_faction` FOREIGN KEY (`faction_id`) REFERENCES `swganh_static`.`faction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_charattributes_mood` FOREIGN KEY (`moodId`) REFERENCES `swganh_static`.`moods` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
 

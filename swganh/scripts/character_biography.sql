@@ -42,7 +42,7 @@ CREATE TABLE `character_biography` (
   `character_id` bigint(20) unsigned NOT NULL default '0',
   `biography` text NOT NULL,
   PRIMARY KEY  (`character_id`),
-  CONSTRAINT `character_biography_ibfk_1` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_character_biography_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

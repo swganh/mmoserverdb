@@ -45,7 +45,7 @@ CREATE TABLE `character_movement` (
   `baseTurnRate` float(5,2) NOT NULL default '1.00',
   `baseTerrainNegotiation` float(6,4) NOT NULL default '0.0125',
   PRIMARY KEY  (`character_id`),
-  CONSTRAINT `fk_char_movement_char` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `fk_char_movement_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 

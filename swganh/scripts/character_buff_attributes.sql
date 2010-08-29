@@ -43,14 +43,15 @@ USE swganh;
 
 DROP TABLE IF EXISTS `character_buff_attributes`;
 CREATE TABLE `character_buff_attributes` (
-  	`buff_id` Bigint(20) unsigned NOT NULL,
-	`character_id` Bigint(20) unsigned NOT NULL,
-	`type` Bigint(20) unsigned NOT NULL,
-	`initial` Bigint(20) NOT NULL DEFAULT '0',
-	`tick` Bigint(20) NOT NULL DEFAULT '0',
-	`final` Bigint(20) NOT NULL DEFAULT '0',
-	`id` Bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-	PRIMARY KEY (`id`)
+  	`buff_id` BIGINT(20) unsigned NOT NULL,
+	`character_id` BIGINT(20) unsigned NOT NULL,
+	`buff_type` BIGINT(20) unsigned NOT NULL,
+	`buff_initial` BIGINT(20) NOT NULL DEFAULT '0',
+	`tick` BIGINT(20) NOT NULL DEFAULT '0',
+	`final` BIGINT(20) NOT NULL DEFAULT '0',
+	`id` BIGINT(20) unsigned NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`id`),
+    CONSTRAINT `FK_buffattributes_buffid` FOREIGN KEY (`buff_id`) REFERENCES `character_buffs` (`buff_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -58,7 +59,6 @@ CREATE TABLE `character_buff_attributes` (
 --
 
 /*!40000 ALTER TABLE `character_buff_attributes` DISABLE KEYS */;
-
 /*!40000 ALTER TABLE `character_buff_attributes` ENABLE KEYS */;
 
 

@@ -50,8 +50,8 @@ CREATE TABLE `character_buffs` (
   `current_global_tick` bigint(20) unsigned NOT NULL default '0',
   `start_global_tick` bigint(20) unsigned NOT NULL default '0',
   PRIMARY KEY  (`buff_id`,`character_id`),
-  KEY `FK_Buffs` (`character_id`),
-  CONSTRAINT `FK_Buffs` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE 
+  KEY `PK_Buffs` (`character_id`),
+  CONSTRAINT `FK_buffs_characterID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40000 ALTER TABLE `character_buffs` ENABLE KEYS */;

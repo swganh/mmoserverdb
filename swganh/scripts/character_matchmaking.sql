@@ -46,7 +46,7 @@ CREATE TABLE  `swganh`.`character_matchmaking` (
   `match_4` int(11) unsigned NOT NULL,
   `match_5` int(11) unsigned NOT NULL,
   PRIMARY KEY  (`character_id`),
-  CONSTRAINT `fk_character_matchmaking_character` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_character_matchmaking_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 --
 -- Dumping data for table `character_matchmaking`

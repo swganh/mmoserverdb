@@ -52,7 +52,7 @@ CREATE TABLE  `swganh`.`character_stat_migration` (
   `target_willpower` int(10) unsigned NOT NULL,
   `points_remaining` int(10) unsigned NOT NULL,
   PRIMARY KEY  (`character_id`),
-  CONSTRAINT `fk_character_stat_migration` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `fk_character_stat_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 

@@ -42,7 +42,7 @@ CREATE TABLE `character_badges` (
   `character_id` bigint(20) unsigned NOT NULL default '0',
   `badge_id` int(11) unsigned NOT NULL default '0',
   PRIMARY KEY  (`character_id`,`badge_id`),
-  CONSTRAINT `fk_characterbadges_char_char` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_characterbadges_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=REDUNDANT;
 
 --

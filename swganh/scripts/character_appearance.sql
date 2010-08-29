@@ -31,12 +31,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
---
--- Create schema swganh
---
-
-CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
@@ -167,7 +161,7 @@ CREATE TABLE `character_appearance` (
   `base_model_string` char(128) DEFAULT NULL,
   `scale` float NOT NULL DEFAULT '1',
   PRIMARY KEY (`character_id`),
-  CONSTRAINT `character_appearance_ibfk_1` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_character_appearance_id` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
 --

@@ -43,9 +43,9 @@ CREATE TABLE `character_faction` (
   `faction_id` int(8) unsigned NOT NULL,
   `value` int(11) NOT NULL,
   PRIMARY KEY  (`character_id`,`faction_id`),
-  KEY `fk_charfaction_fac_fac` (`faction_id`),
-  CONSTRAINT `character_faction_ibfk_1` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `character_faction_ibfk_2` FOREIGN KEY (`faction_id`) REFERENCES `faction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `PK_charfaction_faction` (`faction_id`),
+  CONSTRAINT `FK_character_faction_charID` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_character_factionID` FOREIGN KEY (`faction_id`) REFERENCES `swganh_static`.`faction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

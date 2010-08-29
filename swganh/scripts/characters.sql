@@ -79,26 +79,6 @@ CREATE TABLE `characters` (
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
 /*!40000 ALTER TABLE `characters` ENABLE KEYS */;
 
---
--- Definition of trigger `tr_DeleteArchiveResidual`
---
-
-DROP TRIGGER /*!50030 IF EXISTS */ `tr_DeleteArchiveResidual`;
-
-DELIMITER $$
-
-CREATE DEFINER = `root`@`localhost` TRIGGER `tr_DeleteArchiveResidual` AFTER DELETE ON `characters` FOR EACH ROW BEGIN
-	DELETE FROM swganh.banks WHERE id = OLD.id + 4;
-	DELETE FROM swganh.datapads WHERE id = OLD.id + 3;
-	DELETE FROM swganh.inventories WHERE id = OLD.id + 1;
-	DELETE FROM swganh.items WHERE parent_id = OLD.id + 1;
-	DELETE FROM swganh.items WHERE parent_id = OLD.id;
-	DELETE FROM swganh.items WHERE privateowner_id = OLD.id;
-	DELETE FROM swganh.resource_containers WHERE parent_id = OLD.id + 1;
-END $$
-
-DELIMITER ;
-
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
