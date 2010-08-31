@@ -40,7 +40,7 @@ use swganh;
 DROP TABLE IF EXISTS `swganh`.`character_clone`;
 CREATE TABLE  `swganh`.`character_clone` (
   `character_id` bigint(20) unsigned NOT NULL,
-  `spawn_facility_id` bigint(20) unsigned NOT NULL,
+  `spawn_facility_id` bigint(20) unsigned NOT NULL COMMENT 'Cloning Facility - Building ID',
   `x` float(10,6) default NULL COMMENT 'Cloning facility X Location',
   `y` float(10,6) default NULL COMMENT 'Cloning facility Y Location',
   `z` float(10,6) default NULL COMMENT 'Cloning facility Z Location',

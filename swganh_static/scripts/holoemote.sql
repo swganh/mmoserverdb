@@ -40,9 +40,9 @@ use swganh_static;
 DROP TABLE IF EXISTS `holoemote`;
 CREATE TABLE `holoemote` (
   `crc` int(10) unsigned NOT NULL,
-  `effect_id` int(10) unsigned NOT NULL,
-  `name` varchar(45) NOT NULL,
-  PRIMARY KEY  (`crc`)
+  `effect_id` int(10) unsigned default NULL,
+  `name` char(32) NOT NULL,
+  PRIMARY KEY  (`effect_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

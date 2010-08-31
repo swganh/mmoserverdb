@@ -129,7 +129,6 @@ BEGIN
     mMindWounds,
     mFocusWounds,
     mWillpowerWounds);
-
   END IF;
 
 END $$

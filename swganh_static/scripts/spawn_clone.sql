@@ -52,7 +52,7 @@ CREATE TABLE `spawn_clone` (
   `city` varchar(45) NOT NULL default '0',
   PRIMARY KEY  (`id`),
   KEY `spawn_clone_planetid` (`planet_id`),
-  CONSTRAINT `spawn_clone_ibfk_1` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_spawn_clone_planet` FOREIGN KEY (`planet_id`) REFERENCES `swganh_static`.`planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
