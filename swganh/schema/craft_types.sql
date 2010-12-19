@@ -4,7 +4,7 @@ This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Em
 
 For more information, visit http://www.swganh.com
 
-Copyright (c) 2006 - 2010 The SWG:ANH Team
+Copyright (c) 2006 - 2011 The SWG:ANH Team
 ---------------------------------------------------------------------------------------
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
