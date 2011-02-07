@@ -57,8 +57,6 @@ CREATE TABLE `spawn_regions` (
 --
 
 /*!40000 ALTER TABLE `spawn_regions` DISABLE KEYS */;
-INSERT INTO `spawn_regions` (`id`,`region_id`,`spawn_type`,`planet_id`,`parent_id`,`mission`) VALUES 
- (64961380352,97,0,5,0,0);
 /*!40000 ALTER TABLE `spawn_regions` ENABLE KEYS */;
 
 
