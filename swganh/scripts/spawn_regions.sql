@@ -38,7 +38,7 @@ USE swganh;
 --
 
 DROP TABLE IF EXISTS `spawn_regions`;
-*/CREATE TABLE `spawn_regions` (
+/*CREATE TABLE `spawn_regions` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `region_id` int(11) unsigned NOT NULL DEFAULT '0',
   `spawn_type` int(11) unsigned NOT NULL DEFAULT '0',
