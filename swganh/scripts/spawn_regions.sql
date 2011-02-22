@@ -38,7 +38,7 @@ USE swganh;
 --
 
 DROP TABLE IF EXISTS `spawn_regions`;
-/*CREATE TABLE `spawn_regions` (
+CREATE TABLE `spawn_regions` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `region_id` int(11) unsigned NOT NULL DEFAULT '0',
   `spawn_type` int(11) unsigned NOT NULL DEFAULT '0',
@@ -51,7 +51,7 @@ DROP TABLE IF EXISTS `spawn_regions`;
   CONSTRAINT `fk_spawn_planet` FOREIGN KEY (`planet_id`) REFERENCES `planet` (`planet_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_spawn_regions` FOREIGN KEY (`region_id`) REFERENCES `planet_regions` (`region_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=64961380353 DEFAULT CHARSET=utf8;
-*/
+
 --
 -- Dumping data for table `spawn_regions`
 --
