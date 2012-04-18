@@ -42,9 +42,9 @@ DROP FUNCTION IF EXISTS `sf_getZoneObjectCount`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER' */ $$
+
 CREATE FUNCTION `sf_getZoneObjectCount`(zoneId INT) RETURNS int(11)
 BEGIN
-
 	DECLARE buildingCount INT;
 	DECLARE cellCount INT;
 	DECLARE terminalCount INT;
@@ -56,7 +56,6 @@ BEGIN
    	DECLARE resourceContainerCount INT;
     DECLARE cityCount INT;
     DECLARE badgeRegionCount INT;
-	DECLARE zoneRegionCount INT;
 	DECLARE creatureSpawnRegionCount INT;
 	DECLARE totalCount INT;
 
@@ -71,10 +70,9 @@ BEGIN
     SELECT COUNT(id) FROM resource_containers WHERE planet_id = zoneId INTO resourceContainerCount;
     SELECT COUNT(id) FROM cities WHERE planet_id = zoneId INTO cityCount;
     SELECT COUNT(id) FROM badge_regions WHERE planet_id = zoneId INTO badgeRegionCount;
-    SELECT COUNT(id) FROM zone_regions WHERE planet_id = zoneId INTO zoneRegionCount;
     SELECT COUNT(id) FROM spawns WHERE spawn_planet = zoneId INTO creatureSpawnRegionCount;
     
-    SET totalCount = (buildingCount + cellCount + terminalCount + resourceContainerCount + containerCount + ticketCollectorCount + persistentNPCCount + shuttleCount + itemCount + cityCount + badgeRegionCount + zoneRegionCount + creatureSpawnRegionCount);
+    SET totalCount = (buildingCount + cellCount + terminalCount + resourceContainerCount + containerCount + ticketCollectorCount + persistentNPCCount + shuttleCount + itemCount + cityCount + badgeRegionCount + creatureSpawnRegionCount);
 
 	RETURN totalCount;
 END $$
