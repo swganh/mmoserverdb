@@ -1,26 +1,8 @@
-/*
----------------------------------------------------------------------------------------
-This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.1.48-community
 
-For more information, visit http://www.swganh.com
-
-Copyright (c) 2006 - 2010 The SWG:ANH Team
----------------------------------------------------------------------------------------
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) any later version.
-
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public
-License along with this library; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
----------------------------------------------------------------------------------------
-*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -35,7 +17,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 --
 -- Create schema swganh
 --
-                                      
+
+CREATE DATABASE IF NOT EXISTS swganh;
 USE swganh;
 
 --
@@ -44,13 +27,13 @@ USE swganh;
 
 DROP TABLE IF EXISTS `frog_items`;
 CREATE TABLE `frog_items` (
-  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `itemtype` int(10) unsigned NOT NULL,
   `family` int(10) unsigned NOT NULL,
   `name` varchar(65) NOT NULL,
   `active` tinyint(1) NOT NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2768 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2790 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `frog_items`
@@ -2515,7 +2498,8 @@ INSERT INTO `frog_items` (`id`,`itemtype`,`family`,`name`,`active`) VALUES
  (2764,2764,10,'@weapon_name:rifle_ewok_crossbow',1),
  (2765,2765,10,'@weapon_name:rifle_laser_noob',1),
  (2766,2766,10,'@weapon_name:rifle_tenloss_dxr6_disruptor_loo',1),
- (2767,2767,10,'@weapon_name:rifle_victor_tusken',1);
+ (2767,2767,10,'@weapon_name:rifle_victor_tusken',1),
+ (2789,2789,31,'@terminal:shared_terminal_character_builder',1);
 /*!40000 ALTER TABLE `frog_items` ENABLE KEYS */;
 
 
