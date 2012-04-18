@@ -44,8 +44,7 @@ DELIMITER $$
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER' */ $$
 CREATE FUNCTION `sf_getZoneObjectCountDebug`(zoneId INT) RETURNS int(11)
 BEGIN
-
-	DECLARE buildingCount INT;
+DECLARE buildingCount INT;
 	DECLARE cellCount INT;
 	DECLARE terminalCount INT;
     DECLARE containerCount INT;
@@ -56,7 +55,6 @@ BEGIN
    	DECLARE resourceContainerCount INT;
     DECLARE cityCount INT;
     DECLARE badgeRegionCount INT;
-	DECLARE zoneRegionCount INT;
 	DECLARE creatureSpawnRegionCount INT;
 	DECLARE totalCount INT;
 
@@ -65,15 +63,15 @@ BEGIN
 	SELECT COUNT(terminals.id) FROM terminals INNER JOIN terminal_types ON(terminals.terminal_type = terminal_types.id) WHERE (terminals.planet_id = zoneId) AND (terminal_types.name NOT LIKE 'unknown') INTO terminalCount;
    	SELECT COUNT(containers.id) FROM containers INNER JOIN container_types ON(containers.container_type = container_types.id) WHERE (containers.planet_id = zoneId) AND (container_types.name NOT LIKE 'unknown') INTO containerCount;
 	SELECT COUNT(id) FROM ticket_collectors WHERE planet_id = zoneId INTO ticketCollectorCount;
+	SELECT COUNT(id) FROM persistent_npcs WHERE planet_id = zoneId INTO persistentNPCCount;
 	SELECT COUNT(id) FROM shuttles WHERE planet_id = zoneId INTO shuttleCount;
    	SELECT COUNT(id) FROM items WHERE planet_id = zoneId INTO itemCount;
     SELECT COUNT(id) FROM resource_containers WHERE planet_id = zoneId INTO resourceContainerCount;
     SELECT COUNT(id) FROM cities WHERE planet_id = zoneId INTO cityCount;
     SELECT COUNT(id) FROM badge_regions WHERE planet_id = zoneId INTO badgeRegionCount;
-    SELECT COUNT(id) FROM zone_regions WHERE planet_id = zoneId INTO zoneRegionCount;
     SELECT COUNT(id) FROM spawns WHERE spawn_planet = zoneId INTO creatureSpawnRegionCount;
     
-    SET totalCount = (buildingCount + cellCount + terminalCount + ticketCollectorCount + shuttleCount + cityCount + zoneRegionCount + creatureSpawnRegionCount);
+    SET totalCount = (buildingCount + cellCount + terminalCount + resourceContainerCount + containerCount + ticketCollectorCount + persistentNPCCount + shuttleCount + itemCount + cityCount + badgeRegionCount + creatureSpawnRegionCount);
 
 	RETURN totalCount;
 END $$
