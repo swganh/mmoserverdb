@@ -1,26 +1,8 @@
-﻿/*
----------------------------------------------------------------------------------------
-This source file is part of SWG:ANH (Star Wars Galaxies - A New Hope - Server Emulator)
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.1.48-community
 
-For more information, visit http://www.swganh.com
-
-Copyright (c) 2006 - 2010 The SWG:ANH Team
----------------------------------------------------------------------------------------
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) any later version.
-
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public
-License along with this library; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
----------------------------------------------------------------------------------------
-*/
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +13,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-use swganh;
+
+--
+-- Create schema swganh
+--
+
+CREATE DATABASE IF NOT EXISTS swganh;
+USE swganh;
 
 --
 -- Definition of table `item_types`
@@ -52,14 +40,14 @@ CREATE TABLE `item_types` (
   `b_isSitable` int(10) unsigned NOT NULL DEFAULT '0',
   `container` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '0 for not a container, otherwise nr of items allowed',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2788 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
+) ENGINE=InnoDB AUTO_INCREMENT=2790 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED;
 
 --
 -- Dumping data for table `item_types`
 --
 
 /*!40000 ALTER TABLE `item_types` DISABLE KEYS */;
-INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`,`container`) VALUES
+INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail_name`,`stf_detail_file`,`bazaar_category`,`equipSlots`,`equipRestrictions`,`complete`,`b_isSitable`,`container`) VALUES 
  (1,'object/tangible/survey_tool/shared_survey_tool_wind.iff','survey_tool_wind','item_n','survey_tool_wind','item_d',32770,'0',0,'No',0,0),
  (2,'object/tangible/survey_tool/shared_survey_tool_gas.iff','survey_tool_gas','item_n','survey_tool_gas','item_d',32770,'0',0,'No',0,0),
  (3,'object/tangible/survey_tool/shared_survey_tool_lumber.iff','survey_tool_lumber','item_n','survey_tool_lumber','item_d',32770,'0',0,'No',0,0),
@@ -2648,8 +2636,12 @@ INSERT INTO `item_types` (`id`,`object_string`,`stf_name`,`stf_file`,`stf_detail
  (2785,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_worm','item_n','fishing_bait_worm','item_d',8215,'0',0,'No',0,1),
  (2786,'object/tangible/food/foraged/shared_edible_jar_funk.iff','fishing_bait_grub','item_n','fishing_bait_grub','item_d',8215,'0',0,'No',0,1),
  (2787,'object/tangible/food/foraged/shared_edible_jar_livers.iff','fishing_bait_chum','item_n','fishing_bait_chum','item_d',8215,'0',0,'No',0,1),
- (2788,'object/tangible/terminal/shared_terminal_ballot_box.iff','terminal_ballot_box','terminal_name','terminal_ballot_box','terminal_details',0,'0',0,'No',0,0);
+ (2788,'object/tangible/terminal/shared_terminal_ballot_box.iff','terminal_ballot_box','terminal_name','terminal_ballot_box','terminal_details',0,'0',0,'No',0,0),
+ (2789,'object/tangible/terminal/shared_terminal_character_builder.iff','terminal_character_builder','terminal_name','terminal_character_builder','terminal_details',0,'0',0,'No',0,0);
 /*!40000 ALTER TABLE `item_types` ENABLE KEYS */;
+
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

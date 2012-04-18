@@ -68,7 +68,7 @@ INSERT INTO `starting_location` (`location_id`,`location`,`planet_id`,`x`,`y`,`z
  (7,'kor_vella',0,-3138.000000,0.000000,2808.000000,'Kor Vella, Corellia',3,180),
  (8,'doaba_guerfel',0,3336.000000,0.000000,5525.000000,'Doaba Guerfel, Corellia',3,180),
  (9,'dearic',7,335.000000,0.000000,-2931.000000,'Dearic, Talus',3,180),
- (10,'nashal',7,4371.000000,0.000000,5165.000000,'Nashal, Talus',3,180),
+ (10,'nashal',7,4450.000000,0.000000,5280.000000,'Nashal, Talus',3,180),
  (11,'narmle',6,-5310.000000,0.000000,-2221.000000,'Narmle, Rori',3,180),
  (12,'restuss',6,5362.000000,0.000000,5663.000000,'Restuss, Rori',3,180),
  (13,'theed',5,-4856.000000,0.000000,4162.000000,'Theed, Naboo',3,180),
